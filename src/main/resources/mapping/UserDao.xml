@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 实现UserDao接口对应的方法 -->
+<mapper namespace="tms.spring.dao.UserDao">
+    <!-- 增 -->
+    <!--<insert id="save" parameterType="tms.spring.entity.User">-->
+        <!--INSERT INTO t_user(user_id,username,userpass)-->
+        <!--VALUES (#{userId},#{username},#{userpass});-->
+    <!--</insert>-->
+
+    <!-- 查 -->
+    <select id="findAll" parameterType="java.lang.String" resultType="tms.spring.entity.User">
+        SELECT * FROM tms_user WHERE NAME = #{name};
+    </select>
+</mapper>

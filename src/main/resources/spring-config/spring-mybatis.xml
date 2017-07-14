@@ -52,6 +52,7 @@
         <!--<property name="dataSource" ref="dataSource"/>-->
         <!--&lt;!&ndash; 自动扫描mapping.xml文件 &ndash;&gt;-->
         <!--<property name="mapperLocations" value="classpath:mapping/*.xml"></property>-->
+        <!--<property name="configLocation" value="classpath:mybatis-configuration.xml" />-->
     <!--</bean>-->
 
     <!--&lt;!&ndash; DAO接口所在包名，Spring会自动查找其下的类 &ndash;&gt;-->
