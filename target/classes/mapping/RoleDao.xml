@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tms.spring.dao.RoleDao">
+    <resultMap id="Permissions" type="tms.spring.entity.Permission">
+        <id column="id" property="id"/>
+        <id column="name" property="name"/>
+        <id column="url" property="url"/>
+    </resultMap>
+
+    <resultMap id="PermissionUrls" type="java.lang.String">
+        <id column="url" property="url"/>
+    </resultMap>
+
+    <select id="selectRoleByName" parameterType="java.lang.String" resultType="tms.spring.entity.Role">
+        SELECT * FROM t_role WHERE name = #{name};
+    </select>
+
+    <insert id="insertRole" parameterType="tms.spring.entity.Role">
+        INSERT INTO t_role(name,type)
+        VALUES (#{name,jdbcType=VARCHAR},#{type,jdbcType=VARCHAR})
+    </insert>
+
+    <delete id="deleteRoleById" parameterType="java.lang.Long">
+        DELETE FROM t_role WHERE id = #{id,jdbcType=BIGINT}
+    </delete>
+
+    <select id="selectPermissionsById" parameterType="java.lang.Long" resultMap="Permissions">
+        SELECT t_permission.id,t_permission.name,t_permission.url
+        FROM t_role LEFT JOIN t_role_permission ON t_role.id=t_role_permission.rid
+        LEFT JOIN t_permission ON t_permission.id=t_role_permission.pid WHERE t_role.id=#{id,jdbcType=BIGINT}
+    </select>
+
+    <select id="selectPermissionUrlsById" parameterType="java.lang.Long" resultMap="PermissionUrls">
+        SELECT t_permission.url
+        FROM t_role LEFT JOIN t_role_permission ON t_role.id=t_role_permission.rid
+        LEFT JOIN t_permission ON t_permission.id=t_role_permission.pid WHERE t_role.id=#{id,jdbcType=BIGINT}
+    </select>
+</mapper>

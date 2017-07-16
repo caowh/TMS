@@ -7,43 +7,40 @@
 
     <!-- 注解扫描包 -->
     <context:component-scan base-package="tms.spring.controller" />
+    <context:component-scan base-package="tms.spring.service" />
 
     <!-- 开启注解 -->
     <mvc:annotation-driven />
 
-    <mvc:interceptors>
-        <mvc:interceptor>
-            <mvc:mapping path="/*.do" />
-            <mvc:exclude-mapping path="/login.do" />
-            <bean class="tms.spring.interceptor.CommonInterceptor"></bean>
-        </mvc:interceptor>
-        <!-- 当设置多个拦截器时，先按顺序调用preHandle方法，然后逆序调用每个拦截器的postHandle和afterCompletion方法 -->
-    </mvc:interceptors>
+    <!--<mvc:interceptors>-->
+        <!--<mvc:interceptor>-->
+            <!--<mvc:mapping path="/**" />-->
+            <!--<mvc:exclude-mapping path="/login.do" />-->
+            <!--<bean class="tms.spring.interceptor.CommonInterceptor"></bean>-->
+        <!--</mvc:interceptor>-->
+        <!--&lt;!&ndash; 当设置多个拦截器时，先按顺序调用preHandle方法，然后逆序调用每个拦截器的postHandle和afterCompletion方法 &ndash;&gt;-->
+    <!--</mvc:interceptors>-->
 
-    <!-- 支持JSON数据格式 -->
-    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
-        <property name="messageConverters">
-            <list>
-                <bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter"/><!-- 解析导出文件byte流 -->
-                <ref bean="fastJsonHttpMessageConverter" />
-            </list>
-        </property>
-    </bean>
-    <!-- 使用fastJson来支持JSON数据格式 -->
-    <bean id="fastJsonHttpMessageConverter" class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
-        <property name="supportedMediaTypes">
-            <list>
-                <value>text/html;charset=UTF-8</value>
-                <value>application/json</value>
-            </list>
-        </property>
-        <property name="features">
-            <list>
-                <value>WriteMapNullValue</value>
-                <value>QuoteFieldNames</value>
-            </list>
-        </property>
-    </bean>
+    <!-- 使用fastjson -->
+    <mvc:annotation-driven>
+        <mvc:message-converters register-defaults="true">
+            <bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>text/html;charset=UTF-8</value>
+                        <value>application/json</value>
+                    </list>
+                </property>
+                <property name="features">
+                    <list>
+                        <value>WriteMapNullValue</value>
+                        <value>QuoteFieldNames</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
 
     <!-- 静态资源的访问 -->
     <mvc:resources location="/resource/js/" mapping="/js/**"/>
@@ -52,7 +49,7 @@
 
     <!-- 定义视图解析器 -->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/"></property>
+        <property name="prefix" value="/WEB-INF/view/"></property>
         <property name="suffix" value=".jsp"></property>
     </bean>
 

@@ -51,7 +51,7 @@ public class CommonInterceptor extends HandlerInterceptorAdapter {
         if(user == null){
             response.setCharacterEncoding("UTF-8");
             log.info("Interceptor：跳转到login页面！");
-            request.getRequestDispatcher("login.do").include(request, response);
+            request.getRequestDispatcher("login.jsp").include(request, response);
             return false;
         }else
             return true;

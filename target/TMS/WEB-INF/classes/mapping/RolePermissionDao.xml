@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tms.spring.dao.RolePermissionDao">
+
+    <insert id="insertRolePermission" parameterType="tms.spring.entity.RolePermission">
+        INSERT INTO t_role_permission(rid,pid)
+        VALUES (#{rid,jdbcType=BIGINT},#{pid,jdbcType=BIGINT})
+    </insert>
+
+    <delete id="deleteRolePermission" parameterType="tms.spring.entity.RolePermission">
+        DELETE FROM t_role_permission WHERE pid=#{pid,jdbcType=BIGINT} and rid=#{rid,jdbcType=BIGINT}
+    </delete>
+
+</mapper>
