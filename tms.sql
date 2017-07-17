@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : test
+Source Server         : localhost_3306
 Source Server Version : 50717
 Source Host           : localhost:3306
 Source Database       : tms
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2017-07-17 08:13:25
+Date: 2017-07-17 16:41:49
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,22 +29,7 @@ CREATE TABLE `t_permission` (
 -- ----------------------------
 -- Records of t_permission
 -- ----------------------------
-INSERT INTO `t_permission` VALUES ('4', '/permission/index.shtml', '权限列表');
-INSERT INTO `t_permission` VALUES ('6', '/permission/addPermission.shtml', '权限添加');
-INSERT INTO `t_permission` VALUES ('7', '/permission/deletePermissionById.shtml', '权限删除');
-INSERT INTO `t_permission` VALUES ('8', '/member/list.shtml', '用户列表');
-INSERT INTO `t_permission` VALUES ('9', '/member/online.shtml', '在线用户');
-INSERT INTO `t_permission` VALUES ('10', '/member/changeSessionStatus.shtml', '用户Session踢出');
-INSERT INTO `t_permission` VALUES ('11', '/member/forbidUserById.shtml', '用户激活&禁止');
-INSERT INTO `t_permission` VALUES ('12', '/member/deleteUserById.shtml', '用户删除');
-INSERT INTO `t_permission` VALUES ('13', '/permission/addPermission2Role.shtml', '权限分配');
-INSERT INTO `t_permission` VALUES ('14', '/role/clearRoleByUserIds.shtml', '用户角色分配清空');
-INSERT INTO `t_permission` VALUES ('15', '/role/addRole2User.shtml', '角色分配保存');
-INSERT INTO `t_permission` VALUES ('16', '/role/deleteRoleById.shtml', '角色列表删除');
-INSERT INTO `t_permission` VALUES ('17', '/role/addRole.shtml', '角色列表添加');
-INSERT INTO `t_permission` VALUES ('18', '/role/index.shtml', '角色列表');
-INSERT INTO `t_permission` VALUES ('19', '/permission/allocation.shtml', '权限分配');
-INSERT INTO `t_permission` VALUES ('20', '/role/allocation.shtml', '角色分配');
+INSERT INTO `t_permission` VALUES ('4', '/main/index.do', '权限列表');
 
 -- ----------------------------
 -- Table structure for t_role
@@ -80,37 +65,7 @@ CREATE TABLE `t_role_permission` (
 -- ----------------------------
 -- Records of t_role_permission
 -- ----------------------------
-INSERT INTO `t_role_permission` VALUES ('4', '8');
-INSERT INTO `t_role_permission` VALUES ('4', '9');
-INSERT INTO `t_role_permission` VALUES ('4', '10');
-INSERT INTO `t_role_permission` VALUES ('4', '11');
-INSERT INTO `t_role_permission` VALUES ('4', '12');
 INSERT INTO `t_role_permission` VALUES ('3', '4');
-INSERT INTO `t_role_permission` VALUES ('3', '6');
-INSERT INTO `t_role_permission` VALUES ('3', '7');
-INSERT INTO `t_role_permission` VALUES ('3', '13');
-INSERT INTO `t_role_permission` VALUES ('3', '14');
-INSERT INTO `t_role_permission` VALUES ('3', '15');
-INSERT INTO `t_role_permission` VALUES ('3', '16');
-INSERT INTO `t_role_permission` VALUES ('3', '17');
-INSERT INTO `t_role_permission` VALUES ('3', '18');
-INSERT INTO `t_role_permission` VALUES ('3', '19');
-INSERT INTO `t_role_permission` VALUES ('3', '20');
-INSERT INTO `t_role_permission` VALUES ('1', '6');
-INSERT INTO `t_role_permission` VALUES ('1', '7');
-INSERT INTO `t_role_permission` VALUES ('1', '8');
-INSERT INTO `t_role_permission` VALUES ('1', '9');
-INSERT INTO `t_role_permission` VALUES ('1', '10');
-INSERT INTO `t_role_permission` VALUES ('1', '11');
-INSERT INTO `t_role_permission` VALUES ('1', '12');
-INSERT INTO `t_role_permission` VALUES ('1', '13');
-INSERT INTO `t_role_permission` VALUES ('1', '14');
-INSERT INTO `t_role_permission` VALUES ('1', '15');
-INSERT INTO `t_role_permission` VALUES ('1', '16');
-INSERT INTO `t_role_permission` VALUES ('1', '17');
-INSERT INTO `t_role_permission` VALUES ('1', '18');
-INSERT INTO `t_role_permission` VALUES ('1', '19');
-INSERT INTO `t_role_permission` VALUES ('1', '20');
 INSERT INTO `t_role_permission` VALUES ('1', '4');
 
 -- ----------------------------
@@ -133,9 +88,9 @@ CREATE TABLE `t_user` (
 -- ----------------------------
 -- Records of t_user
 -- ----------------------------
-INSERT INTO `t_user` VALUES ('1', 'admin', '1240597349@qq.com', 'admin', '2016-06-16 11:15:33', '2017-07-16 20:51:55', '1', 'admin', '老大');
-INSERT INTO `t_user` VALUES ('11', '曹文松', '1240597349@qq.com', 'admin', '2016-05-26 20:50:54', '2017-07-15 23:45:29', '1', 'caowh', '测试一部');
-INSERT INTO `t_user` VALUES ('12', '曹文豪', '1240597349@qq.com', 'admin', '2016-05-27 22:34:19', '2017-07-15 23:45:29', '1', 'caows', '测试二部');
+INSERT INTO `t_user` VALUES ('1', 'admin', '1240597349@qq.com', '47a584b728e69533311a76ff05e8dc01', '2016-06-16 11:15:33', '2017-07-17 10:53:13', '1', 'admin', '老大');
+INSERT INTO `t_user` VALUES ('11', '曹文松', '12405973491@qq.com', '47a584b728e69533311a76ff05e8dc01', '2016-05-26 20:50:54', '2017-07-15 23:45:29', '1', 'caowh', '测试一部');
+INSERT INTO `t_user` VALUES ('12', '曹文豪', '12405973492@qq.com', '47a584b728e69533311a76ff05e8dc01', '2016-05-27 22:34:19', '2017-07-15 23:45:29', '1', 'caows', '测试二部');
 
 -- ----------------------------
 -- Table structure for t_user_role
