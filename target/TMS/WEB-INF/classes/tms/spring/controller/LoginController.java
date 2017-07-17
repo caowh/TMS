@@ -9,8 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import tms.spring.exception.MailException;
+import tms.spring.exception.RegisterException;
 import tms.spring.service.LoginService;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,18 +37,87 @@ public class LoginController {
         logger.info("begin login!");
         try {
             loginService.login(username,password,remember);
-            map.put("code","1");
-            map.put("message","");
+            map.put("code",1);
         } catch (IncorrectCredentialsException e) {
-            map.put("code","0");
+            map.put("code",0);
             map.put("message",e.getMessage());
         } catch (UnknownAccountException e) {
-            map.put("code","0");
+            map.put("code",0);
             map.put("message",e.getMessage());
         } catch (UnauthorizedException e) {
-            map.put("code","0");
+            map.put("code",0);
             map.put("message",e.getMessage());
         }
         return map;
     }
+
+    @RequestMapping(value = "checkUserName")
+    @ResponseBody
+    public Map<String, Object> checkUserName(@Param("username") String username){
+        Map<String, Object> map = new HashMap<String, Object>();
+        logger.info("begin checkUserName!");
+        try {
+            loginService.checkUserName(username);
+            map.put("code",1);
+        }catch (Exception e){
+            logger.error("checkUserName error,"+e.getMessage());
+            map.put("code",0);   //预料之外的错误
+            map.put("message",e.getMessage());
+        }
+        return map;
+    }
+
+    @RequestMapping(value = "checkEmail")
+    @ResponseBody
+    public Map<String, Object> checkEmail(@Param("email") String email){
+        Map<String, Object> map = new HashMap<String, Object>();
+        logger.info("begin checkEmail!");
+        try {
+            loginService.checkEmail(email);
+            map.put("code",1);
+        }catch (Exception e){
+            logger.error("checkEmail error,"+e.getMessage());
+            map.put("code",0);    //预料之外的错误
+            map.put("message",e.getMessage());
+        }
+        return map;
+    }
+
+    @RequestMapping(value = "sendEmailToGetValidateCode")
+    @ResponseBody
+    public Map<String, Object> sendEmailToGetValidateCode(HttpServletRequest request){
+        Map<String, Object> map = new HashMap<String, Object>();
+        logger.info("begin sendEmailToGetValidateCode!");
+        try {
+            loginService.sendEmailToGetValidateCode(request);
+            map.put("code",1);
+        }catch (MailException e){
+            logger.error("sendEmailToGetValidateCode error,"+e.getMessage());
+            map.put("code",0);
+            map.put("message",e.getMessage());
+        }
+        return map;
+    }
+
+    @RequestMapping(value = "register")
+    @ResponseBody
+    public Map<String, Object> register(HttpServletRequest request){
+        Map<String, Object> map = new HashMap<String, Object>();
+        logger.info("begin sendEmailToGetValidateCode!");
+        try {
+            loginService.register(request);
+            map.put("code",1);
+        }catch (RegisterException e){
+            logger.error("sendEmailToGetValidateCode error,"+e.getMessage());
+            map.put("code",0);
+            map.put("message",e.getMessage());
+        }catch (Exception e){
+            logger.error("sendEmailToGetValidateCode error,"+e.getMessage());
+            map.put("code",0);   //预料之外的错误
+            map.put("message",e.getMessage());
+        }
+        return map;
+    }
+
+
 }

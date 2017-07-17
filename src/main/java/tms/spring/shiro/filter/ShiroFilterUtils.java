@@ -1,8 +1,11 @@
 package tms.spring.shiro.filter;
 
 import com.alibaba.fastjson.JSON;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.crypto.hash.Md5Hash;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import tms.spring.utils.Constant;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -49,5 +52,9 @@ public class ShiroFilterUtils {
 				out.close();
 			}
 		}
+	}
+
+	public static String encryptPassword(String password){
+		return new Md5Hash(password, Constant.ENCRYPT_SALT,Constant.ENCRYPT_HASHITERATIONS).toString();
 	}
 }

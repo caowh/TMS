@@ -82,9 +82,13 @@
         <error-code>404</error-code>
         <location>/404.jsp</location>
     </error-page>
+    <!--<error-page>-->
+        <!--<error-code>500</error-code>-->
+        <!--<location>/500.jsp</location>-->
+    <!--</error-page>-->
     <error-page>
-        <error-code>500</error-code>
-        <location>/500.jsp</location>
+        <error-code>401</error-code>
+        <location>/unauthorized.jsp</location>
     </error-page>
 
     <!-- 配置session超时时间，单位分钟 -->

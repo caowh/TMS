@@ -62,4 +62,11 @@
         <!-- 内存中的最大值 -->
         <property name="maxInMemorySize" value="4096"/>
     </bean>
+
+    <!-- 配置邮件smtp服务器 -->
+    <bean class="tms.spring.utils.MailCilent">
+        <property name="host" value="smtp.exmail.qq.com"></property>
+        <property name="sender" value="caowh@geovis.com.cn"></property>
+        <property name="password" value="Cwh123456"></property>
+    </bean>
 </beans>

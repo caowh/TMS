@@ -25,9 +25,15 @@ public class UserDaoTest extends BaseDaoTest{
     private UserDao userDao;
 
     @Test
-    public void findUserByName() throws Exception {
+    public void selectUserByName() throws Exception {
         User user=userDao.selectUserByName("admin");
-        assertEquals("admin",user.getPassword());
+        assertEquals("admin",user.getUsername());
+    }
+
+    @Test
+    public void selectUserByEmail() throws Exception {
+        User user=userDao.selectUserByEmail("1240597349@qq.com");
+        assertEquals("admin",user.getUsername());
     }
 
     @Test

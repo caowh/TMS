@@ -4,7 +4,6 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.web.filter.AccessControlFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import tms.spring.entity.User;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -18,8 +17,7 @@ public class LoginFilter extends AccessControlFilter {
 	protected boolean isAccessAllowed(ServletRequest request,
                                       ServletResponse response, Object mappedValue) throws Exception {
 
-		User user = (User)SecurityUtils.getSubject().getPrincipal();
-		if(null != user || isLoginRequest(request, response)){
+		if(null != SecurityUtils.getSubject().getPrincipal() || isLoginRequest(request, response)){
             return Boolean.TRUE;
         } 
 		if (ShiroFilterUtils.isAjax(request)) {

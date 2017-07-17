@@ -206,6 +206,11 @@
       <version>${shiro.version}</version>
     </dependency>
     <dependency>
+      <groupId>javax.mail</groupId>
+      <artifactId>mail</artifactId>
+      <version>1.4</version>
+    </dependency>
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.12</version>
@@ -228,6 +233,7 @@
             <includes>
               <include>**/*.properties</include>
               <include>**/*.xml</include>
+              <include>**/*.ini</include>
             </includes>
       </resource>
     </resources>

@@ -11,6 +11,7 @@ import java.util.Set;
 public interface UserDao {
 
      User selectUserByName(String name);
+     User selectUserByEmail(String email);
      void insertUser(User user);
      void deleteUserById(Long id);
      Set<Role> selectRolesById(Long id);

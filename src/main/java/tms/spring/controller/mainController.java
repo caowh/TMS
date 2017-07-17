@@ -26,10 +26,27 @@ public class mainController {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
+    @Autowired
+    private LoginService loginService;
 
     @RequestMapping(value = "index")
     public String index() {
         return "index";
     }
 
+    @RequestMapping(value="logout")
+    @ResponseBody
+    public Map<String, Object> logout(){
+        Map<String, Object> map = new HashMap<String, Object>();
+        logger.info("begin logout!");
+        try {
+            loginService.logout();
+            map.put("code", 1);
+        }catch (Exception e){
+            logger.error("logout errorMessage:" + e.getMessage());
+            map.put("code", 0);
+            map.put("message",e.getMessage());
+        }
+        return map;
+    }
 }

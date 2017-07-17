@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
     <!-- 会话Session ID生成器 -->
     <bean id="sessionIdGenerator" class="org.apache.shiro.session.mgt.eis.JavaUuidSessionIdGenerator"/>
@@ -32,20 +32,25 @@
         <property name="cookie" ref="rememberMeCookie"/>
     </bean>
 
+    <!-- 认证数据库存储-->
+    <bean id="shiroManager" class="tms.spring.shiro.ShiroManager"/>
+    <bean id="login" class="tms.spring.shiro.filter.LoginFilter"/>
+    <bean id="role" class="tms.spring.shiro.filter.RoleFilter"/>
+    <bean id="permission" class="tms.spring.shiro.filter.PermissionFilter"/>
+
     <!-- 启用shrio授权注解拦截方式 -->
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         <!-- 装配 securityManager -->
         <property name="securityManager" ref="securityManager"/>
         <!-- 配置登陆页面 -->
         <property name="loginUrl" value="/login.jsp"/>
-        <property name="filterChainDefinitions">
-            <value>
-                /beforeLogin/**=anon
-                /js/**=anon
-                /css/**=anon
-                /images/**=anon
-                /main/**=user
-            </value>
+        <property name="filterChainDefinitions" value="#{shiroManager.loadFilterChainDefinitions()}"/>
+        <property name="filters">
+            <util:map>
+                <entry key="login" value-ref="login"></entry>
+                <entry key="role" value-ref="role"></entry>
+                <entry key="permission" value-ref="permission"></entry>
+            </util:map>
         </property>
     </bean>
 
