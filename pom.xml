@@ -210,6 +210,13 @@
       <artifactId>mail</artifactId>
       <version>1.4</version>
     </dependency>
+
+    <!-- quartz-->
+    <dependency>
+      <groupId>org.quartz-scheduler</groupId>
+      <artifactId>quartz</artifactId>
+      <version>2.2.1</version>
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2017-07-17 16:41:49
+Date: 2017-07-20 09:25:07
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -75,14 +75,16 @@ DROP TABLE IF EXISTS `t_user`;
 CREATE TABLE `t_user` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `nickname` varchar(20) DEFAULT NULL COMMENT '用户昵称',
-  `email` varchar(128) DEFAULT NULL COMMENT '邮箱|登录帐号',
-  `password` varchar(32) DEFAULT NULL COMMENT '密码',
+  `email` varchar(128) NOT NULL COMMENT '邮箱|登录帐号',
+  `password` varchar(32) NOT NULL COMMENT '密码',
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
   `last_login_time` datetime DEFAULT NULL COMMENT '最后登录时间',
   `status` bigint(1) DEFAULT '1' COMMENT '1:有效，0:禁止登录',
-  `username` varchar(20) DEFAULT NULL,
+  `username` varchar(20) NOT NULL,
   `department` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username_unique` (`username`) USING HASH,
+  UNIQUE KEY `email_unique` (`email`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 -- ----------------------------

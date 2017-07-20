@@ -64,15 +64,25 @@ public class LoginService {
         if(!validateCode.equals(realValiteCode)){
             throw new RegisterException("验证码错误");
         }
-        User user=new User();
-        user.setUsername(username);
-        user.setPassword(ShiroFilterUtils.encryptPassword(password));
-        user.setCreateTime(new Date());
-        user.setDepartment(department);
-        user.setEmail(email);
-        user.setNickname(nickname);
-        user.setStatus(User._1);
-        userDao.insertUser(user);
+        synchronized (this){
+            User userByName=userDao.selectUserByName(username);
+            User userByEmail=userDao.selectUserByEmail(email);
+            if(null!=userByName){
+                throw new RegisterException("用户名已存在");
+            }
+            if(null!=userByEmail){
+                throw new RegisterException("邮箱已存在");
+            }
+            User user=new User();
+            user.setUsername(username);
+            user.setPassword(ShiroFilterUtils.encryptPassword(password));
+            user.setCreateTime(new Date());
+            user.setDepartment(department);
+            user.setEmail(email);
+            user.setNickname(nickname);
+            user.setStatus(User._1);
+            userDao.insertUser(user);
+        }
     }
 
     public void checkUserName(String username) throws Exception {

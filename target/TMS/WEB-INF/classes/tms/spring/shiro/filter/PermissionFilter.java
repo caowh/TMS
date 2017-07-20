@@ -52,7 +52,7 @@ public class PermissionFilter extends AccessControlFilter {
 		if(ShiroFilterUtils.isAjax(request)){
 			Map<String,String> resultMap = new HashMap<String, String>();
 			logger.debug("你未获得此权限，并且是Ajax请求");
-			resultMap.put("code", "0");
+			resultMap.put("code", "3");
 			resultMap.put("message", "你未获得此权限");
 			ShiroFilterUtils.out(response, resultMap);
 		}
