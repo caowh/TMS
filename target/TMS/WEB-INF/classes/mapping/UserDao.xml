@@ -47,4 +47,8 @@
     <update id="updateLastLoginTime" parameterType="tms.spring.entity.User">
         UPDATE t_user SET  last_login_time=#{lastLoginTime,jdbcType=TIMESTAMP} WHERE username=#{username,jdbcType=VARCHAR}
     </update>
+
+    <update id="updatePasswordByEmail" parameterType="tms.spring.entity.User">
+        UPDATE t_user SET  password=#{password,jdbcType=TIMESTAMP} WHERE email=#{email,jdbcType=VARCHAR}
+    </update>
 </mapper>

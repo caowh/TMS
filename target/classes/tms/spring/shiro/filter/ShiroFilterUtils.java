@@ -37,7 +37,7 @@ public class ShiroFilterUtils {
 	 * @param resultMap
 	 * @throws IOException
 	 */
-	public static void out(ServletResponse response, Map<String, String> resultMap){
+	public static void out(ServletResponse response, Map<String, Object> resultMap){
 		
 		PrintWriter out = null;
 		try {

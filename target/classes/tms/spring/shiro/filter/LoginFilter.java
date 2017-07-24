@@ -4,6 +4,7 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.web.filter.AccessControlFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import tms.spring.utils.Constant;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -21,9 +22,9 @@ public class LoginFilter extends AccessControlFilter {
             return Boolean.TRUE;
         } 
 		if (ShiroFilterUtils.isAjax(request)) {
-			Map<String,String> resultMap = new HashMap<String, String>();
+			Map<String,Object> resultMap = new HashMap<String, Object>();
 			log.debug("当前用户没有登录，并且是Ajax请求！");
-			resultMap.put("code", "2");
+			resultMap.put("code", Constant.CODE_UNLOGIN);
 			resultMap.put("error", "当前用户没有登录");
 			ShiroFilterUtils.out(response, resultMap);
 		}

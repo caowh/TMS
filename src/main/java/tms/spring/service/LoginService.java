@@ -5,7 +5,6 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.util.WebUtils;
 import tms.spring.dao.UserDao;
 import tms.spring.entity.User;
 import tms.spring.exception.MailException;
@@ -95,7 +94,7 @@ public class LoginService {
     public void checkEmail(String email) throws Exception {
         User user=userDao.selectUserByEmail(email);
         if(null!=user){
-            throw new Exception("查找邮箱失败");
+            throw new Exception("邮箱已被注册");
         }
     }
 
@@ -109,5 +108,29 @@ public class LoginService {
         //设置有效时间为60s
         session.setMaxInactiveInterval(60);
         session.setAttribute(email,validateCode);
+    }
+
+    public void updatePasswordByEmail(HttpServletRequest request) throws Exception {
+        String realValiteCode=request.getParameter("valiteCode");
+        String password=request.getParameter("password");
+        String email=request.getParameter("email");
+        if(realValiteCode==null||password==null||email==null){
+            throw new Exception("填写的信息不完善");
+        }
+        HttpSession session=request.getSession(false);
+        if (null==session){
+            throw new Exception("验证码失效");
+        }
+        String validateCode=String.valueOf(session.getAttribute(email));
+        if(null==validateCode){
+            throw new Exception("验证码与邮箱不匹配");
+        }
+        if(!validateCode.equals(realValiteCode)){
+            throw new Exception("验证码错误");
+        }
+        User user=new User();
+        user.setEmail(email);
+        user.setPassword(password);
+        userDao.updatePasswordByEmail(user);
     }
 }

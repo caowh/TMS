@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import tms.spring.service.LoginService;
+import tms.spring.utils.Constant;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -41,10 +42,10 @@ public class mainController {
         logger.info("begin logout!");
         try {
             loginService.logout();
-            map.put("code", 1);
+            map.put("code", Constant.CODE_SUCCESS);
         }catch (Exception e){
             logger.error("logout errorMessage:" + e.getMessage());
-            map.put("code", 0);
+            map.put("code", Constant.CODE_FAILED);
             map.put("message",e.getMessage());
         }
         return map;

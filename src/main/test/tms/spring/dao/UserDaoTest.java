@@ -76,4 +76,13 @@ public class UserDaoTest extends BaseDaoTest{
         user.setUsername("admin");
         userDao.updateLastLoginTime(user);
     }
+
+    @Test
+    public void updatePasswordByEmail() throws Exception {
+        User user=new User();
+        user.setLastLoginTime(new Date());
+        user.setEmail("1240597349@qq.com");
+        user.setPassword("admin");
+        userDao.updatePasswordByEmail(user);
+    }
 }

@@ -6,6 +6,7 @@ import org.apache.shiro.web.filter.AccessControlFilter;
 import org.apache.shiro.web.util.WebUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import tms.spring.utils.Constant;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -50,9 +51,9 @@ public class PermissionFilter extends AccessControlFilter {
 			return Boolean.TRUE;
 		}
 		if(ShiroFilterUtils.isAjax(request)){
-			Map<String,String> resultMap = new HashMap<String, String>();
+			Map<String,Object> resultMap = new HashMap<String, Object>();
 			logger.debug("你未获得此权限，并且是Ajax请求");
-			resultMap.put("code", "3");
+			resultMap.put("code", Constant.CODE_UNAUTHORIZED);
 			resultMap.put("message", "你未获得此权限");
 			ShiroFilterUtils.out(response, resultMap);
 		}
