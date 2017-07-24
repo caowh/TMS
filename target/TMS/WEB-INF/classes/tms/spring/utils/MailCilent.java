@@ -78,7 +78,7 @@ public class MailCilent {
             throw new MailException("set mail subject failed");
         }
         String htmlContent = "<h1>欢迎您使用TMS！</h1><br><br>尊敬的用户，您的验证码为：<span style='color:blue;font-size:18px'>"+validateCode+"</span>，" +
-                "请在1分钟内使用<br><br>如果您在使用过程中有任何疑问或建议，请通过此邮件发件人与我们联系，您的满意是我们最大的心愿！";
+                "请在15分钟内使用<br><br>如果您在使用过程中有任何疑问或建议，请通过此邮件发件人与我们联系，您的满意是我们最大的心愿！";
         MimeBodyPart text = new MimeBodyPart();
         try {
             text.setContent(htmlContent, "text/html;charset=UTF-8");

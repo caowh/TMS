@@ -9,12 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.util.WebUtils;
 import tms.spring.exception.MailException;
 import tms.spring.exception.RegisterException;
 import tms.spring.service.LoginService;
 import tms.spring.utils.Constant;
+import tms.spring.utils.VerifyCodeUtils;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,19 +36,13 @@ public class LoginController {
 
     @RequestMapping(value = "login")
     @ResponseBody
-    public Map<String, Object> login(@Param("username") String username,@Param("password") String password,@Param("remember") Boolean remember) {
+    public Map<String, Object> login(HttpServletRequest request) {
         Map<String, Object> map = new HashMap<String, Object>();
         logger.info("begin login!");
         try {
-            loginService.login(username,password,remember);
+            loginService.login(request);
             map.put("code", Constant.CODE_SUCCESS);
-        } catch (IncorrectCredentialsException e) {
-            map.put("code",Constant.CODE_FAILED);
-            map.put("message",e.getMessage());
-        } catch (UnknownAccountException e) {
-            map.put("code",Constant.CODE_FAILED);
-            map.put("message",e.getMessage());
-        } catch (UnauthorizedException e) {
+        } catch (Exception e){
             map.put("code",Constant.CODE_FAILED);
             map.put("message",e.getMessage());
         }
@@ -135,5 +132,23 @@ public class LoginController {
         }
         return map;
     }
+
+    @RequestMapping(value = "getLoginValidateJpg")
+    public void getLoginValidateJpg(HttpServletRequest request,HttpServletResponse response){
+        try {
+            response.setHeader("Pragma", "No-cache");
+            response.setHeader("Cache-Control", "no-cache");
+            response.setDateHeader("Expires", 0);
+            response.setContentType("image/jpg");
+            String verifyCode = VerifyCodeUtils.generateVerifyCode(4);
+            WebUtils.setSessionAttribute(request,VerifyCodeUtils.V_CODE, verifyCode.toLowerCase());
+            //生成图片
+            int w = 146, h = 33;
+            VerifyCodeUtils.outputImage(w, h, response.getOutputStream(), verifyCode);
+        } catch (Exception e) {
+            logger.error("获取验证码异常：%s",e.getMessage());
+        }
+    }
+
 
 }

@@ -5,6 +5,7 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.util.WebUtils;
 import tms.spring.dao.UserDao;
 import tms.spring.entity.User;
 import tms.spring.exception.MailException;
@@ -12,6 +13,7 @@ import tms.spring.exception.RegisterException;
 import tms.spring.shiro.ShiroRealm;
 import tms.spring.shiro.filter.ShiroFilterUtils;
 import tms.spring.utils.MailCilent;
+import tms.spring.utils.VerifyCodeUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -30,7 +32,22 @@ public class LoginService {
     @Autowired
     private MailCilent mailCilent;
 
-    public void login(String username,String password,Boolean remember){
+    public void login(HttpServletRequest request) throws Exception {
+        String username=request.getParameter("username");
+        String password=request.getParameter("password");
+        String realValiteCode=request.getParameter("valiteCode");
+        String rememberStr=request.getParameter("remember");
+        if(realValiteCode==null||username==null||password==null||rememberStr==null){
+            throw new Exception("填写的注册信息不完善");
+        }
+        Boolean remember=Boolean.getBoolean(rememberStr);
+        String validateCode= (String) WebUtils.getSessionAttribute(request,VerifyCodeUtils.V_CODE);
+        if(null==validateCode){
+            throw new Exception("验证码失效");
+        }
+        if(!validateCode.equals(realValiteCode.toLowerCase())){
+            throw new Exception("验证码错误");
+        }
         UsernamePasswordToken token = new UsernamePasswordToken(username, ShiroFilterUtils.encryptPassword(password));
         Subject subject = SecurityUtils.getSubject();
         token.setRememberMe(remember);
@@ -52,13 +69,9 @@ public class LoginService {
         if(realValiteCode==null||username==null||password==null||email==null){
             throw new RegisterException("填写的注册信息不完善");
         }
-        HttpSession session=request.getSession(false);
-        if (null==session){
-            throw new RegisterException("验证码失效");
-        }
-        String validateCode=String.valueOf(session.getAttribute(email));
+        String validateCode=String.valueOf(WebUtils.getSessionAttribute(request,email));
         if(null==validateCode){
-            throw new RegisterException("验证码与邮箱不匹配");
+            throw new RegisterException("验证码失效或与邮箱不匹配");
         }
         if(!validateCode.equals(realValiteCode)){
             throw new RegisterException("验证码错误");
@@ -104,10 +117,7 @@ public class LoginService {
             throw new MailException("你输入的邮件地址为空");
         }
         String validateCode=mailCilent.sendHtmlMail(email);
-        HttpSession session=request.getSession();
-        //设置有效时间为60s
-        session.setMaxInactiveInterval(60);
-        session.setAttribute(email,validateCode);
+        WebUtils.setSessionAttribute(request, email, validateCode);
     }
 
     public void updatePasswordByEmail(HttpServletRequest request) throws Exception {
@@ -117,13 +127,9 @@ public class LoginService {
         if(realValiteCode==null||password==null||email==null){
             throw new Exception("填写的信息不完善");
         }
-        HttpSession session=request.getSession(false);
-        if (null==session){
-            throw new Exception("验证码失效");
-        }
-        String validateCode=String.valueOf(session.getAttribute(email));
+        String validateCode=String.valueOf(WebUtils.getSessionAttribute(request,email));
         if(null==validateCode){
-            throw new Exception("验证码与邮箱不匹配");
+            throw new RegisterException("验证码失效或与邮箱不匹配");
         }
         if(!validateCode.equals(realValiteCode)){
             throw new Exception("验证码错误");
