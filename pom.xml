@@ -217,6 +217,11 @@
       <version>2.8.0</version>
     </dependency>
     <!-- redis end -->
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient</artifactId>
+      <version>4.5.3</version>
+    </dependency>
     <!-- quartz-->
     <dependency>
       <groupId>org.quartz-scheduler</groupId>
