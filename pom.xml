@@ -210,7 +210,13 @@
       <artifactId>mail</artifactId>
       <version>1.4</version>
     </dependency>
-
+    <!-- redis begin -->
+    <dependency>
+      <groupId>redis.clients</groupId>
+      <artifactId>jedis</artifactId>
+      <version>2.8.0</version>
+    </dependency>
+    <!-- redis end -->
     <!-- quartz-->
     <dependency>
       <groupId>org.quartz-scheduler</groupId>

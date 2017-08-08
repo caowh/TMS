@@ -88,11 +88,19 @@
         <property name="interval" value="9000000"/>
         <property name="sessionManager" ref="sessionManager"/>
     </bean>
-    <bean id="cacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+    <!--<bean id="cacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">-->
+        <!--&lt;!&ndash; 指定 ehcache 的配置文件 &ndash;&gt;-->
+        <!--<property name="cacheManagerConfigFile" value="classpath:ehcache-shiro.xml"/>-->
+    <!--</bean>-->
+
+    <bean id="cacheManager" class="tms.spring.shiro.cache.JedisCacheManager">
         <!-- 指定 ehcache 的配置文件 -->
-        <property name="cacheManagerConfigFile" value="classpath:ehcache-shiro.xml"/>
+        <property name="jedisManager" ref="JedisManager"/>
     </bean>
 
+    <bean id="JedisManager" class="tms.spring.shiro.cache.JedisManager">
+        <property name="jedisPool" ref="jedisPool" />
+    </bean>
 
     <!-- 配置进行授权和认证的 Realm -->
     <bean id="myRealm" class="tms.spring.shiro.ShiroRealm"></bean>

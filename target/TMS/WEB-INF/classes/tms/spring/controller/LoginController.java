@@ -7,7 +7,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.util.WebUtils;
 import tms.spring.exception.MailException;
@@ -36,11 +38,11 @@ public class LoginController {
 
     @RequestMapping(value = "login")
     @ResponseBody
-    public Map<String, Object> login(HttpServletRequest request) {
+    public Map<String, Object> login(HttpServletRequest request,@RequestBody Map<String,String> jsonMap) {
         Map<String, Object> map = new HashMap<String, Object>();
         logger.info("begin login!");
         try {
-            loginService.login(request);
+            loginService.login(request,jsonMap);
             map.put("code", Constant.CODE_SUCCESS);
         } catch (Exception e){
             map.put("code",Constant.CODE_FAILED);
@@ -51,11 +53,11 @@ public class LoginController {
 
     @RequestMapping(value = "checkUserName")
     @ResponseBody
-    public Map<String, Object> checkUserName(@Param("username") String username){
+    public Map<String, Object> checkUserName(@RequestBody Map<String,String> jsonMap){
         Map<String, Object> map = new HashMap<String, Object>();
         logger.info("begin checkUserName!");
         try {
-            loginService.checkUserName(username);
+            loginService.checkUserName(jsonMap.get("username"));
             map.put("code",1);
         }catch (Exception e){
             logger.error("checkUserName error,"+e.getMessage());
@@ -67,11 +69,11 @@ public class LoginController {
 
     @RequestMapping(value = "checkEmail")
     @ResponseBody
-    public Map<String, Object> checkEmail(@Param("email") String email){
+    public Map<String, Object> checkEmail(@RequestBody Map<String,String> jsonMap){
         Map<String, Object> map = new HashMap<String, Object>();
         logger.info("begin checkEmail!");
         try {
-            loginService.checkEmail(email);
+            loginService.checkEmail(jsonMap.get("email"));
             map.put("code",Constant.CODE_SUCCESS);
         }catch (Exception e){
             logger.error("checkEmail error,"+e.getMessage());
@@ -83,11 +85,11 @@ public class LoginController {
 
     @RequestMapping(value = "sendEmailToGetValidateCode")
     @ResponseBody
-    public Map<String, Object> sendEmailToGetValidateCode(HttpServletRequest request){
+    public Map<String, Object> sendEmailToGetValidateCode(HttpServletRequest request,@RequestBody Map<String,String> jsonMap){
         Map<String, Object> map = new HashMap<String, Object>();
         logger.info("begin sendEmailToGetValidateCode!");
         try {
-            loginService.sendEmailToGetValidateCode(request);
+            loginService.sendEmailToGetValidateCode(request,jsonMap.get("email"));
             map.put("code",Constant.CODE_SUCCESS);
         }catch (MailException e){
             logger.error("sendEmailToGetValidateCode error,"+e.getMessage());
@@ -99,11 +101,11 @@ public class LoginController {
 
     @RequestMapping(value = "register")
     @ResponseBody
-    public Map<String, Object> register(HttpServletRequest request){
+    public Map<String, Object> register(HttpServletRequest request,@RequestBody Map<String,String> jsonMap){
         Map<String, Object> map = new HashMap<String, Object>();
         logger.info("begin sendEmailToGetValidateCode!");
         try {
-            loginService.register(request);
+            loginService.register(request,jsonMap);
             map.put("code",Constant.CODE_SUCCESS);
         }catch (RegisterException e){
             logger.error("sendEmailToGetValidateCode error,"+e.getMessage());
@@ -119,11 +121,11 @@ public class LoginController {
 
     @RequestMapping(value = "updatePasswordByEmail")
     @ResponseBody
-    public Map<String, Object> updatePasswordByEmail(HttpServletRequest request){
+    public Map<String, Object> updatePasswordByEmail(HttpServletRequest request,@RequestBody Map<String,String> jsonMap){
         Map<String, Object> map = new HashMap<String, Object>();
         logger.info("begin forgetPassword!");
         try {
-            loginService.updatePasswordByEmail(request);
+            loginService.updatePasswordByEmail(request,jsonMap);
             map.put("code",Constant.CODE_SUCCESS);
         }catch (Exception e){
             logger.error("updatePasswordByEmail error,"+e.getMessage());
