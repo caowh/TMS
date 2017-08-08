@@ -102,7 +102,7 @@ public class LoginService {
     public void checkUserName(String username) throws Exception {
         User user=userDao.selectUserByName(username);
         if(null!=user){
-            throw new Exception("查找用户名失败");
+            throw new Exception("用户名已存在");
         }
     }
 

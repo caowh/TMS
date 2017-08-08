@@ -89,7 +89,7 @@ public class LoginController {
         Map<String, Object> map = new HashMap<String, Object>();
         logger.info("begin sendEmailToGetValidateCode!");
         try {
-            loginService.sendEmailToGetValidateCode(request,jsonMap.get("username"));
+            loginService.sendEmailToGetValidateCode(request,jsonMap.get("email"));
             map.put("code",Constant.CODE_SUCCESS);
         }catch (MailException e){
             logger.error("sendEmailToGetValidateCode error,"+e.getMessage());
