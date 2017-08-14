@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/loginReg.css"/>
+    <link rel="stylesheet" href="css/animate.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+</head>
+<body>
+    <div id="background" >
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div id="content">
+        <div class="loginReg">
+            <ul>
+                <li class="active">登陆</li>
+                <li>注册</li>
+            </ul>
+            <div class="login">
+                <form id="loginForm" action="" method="post">
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-xs-12 control-label" style="color:#fff">用户名称</label>
+                        <div class="col-xs-12">
+                            <input name="loginName" type="text" class="form-control" id="inputEmail" placeholder="请输入用户名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  style="color:#fff" for="inputPassword" class="col-xs-12 control-label">用户密码</label>
+                        <div class="col-xs-12">
+                            <input name="loginPwd"  type="password" class="form-control" id="inputPassword" placeholder="请输入密码">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  style="color:#fff" for="inputYzm" class="col-xs-12 control-label">验证码</label>
+                        <div class="col-xs-6">
+                            <input name="loginYzm"  type="text" class="form-control" id="inputYzm" placeholder="请输入验证码">
+                        </div>
+                        <div class="col-xs-6" style="width:100px;height: 40px;border: 1px solid red ">
+                            <img src="" alt=""/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-6">
+                            <div class="checkbox">
+                                <label  style="color:#fff">
+                                    <input name="loginRember"  type="checkbox">记住密码
+                                </label>
+                                <img src="" alt=""/>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <button type="reset" style="margin-top: 3px;" class="btn btn-warning">重置</button>
+                            <button id="loginbtn" style="margin-top: 3px;" type="button" class="btn btn-info">登陆</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="reg">
+                <form id="regForm" action="" method="post">
+                    <div class="form-group">
+                        <label for="inputName" class="col-xs-4 control-label" style="color:#fff">注册名称：</label>
+                        <div class="col-xs-8">
+                            <input name="regName"  type="text" class="form-control" id="inputName" placeholder="请输入名称">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail12" class="col-xs-4 control-label" style="color:#fff">注册邮箱：</label>
+                        <div class="col-xs-8">
+                            <input name="regEmail" type="email" class="form-control" id="inputEmail12" placeholder="请输入邮箱">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPwd1" class="col-xs-4 control-label" style="color:#fff">注册密码：</label>
+                        <div class="col-xs-8">
+                            <input name="regPwd"  type="password" class="form-control" id="inputPwd1" placeholder="请输入密码">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPwd2" class="col-xs-4 control-label" style="color:#fff">确认密码：</label>
+                        <div class="col-xs-8">
+                            <input  type="password" class="form-control" id="inputPwd2" placeholder="请再次输入密码">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputYzm2" class="col-xs-4 control-label" style="color:#fff">验证码：</label>
+                        <div class="col-xs-8">
+                            <input name="regYzm" type="text" class="form-control" id="inputYzm2" placeholder="请输入验证码">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-offset-6 col-xs-6">
+                            <button type="reset" class="btn btn-warning">重置</button>
+                            <button id="regbtn" type="button" class="btn btn-info">注册</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-1.11.3.js" type="text/javascript"></script>
+    <script src="js/loginReg.js" type="text/javascript"></script>
+</body>
+</html>
