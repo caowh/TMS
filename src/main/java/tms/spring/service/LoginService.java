@@ -40,7 +40,7 @@ public class LoginService {
         String realValiteCode=jsonMap.get("valiteCode");
         String rememberStr=jsonMap.get("remember");
         if(realValiteCode==null||username==null||password==null||rememberStr==null){
-            throw new Exception("填写的注册信息不完善");
+            throw new Exception("填写的登录信息不完善");
         }
         Boolean remember=Boolean.parseBoolean(rememberStr);
         String validateCode= (String) WebUtils.getSessionAttribute(request,VerifyCodeUtils.V_CODE);

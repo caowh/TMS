@@ -22,7 +22,6 @@ public class ShiroManager {
 	private static final String CRLF = "\r\n";
 	private final Logger logger = LoggerFactory.getLogger(ShiroManager.class);
 
-	@Resource
 	@Autowired
 	private ShiroFilterFactoryBean shiroFilterFactoryBean;
 
