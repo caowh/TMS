@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Login and Registration</title>
-
+   
     <link rel="stylesheet" type="text/css" href="css/demo.css" />
 
     <!--必要样式-->
@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
 </head>
 <body>
-
+<div>65465456</div>
 <div id="container_demo" >
     <a class="hiddenanchor" id="toregister"></a>
     <a class="hiddenanchor" id="tologin"></a>
