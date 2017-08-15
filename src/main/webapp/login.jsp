@@ -11,7 +11,6 @@
     <link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
 </head>
 <body>
-<div>65465456</div>
 <div id="container_demo" >
     <a class="hiddenanchor" id="toregister"></a>
     <a class="hiddenanchor" id="tologin"></a>
