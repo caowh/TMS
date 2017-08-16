@@ -69,7 +69,7 @@ var d=function(){if($.validator){$(".login-form").validate({invalidHandler:funct
 var f=function(){if($.validator){$(".forgot-password-form").validate(
     {
         success:function(e,h) {
-                    if ($(h).attr("name")=="email"){
+                    if ($(h).attr("name")=="email"&&sessionStorage.getItem($(h).val()+"update")!="true"){
                         $('#resetPwd').attr("disabled","disabled")
                         $.ajax({
                             type: "post",
@@ -80,7 +80,11 @@ var f=function(){if($.validator){$(".forgot-password-form").validate(
                             success: function(res){
                                 $('#resetPwd').removeAttr("disabled")
                                 if(res.code==1){
-                                    e.html("发送成功");
+                                    e.html("发送成功,60s内不能重复发送");
+                                    sessionStorage.setItem($(h).val()+"update","true");
+                                    setTimeout(function () {
+                                        sessionStorage.removeItem($(h).val()+"update")
+                                    },60000)
                                     $('#updatePwdEmail').attr("placeholder","邮箱验证通过后自动发送")
                                 }else {
                                     e.parent().parent().removeClass("has-success").addClass("has-error");
@@ -147,7 +151,7 @@ var f=function(){if($.validator){$(".forgot-password-form").validate(
 var a=function(){if($.validator){$(".register-form").validate({
     success:function(e,h) {
         console.log(sessionStorage.getItem($(h).val()))
-        if ($(h).attr("name")=="email"&&sessionStorage.getItem($(h).val())!="true"){
+        if ($(h).attr("name")=="email"&&sessionStorage.getItem($(h).val()+"register")!="true"){
             $('#register').attr("disabled","disabled")
             $.ajax({
                 type: "post",
@@ -159,9 +163,9 @@ var a=function(){if($.validator){$(".register-form").validate({
                     $('#register').removeAttr("disabled")
                     if(res.code==1){
                         e.html("发送成功,60s内不能重复发送");
-                        sessionStorage.setItem($(h).val(),"true");
+                        sessionStorage.setItem($(h).val()+"register","true");
                         setTimeout(function () {
-                            sessionStorage.removeItem($(h).val())
+                            sessionStorage.removeItem($(h).val()+"register")
                         },60000)
                         $('#registerEmail').attr("placeholder","邮箱验证通过后自动发送")
                     }else {
