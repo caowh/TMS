@@ -44,11 +44,13 @@ public class ShiroRealm  extends AuthorizingRealm {
             Set<String> roleNames=new HashSet<String>();
             Set<String> permissionUrls=new HashSet<String>();
             for (Role role: roles) {
-                roleNames.add(role.getName());
-                Set<String> rolePermissionUrls=roleDao.selectPermissionUrlsById(role.getId());
-                for (String rolePermissionUrl:rolePermissionUrls) {
-                    if (!permissionUrls.contains(rolePermissionUrl)){
-                        permissionUrls.add(rolePermissionUrl);
+                if(role!=null){
+                    roleNames.add(role.getName());
+                    Set<String> rolePermissionUrls=roleDao.selectPermissionUrlsById(role.getId());
+                    for (String rolePermissionUrl:rolePermissionUrls) {
+                        if (null!=rolePermissionUrl&&!permissionUrls.contains(rolePermissionUrl)){
+                            permissionUrls.add(rolePermissionUrl);
+                        }
                     }
                 }
             }

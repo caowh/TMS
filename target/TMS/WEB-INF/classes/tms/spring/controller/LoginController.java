@@ -1,15 +1,11 @@
 package tms.spring.controller;
 
-import org.apache.ibatis.annotations.Param;
-import org.apache.shiro.authc.*;
-import org.apache.shiro.authz.UnauthorizedException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.util.WebUtils;
 import tms.spring.exception.MailException;
@@ -83,43 +79,61 @@ public class LoginController {
         return map;
     }
 
-    @RequestMapping(value = "sendEmailToGetValidateCode")
+    @RequestMapping(value = "registerToGetValidateCode")
     @ResponseBody
-    public Map<String, Object> sendEmailToGetValidateCode(HttpServletRequest request,@RequestBody Map<String,String> jsonMap){
+    public Map<String, Object> registerToGetValidateCode(HttpServletRequest request, @RequestBody Map<String,String> jsonMap){
         Map<String, Object> map = new HashMap<String, Object>();
-        logger.info("begin sendEmailToGetValidateCode!");
+        logger.info("begin registerToGetValidateCode!");
         try {
-            loginService.sendEmailToGetValidateCode(request,jsonMap.get("email"));
+            loginService.registerToGetValidateCode(request,jsonMap.get("email"));
             map.put("code",Constant.CODE_SUCCESS);
         }catch (MailException e){
-            logger.error("sendEmailToGetValidateCode error,"+e.getMessage());
+            logger.error("registerToGetValidateCode error,"+e.getMessage());
             map.put("code",Constant.CODE_FAILED);
             map.put("message",e.getMessage());
         }
         return map;
     }
+
+
+    @RequestMapping(value = "updatePwdToGetValidateCode")
+    @ResponseBody
+    public Map<String, Object> updatePwdToGetValidateCode(HttpServletRequest request, @RequestBody Map<String,String> jsonMap){
+        Map<String, Object> map = new HashMap<String, Object>();
+        logger.info("begin updatePwdToGetValidateCode!");
+        try {
+            loginService.updatePwdToGetValidateCode(request,jsonMap.get("email"));
+            map.put("code",Constant.CODE_SUCCESS);
+        }catch (MailException e){
+            logger.error("updatePwdToGetValidateCode error,"+e.getMessage());
+            map.put("code",Constant.CODE_FAILED);
+            map.put("message",e.getMessage());
+        }
+        return map;
+    }
+
 
     @RequestMapping(value = "register")
     @ResponseBody
     public Map<String, Object> register(HttpServletRequest request,@RequestBody Map<String,String> jsonMap){
         Map<String, Object> map = new HashMap<String, Object>();
-        logger.info("begin sendEmailToGetValidateCode!");
+        logger.info("begin registerToGetValidateCode!");
         try {
             loginService.register(request,jsonMap);
             map.put("code",Constant.CODE_SUCCESS);
         }catch (RegisterException e){
-            logger.error("sendEmailToGetValidateCode error,"+e.getMessage());
+            logger.error("registerToGetValidateCode error,"+e.getMessage());
             map.put("code",Constant.CODE_FAILED);
             map.put("message",e.getMessage());
         }catch (Exception e){
-            logger.error("sendEmailToGetValidateCode error,"+e.getMessage());
+            logger.error("registerToGetValidateCode error,"+e.getMessage());
             map.put("code",Constant.CODE_FAILED);
             map.put("message",e.getMessage());
         }
         return map;
     }
 
-    @RequestMapping(value = "updatePasswordByEmail")
+    @RequestMapping(value = "updatePasswordByEmail",produces="text/html;charset=UTF-8")
     @ResponseBody
     public Map<String, Object> updatePasswordByEmail(HttpServletRequest request,@RequestBody Map<String,String> jsonMap){
         Map<String, Object> map = new HashMap<String, Object>();

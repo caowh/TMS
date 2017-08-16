@@ -223,7 +223,7 @@
     <canvas class="snow" id="snow" width="1349" height="400"></canvas>
     <div class="main-text">
         <h1>HTTP BUZY<br>服务器正忙，请稍后访问！</h1>
-        <div class="main-text-a"><a href="#">< 返回首页</a></div>
+        <div class="main-text-a"><a href="/login.jsp">< 返回首页</a></div>
     </div>
     <div class="ground">
         <div class="mound">

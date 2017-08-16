@@ -39,10 +39,13 @@ public class LoginService {
         String password=jsonMap.get("password");
         String realValiteCode=jsonMap.get("valiteCode");
         String rememberStr=jsonMap.get("remember");
-        if(realValiteCode==null||username==null||password==null||rememberStr==null){
+        if(realValiteCode==null||username==null||password==null){
             throw new Exception("填写的登录信息不完善");
         }
-        Boolean remember=Boolean.parseBoolean(rememberStr);
+        Boolean remember=true;
+        if (rememberStr==null){
+            remember=false;
+        }
         String validateCode= (String) WebUtils.getSessionAttribute(request,VerifyCodeUtils.V_CODE);
         if(null==validateCode){
             throw new Exception("验证码失效");
@@ -113,11 +116,29 @@ public class LoginService {
         }
     }
 
-    public void sendEmailToGetValidateCode(HttpServletRequest request,String email) throws MailException {
+    public void registerToGetValidateCode(HttpServletRequest request, String email) throws MailException {
         if (email==null){
             throw new MailException("你输入的邮件地址为空");
         }
-        String validateCode=mailCilent.sendHtmlMail(email);
+        User user=userDao.selectUserByEmail(email);
+        if(null!=user){
+            throw new MailException("邮箱已被注册");
+        }
+        String content="你正在注册账号！";
+        String validateCode=mailCilent.sendHtmlMail(email,content);
+        WebUtils.setSessionAttribute(request, email, validateCode);
+    }
+
+    public void updatePwdToGetValidateCode(HttpServletRequest request,String email) throws MailException {
+        if (email==null){
+            throw new MailException("你输入的邮件地址为空");
+        }
+        User user=userDao.selectUserByEmail(email);
+        if(null==user){
+            throw new MailException("该邮箱未被注册");
+        }
+        String content="你正在找回密码！";
+        String validateCode=mailCilent.sendHtmlMail(email,content);
         WebUtils.setSessionAttribute(request, email, validateCode);
     }
 
@@ -129,8 +150,8 @@ public class LoginService {
             throw new Exception("填写的信息不完善");
         }
         String validateCode=String.valueOf(WebUtils.getSessionAttribute(request,email));
-        if(null==validateCode){
-            throw new RegisterException("验证码失效或与邮箱不匹配");
+        if(null==validateCode||validateCode.equals("null")){
+            throw new RegisterException("验证码无效");
         }
         if(!validateCode.equals(realValiteCode)){
             throw new Exception("验证码错误");

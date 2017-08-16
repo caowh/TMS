@@ -42,9 +42,11 @@
 
 
     <!-- 静态资源的访问 -->
-    <mvc:resources location="/js/" mapping="/js/**"/>
-    <mvc:resources location="/img/" mapping="/img/**"/>
-    <mvc:resources location="/css/" mapping="/css/**"/>
+    <mvc:resources location="/assets/css/" mapping="/assets/css/**"/>
+    <mvc:resources location="/assets/js/" mapping="/assets/js/**"/>
+    <mvc:resources location="/assets/img/" mapping="/assets/img/**"/>
+    <mvc:resources location="/bootstrap/" mapping="/bootstrap/**"/>
+    <mvc:resources location="/plugins/" mapping="/plugins/**"/>
 
     <!-- 定义视图解析器 -->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">

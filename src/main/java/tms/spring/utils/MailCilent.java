@@ -35,7 +35,7 @@ public class MailCilent {
         this.host = host;
     }
 
-    public String sendHtmlMail(String recipients) throws MailException {
+    public String sendHtmlMail(String recipients,String content) throws MailException {
         String validateCode=createValidateCode();
         Properties prop = new Properties();
         prop.setProperty("mail.debug", debug);
@@ -77,7 +77,7 @@ public class MailCilent {
         } catch (MessagingException e) {
             throw new MailException("set mail subject failed");
         }
-        String htmlContent = "<h1>欢迎您使用TMS！</h1><br><br>尊敬的用户，您的验证码为：<span style='color:blue;font-size:18px'>"+validateCode+"</span>，" +
+        String htmlContent = "<h1>欢迎您使用TMS！</h1><br>尊敬的用户，"+content+"<br>您的验证码为：<span style='color:blue;font-size:18px'>"+validateCode+"</span>，" +
                 "请在15分钟内使用<br><br>如果您在使用过程中有任何疑问或建议，请通过此邮件发件人与我们联系，您的满意是我们最大的心愿！";
         MimeBodyPart text = new MimeBodyPart();
         try {

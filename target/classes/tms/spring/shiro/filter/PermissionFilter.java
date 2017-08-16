@@ -43,10 +43,10 @@ public class PermissionFilter extends AccessControlFilter {
 		 */
 		
 		String uri = httpRequest.getRequestURI();//获取URI
-		String basePath = httpRequest.getContextPath();//获取basePath
-		if(null != uri && uri.startsWith(basePath)){
-			uri = uri.replace(basePath, "");
-		}
+//		String basePath = httpRequest.getContextPath();//获取basePath
+//		if(null != uri && uri.startsWith(basePath)){
+//			uri = uri.replace(basePath, "");
+//		}
 		if(subject.isPermitted(uri)){
 			return Boolean.TRUE;
 		}
