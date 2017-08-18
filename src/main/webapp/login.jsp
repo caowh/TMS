@@ -116,7 +116,7 @@
                     <i class="icon-user">
                     </i>
                     <input type="text" id="username" name="username" class="form-control" placeholder="用户名"
-                           autofocus="autofocus" data-rule-required="true" data-msg-required="请输入用户名"/>
+                           autofocus="autofocus" data-rule-required="true" data-rule-rangelength="[4,10]" data-msg-rangelength="字符长度必须在{0}-{1}之间" data-msg-required="请输入用户名"/>
                 </div>
             </div>
             <div class="form-group">
@@ -124,7 +124,7 @@
                     <i class="icon-lock">
                     </i>
                     <input type="password" name="password" class="form-control" placeholder="密码"
-                           id="register_password" data-rule-required="true" data-msg-required="请输入密码"/>
+                           id="register_password" data-rule-required="true" data-rule-rangelength="[6,16]" data-msg-rangelength="字符长度必须在{0}-{1}之间" data-msg-required="请输入密码"/>
                 </div>
             </div>
             <div class="form-group">
@@ -132,7 +132,7 @@
                     <i class="icon-ok">
                     </i>
                     <input type="password" name="password_confirm" class="form-control" placeholder="确认密码"
-                           data-rule-required="true" data-rule-equalTo="#register_password" data-msg-required="请输入确认密码"/>
+                           data-rule-required="true" data-rule-equalTo="#register_password" data-rule-rangelength="[6,16]" data-msg-rangelength="字符长度必须在{0}-{1}之间" data-msg-required="请输入确认密码"/>
                 </div>
             </div>
             <div class="form-group">
@@ -199,7 +199,7 @@
                         <i class="icon-lock">
                         </i>
                         <input type="password" name="password" class="form-control" placeholder="密码"
-                               id="update_password" data-rule-required="true" data-msg-required="请输入密码"/>
+                               id="update_password" data-rule-required="true" data-rule-rangelength="[6,16]" data-msg-rangelength="字符长度必须在{0}-{1}之间" data-msg-required="请输入密码"/>
                     </div>
                 </div>
                 <div class="form-group">
@@ -207,7 +207,7 @@
                         <i class="icon-ok">
                         </i>
                         <input type="password" name="password_confirm" class="form-control" placeholder="确认密码"
-                               data-rule-required="true" data-rule-equalTo="#update_password" data-msg-required="请输入确认密码"/>
+                               data-rule-required="true" data-rule-equalTo="#update_password" data-rule-rangelength="[6,16]" data-msg-rangelength="字符长度必须在{0}-{1}之间" data-msg-required="请输入确认密码"/>
                     </div>
                 </div>
                 <button id="resetPwd" type="submit" class="submit btn btn-default btn-block">
