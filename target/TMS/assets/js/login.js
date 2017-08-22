@@ -68,43 +68,13 @@ var d=function(){if($.validator){$(".login-form").validate({invalidHandler:funct
 }})}};
 var f=function(){if($.validator){$(".forgot-password-form").validate(
     {
-        success:function(e,h) {
-                    if ($(h).attr("name")=="email"&&sessionStorage.getItem($(h).val()+"update")!="true"){
-                        $('#resetPwd').attr("disabled","disabled")
-                        $.ajax({
-                            type: "post",
-                            contentType: "application/json; charset=utf-8",
-                            url: "before/updatePwdToGetValidateCode.do",
-                            data: JSON.stringify({email:$(h).val()}),
-                            dataType: "json",
-                            success: function(res){
-                                $('#resetPwd').removeAttr("disabled")
-                                if(res.code==1){
-                                    e.html("发送成功,60s内不能重复发送");
-                                    sessionStorage.setItem($(h).val()+"update","true");
-                                    setTimeout(function () {
-                                        sessionStorage.removeItem($(h).val()+"update")
-                                    },60000)
-                                    $('#updatePwdEmail').attr("placeholder","邮箱验证通过后自动发送")
-                                }else {
-                                    e.parent().parent().removeClass("has-success").addClass("has-error");
-                                    e.parent().children("input").attr("placeholder","请重新输入");
-                                    e.html(res.message);
-                                }
-                            }
-                        })
-                }
-                },
         submitHandler:function(h){
-            if($('#updatePwdEmail').attr("placeholder")=="请重新输入"){
-                $('#updatePwdEmail').attr("placeholder","邮箱验证通过后自动发送")
-            }else {
                 $(".inner-box").slideUp(350,function(){
                     $(".forgot-password-form").hide();
                     $(".forgot-password-link").hide();
                     $(".inner-box .close").hide();
                 });
-                var formData=$("#updatePwdForm").serializeArray(),sendData={};
+                var formData=$("#updatePwd").serializeArray(),sendData={};
                 for(var i=0;i<formData.length;i++){
                     sendData[formData[i].name]=formData[i].value;
                 };
@@ -143,66 +113,12 @@ var f=function(){if($.validator){$(".forgot-password-form").validate(
                         }
                     }
                 })
-            }
             return false
         }
 })}};
 
 var a=function(){if($.validator){$(".register-form").validate({
-    success:function(e,h) {
-        console.log(sessionStorage.getItem($(h).val()))
-        if ($(h).attr("name")=="email"&&sessionStorage.getItem($(h).val()+"register")!="true"){
-            $('#register').attr("disabled","disabled")
-            $.ajax({
-                type: "post",
-                contentType: "application/json; charset=utf-8",
-                url: "before/registerToGetValidateCode.do",
-                data: JSON.stringify({email:$(h).val()}),
-                dataType: "json",
-                success: function(res){
-                    $('#register').removeAttr("disabled")
-                    if(res.code==1){
-                        e.html("发送成功,60s内不能重复发送");
-                        sessionStorage.setItem($(h).val()+"register","true");
-                        setTimeout(function () {
-                            sessionStorage.removeItem($(h).val()+"register")
-                        },60000)
-                        $('#registerEmail').attr("placeholder","邮箱验证通过后自动发送")
-                    }else {
-                        e.parent().parent().removeClass("has-success").addClass("has-error");
-                        e.parent().children("input").attr("placeholder","请重新输入");
-                        e.html(res.message);
-                    }
-                }
-            })
-        }else if($(h).attr("name")=="username"){
-            $('#register').attr("disabled","disabled")
-            $.ajax({
-                type: "post",
-                contentType: "application/json; charset=utf-8",
-                url: "before/checkUserName.do",
-                data: JSON.stringify({username:$(h).val()}),
-                dataType: "json",
-                success: function(res){
-                    $('#register').removeAttr("disabled")
-                    if(res.code==1){
-                        e.html("该名称尚未注册");
-                        $('#username').attr("placeholder","用户名")
-                    }else {
-                        e.parent().parent().removeClass("has-success").addClass("has-error");
-                        e.parent().children("input").attr("placeholder","请重新输入");
-                        e.html(res.message);
-                    }
-                }
-            })
-        }
-    },
     submitHandler:function(h){
-        if($('#registerEmail').attr("placeholder")=="请重新输入"){
-            $('#registerEmail').attr("placeholder","邮箱验证通过后自动发送")
-        }else if($('#username').attr("placeholder")=="请重新输入"){
-            $('#username').attr("placeholder","用户名")
-        }else {
             var formData=$("#registerForm").serializeArray(),sendData={};
             for(var i=0;i<formData.length;i++){
                 sendData[formData[i].name]=formData[i].value;
@@ -231,34 +147,10 @@ var a=function(){if($.validator){$(".register-form").validate({
                     }
                 }
             })
-        }
         return false
     }
 })}};
 
-// var r=function(){if($.validator){
-//     $.validator.addMethod(
-//         "updatePwdByEmail",
-//         function(value, element) {
-//             alert(value)
-//             $.ajax({
-//                 type: "post",
-//                 contentType: "application/json; charset=utf-8",
-//                 url: "before/updatePwdToGetValidateCode.do",
-//                 data: JSON.stringify({email:value}),
-//                 dataType: "json",
-//                 success: function(res){
-//                     if(res.code==1){
-//                         return  true;
-//                     }else {
-//                         return  false;
-//                     }
-//                 }
-//             })
-//         },
-//         $.validator.format("邮件发送失败")
-//     );
-// }};
 return{init:function(){b();c();g();e();d();f();a()},}}();
 
 function getverificat(){
