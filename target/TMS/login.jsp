@@ -2,8 +2,9 @@
 <!DOCTYPE html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Cache-Control" content="no-cache">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <title>Bootstrap3响应式后台管理系统模版MeAdmin 用户登录页面</title>
+    <title>测试综合管理平台--登录</title>
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link href="assets/css/main.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/plugins.css" rel="stylesheet" type="text/css" />
@@ -116,7 +117,7 @@
                     <i class="icon-user">
                     </i>
                     <input type="text" id="username" name="username" class="form-control" placeholder="用户名"
-                           autofocus="autofocus" data-rule-required="true" data-msg-required="请输入用户名"/>
+                           autofocus="autofocus" data-rule-required="true" data-rule-rangelength="[4,10]" data-msg-rangelength="字符长度必须在{0}-{1}之间" data-msg-required="请输入用户名"/>
                 </div>
             </div>
             <div class="form-group">
@@ -124,7 +125,7 @@
                     <i class="icon-lock">
                     </i>
                     <input type="password" name="password" class="form-control" placeholder="密码"
-                           id="register_password" data-rule-required="true" data-msg-required="请输入密码"/>
+                           id="register_password" data-rule-required="true" data-rule-rangelength="[6,16]" data-msg-rangelength="字符长度必须在{0}-{1}之间" data-msg-required="请输入密码"/>
                 </div>
             </div>
             <div class="form-group">
@@ -132,15 +133,17 @@
                     <i class="icon-ok">
                     </i>
                     <input type="password" name="password_confirm" class="form-control" placeholder="确认密码"
-                           data-rule-required="true" data-rule-equalTo="#register_password" data-msg-required="请输入确认密码"/>
+                           data-rule-required="true" data-rule-equalTo="#register_password" data-rule-rangelength="[6,16]" data-msg-rangelength="字符长度必须在{0}-{1}之间" data-msg-required="请输入确认密码"/>
                 </div>
             </div>
             <div class="form-group">
                 <div class="input-icon">
                     <i class="icon-envelope">
                     </i>
+                    <a id="registerEmailA" class="btn btn-default">发送验证码</a>
                     <input type="text" id="registerEmail" name="email" class="form-control" placeholder="邮箱验证通过后自动发送"
                            data-rule-required="true" data-rule-email="true" data-msg-required="请输入邮箱"/>
+
                 </div>
             </div>
             <div class="form-group">
@@ -180,6 +183,7 @@
                         <div class="input-icon">
                             <i class="icon-envelope">
                             </i>
+                            <a id="updatePwdEmailA" class="btn btn-default">发送验证码</a>
                             <input type="text" id="updatePwdEmail" name="email" class="form-control" placeholder="邮箱验证通过后自动发送"
                                    data-rule-required="true" data-rule-="true" data-rule-email="true" data-msg-required="请输入您的邮箱"
                             />
@@ -199,7 +203,7 @@
                         <i class="icon-lock">
                         </i>
                         <input type="password" name="password" class="form-control" placeholder="密码"
-                               id="update_password" data-rule-required="true" data-msg-required="请输入密码"/>
+                               id="update_password" data-rule-required="true" data-rule-rangelength="[6,16]" data-msg-rangelength="字符长度必须在{0}-{1}之间" data-msg-required="请输入密码"/>
                     </div>
                 </div>
                 <div class="form-group">
@@ -207,7 +211,7 @@
                         <i class="icon-ok">
                         </i>
                         <input type="password" name="password_confirm" class="form-control" placeholder="确认密码"
-                               data-rule-required="true" data-rule-equalTo="#update_password" data-msg-required="请输入确认密码"/>
+                               data-rule-required="true" data-rule-equalTo="#update_password" data-rule-rangelength="[6,16]" data-msg-rangelength="字符长度必须在{0}-{1}之间" data-msg-required="请输入确认密码"/>
                     </div>
                 </div>
                 <button id="resetPwd" type="submit" class="submit btn btn-default btn-block">

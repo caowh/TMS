@@ -4,7 +4,7 @@ var c=function(){
         h.preventDefault();
         $(".login-form").slideUp(350,function(){
             $(".register-form").slideDown(350);
-            // $(".sign-up").hide();
+            $(".sign-up").hide();
             $(".inner-box").hide();
         })
     });
@@ -12,7 +12,7 @@ var c=function(){
         h.preventDefault();
         $(".register-form").slideUp(350,function(){
             $(".login-form").slideDown(350);
-            // $(".sign-up").show();
+            $(".sign-up").show();
             $(".inner-box").show();
             $(".forgot-password-form").slideUp(350)
             $(".inner-box .close").hide();
@@ -268,4 +268,42 @@ function getverificat(){
 $(document).ready(function(){
     getverificat();
     $("#verificatImg").click(getverificat);
+    sendEmail("updatePwdEmail");
+    sendEmail("registerEmail")
 });
+
+function sendEmail(elID){
+    var cansend=true;
+    setTimeout(cansend=true,60000);
+    $("#"+elID+"A").click(function(){
+        if(!cansend){
+            return "";
+        }
+        var elInput=$(this).next();
+        var sendAddress=elInput.val();
+        var url1="before/registerToGetValidateCode.do";
+        var url2="before/updatePwdToGetValidateCode.do";
+        var url="";
+        if(elID=="registerEmail"){
+            url=url1;
+        }else{
+            url=url2;
+        }
+        alert("正在验证邮箱,请稍后！");
+        $.ajax({
+            type: "post",
+            contentType: "application/json; charset=utf-8",
+            url: url,
+            data: JSON.stringify({email:sendAddress}),
+            dataType: "json",
+            success: function(res){
+                if(res.code==1){
+                    alert("发送成功,60s内不能重复发送");
+                    cansend=false
+                }else {
+                    alert(res.message);
+                }
+            }
+        })
+    })
+}

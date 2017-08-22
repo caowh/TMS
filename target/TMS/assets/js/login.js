@@ -4,7 +4,7 @@ var c=function(){
         h.preventDefault();
         $(".login-form").slideUp(350,function(){
             $(".register-form").slideDown(350);
-            // $(".sign-up").hide();
+            $(".sign-up").hide();
             $(".inner-box").hide();
         })
     });
@@ -12,7 +12,7 @@ var c=function(){
         h.preventDefault();
         $(".register-form").slideUp(350,function(){
             $(".login-form").slideDown(350);
-            // $(".sign-up").show();
+            $(".sign-up").show();
             $(".inner-box").show();
             $(".forgot-password-form").slideUp(350)
             $(".inner-box .close").hide();
@@ -69,7 +69,7 @@ var d=function(){if($.validator){$(".login-form").validate({invalidHandler:funct
 var f=function(){if($.validator){$(".forgot-password-form").validate(
     {
         success:function(e,h) {
-                    if ($(h).attr("name")=="email"){
+                    if ($(h).attr("name")=="email"&&sessionStorage.getItem($(h).val()+"update")!="true"){
                         $('#resetPwd').attr("disabled","disabled")
                         $.ajax({
                             type: "post",
@@ -80,7 +80,11 @@ var f=function(){if($.validator){$(".forgot-password-form").validate(
                             success: function(res){
                                 $('#resetPwd').removeAttr("disabled")
                                 if(res.code==1){
-                                    e.html("发送成功");
+                                    e.html("发送成功,60s内不能重复发送");
+                                    sessionStorage.setItem($(h).val()+"update","true");
+                                    setTimeout(function () {
+                                        sessionStorage.removeItem($(h).val()+"update")
+                                    },60000)
                                     $('#updatePwdEmail').attr("placeholder","邮箱验证通过后自动发送")
                                 }else {
                                     e.parent().parent().removeClass("has-success").addClass("has-error");
@@ -147,7 +151,7 @@ var f=function(){if($.validator){$(".forgot-password-form").validate(
 var a=function(){if($.validator){$(".register-form").validate({
     success:function(e,h) {
         console.log(sessionStorage.getItem($(h).val()))
-        if ($(h).attr("name")=="email"&&sessionStorage.getItem($(h).val())!="true"){
+        if ($(h).attr("name")=="email"&&sessionStorage.getItem($(h).val()+"register")!="true"){
             $('#register').attr("disabled","disabled")
             $.ajax({
                 type: "post",
@@ -159,9 +163,9 @@ var a=function(){if($.validator){$(".register-form").validate({
                     $('#register').removeAttr("disabled")
                     if(res.code==1){
                         e.html("发送成功,60s内不能重复发送");
-                        sessionStorage.setItem($(h).val(),"true");
+                        sessionStorage.setItem($(h).val()+"register","true");
                         setTimeout(function () {
-                            sessionStorage.removeItem($(h).val())
+                            sessionStorage.removeItem($(h).val()+"register")
                         },60000)
                         $('#registerEmail').attr("placeholder","邮箱验证通过后自动发送")
                     }else {
@@ -264,4 +268,42 @@ function getverificat(){
 $(document).ready(function(){
     getverificat();
     $("#verificatImg").click(getverificat);
+    sendEmail("updatePwdEmail");
+    sendEmail("registerEmail")
 });
+
+function sendEmail(elID){
+    var cansend=true;
+    setTimeout(cansend=true,60000);
+    $("#"+elID+"A").click(function(){
+        if(!cansend){
+            return "";
+        }
+        var elInput=$(this).next();
+        var sendAddress=elInput.val();
+        var url1="before/registerToGetValidateCode.do";
+        var url2="before/updatePwdToGetValidateCode.do";
+        var url="";
+        if(elID=="registerEmail"){
+            url=url1;
+        }else{
+            url=url2;
+        }
+        alert("正在验证邮箱,请稍后！");
+        $.ajax({
+            type: "post",
+            contentType: "application/json; charset=utf-8",
+            url: url,
+            data: JSON.stringify({email:sendAddress}),
+            dataType: "json",
+            success: function(res){
+                if(res.code==1){
+                    alert("发送成功,60s内不能重复发送");
+                    cansend=false
+                }else {
+                    alert(res.message);
+                }
+            }
+        })
+    })
+}
