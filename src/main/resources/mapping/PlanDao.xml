@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tms.spring.dao.PlanDao">
+
+    <insert id="insertPlans" parameterType="java.util.List" useGeneratedKeys="true">
+        INSERT INTO t_plan(name,version,node,type,result)
+        VALUES
+        <foreach collection="list" item="plan" separator=",">
+            (#{plan.name,jdbcType=VARCHAR},#{plan.version,jdbcType=VARCHAR},
+            #{plan.node,jdbcType=VARCHAR},#{plan.type,jdbcType=VARCHAR},#{plan.result,jdbcType=VARCHAR})
+        </foreach>
+    </insert>
+</mapper>

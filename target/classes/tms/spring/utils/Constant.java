@@ -12,6 +12,6 @@ public class Constant {
     public static int CODE_UNAUTHORIZED=2;
     public static int CODE_UNLOGIN=3;
     public static String PRODUCT_ID="6";
-    public static String TESTLINKSERVICE_ADDRESS="http://localhost:8085/api/v1/testlinkservice/";
+    public static String TESTLINKSERVICE_ADDRESS="http://192.168.31.14:8085/api/v1/testlinkservice/";
 
 }

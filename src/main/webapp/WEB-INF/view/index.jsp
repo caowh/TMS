@@ -135,7 +135,7 @@
                     <i class="icon-male">
                     </i>
                     <span class="username">
-                admin
+                ${username}
               </span>
                     <i class="icon-caret-down small">
                     </i>

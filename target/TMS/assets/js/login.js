@@ -152,7 +152,7 @@ var a=function(){if($.validator){$(".register-form").validate({
 })}};
 
 return{init:function(){b();c();g();e();d();f();a()},}}();
-
+var emailA;
 function getverificat(){
     var url="before/getLoginValidateJpg.do?math="
     $("#verificatImg").attr({src:url+Math.random()});
@@ -160,42 +160,72 @@ function getverificat(){
 $(document).ready(function(){
     getverificat();
     $("#verificatImg").click(getverificat);
-    sendEmail("updatePwdEmail");
-    sendEmail("registerEmail")
+    clickA($('#updatePwdEmailA'));
+    clickA($('#registerEmailA'));
 });
 
-function sendEmail(elID){
-    var cansend=true;
-    setTimeout(cansend=true,60000);
-    $("#"+elID+"A").click(function(){
-        if(!cansend){
-            return "";
-        }
-        var elInput=$(this).next();
-        var sendAddress=elInput.val();
-        var url1="before/registerToGetValidateCode.do";
-        var url2="before/updatePwdToGetValidateCode.do";
-        var url="";
-        if(elID=="registerEmail"){
-            url=url1;
-        }else{
-            url=url2;
-        }
-        alert("正在验证邮箱,请稍后！");
-        $.ajax({
-            type: "post",
-            contentType: "application/json; charset=utf-8",
-            url: url,
-            data: JSON.stringify({email:sendAddress}),
-            dataType: "json",
-            success: function(res){
-                if(res.code==1){
-                    alert("发送成功,60s内不能重复发送");
-                    cansend=false
-                }else {
-                    alert(res.message);
-                }
+
+function getValidateCode(a) {
+    setTimeout(function () {
+        var elInput=a.next();
+        console.log(a.attr('id'))
+        if(elInput.attr('class').indexOf('has-error')>0||elInput.val().trim()==''){
+            return '';
+        }else {
+            var sendAddress=elInput.val();
+            var url1="before/registerToGetValidateCode.do";
+            var url2="before/updatePwdToGetValidateCode.do";
+            var url="";
+            if(a.attr('id')=="registerEmailA"){
+                url=url1;
+            }else{
+                url=url2;
             }
-        })
+            a.html('发送中...')
+            a.attr({'style':'opacity: 0.5'}).unbind('click')
+            $.ajax({
+                type: "post",
+                contentType: "application/json; charset=utf-8",
+                url: url,
+                data: JSON.stringify({email:sendAddress}),
+                dataType: "json",
+                success: function(res){
+                    if(res.code==1){
+                        settime(a,60)
+                    }else {
+                        clean(a)
+                        a.parent().append('<label id="errorEmail" style="color: red">'+res.message+'</label>')
+                        setTimeout(function () {
+                            $('#errorEmail').remove();
+                        },2000)
+                    }
+                }
+            })
+        }
+    },500)
+
+}
+
+function settime(a,timer) {
+   if(timer>0){
+       a.html(timer+'s')
+       timer--;
+       setTimeout(function () {
+           settime(a,timer)
+       },1000)
+   }else {
+       clean(a)
+   }
+}
+
+function clean(a) {
+    a.removeAttr('style')
+    a.html('获取验证码')
+    clickA(a)
+}
+
+function clickA(a) {
+    a.click(function () {
+        getValidateCode(a)
     })
 }

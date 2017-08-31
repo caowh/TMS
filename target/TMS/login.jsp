@@ -5,38 +5,38 @@
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <title>测试综合管理平台--登录</title>
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/css/main.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/plugins.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/responsive.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/login.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="assets/css/fontawesome/font-awesome.min.css">
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/assets/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/plugins.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+    <link href="/assets/css/icons.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/login.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/assets/css/fontawesome/font-awesome.min.css">
     <!--[if IE 7]>
-    <link rel="stylesheet" href="assets/css/fontawesome/font-awesome-ie7.min.css">
+    <link rel="stylesheet" href="/assets/css/fontawesome/font-awesome-ie7.min.css">
     <![endif]-->
     <!--[if IE 8]>
-    <link href="assets/css/ie8.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/ie8.css" rel="stylesheet" type="text/css" />
     <![endif]-->
-    <script type="text/javascript" src="assets/js/libs/jquery-1.10.2.min.js">
+    <script type="text/javascript" src="/assets/js/libs/jquery-1.10.2.min.js">
     </script>
-    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js">
+    <script type="text/javascript" src="/bootstrap/js/bootstrap.min.js">
     </script>
-    <script type="text/javascript" src="assets/js/libs/lodash.compat.min.js">
+    <script type="text/javascript" src="/assets/js/libs/lodash.compat.min.js">
     </script>
     <!--[if lt IE 9]>
-    <script src="assets/js/libs/html5shiv.js">
+    <script src="/assets/js/libs/html5shiv.js">
     </script>
     <![endif]-->
-    <script type="text/javascript" src="plugins/uniform/jquery.uniform.min.js">
+    <script type="text/javascript" src="/plugins/uniform/jquery.uniform.min.js">
     </script>
-    <script type="text/javascript" src="plugins/validation/jquery.validate.min.js">
+    <script type="text/javascript" src="/plugins/validation/jquery.validate.min.js">
     </script>
-    <script type="text/javascript" src="plugins/nprogress/nprogress.js">
+    <script type="text/javascript" src="/plugins/nprogress/nprogress.js">
     </script>
-    <script type="text/javascript" src="assets/js/login.js">
+    <script type="text/javascript" src="/assets/js/login.js">
     </script>
-    <script type="text/javascript" src="assets/js/all.js"></script>
+    <script type="text/javascript" src="/assets/js/all.js"></script>
     <script>
         $(document).ready(function() {
             Login.init()
@@ -45,10 +45,10 @@
 </head>
 
 <body class="login">
-<div class="snow-container" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:100001;"></div>
+<div class="snow-container" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;"></div>
 
 <div class="logo">
-    <img src="assets/img/logo.png" alt="logo" /></div>
+    <img src="/assets/img/logo.png" alt="logo" /></div>
 <div class="box">
     <div class="content">
         <form id="login" class="form-vertical login-form" action="404.jsp" method="post">
@@ -141,7 +141,7 @@
                     <i class="icon-envelope">
                     </i>
                     <a id="registerEmailA" class="btn btn-default">发送验证码</a>
-                    <input type="text" id="registerEmail" name="email" class="form-control" placeholder="邮箱验证通过后自动发送"
+                    <input type="text" id="registerEmail" name="email" class="form-control" placeholder="邮箱"
                            data-rule-required="true" data-rule-email="true" data-msg-required="请输入邮箱"/>
 
                 </div>
@@ -184,7 +184,7 @@
                             <i class="icon-envelope">
                             </i>
                             <a id="updatePwdEmailA" class="btn btn-default">发送验证码</a>
-                            <input type="text" id="updatePwdEmail" name="email" class="form-control" placeholder="邮箱验证通过后自动发送"
+                            <input type="text" id="updatePwdEmail" name="email" class="form-control" placeholder="邮箱"
                                    data-rule-required="true" data-rule-="true" data-rule-email="true" data-msg-required="请输入您的邮箱"
                             />
                         </div>

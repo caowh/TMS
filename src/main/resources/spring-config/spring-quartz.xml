@@ -11,7 +11,7 @@
 		<property name="targetMethod" value="execute"></property>
 	</bean>
 
-	<!-- 2启动的规则 开机延时10s，每10s执行一次 -->
+	<!-- 2启动的规则-->
 	<bean id ="testTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean" >
 		<!-- 注入要执行任务的类的实例 -->
 		<property name="jobDetail">
@@ -23,7 +23,7 @@
 		</property>
 		<!--配置启动任务间隔时间,以毫秒为单位-->
 		<property name="repeatInterval">
-			<value>300000</value>
+			<value>7200000</value>
 		</property>
 	</bean>
 
