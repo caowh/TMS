@@ -101,7 +101,6 @@ public class CaseAnalyseUtil {
 
     public List<Map> getChildSuites(String planName, String version, String node) throws CaseAnalyseException {
         List<Map> list=new ArrayList<Map>();
-        List<Map> list1=new ArrayList<Map>();
         Plan plan=new Plan();
         plan.setVersion(version);
         plan.setName(planName);
@@ -119,7 +118,7 @@ public class CaseAnalyseUtil {
             }
             getChildSuitesById(list, testSuites, planId);
         }
-        return list1;
+        return list;
     }
 
     private void getChildSuitesById(List<Map> list, List<Map> testSuites, String planId) {
