@@ -4,65 +4,33 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/tms/spring/dao/UserRoleDao.java" line="10" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f9cc282-ed11-4a6d-8b09-35408e684dc7" name="Default" comment="增加主页">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/assets/img/base.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/assets/img/green.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/assets/img/red.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tms/spring/dao/PlanDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tms/spring/entity/Plan.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tms/spring/exception/CaseAnalyseException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tms/spring/handler/CaseAnalyseHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tms/spring/handler/impl/CaseBugCountAnalyse.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tms/spring/handler/impl/CaseBugRatioCompareAnalyse.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tms/spring/handler/impl/SeverityCompareAnalyse.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tms/spring/handler/impl/SeverityDistributeAnalyse.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tms/spring/service/CaseAnalyseService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tms/spring/utils/CaseAnalyseUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tms/spring/utils/PlanDataType.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/mapping/PlanDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/spring-config/spring-service.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/test/tms/spring/dao/PlanDaoTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/test/tms/spring/utils/CaseAnalyseUtilTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/totalCaseResult.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/data.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/echarts.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/totalCaseResult.js" />
+    <list default="true" id="2f9cc282-ed11-4a6d-8b09-35408e684dc7" name="Default" comment="增加total.do">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/assets/img/test/data-1491837512042-rJlLfXYax.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/assets/img/test/data-1491837984109-r1u7NmY6e.hdr" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/assets/img/test/data-1491837999815-H1_44Qtal.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/assets/img/test/data-1491889019097-rJQYikcpl.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/assets/img/test/data-1491890092270-BJEhJg96l.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/assets/img/test/data-1491890179041-Hkj-elqpe.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/test/jquery.thoughtBubble.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/test/reset.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/test/solarSystemStyle.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/echarts-gl.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/test/TweenMax.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/test/jquery.thoughtBubble.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/test/solarSystem.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/test.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/cache/CaseResultCountCache.class" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/cache/CaseResultCountCache.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/controller/CaseResultController.class" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/controller/CaseResultController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/quartz/UpdateCaseResult.class" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/quartz/UpdateCaseResult.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/utils/Constant.class" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/utils/Constant.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tms/spring/cache/CaseResultCountCache.class" afterPath="$PROJECT_DIR$/target/classes/tms/spring/cache/CaseResultCountCache.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tms/spring/controller/CaseResultController.class" afterPath="$PROJECT_DIR$/target/classes/tms/spring/controller/CaseResultController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tms/spring/quartz/UpdateCaseResult.class" afterPath="$PROJECT_DIR$/target/classes/tms/spring/quartz/UpdateCaseResult.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tms/spring/utils/Constant.class" afterPath="$PROJECT_DIR$/target/classes/tms/spring/utils/Constant.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/tms.log" afterPath="$PROJECT_DIR$/logs/tms.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tms/spring/cache/CaseResultCountCache.java" afterPath="$PROJECT_DIR$/src/main/java/tms/spring/cache/CaseResultCountCache.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tms/spring/controller/CaseResultController.java" afterPath="$PROJECT_DIR$/src/main/java/tms/spring/controller/CaseResultController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tms/spring/quartz/UpdateCaseResult.java" afterPath="$PROJECT_DIR$/src/main/java/tms/spring/quartz/UpdateCaseResult.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tms/spring/utils/Constant.java" afterPath="$PROJECT_DIR$/src/main/java/tms/spring/utils/Constant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring-config/spring-quartz.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring-config/spring-quartz.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/icons.css" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/icons.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/login.css" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/login.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/main.css" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/spring-config/spring-quartz.xml" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/spring-config/spring-quartz.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/shiroBaseAuth.ini" afterPath="$PROJECT_DIR$/src/main/resources/shiroBaseAuth.ini" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/shiroBaseAuth.ini" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/shiroBaseAuth.ini" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/cache/CaseResultCountCache.java" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/cache/CaseResultCountCache.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/controller/CaseResultController.java" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/controller/CaseResultController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/quartz/UpdateCaseResult.java" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/quartz/UpdateCaseResult.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/utils/Constant.java" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/utils/Constant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMS/WEB-INF/view/index.jsp" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/view/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMS/assets/css/icons.css" afterPath="$PROJECT_DIR$/target/TMS/assets/css/icons.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMS/assets/css/login.css" afterPath="$PROJECT_DIR$/target/TMS/assets/css/login.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMS/assets/css/main.css" afterPath="$PROJECT_DIR$/target/TMS/assets/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMS/assets/js/login.js" afterPath="$PROJECT_DIR$/target/TMS/assets/js/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMS/login.jsp" afterPath="$PROJECT_DIR$/target/TMS/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/spring-config/spring-quartz.xml" afterPath="$PROJECT_DIR$/target/classes/spring-config/spring-quartz.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/shiroBaseAuth.ini" afterPath="$PROJECT_DIR$/target/classes/shiroBaseAuth.ini" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tms/spring/cache/CaseResultCountCache.java" afterPath="$PROJECT_DIR$/target/classes/tms/spring/cache/CaseResultCountCache.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tms/spring/controller/CaseResultController.java" afterPath="$PROJECT_DIR$/target/classes/tms/spring/controller/CaseResultController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tms/spring/quartz/UpdateCaseResult.java" afterPath="$PROJECT_DIR$/target/classes/tms/spring/quartz/UpdateCaseResult.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tms/spring/utils/Constant.java" afterPath="$PROJECT_DIR$/target/classes/tms/spring/utils/Constant.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -87,27 +55,112 @@
     <favorites_list name="TMS" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="test.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/test.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1104">
+              <caret line="107" column="9" lean-forward="true" selection-start-line="107" selection-start-column="9" selection-end-line="107" selection-end-column="9" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#figure#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#figure#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#figure#2;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#figure#4;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#script#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#script#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="e#9522#10058#0#HTML" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery.thoughtBubble.min.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/test/jquery.thoughtBubble.min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Downloads/提示/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="22" column="44" lean-forward="true" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery.thoughtBubble.js" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Downloads/提示/js/jquery.thoughtBubble.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-278">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="alpha.js" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Downloads/提示框/js/alpha.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="flower.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Downloads/jiaoben818/images/flower.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="solarSystem.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/test/solarSystem.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1134">
+              <caret line="93" column="13" lean-forward="true" selection-start-line="93" selection-start-column="13" selection-end-line="93" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="solarSystemStyle.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/css/test/solarSystemStyle.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="844">
+              <caret line="56" column="25" lean-forward="false" selection-start-line="56" selection-start-column="25" selection-end-line="56" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="spring-beans.schema" />
-        <option value="Jsp File" />
         <option value="Kotlin File" />
         <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
         <option value="JavaScript File" />
         <option value="JUnit4 Test Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>index.</find>
-      <find>index.h</find>
-      <find>index.ht</find>
       <find>index.htm</find>
       <find>404.jsp</find>
       <find>webpack</find>
@@ -135,6 +188,9 @@
       <find>&lt;a</find>
       <find>人</find>
       <find>caseBugCount</find>
+      <find>background</find>
+      <find>demo-perspective-photo</find>
+      <find>.demo-perspective-photo .example4</find>
     </findStrings>
     <replaceStrings>
       <replace>t_user_role</replace>
@@ -154,18 +210,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/tms/spring/service/LoginService.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/assets/js/loginMy.js" />
-        <option value="$PROJECT_DIR$/src/main/java/tms/spring/controller/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tms/spring/shiro/filter/PermissionFilter.java" />
-        <option value="$PROJECT_DIR$/src/main/test/tms/spring/shiro/ShiroRealmTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tms/spring/controller/mainController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring-config/spring-shiro.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/unauthorized.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/500.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/404.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/tms/spring/shiro/ShiroRealm.java" />
         <option value="D:/GeoVis5 1.3/webgl.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/assets/js/login.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" />
@@ -178,12 +222,10 @@
         <option value="$PROJECT_DIR$/src/main/java/tms/spring/service/CaseAnalyseHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/tms/spring/service/NewSeverityDistributeAnalyse.java" />
         <option value="$PROJECT_DIR$/src/main/java/tms/spring/handler/impl/NewSeverityDistributeAnalyse.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tms/spring/quartz/UpdateCaseResult.java" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-config/spring-quartz.xml" />
         <option value="$PROJECT_DIR$/src/main/java/tms/spring/entity/Plan.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapping/PlanDao.xml" />
         <option value="$PROJECT_DIR$/src/main/test/tms/spring/dao/PlanDaoTest.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/shiroBaseAuth.ini" />
         <option value="$USER_HOME$/Downloads/meAdmin/index - 副本.html" />
         <option value="D:/apache-tomcat-7.0.79/conf/server.xml" />
         <option value="$PROJECT_DIR$/src/main/java/tms/spring/utils/PlanType.java" />
@@ -194,17 +236,31 @@
         <option value="$PROJECT_DIR$/src/main/java/tms/spring/handler/CaseAnalyseHandler.java" />
         <option value="$PROJECT_DIR$/src/main/test/tms/spring/utils/CaseAnalyseUtilTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/tms/spring/utils/PlanDataType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tms/spring/cache/CaseResultCountCache.java" />
         <option value="$PROJECT_DIR$/src/main/java/tms/spring/service/CaseAnalyseService.java" />
         <option value="$PROJECT_DIR$/src/main/java/tms/spring/handler/impl/SeverityCompareAnalyse.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/totalCaseResult.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-config/spring-service.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/tms/spring/handler/impl/CaseBugRatioCompareAnalyse.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/assets/js/totalCaseResult.js" />
         <option value="$PROJECT_DIR$/src/main/java/tms/spring/handler/impl/SeverityDistributeAnalyse.java" />
         <option value="$PROJECT_DIR$/src/main/java/tms/spring/handler/impl/CaseBugCountAnalyse.java" />
         <option value="$PROJECT_DIR$/src/main/java/tms/spring/utils/CaseAnalyseUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tms/spring/handler/impl/CaseBugRatioCompareAnalyse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tms/spring/cache/CaseResultCountCache.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tms/spring/quartz/UpdateCaseResult.java" />
+        <option value="$USER_HOME$/Desktop/css3实现的模拟3D行星运转效果源码/index.html" />
+        <option value="$USER_HOME$/Desktop/css3实现的模拟3D行星运转效果源码/css/solarSystemStyle.css" />
+        <option value="$USER_HOME$/Desktop/css3实现的模拟3D行星运转效果源码/js/solarSystem.js" />
+        <option value="$USER_HOME$/Desktop/css3实现的模拟3D行星运转效果源码/index - 副本.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/shiroBaseAuth.ini" />
+        <option value="$USER_HOME$/Desktop/11111/index.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/assets/js/test/solarSystem.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/assets/css/test/solarSystemStyle.css" />
+        <option value="$USER_HOME$/Downloads/jiaoben818/index.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/assets/css/test/jquery.hotspot.css" />
+        <option value="$USER_HOME$/Downloads/提示框/index.html" />
+        <option value="$USER_HOME$/Downloads/提示/css/jquery.thoughtBubble.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/test.jsp" />
       </list>
     </option>
   </component>
@@ -462,6 +518,130 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -503,265 +683,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spring-config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="utils" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="quartz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="handler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="handler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="impl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cache" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="logs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -806,11 +728,11 @@
       <recent name="tms.spring.shiro" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\tijiao\TMS\src\main\webapp\assets\img" />
+      <recent name="F:\tijiao\TMS\src\main\webapp\assets\js\test" />
+      <recent name="F:\tijiao\TMS\src\main\webapp\assets\css\test" />
       <recent name="F:\tijiao\TMS\src\main\webapp\assets\js" />
-      <recent name="F:\tijiao\TMS\src\main\webapp" />
-      <recent name="F:\tijiao\TMS\src\main\resources\spring-config" />
-      <recent name="F:\tijiao\TMS\src\main\resources\mapping" />
+      <recent name="F:\tijiao\TMS\src\main\webapp\assets\img\test" />
+      <recent name="F:\tijiao\TMS\src\main\webapp\assets\img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\tijiao\TMS\src\main\webapp\WEB-INF\view" />
@@ -1543,7 +1465,7 @@
       <workItem from="1503572915760" duration="2564000" />
       <workItem from="1503622810407" duration="16177000" />
       <workItem from="1503884277672" duration="56525000" />
-      <workItem from="1504054719196" duration="44426000" />
+      <workItem from="1504054719196" duration="66721000" />
     </task>
     <task id="LOCAL-00001" summary="移除自动发送">
       <created>1503398984536</created>
@@ -1573,7 +1495,21 @@
       <option name="project" value="LOCAL" />
       <updated>1503459589223</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="增加total.do">
+      <created>1504169250587</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1504169250587</updated>
+    </task>
+    <task id="LOCAL-00006" summary="增加total.do">
+      <created>1504173956006</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1504173956006</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1609,7 +1545,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="354549000" />
+    <option name="totallyTimeSpent" value="376844000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1625,8 +1561,8 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3434453" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2835498" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16576381" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28277355" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45454547" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1636,7 +1572,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.115926325" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16576381" sideWeight="0.4978678" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12459372" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1647,8 +1583,8 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3488624" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29144096" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26226014" sideWeight="0.5232936" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26226014" sideWeight="0.4767064" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26226014" sideWeight="0.16227181" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26226014" sideWeight="0.8377282" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2153518" sideWeight="0.5361842" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1661,6 +1597,45 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46587217" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28277355" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="15" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45454547" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16576381" sideWeight="0.4978678" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12459372" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3488624" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29144096" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26226014" sideWeight="0.16227181" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26226014" sideWeight="0.8377282" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2153518" sideWeight="0.5361842" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -1672,7 +1647,8 @@
     <MESSAGE value="移除自动发送" />
     <MESSAGE value="增加主页" />
     <MESSAGE value="修改邮箱获取验证码的方式" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改邮箱获取验证码的方式" />
+    <MESSAGE value="增加total.do" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加total.do" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1699,7 +1675,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="170" />
+      <option name="time" value="176" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1708,251 +1684,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Downloads/meAdmin/assets/css/fontawesome/font-awesome.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="351" column="1" lean-forward="false" selection-start-line="351" selection-start-column="1" selection-end-line="351" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/meAdmin/bootstrap/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="93458" lean-forward="false" selection-start-line="8" selection-start-column="93458" selection-end-line="8" selection-end-column="93458" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/tms/spring/dao/RoleDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/RoleDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="37" column="31" lean-forward="false" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/entity/Plan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/tms/spring/dao/PlanDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/dao/PlanDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/PlanDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="55" lean-forward="false" selection-start-line="6" selection-start-column="55" selection-end-line="6" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/controller/mainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="36" column="35" lean-forward="true" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/meAdmin/index - 副本.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/plugins.form-components.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="3546" lean-forward="false" selection-start-line="0" selection-start-column="3546" selection-end-line="0" selection-end-column="3546" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/plugins.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="7738" lean-forward="false" selection-start-line="0" selection-start-column="7738" selection-end-line="0" selection-end-column="7738" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="0" column="10098" lean-forward="false" selection-start-line="0" selection-start-column="10098" selection-end-line="0" selection-end-column="10098" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/service/LoginService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-559">
-          <caret line="37" column="48" lean-forward="true" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1801">
-          <caret line="26" column="24" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/apache-tomcat-7.0.79/conf/server.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="92" column="55" lean-forward="true" selection-start-line="92" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="67" column="6" lean-forward="true" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
-          <folding>
-            <element signature="e#3207#3799#0" expanded="false" />
-            <marker date="1503459419851" expanded="true" signature="9343:9353" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/util/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="211" column="6" lean-forward="false" selection-start-line="211" selection-start-column="6" selection-end-line="211" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/all.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="1" column="7833" lean-forward="false" selection-start-line="1" selection-start-column="7833" selection-end-line="1" selection-end-column="7833" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/shiroBaseAuth.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2295">
-          <caret line="11" column="44" lean-forward="false" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
-          <folding>
-            <marker date="1503465855941" expanded="true" signature="521:527" ph="..." />
-            <marker date="1503465855941" expanded="true" signature="1616:1630" ph="..." />
-            <marker date="1503465855941" expanded="true" signature="2524:2538" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/tms.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4740">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.2.5.RELEASE/spring-web-4.2.5.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/meAdmin/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34286">
-          <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5/common.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="124" column="18" lean-forward="false" selection-start-line="124" selection-start-column="18" selection-end-line="124" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="0" column="26964" lean-forward="false" selection-start-line="0" selection-start-column="26964" selection-end-line="0" selection-end-column="26964" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/css/login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/css/responsive.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="5103" lean-forward="false" selection-start-line="0" selection-start-column="5103" selection-end-line="0" selection-end-column="5103" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="475" column="17" lean-forward="false" selection-start-line="475" selection-start-column="17" selection-end-line="475" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/util/Collections.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="139" column="57" lean-forward="false" selection-start-line="139" selection-start-column="57" selection-end-line="139" selection-end-column="57" />
-          <folding>
-            <element signature="e#5644#5645#0" expanded="false" />
-            <element signature="e#5675#5676#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/test/tms/spring/dao/BaseDaoTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -2013,26 +1744,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/cache/CaseResultCountCache.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-513">
-          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="e#841#847#0" expanded="true" />
-            <element signature="e#984#985#0" expanded="true" />
-            <element signature="e#1019#1020#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/quartz/UpdateCaseResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="80" column="28" lean-forward="false" selection-start-line="80" selection-start-column="22" selection-end-line="80" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/service/CaseAnalyseService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
@@ -2073,79 +1784,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/totalCaseResult.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="617">
-          <caret line="352" column="66" lean-forward="false" selection-start-line="352" selection-start-column="47" selection-end-line="352" selection-end-column="66" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#ul#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#li#0;n#ul#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1504152100341" expanded="true" signature="541:547" ph="..." />
-            <marker date="1504152100341" expanded="true" signature="2782:2796" ph="..." />
-            <marker date="1504152100341" expanded="true" signature="3690:3704" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/handler/CaseAnalyseHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="11" column="23" lean-forward="false" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/totalCaseResult.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="486" column="29" lean-forward="true" selection-start-line="486" selection-start-column="29" selection-end-line="486" selection-end-column="29" />
-          <folding>
-            <element signature="e#136#228#0" expanded="false" />
-            <element signature="e#2725#2824#0" expanded="false" />
-            <element signature="n#!!block;n#drawSeverityCompare#0;n#!!block;n#init#0;n#init#0;n#!!block;n#totalCaseResult#0;n#!!top" expanded="false" />
-            <element signature="e#3227#3484#0" expanded="false" />
-            <element signature="e#3542#3596#0" expanded="false" />
-            <element signature="e#13836#13932#0" expanded="false" />
-            <element signature="e#18440#18543#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/utils/CaseAnalyseUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="48" lean-forward="true" selection-start-line="6" selection-start-column="48" selection-end-line="6" selection-end-column="48" />
-          <folding>
-            <element signature="method#getNewVersion#0;class#CaseAnalyseUtil#0" expanded="false" />
-            <element signature="method#getNewTwoVersion#0;class#CaseAnalyseUtil#0" expanded="false" />
-            <element signature="e#1463#1471#0" expanded="true" />
-            <element signature="e#1635#1642#0" expanded="true" />
-            <element signature="method#getResult#0;class#CaseAnalyseUtil#0" expanded="false" />
-            <element signature="method#getMessage#0;class#CaseAnalyseUtil#0" expanded="false" />
-            <element signature="e#3349#3365#0" expanded="true" />
-            <element signature="method#getUutVersion#0;class#CaseAnalyseUtil#0" expanded="false" />
-            <element signature="e#5163#5171#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/handler/impl/CaseBugRatioCompareAnalyse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
-          <folding>
-            <element signature="e#1490#1498#0" expanded="true" />
-            <element signature="e#1566#1587#0" expanded="true" />
-            <element signature="e#1892#1907#0" expanded="true" />
-            <element signature="e#2023#2032#0" expanded="true" />
-            <element signature="e#2825#2842#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2162,15 +1805,342 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/handler/impl/CaseBugCountAnalyse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
+        <state relative-caret-position="-308">
           <caret line="38" column="53" lean-forward="false" selection-start-line="38" selection-start-column="53" selection-end-line="38" selection-end-column="53" />
           <folding>
-            <element signature="e#820#836#0" expanded="true" />
-            <element signature="e#1613#1629#0" expanded="true" />
             <element signature="e#1677#1685#0" expanded="true" />
             <element signature="e#1738#1747#0" expanded="true" />
             <element signature="e#1799#1808#0" expanded="true" />
             <element signature="e#1857#1866#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/handler/impl/CaseBugRatioCompareAnalyse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="54" column="33" lean-forward="true" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
+          <folding>
+            <element signature="e#1490#1498#0" expanded="true" />
+            <element signature="e#1566#1587#0" expanded="true" />
+            <element signature="e#1892#1907#0" expanded="true" />
+            <element signature="e#2023#2032#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/quartz/UpdateCaseResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1241">
+          <caret line="178" column="17" lean-forward="true" selection-start-line="178" selection-start-column="17" selection-end-line="178" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/utils/CaseAnalyseUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="66" column="35" lean-forward="true" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getNewVersion#0;class#CaseAnalyseUtil#0" expanded="false" />
+            <element signature="method#getNewTwoVersion#0;class#CaseAnalyseUtil#0" expanded="false" />
+            <element signature="e#1463#1471#0" expanded="true" />
+            <element signature="e#1635#1642#0" expanded="true" />
+            <element signature="method#getResult#0;class#CaseAnalyseUtil#0" expanded="false" />
+            <element signature="method#getMessage#0;class#CaseAnalyseUtil#0" expanded="false" />
+            <element signature="method#getChildSuites#0;class#CaseAnalyseUtil#0" expanded="false" />
+            <element signature="method#getChildSuitesById#0;class#CaseAnalyseUtil#0" expanded="false" />
+            <element signature="method#getUutVersion#0;class#CaseAnalyseUtil#0" expanded="false" />
+            <element signature="e#5116#5124#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/cache/CaseResultCountCache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="591">
+          <caret line="87" column="20" lean-forward="false" selection-start-line="87" selection-start-column="11" selection-end-line="87" selection-end-column="20" />
+          <folding>
+            <element signature="e#902#908#0" expanded="true" />
+            <element signature="e#952#953#0" expanded="true" />
+            <element signature="e#987#988#0" expanded="true" />
+            <element signature="e#2287#2288#0" expanded="true" />
+            <element signature="e#2325#2326#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="1212" column="0" lean-forward="false" selection-start-line="1212" selection-start-column="0" selection-end-line="1212" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/totalCaseResult.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="475" column="0" lean-forward="false" selection-start-line="475" selection-start-column="0" selection-end-line="561" selection-end-column="42" />
+          <folding>
+            <element signature="e#136#228#0" expanded="false" />
+            <element signature="e#2725#2824#0" expanded="false" />
+            <element signature="n#!!block;n#drawSeverityCompare#0;n#!!block;n#init#0;n#init#0;n#!!block;n#totalCaseResult#0;n#!!top" expanded="false" />
+            <element signature="e#3227#3484#0" expanded="false" />
+            <element signature="e#3542#3596#0" expanded="false" />
+            <element signature="e#13836#13932#0" expanded="false" />
+            <element signature="e#18440#18543#0" expanded="false" />
+            <element signature="e#18742#21898#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/totalCaseResult.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="152" column="61" lean-forward="true" selection-start-line="152" selection-start-column="61" selection-end-line="152" selection-end-column="61" />
+          <folding>
+            <marker date="1504152100341" expanded="true" signature="541:547" ph="..." />
+            <marker date="1504152100341" expanded="true" signature="2782:2796" ph="..." />
+            <marker date="1504152100341" expanded="true" signature="3690:3704" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/css3实现的模拟3D行星运转效果源码/css/reset.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/css3实现的模拟3D行星运转效果源码/css/solarSystemStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="249" column="20" lean-forward="false" selection-start-line="249" selection-start-column="20" selection-end-line="249" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/css3实现的模拟3D行星运转效果源码/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="132" column="26" lean-forward="false" selection-start-line="132" selection-start-column="26" selection-end-line="132" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/css3实现的模拟3D行星运转效果源码/js/solarSystem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="100" column="33" lean-forward="false" selection-start-line="100" selection-start-column="33" selection-end-line="100" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/css3实现的模拟3D行星运转效果源码/index - 副本.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/11111/index1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="201" selection-end-column="9" />
+          <folding>
+            <element signature="n#script#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/unauthorized.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/shiroBaseAuth.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="13" column="14" lean-forward="false" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/img/test/data-1491889019097-rJQYikcpl.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/img/test/data-1491890092270-BJEhJg96l.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/img/test/data-1491890179041-Hkj-elqpe.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/img/test/data-1491890179041-Hkj-elqpe1.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/img/test/data-1491837999815-H1_44Qtal.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/img/test/data-1491837512042-rJlLfXYax.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/echarts.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="27" column="26884" lean-forward="false" selection-start-line="27" selection-start-column="26870" selection-end-line="27" selection-end-column="26884" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/11111/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1323">
+          <caret line="119" column="0" lean-forward="false" selection-start-line="119" selection-start-column="0" selection-end-line="124" selection-end-column="50" />
+          <folding>
+            <element signature="n#figure#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#figure#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#figure#2;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#figure#3;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#figure#4;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/test/solarSystem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1134">
+          <caret line="93" column="13" lean-forward="true" selection-start-line="93" selection-start-column="13" selection-end-line="93" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/css/test/solarSystemStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="844">
+          <caret line="56" column="25" lean-forward="false" selection-start-line="56" selection-start-column="25" selection-end-line="56" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/jiaoben818/images/arrow2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/jiaoben818/images/flower.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/jiaoben818/css/jquery.hotspot.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/jiaoben818/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="49" column="95" lean-forward="true" selection-start-line="49" selection-start-column="77" selection-end-line="49" selection-end-column="95" />
+          <folding>
+            <element signature="e#805#1044#0" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/css/test/jquery.hotspot.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/提示框/js/alpha.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/提示框/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="57" column="29" lean-forward="true" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/提示/js/jquery.thoughtBubble.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-278">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/提示/css/jquery.thoughtBubble.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="30" column="19" lean-forward="true" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/提示/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="22" column="44" lean-forward="true" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/test/jquery.thoughtBubble.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/test.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1104">
+          <caret line="107" column="9" lean-forward="true" selection-start-line="107" selection-start-column="9" selection-end-line="107" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#figure#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#figure#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#figure#2;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#figure#4;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#9522#10058#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>

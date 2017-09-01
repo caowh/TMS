@@ -23,7 +23,6 @@ public class UpdateCaseResult {
     public void execute(){
         logger.info("Begin Update CaseResult Count!");
         /**
-         * 清除要使用的缓存
          * 根据产品得到测试计划列表
          * 根据每个测试计划得到对应的用例执行情况
          * 根据每个测试计划得到对应的严重级别分布情况
@@ -32,6 +31,7 @@ public class UpdateCaseResult {
          * 根据每个测试套得到对应的严重级别分布情况
          * 。。。
          * 所有统计完毕，更新计划
+         * 清除要使用的缓存
          * */
         getTestPlanList();
         getPlanExecuteCount();
@@ -133,9 +133,33 @@ public class UpdateCaseResult {
 
     private void getTestPlanList() {
         logger.info("Begin Get getTestPlanList!");
-        List testPlans=HttpRequestUtils.httpGet(Constant.TESTLINKSERVICE_ADDRESS+"getAllTestPlan", List.class);
+        List<Map> testPlans=HttpRequestUtils.httpGet(Constant.TESTLINKSERVICE_ADDRESS+"getAllTestPlan", List.class);
         if(testPlans!=null&&testPlans.size()>0){
-            cache.getTestPlanList().addAll(testPlans);
+            cache.getTestPlanListAll().addAll(testPlans);
+            List<Map> testPlanList=new ArrayList<Map>();
+            Map<String,Map> testPlanMap=new HashMap();
+            for (Map testPlan:testPlans){
+                String planName=String.valueOf(testPlan.get("name"));
+                String[] planArr=planName.split("_");
+                float versionNumber=Float.parseFloat(planArr[1].replace("v",""));
+                String name=planArr[0];
+                Map map=testPlanMap.get(name);
+                if(map!=null){
+                    String existPlanName=String.valueOf(map.get("name"));
+                    float existVersion=Float.parseFloat(existPlanName.split("_")[1].replace("v",""));
+                    if(existVersion<versionNumber){
+                        testPlanMap.put(name,testPlan);
+                    }
+                }else {
+                    testPlanMap.put(name,testPlan);
+                }
+            }
+            Iterator<Map.Entry<String,Map>> iterator=testPlanMap.entrySet().iterator();
+            while (iterator.hasNext()){
+                Map.Entry<String,Map> entry=iterator.next();
+                testPlanList.add(entry.getValue());
+            }
+            cache.getTestPlanList().addAll(testPlanList);
 //            logger.info(JSON.toJSONString(testPlans));
         }
         logger.info("Finished Get getTestPlanList!");

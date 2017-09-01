@@ -28,6 +28,8 @@ public class CaseResultCountCache {
 
     private List<Map> testPlanList=new ArrayList<Map>();
 
+    private List<Map> testPlanListAll=new ArrayList<Map>();
+
     private Map<String,List<String>> planSuiteMap=new HashMap<String, List<String>>();
 
     private List<Plan> plans=new ArrayList<Plan>();
@@ -68,8 +70,8 @@ public class CaseResultCountCache {
     }
 
     public void updatePlanList(){
-        if(testPlanList!=null&&testPlanList.size()>0){
-            getCache().put("planList",testPlanList);
+        if(testPlanListAll!=null&&testPlanListAll.size()>0){
+            getCache().put("planList",testPlanListAll);
             if(plans!=null&&plans.size()>0){
                 planDao.insertPlans(plans);
             }
@@ -80,5 +82,10 @@ public class CaseResultCountCache {
         testPlanList.clear();
         planSuiteMap.clear();
         plans.clear();
+        testPlanListAll.clear();
+    }
+
+    public List<Map> getTestPlanListAll() {
+        return testPlanListAll;
     }
 }
