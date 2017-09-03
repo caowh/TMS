@@ -33,14 +33,14 @@ public class UpdateCaseResult {
          * 所有统计完毕，更新计划
          * 清除要使用的缓存
          * */
-        getTestPlanList();
-        getPlanExecuteCount();
-        getPlanSeverity();
-        getTestSuites();
-        getSuiteExecuteCount();
-        getSuiteSeverity();
-        cache.updatePlanList();
-        cache.clearUselessCache();
+//        getTestPlanList();
+//        getPlanExecuteCount();
+//        getPlanSeverity();
+//        getTestSuites();
+//        getSuiteExecuteCount();
+//        getSuiteSeverity();
+//        cache.updatePlanList();
+//        cache.clearUselessCache();
         logger.info("Finished Update CaseResult Count!");
     }
 

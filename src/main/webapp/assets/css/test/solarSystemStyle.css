@@ -1,18 +1,19 @@
 .container {
   width: 100%;
+  height: 100%;
 }
 
 .demo-perspective-photo {
   position: absolute;
   width: 100%;
-  height: 800px;
+  height: 100%;
   top: 0px;
   background-color: #000;
 }
 
 .demo-perspective-photo #contentContainer {
   width: 100%;
-  height: 800px;
+  height: 100%;
   -webkit-perspective: 2000px;
   -moz-perspective: 2000px;
   perspective: 2000px;
@@ -32,8 +33,7 @@
   width: 128px;
   height: 72px;
   left: 50%;
-  top: 50%;
-  margin-left: -64px;
+  top: 70%;
   margin-top: -36px;
   cursor: pointer;
   -webkit-transform-style: preserve-3d;
@@ -1065,8 +1065,8 @@
   margin: -42.5px 0 0 -42.5px;
   -webkit-transform: rotateY(60deg) translateZ(950px);
   transform: rotateY(60deg) translateZ(950px);
-  -webkit-animation: rotateSun 240s linear infinite 2s;
-  animation: rotateSun 240s linear infinite 2s;
+  -webkit-animation: rotateSun 250s linear infinite 2s;
+  animation: rotateSun 250s linear infinite 2s;
 }
 
 .demo-perspective-photo .example6 .x, .demo-perspective-photo .example6 .y, .demo-perspective-photo .example6 .z {

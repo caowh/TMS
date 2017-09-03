@@ -7,11 +7,58 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<html>
 <head>
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="/assets/css/test/reset.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/test/solarSystemStyle.css" />
-    <link rel="stylesheet" href="/assets/css/test/jquery.thoughtBubble.min.css">
+    <style>
+        img{
+            width:200px;
+            height: 300px;
+        }
+        @keyframes fn{
+            0% {transform:rotateX(-15deg) rotateY(0deg);}
+            100%{transform:rotateX(-15deg) rotateY(360deg);}
+
+        }
+        @-moz-keyframes fn{
+            0% {transform:rotateX(-15deg) rotateY(0deg);}
+            100%{transform:rotateX(-15deg) rotateY(360deg);}
+        }
+        @-ms-keyframes fn{
+            0% {transform:rotateX(-15deg) rotateY(0deg);}
+            100%{transform:rotateX(-15deg) rotateY(360deg);}
+        }
+        @-webkit-keyframes fn{
+            0% {transform:rotateX(-15deg) rotateY(0deg);}
+            100%{transform:rotateX(-15deg) rotateY(360deg);}
+        }
+        .box{
+            width:200px;
+            height:300px;
+            right: 100px;
+            position:relative;
+            transform-style:preserve-3d;
+            transform:rotateX(-10deg);
+            animation: fn 10s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            position: relative;
+            z-index: 10001;
+        }
+        .example:hover{
+            animation-play-state: paused;
+        }
+        .box:hover{
+            animation-play-state: paused;
+        }
+        .box>div{
+            position: absolute;
+            left:0;
+            top:-700px;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -86,6 +133,35 @@
                 <figure class="circle circle3"></figure>
                 <figure class="circle circle4"></figure>
                 <figure class="circle circle6"></figure>
+                <div class="box">
+                    <div  id="img1" style="transform: rotateY(0deg) translateZ(275px);">
+                        <a href="#"><img src="/assets/img/test/1.png" ></a>
+                    </div>
+                    <div id="img2" style="transform: rotateY(40deg) translateZ(275px);">
+                        <img src="/assets/img/test/2.png">
+                    </div>
+                    <div id="img3" style="transform: rotateY(80deg) translateZ(275px);">
+                        <img src="/assets/img/test/3.png">
+                    </div>
+                    <div id="img4" style="transform: rotateY(120deg) translateZ(275px);">
+                        <img src="/assets/img/test/4.png">
+                    </div>
+                    <div id="img5" style="transform: rotateY(160deg) translateZ(275px);">
+                        <img src="/assets/img/test/5.png">
+                    </div>
+                    <div id="img6" style="transform: rotateY(200deg) translateZ(275px);">
+                        <a href="#"><img src="/assets/img/test/6.png" ></a>
+                    </div>
+                    <div id="img7" style="transform: rotateY(240deg) translateZ(275px);">
+                        <img src="/assets/img/test/7.png">
+                    </div>
+                    <div id="img8" style="transform: rotateY(280deg) translateZ(275px);">
+                        <img src="/assets/img/test/8.png">
+                    </div>
+                    <div id="img9" style="transform: rotateY(320deg) translateZ(275px);">
+                        <a href="#"><img src="/assets/img/test/9.png"></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -105,6 +181,16 @@
 <script type="text/javascript" src='/assets/js/test/jquery.thoughtBubble.min.js'></script>
 <script>
     $('.demo-perspective-photo,#contentContainer').css('height',$(window).height());
+    $('.example6').hover(function () {
+        $('#img1').slideUp(500);
+        $('#img1').slideDown(500);
+    })
+    $('.example4').hover(function () {
+        $('#img6').slideUp(500);
+        $('#img9').slideUp(500);
+        $('#img6').slideDown(500)
+        $('#img9').slideDown(500);
+    })
 </script>
 <script>
 
@@ -293,17 +379,6 @@
             }]
         });
     }
-</script>
-<script type="text/javascript">
-    $(window).ready( function() {
-
-        $('#thoughtBubble').thoughtBubble({
-            text: '大爷，我美不。',
-            font: 'avenir'
-
-        });
-
-    });
 </script>
 </body>
 </html>
