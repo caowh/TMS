@@ -10,7 +10,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>GET</title>
     <style>
         html,body {
             height: 100%;

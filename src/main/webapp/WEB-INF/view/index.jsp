@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0"
     />
-    <title>测试综合管理平台</title>
+    <title>GET主页</title>
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"
     />
     <!--[if lt IE 9]>

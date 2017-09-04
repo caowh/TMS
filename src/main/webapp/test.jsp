@@ -9,7 +9,7 @@
 <html>
 <html>
 <head>
-    <title>Title</title>
+    <title>GET</title>
     <link rel="stylesheet" type="text/css" href="/assets/css/test/reset.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/test/solarSystemStyle.css" />
 </head>
@@ -24,8 +24,7 @@
                 <figure class='example example2'>
                     <h1 style="color: rgba(228, 128, 24, 0.8)">基础设施</h1>
                     <div class="x">
-                        <div class="x1">
-                        </div>
+                        <div class="x1"></div>
                         <div class="x2"></div>
                         <div class="xInner"></div>
                         <div class="y"></div>
@@ -70,6 +69,7 @@
                         <div class="zInner"></div>
                     </div>
                 </figure>
+
                 <figure class='example example6'>
                     <h1 style="color: rgba(136, 155, 250, 0.8)">应用平台</h1>
                     <div class="x">
