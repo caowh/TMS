@@ -57,6 +57,7 @@ var d=function(){if($.validator){$(".login-form").validate({invalidHandler:funct
             if(res.code==1){
                 window.location.href="/main/index.do"
             }else {
+                getverificat();
                 $(".login-form .alert-danger").show();
                 $(".login-form .alert-danger span").html(res.message);
                 setTimeout(function () {
@@ -152,7 +153,7 @@ var a=function(){if($.validator){$(".register-form").validate({
 })}};
 
 return{init:function(){b();c();g();e();d();f();a()},}}();
-var emailA;
+
 function getverificat(){
     var url="before/getLoginValidateJpg.do?math="
     $("#verificatImg").attr({src:url+Math.random()});

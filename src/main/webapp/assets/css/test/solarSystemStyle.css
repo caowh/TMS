@@ -33,7 +33,7 @@
   width: 128px;
   height: 72px;
   left: 50%;
-  top: 70%;
+  top: 11%;
   margin-top: -36px;
   cursor: pointer;
   -webkit-transform-style: preserve-3d;
@@ -405,8 +405,8 @@
   margin: -22.5px 0 0 -22.5px;
   -webkit-transform: rotateY(60deg) translateZ(400px);
   transform: rotateY(60deg) translateZ(400px);
-  -webkit-animation: rotateSunFive 8s linear infinite 2s;
-  animation: rotateSunFive 8s linear infinite 2s;
+  -webkit-animation: rotateSunFive 30s linear infinite 2s;
+  animation: rotateSunFive 30s linear infinite 2s;
 }
 
 .demo-perspective-photo .example2 .x, .demo-perspective-photo .example2 .y, .demo-perspective-photo .example2 .z {
@@ -570,8 +570,8 @@
   margin: -27.5px 0 0 -27.5px;
   -webkit-transform: rotateY(60deg) translateZ(520px);
   transform: rotateY(60deg) translateZ(520px);
-  -webkit-animation: rotateSunFour 20s linear infinite 2s;
-  animation: rotateSunFour 20s linear infinite 2s;
+  -webkit-animation: rotateSunFour 50s linear infinite 2s;
+  animation: rotateSunFour 50s linear infinite 2s;
 }
 
 .demo-perspective-photo .example3 .x, .demo-perspective-photo .example3 .y, .demo-perspective-photo .example3 .z {
@@ -735,8 +735,8 @@
   margin: -55px 0 0 -55px;
   -webkit-transform: rotateY(60deg) translateZ(650px);
   transform: rotateY(60deg) translateZ(650px);
-  -webkit-animation: rotateSunThree 50s linear infinite 2s;
-  animation: rotateSunThree 50s linear infinite 2s;
+  -webkit-animation: rotateSunThree 70s linear infinite 2s;
+  animation: rotateSunThree 70s linear infinite 2s;
 }
 
 .demo-perspective-photo .example4 .x, .demo-perspective-photo .example4 .y, .demo-perspective-photo .example4 .z {
@@ -1065,8 +1065,8 @@
   margin: -42.5px 0 0 -42.5px;
   -webkit-transform: rotateY(60deg) translateZ(950px);
   transform: rotateY(60deg) translateZ(950px);
-  -webkit-animation: rotateSun 250s linear infinite 2s;
-  animation: rotateSun 250s linear infinite 2s;
+  -webkit-animation: rotateSun 88s linear infinite 2s;
+  animation: rotateSun 88s linear infinite 2s;
 }
 
 .demo-perspective-photo .example6 .x, .demo-perspective-photo .example6 .y, .demo-perspective-photo .example6 .z {
@@ -1435,4 +1435,50 @@
   100% {
     -webkit-transform: rotateY(420deg) translateZ(300px);
   }
+}
+
+img{
+  width:200px;
+  height: 300px;
+}
+@keyframes fn{
+  0% {transform:rotateX(-15deg) rotateY(0deg);}
+  100%{transform:rotateX(-15deg) rotateY(360deg);}
+
+}
+@-moz-keyframes fn{
+  0% {transform:rotateX(-15deg) rotateY(0deg);}
+  100%{transform:rotateX(-15deg) rotateY(360deg);}
+}
+@-ms-keyframes fn{
+  0% {transform:rotateX(-15deg) rotateY(0deg);}
+  100%{transform:rotateX(-15deg) rotateY(360deg);}
+}
+@-webkit-keyframes fn{
+  0% {transform:rotateX(-15deg) rotateY(0deg);}
+  100%{transform:rotateX(-15deg) rotateY(360deg);}
+}
+.box{
+  width:200px;
+  height:300px;
+  right: 100px;
+  position:relative;
+  transform-style:preserve-3d;
+  transform:rotateX(-10deg);
+  animation: fn 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  position: relative;
+  z-index: 10001;
+}
+.example:hover{
+  animation-play-state: paused;
+}
+.box:hover{
+  animation-play-state: paused;
+}
+.box>div{
+  position: absolute;
+  left:0;
+  top:550px;
 }

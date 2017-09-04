@@ -158,7 +158,7 @@ public class LoginService {
         }
         User user=new User();
         user.setEmail(email);
-        user.setPassword(password);
+        user.setPassword(ShiroFilterUtils.encryptPassword(password));
         userDao.updatePasswordByEmail(user);
     }
 }
