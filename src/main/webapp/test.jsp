@@ -22,7 +22,7 @@
                     <div style="width: 100%;height: 100%" id="chart"></div>
                 </figure>
                 <figure class='example example2'>
-                    <h1 style="color: rgba(228, 128, 24, 0.8)">基础设施</h1>
+                    <h1 style="color: rgba(228, 128, 24, 0.8);position: absolute;top:5%;text-align: center">基础设施</h1>
                     <div class="x">
                         <div class="x1"></div>
                         <div class="x2"></div>
@@ -38,7 +38,7 @@
                     </div>
                 </figure>
                 <figure class='example example3'>
-                    <h1 style="color: rgba(31, 107, 234, 0.8)">专题服务集</h1>
+                    <h1 style="color: rgba(31, 107, 234, 0.8);position: absolute;top:5%;text-align: center">专题服务</h1>
                     <div class="x">
                         <div class="x1"></div>
                         <div class="x2"></div>
@@ -54,7 +54,7 @@
                     </div>
                 </figure>
                 <figure class='example example4'>
-                    <h1 style="color: rgba(245, 192, 86, 0.7)">数据中心</h1>
+                    <h1 style="color: rgba(245, 192, 86, 0.7);position: absolute;top:35%;text-align: center">数据中心</h1>
                     <div class="x">
                         <div class="x1"></div>
                         <div class="x2"></div>
@@ -71,7 +71,7 @@
                 </figure>
 
                 <figure class='example example6'>
-                    <h1 style="color: rgba(136, 155, 250, 0.8)">应用平台</h1>
+                    <h1 style="color: rgba(136, 155, 250, 0.8);position: absolute;top:35%;text-align: center">应用平台</h1>
                     <div class="x">
                         <div class="x1"></div>
                         <div class="x2"></div>

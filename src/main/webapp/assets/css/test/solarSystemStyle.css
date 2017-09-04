@@ -1462,7 +1462,7 @@ img{
   width:200px;
   height:300px;
   right: 100px;
-  position:relative;
+  position:fixed;
   transform-style:preserve-3d;
   transform:rotateX(-10deg);
   animation: fn 10s;
