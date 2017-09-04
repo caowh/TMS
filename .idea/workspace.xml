@@ -7,7 +7,6 @@
     <list default="true" id="2f9cc282-ed11-4a6d-8b09-35408e684dc7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/test/solarSystemStyle.css" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/test/solarSystemStyle.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/test.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/test.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -36,7 +35,7 @@
       <file leaf-file-name="test.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/test.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-756">
+            <state relative-caret-position="-2596">
               <caret line="26" column="46" lean-forward="false" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="46" />
               <folding>
                 <element signature="n#style#0;n#h1#0;n#figure#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#html#0;n#!!top" expanded="true" />
@@ -51,8 +50,8 @@
       <file leaf-file-name="solarSystemStyle.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/css/test/solarSystemStyle.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="1463" column="15" lean-forward="true" selection-start-line="1463" selection-start-column="15" selection-end-line="1463" selection-end-column="15" />
+            <state relative-caret-position="198">
+              <caret line="1465" column="9" lean-forward="false" selection-start-line="1465" selection-start-column="9" selection-end-line="1465" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -1325,7 +1324,14 @@
       <option name="project" value="LOCAL" />
       <updated>1504505168429</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="修改test.jsp球上字体位置">
+      <created>1504507306593</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1504507306593</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1361,7 +1367,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="401613000" />
+    <option name="totallyTimeSpent" value="401777000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1496,7 +1502,8 @@
     <MESSAGE value="增加total.do" />
     <MESSAGE value="修改忘记密码bug，完善特效" />
     <MESSAGE value="增加get名称" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加get名称" />
+    <MESSAGE value="修改test.jsp球上字体位置" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改test.jsp球上字体位置" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1792,7 +1799,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/test.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-756">
+        <state relative-caret-position="-2596">
           <caret line="26" column="46" lean-forward="false" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="46" />
           <folding>
             <element signature="n#style#0;n#h1#0;n#figure#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#html#0;n#!!top" expanded="true" />
@@ -1805,8 +1812,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/css/test/solarSystemStyle.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="1463" column="15" lean-forward="true" selection-start-line="1463" selection-start-column="15" selection-end-line="1463" selection-end-column="15" />
+        <state relative-caret-position="198">
+          <caret line="1465" column="9" lean-forward="false" selection-start-line="1465" selection-start-column="9" selection-end-line="1465" selection-end-column="9" />
           <folding />
         </state>
       </provider>
