@@ -5,6 +5,7 @@
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <title>GET--登录</title>
+    <link rel="icon" href="/assets/img/get-icon.png" type="image/x-icon"/>
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link href="/assets/css/main.css" rel="stylesheet" type="text/css" />
     <link href="/assets/css/plugins.css" rel="stylesheet" type="text/css" />
@@ -53,7 +54,7 @@
     <div class="content">
         <form id="login" class="form-vertical login-form" action="404.jsp" method="post">
             <h3 class="form-title">
-                测试综合管理平台--登录
+                <img src="/assets/img/get-logo.png"  style="height: 40px;width: 118px">
             </h3>
             <div class="alert fade in alert-danger" style="display: none;">
                 <i class="icon-remove close" data-dismiss="alert">
@@ -105,7 +106,7 @@
         <form id="registerForm" class="form-vertical register-form" action="500.jsp" method="post"
               style="display: none;">
             <h3 class="form-title">
-                测试综合管理平台--注册
+                <img src="/assets/img/get-logo.png"  style="height: 40px;width: 118px">
             </h3>
             <div class="alert fade in" id="alert" style="display: none;">
                 <i class="icon-remove close" data-dismiss="alert">

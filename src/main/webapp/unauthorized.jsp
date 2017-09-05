@@ -11,6 +11,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>GET</title>
+    <link rel="icon" href="/assets/img/get-icon.png" type="image/x-icon"/>
     <style>
         html,body {
             height: 100%;

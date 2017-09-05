@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0"
     />
     <title>GET主页</title>
+    <link rel="icon" href="/assets/img/get-icon.png" type="image/x-icon"/>
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"
     />
     <!--[if lt IE 9]>

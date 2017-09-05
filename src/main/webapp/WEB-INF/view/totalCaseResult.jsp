@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0"
     />
     <title>GET</title>
+    <link rel="icon" href="/assets/img/get-icon.png" type="image/x-icon"/>
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"
     />
     <!--[if lt IE 9]>
@@ -158,7 +159,7 @@
     <div class="page-header">
         <div class="page-title">
             <h3>
-                SKY EYES ON TEST
+                <img src="/assets/img/get-logo.png"  style="height: 40px;width: 118px">SKY EYES ON TEST
             </h3>
             <a href="/login.jsp">
                 hello, guest，do you want broaden your horizons？just click!
