@@ -98,7 +98,7 @@ var totalCaseResult={
                 var option = {
                     baseOption: {
                         title: {
-                            text:'问题严重情况版本变化差异对比',
+                            text:'问题严重级别情况版本对比',
                             subtext: res.time,
                             x:'center'
                         },
@@ -356,7 +356,7 @@ var totalCaseResult={
                 var myChart = echarts.init(document.getElementById('caseBugCount'));
                 var option = {
                         title : {
-                            text: '子模块执行用例数与问题数及比值分析',
+                            text: '子模块用例问题分布情况',
                             subtext:res.time,
                             x:'center'
                         },
@@ -476,7 +476,7 @@ var totalCaseResult={
                 var myChart = echarts.init(document.getElementById('caseBugRatioCompare'));
                 var option = {
                     title: {
-                        text: '用例数与问题数比值变化趋势',
+                        text: '子模块用例问题分布版本对比',
                         subtext:res.time,
                         x:'center'
                     },

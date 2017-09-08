@@ -35,7 +35,7 @@ public class SeverityCompareAnalyse implements CaseAnalyseHandler {
         plan.setName(planName);
         plan.setNode(node);
         plan.setType(PlanDataType.SEVERITY.name());
-        String versions=map.get("versions");
+        String versions=map.get("version");
         List<String> versionList;
         if(versions==null||versions.equals("")){
             versionList=caseAnalyseUtil.getNewTwoVersion(planName);

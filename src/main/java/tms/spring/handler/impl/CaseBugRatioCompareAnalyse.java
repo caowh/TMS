@@ -32,7 +32,7 @@ public class CaseBugRatioCompareAnalyse implements CaseAnalyseHandler {
         if(planName==null||node==null){
             throw new CaseAnalyseException("输入的分析信息不完善");
         }
-        String versions=map.get("versions");
+        String versions=map.get("version");
         List<String> versionList;
         if(versions==null||versions.equals("")){
             versionList=caseAnalyseUtil.getNewTwoVersion(planName);

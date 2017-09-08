@@ -24,20 +24,37 @@ function getCaseAnalyseResult(data, fun) {
 
 
 /**
- * 用例总数统计接口
- * 参数，data：post请求的数据（json）；fun：回调函数，返回用例总数
+ * 多版本系统获取子模块树
+ * 参数，data：post请求的数据（json）；fun：回调函数,子模块树
  *     {
             planName:planName,
-            type:"severity",
-            node:"0"，
-            version:"v1.0"
+            version:"v1.0,v2.0"
         }
  * */
-function getCaseTotalCount(data,fun) {
+function getModuleTree(data,fun) {
     $.ajax({
         type: "post",
         contentType: "application/json; charset=utf-8",
-        url: "/CaseResult/caseTotalCount.do",
+        url: "/main/getModuleTree.do",
+        data: JSON.stringify(data),
+        dataType: "json",
+        success: fun
+    })
+}
+
+
+/**
+ * 查看支持的分析类型
+ * 参数，data：post请求的数据（json）；fun：回调函数，支持的分析类型
+ *     {
+            version:"v1.0,v2.0"
+        }
+ * */
+function getSupportType(data,fun) {
+    $.ajax({
+        type: "post",
+        contentType: "application/json; charset=utf-8",
+        url: "/main/getSupportType.do",
         data: JSON.stringify(data),
         dataType: "json",
         success: fun

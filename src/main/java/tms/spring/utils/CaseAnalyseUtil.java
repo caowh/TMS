@@ -22,6 +22,10 @@ public class CaseAnalyseUtil {
     @Autowired
     private CaseResultCountCache cache;
 
+    public List<Map> getPlanList(){
+        return (List<Map>)cache.getResult("planList");
+    }
+
     public String getNewVersion(String planName){
         String version="";
         List<Map> planList = (List<Map>)cache.getResult("planList");

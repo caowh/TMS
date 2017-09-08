@@ -41,6 +41,7 @@ public class LoginController {
             loginService.login(request,jsonMap);
             map.put("code", Constant.CODE_SUCCESS);
         } catch (Exception e){
+            logger.error("login error,"+e.getMessage());
             map.put("code",Constant.CODE_FAILED);
             map.put("message",e.getMessage());
         }
@@ -54,10 +55,10 @@ public class LoginController {
         logger.info("begin checkUserName!");
         try {
             loginService.checkUserName(jsonMap.get("username"));
-            map.put("code",1);
+            map.put("code",Constant.CODE_SUCCESS);
         }catch (Exception e){
             logger.error("checkUserName error,"+e.getMessage());
-            map.put("code",0);   //预料之外的错误
+            map.put("code",Constant.CODE_FAILED);   //预料之外的错误
             map.put("message",e.getMessage());
         }
         return map;

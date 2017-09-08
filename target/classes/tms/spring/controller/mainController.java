@@ -11,13 +11,18 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import tms.spring.entity.TreeNode;
+import tms.spring.service.CaseAnalyseService;
 import tms.spring.service.LoginService;
 import tms.spring.utils.Constant;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -33,9 +38,13 @@ public class mainController {
     @Autowired
     private LoginService loginService;
 
+    @Autowired
+    private CaseAnalyseService caseAnalyseService;
+
     @RequestMapping(value = "index")
     public String index(Model model) {
         model.addAttribute("username",SecurityUtils.getSubject().getPrincipal());
+        model.addAttribute("planHelperList",caseAnalyseService.getPlanHelperList());
         return "index";
     }
 
@@ -49,6 +58,40 @@ public class mainController {
             map.put("code", Constant.CODE_SUCCESS);
         }catch (Exception e){
             logger.error("logout errorMessage:" + e.getMessage());
+            map.put("code", Constant.CODE_FAILED);
+            map.put("message",e.getMessage());
+        }
+        return map;
+    }
+
+    @RequestMapping(value="getModuleTree")
+    @ResponseBody
+    public Map<String, Object> getModuleTree(@RequestBody Map<String,String> jsonMap){
+        Map<String, Object> map = new HashMap<String, Object>();
+        logger.info("begin getModuleTree!");
+        try {
+            TreeNode treeNode=caseAnalyseService.getModuleTree(jsonMap);
+            map.put("code", Constant.CODE_SUCCESS);
+            map.put("result", treeNode);
+        }catch (Exception e){
+            logger.error("getModuleTree errorMessage:" + e.getMessage());
+            map.put("code", Constant.CODE_FAILED);
+            map.put("message",e.getMessage());
+        }
+        return map;
+    }
+
+    @RequestMapping(value="getSupportType")
+    @ResponseBody
+    public Map<String, Object> getSupportType(@RequestBody Map<String,String> jsonMap){
+        Map<String, Object> map = new HashMap<String, Object>();
+        logger.info("begin getSupportType!");
+        try {
+            List<String> types=caseAnalyseService.getSupportType(jsonMap.get("version"));
+            map.put("code", Constant.CODE_SUCCESS);
+            map.put("result", types);
+        }catch (Exception e){
+            logger.error("getSupportType errorMessage:" + e.getMessage());
             map.put("code", Constant.CODE_FAILED);
             map.put("message",e.getMessage());
         }
