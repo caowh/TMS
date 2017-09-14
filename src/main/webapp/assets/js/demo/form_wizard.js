@@ -53,35 +53,7 @@ $(document).ready(function(){
         nextSelector:".button-next",
         previousSelector:".button-previous",
         onTabClick:function(i,g,h,j){
-            f.hide();a.hide();
-            if(c.valid()==false){
-                return false
-            }
-            if(arr.planName==''){
-                $('#warning1').click()
-                return false
-            }
-            if($('#box2View option').size()==0&&$('#secondLi').attr('class')=='active'){
-                $('#warning3').click()
-                return false
-            }else {
-                arr.type=''
-                arr.typeName=''
-                $('#box2View option').each(function () {
-                    if(arr.type==''){
-                        arr.type=$(this).val()
-                        arr.typeName=$(this).html()
-                    }else {
-                        arr.type=arr.type+','+$(this).val()
-                        arr.typeName=arr.typeName+'<br>'+$(this).html()
-                    }
-                })
-                $('#planName').html(arr.planName)
-                $('#version').html(arr.version)
-                $('#node').html(arr.nodeName)
-                $('#type').html(arr.typeName)
-            }
-            b(i,g,j)
+           return false
         },
         onNext:function(i,g,h){
             f.hide();
@@ -98,56 +70,78 @@ $(document).ready(function(){
                     if(res.code==1){
                         var nodeTree=[];
                         nodeTree.push(res.result)
-                        var setting = {};
+                        var setting = {
+                            view:{
+                                selectedMulti:false
+                            },
+                            callback: {
+                                onClick: function (event, treeId, treeNode) {
+                                    $('#box1View').empty()
+                                    $('#box2View').empty()
+                                    getSupportType({planVersion:arr.planVersion,node:treeNode.cid},function (res) {
+                                        if(res.code==1){
+                                            var supportTypes=res.result
+                                            $.each(supportTypes,function (index, type) {
+                                                var message=''
+                                                if(type=='severity'){
+                                                    message='问题严重级别分布情况'
+                                                }
+                                                else if(type=='severityCompare'){
+                                                    message='问题严重级别情况版本对比'
+                                                }
+                                                else if(type=='caseBugCount'&&treeNode.children.length>0){
+                                                    message='子模块用例问题分布情况'
+                                                }
+                                                else if(type=='caseBugRatioCompare'&&treeNode.children.length>0){
+                                                    message='子模块用例问题分布版本对比'
+                                                }
+                                                if(message!=''){
+                                                    $('#box1View').append('<option value="'+type+'">'+message+'</option>')
+                                                }
+                                            })
+                                        }else {
+                                            $('#box1View').append('<option value="'+type+'" disabled="disabled">找不到数据</option>')
+                                        }
+                                    })
+                                }
+                            }
+                        };
                         $.fn.zTree.init($("#moduleNodeTree"), setting, nodeTree);
                     }else {
                         $('#moduleNodeTree').append('找不到数据')
                     }
                 })
-                getSupportType({version:arr.version},function (res) {
-                    if(res.code==1){
-                        console.log(res)
-                        var supportTypes=res.result
-                        $.each(supportTypes,function (index, type) {
-                            var message=''
-                            if(type=='severity'){
-                                message='问题严重级别分布情况'
-                            }
-                            else if(type=='severityCompare'){
-                                message='问题严重级别情况版本对比'
-                            }
-                            else if(type=='caseBugCount'){
-                                message='子模块用例问题分布情况'
-                            }
-                            else if(type=='caseBugRatioCompare'){
-                                message='子模块用例问题分布版本对比'
-                            }
-                            $('#box1View').append('<option value="'+type+'">'+message+'</option>')
-                        })
-                    }else {
-                        $('#box1View').append('<option value="'+type+'" disabled="disabled">找不到数据</option>')
-                    }
-                })
+                $('#box1View').empty()
+                $('#box2View').empty()
             }
-            if($('#box2View option').size()==0&&$('#secondLi').attr('class')=='active'){
-                $('#warning3').click()
-                return false
-            }else {
-                arr.type=''
-                arr.typeName=''
-                $('#box2View option').each(function () {
-                    if(arr.type==''){
-                        arr.type=$(this).val()
-                        arr.typeName=$(this).html()
-                    }else {
-                        arr.type=arr.type+','+$(this).val()
-                        arr.typeName=arr.typeName+'<br>'+$(this).html()
-                    }
-                })
-                $('#planName').html(arr.planName)
-                $('#version').html(arr.version)
-                $('#node').html(arr.nodeName)
-                $('#type').html(arr.typeName)
+            if($('#secondLi').attr('class')=='active'){
+                var treeObj=$.fn.zTree.getZTreeObj("moduleNodeTree")
+                var nodes=treeObj.getSelectedNodes(true)
+                if(nodes.length==0){
+                    $('#warning3').click()
+                    return false
+                }else if($('#box2View option').size()==0){
+                    $('#warning4').click()
+                    return false
+                }else {
+                    arr.node=nodes[0].cid
+                    arr.nodeName=nodes[0].name
+                    arr.type=''
+                    arr.typeName=''
+                    $('#box2View option').each(function () {
+                        if(arr.type==''){
+                            arr.type=$(this).val()
+                            arr.typeName=$(this).html()
+                        }else {
+                            arr.type=arr.type+','+$(this).val()
+                            arr.typeName=arr.typeName+'<br>'+$(this).html()
+                        }
+                    })
+                    $('#planName').html(arr.planName)
+                    $('#version').html(arr.version)
+                    $('#node').html(arr.nodeName)
+                    $('#type').html(arr.typeName)
+                }
             }
             b(i,g,h)
         },
@@ -156,12 +150,44 @@ $(document).ready(function(){
             var k=g.find("li").length;
             var l=i+1;
             var h=(l/k)*100;
-            d.find(".progress-bar").css({width:h+"%"})
+            d.find(".progress-bar-success").css({width:h+"%"})
         }
     });
     d.find(".button-previous").hide();
-    $("#form_wizard .button-submit").click(function(){
-        alert("You just finished the wizard.")
+    $("#form_wizard .button-submit").click(function(b){
+        b.preventDefault();
+        bootbox.setDefaults({locale:"zh_CN"});
+        bootbox.confirm("确定所选信息无误，开始分析吗?",function(){
+            $('#row1').addClass('hide')
+            $('#row2').removeClass('hide')
+            var types=arr.type.split(',')
+            $.each(types,function (index,element) {
+                if(element=='severity'){
+                    getCaseAnalyseResult({planName:arr.planName,version:arr.planVersion,node:String(arr.node),type:element}, function (res) {
+                        $('#row2').children('div').eq(0).removeClass('hide')
+                        drawSeverity(res)
+                    })
+                }
+                else if(element=='severityCompare'){
+                    getCaseAnalyseResult({planName:arr.planName,version:arr.planVersion,node:String(arr.node),type:element}, function (res) {
+                        $('#row2').children('div').eq(1).removeClass('hide')
+                        drawSeverityCompare(res)
+                    })
+                }
+                else if(element=='caseBugCount'){
+                    getCaseAnalyseResult({planName:arr.planName,version:arr.planVersion,node:String(arr.node),type:element}, function (res) {
+                        $('#row2').children('div').eq(2).removeClass('hide')
+                        drawCaseBugCount(res)
+                    })
+                }
+                else if(element=='caseBugRatioCompare'){
+                    getCaseAnalyseResult({planName:arr.planName,version:arr.planVersion,node:String(arr.node),type:element}, function (res) {
+                        $('#row2').children('div').eq(3).removeClass('hide')
+                        drawCaseBugRatioCompare(res)
+                    })
+                }
+            })
+        })
     }).hide()
 });
 

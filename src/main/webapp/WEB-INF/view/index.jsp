@@ -10,6 +10,57 @@
     <link rel="icon" href="/assets/img/get-icon.png" type="image/x-icon"/>
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"
     />
+    <style>
+        .light{
+            float: left;
+            width: 38px;
+            height: 35px;
+            background: url("/assets/img/base.png") no-repeat center;
+        }
+        .light p{
+            width: 100%;
+            height: 100%;
+        }
+        .light-alarm{
+            float: left;
+            width: 38px;
+            height: 35px;
+            background: url("/assets/img/red.png") no-repeat center;
+        }
+        .light-normal{
+            float: left;
+            width: 38px;
+            height: 35px;
+            background: url("/assets/img/green.png") no-repeat center;
+        }
+
+        @-webkit-keyframes light {
+            from{
+                opacity: 1;
+            }
+            50%{
+                opacity: 1;
+            }
+            to{
+                opacity: 0;
+            }
+        }
+        .light-alarm{
+            animation:light 1s ease  infinite;
+        }
+        @keyframes light {
+            from{
+                opacity: 1;
+            }
+            50%{
+                opacity: 1;
+            }
+            to{
+                opacity: 0;
+            }
+        }
+
+    </style>
     <!--[if lt IE 9]>
     <link rel="stylesheet" type="text/css" href="/plugins/jquery-ui/jquery.ui.1.10.2.ie.css"
     />
@@ -86,6 +137,8 @@
     </script>
     <script type="text/javascript" src="/plugins/noty/layouts/top.js">
     </script>
+    <script type="text/javascript" src="/plugins/bootbox/bootbox.min.js">
+    </script>
     <script type="text/javascript" src="/plugins/noty/themes/default.js">
     </script>
     <script type="text/javascript" src="/plugins/duallistbox/jquery.duallistbox.min.js">
@@ -116,19 +169,22 @@
     </script>
     <script type="text/javascript" src="/plugins/bootstrap-colorpicker/bootstrap-colorpicker.min.js">
     </script>
-
     <script type="text/javascript" src="/assets/js/plugins.form-components.js">
     </script>
     <script>
         $(document).ready(function() {
             App.init();
             Plugins.init();
-            FormComponents.init()
+            FormComponents.init();
         });
     </script>
     <script type="text/javascript" src="/assets/js/custom.js">
     </script>
+    <script type="text/javascript" src="/assets/js/echarts.min.js">
+    </script>
     <script type="text/javascript" src="/assets/js/data.js">
+    </script>
+    <script type="text/javascript" src="/assets/js/totalCaseResult.js">
     </script>
     <script type="text/javascript" src="/assets/js/demo/form_wizard.js">
     </script>
@@ -234,10 +290,12 @@
                 </button>
                 <button id="warning2" class="btn btn-warning btn-notification close" data-type="warning" data-text="<strong>警告</strong><br>多选时只能选择相同系统不同版本号！">
                 </button>
-                <button id="warning3" class="btn btn-warning btn-notification close" data-type="warning" data-text="<strong>警告</strong><br>请至少选择一种分析种类！">
+                <button id="warning3" class="btn btn-warning btn-notification close" data-type="warning" data-text="<strong>警告</strong><br>请选择一个子模块！">
+                </button>
+                <button id="warning4" class="btn btn-warning btn-notification close" data-type="warning" data-text="<strong>警告</strong><br>请至少选择一种分析种类！">
                 </button>
             </div>
-            <div class="row">
+            <div id="row1" class="row">
                 <div class="col-md-12">
                     <div class="widget box" id="form_wizard">
                         <div class="widget-content">
@@ -411,7 +469,7 @@
                                             </div>
                                             <div class="tab-pane" id="tab3">
                                                 <h3 class="block padding-bottom-10px">
-                                                    请再次确认分析信息
+                                                    请确认分析信息
                                                 </h3>
                                                 <div class="form-group">
                                                     <label class="control-label col-md-3">
@@ -481,10 +539,109 @@
                     </div>
                 </div>
             </div>
+            <div id="row2" class="row hide">
+                <div class="col-md-12 hide">
+                    <div class="widget box">
+                        <div class="widget-header">
+                            <h4>
+                                <i class="icon-reorder">
+                                </i>
+                                问题严重情况分布图
+                            </h4>
+                            <div class="light"><p id="severity-light"></p></div>
+                            <div class="toolbar no-padding">
+                                <div class="btn-group">
+                      <span class="btn btn-xs widget-collapse">
+                        <i class="icon-angle-down">
+                        </i>
+                      </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget-content">
+                            <div class="chart" id="severity">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 hide">
+                    <div class="widget box">
+                        <div class="widget-header">
+                            <h4>
+                                <i class="icon-reorder">
+                                </i>
+                                问题严重情况变化趋势图
+                            </h4>
+                            <div class="light"><p id="severityCompare-light"></p></div>
+                            <div class="toolbar no-padding">
+                                <div class="btn-group">
+                      <span class="btn btn-xs widget-collapse">
+                        <i class="icon-angle-down">
+                        </i>
+                      </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget-content">
+                            <div class="chart" id="severityCompare">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 hide">
+                    <div class="widget box">
+                        <div class="widget-header">
+                            <h4>
+                                <i class="icon-reorder">
+                                </i>
+                                子模块执行用例数与问题数及比值统计图
+                            </h4>
+                            <div class="light"><p id="caseBugCount-light"></p></div>
+                            <div class="toolbar no-padding">
+                                <div class="btn-group">
+                      <span class="btn btn-xs widget-collapse">
+                        <i class="icon-angle-down">
+                        </i>
+                      </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget-content">
+                            <div class="chart" id="caseBugCount">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 hide">
+                    <div class="widget box">
+                        <div class="widget-header">
+                            <h4>
+                                <i class="icon-reorder">
+                                </i>
+                                问题数变化趋势图
+                            </h4>
+                            <div class="light"><p id="caseBugRatioCompare-light"></p></div>
+                            <div class="toolbar no-padding">
+                                <div class="btn-group">
+                      <span class="btn btn-xs widget-collapse">
+                        <i class="icon-angle-down">
+                        </i>
+                      </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget-content">
+                            <div class="chart" id="caseBugRatioCompare">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
 </body>
 
 </html>

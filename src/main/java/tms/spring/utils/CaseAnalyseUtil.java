@@ -108,19 +108,23 @@ public class CaseAnalyseUtil {
         Plan plan=new Plan();
         plan.setVersion(version);
         plan.setName(planName);
-        plan.setNode(node);
+        plan.setNode("0");
         plan.setType(PlanDataType.SUITES.name());
         List<Map> testSuites= (List<Map>) getResult(plan);
         if (testSuites!=null&&testSuites.size()>0){
-            String planId="";
-            for (Map testSuite : testSuites){
-                String suiteName=String.valueOf(testSuite.get("name"));
-                if(planName.equals(suiteName)){
-                    planId=String.valueOf(testSuite.get("id"));
-                    break;
+            if(node.equals("0")){
+                String planId="";
+                for (Map testSuite : testSuites){
+                    String suiteName=String.valueOf(testSuite.get("name"));
+                    if(planName.equals(suiteName)){
+                        planId=String.valueOf(testSuite.get("id"));
+                        break;
+                    }
                 }
+                getChildSuitesById(list, testSuites, planId);
+            }else {
+                getChildSuitesById(list, testSuites, node);
             }
-            getChildSuitesById(list, testSuites, planId);
         }
         return list;
     }

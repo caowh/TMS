@@ -10,6 +10,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
+import java.io.File;
 import java.util.Properties;
 import java.util.Random;
 
@@ -85,5 +86,19 @@ public class test {
             }
         }
         System.out.print(val);
+    }
+
+
+    @Test
+    public void testExe(){
+        try
+        {
+            Runtime mt =Runtime.getRuntime();
+            mt.exec("cmd.exe");
+        } catch(Exception e)
+        {
+            System.out.println(e);
+        }
+
     }
 }

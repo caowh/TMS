@@ -135,7 +135,8 @@ public class CaseAnalyseService {
         return treeUtil.generateTreeNode(root_id);
     }
 
-    public List<String> getSupportType(String version) throws CaseAnalyseException {
+    public List<String> getSupportType(Map<String,String> jsonMap) throws CaseAnalyseException {
+        String version=jsonMap.get("planVersion");
         List<String> list=new ArrayList<String>();
         if(version==null||version.equals("")){
             throw new CaseAnalyseException("输入的版本号为空");
