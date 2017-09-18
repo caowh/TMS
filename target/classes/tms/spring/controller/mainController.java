@@ -20,6 +20,7 @@ import tms.spring.entity.TreeNode;
 import tms.spring.service.CaseAnalyseService;
 import tms.spring.service.LoginService;
 import tms.spring.utils.Constant;
+import tms.spring.utils.PropertiesUtil;
 
 import java.util.HashMap;
 import java.util.List;
@@ -96,5 +97,30 @@ public class mainController {
             map.put("message",e.getMessage());
         }
         return map;
+    }
+
+    /**
+     * 加载阈值参数配置页面
+     */
+    @RequestMapping(value="loadThresholdPage")
+    public String loadThresholdPage(Model model) {
+        logger.info("load threshold page!");
+        model.addAttribute("username", SecurityUtils.getSubject().getPrincipal());
+        return "thresholdConfig";
+    }
+
+    /**
+     * 阈值参数配置
+     */
+    @RequestMapping(value="modifyThreshold")
+    public String modifyThreshold(String value) {
+        logger.info("modify the threshold!");
+
+        //向配置文件写入threshold值
+        String path = getClass().getResource("/").getFile().toString()+"threshold.properties";
+        PropertiesUtil.updateValue(path,"threshold",value);
+
+
+        return "thresholdConfig";
     }
 }

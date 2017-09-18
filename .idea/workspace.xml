@@ -4,15 +4,235 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/tms/spring/dao/UserRoleDao.java" line="10" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f9cc282-ed11-4a6d-8b09-35408e684dc7" name="Default" comment="">
+    <list default="true" id="2f9cc282-ed11-4a6d-8b09-35408e684dc7" name="Default" comment="修改test.jsp灯笼位置">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/dao/PlanDao.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/entity/Plan.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/entity/PlanHelper.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/entity/TreeNode.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/exception/CaseAnalyseException.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/handler/CaseAnalyseHandler.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/handler/impl/CaseBugCountAnalyse.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/handler/impl/CaseBugRatioCompareAnalyse.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/handler/impl/SeverityCompareAnalyse.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/handler/impl/SeverityDistributeAnalyse.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/service/CaseAnalyseService.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/utils/CaseAnalyseUtil.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/utils/PlanDataType.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/utils/PropertiesUtil.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/utils/TreeUtil.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/classworlds-1.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/commons-cli-1.0.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/doxia-sink-api-1.0-alpha-7.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/jsch-0.1.27.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/jstl-1.2.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/jtidy-4aug2000r7-dev.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/maven-artifact-2.0.6.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/maven-artifact-manager-2.0.6.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/maven-core-2.0.6.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/maven-error-diagnostics-2.0.6.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/maven-filtering-1.0-beta-4.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/maven-model-2.0.6.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/maven-monitor-2.0.6.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/maven-plugin-api-2.0.6.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/maven-plugin-descriptor-2.0.6.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/maven-plugin-parameter-documenter-2.0.6.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/maven-plugin-registry-2.0.6.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/maven-profile-2.0.6.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/maven-project-2.0.6.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/maven-reporting-api-2.0.6.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/maven-repository-metadata-2.0.6.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/maven-resources-plugin-2.4.3.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/maven-settings-2.0.6.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/plexus-build-api-0.0.4.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/plexus-container-default-1.0-alpha-9-stable-1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/plexus-interactivity-api-1.0-alpha-4.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/plexus-interpolation-1.13.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/plexus-utils-2.0.5.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/standard-1.1.2.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/wagon-file-1.0-beta-2.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/wagon-http-lightweight-1.0-beta-2.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/wagon-http-shared-1.0-beta-2.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/wagon-provider-api-1.0-beta-2.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/wagon-ssh-1.0-beta-2.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/wagon-ssh-common-1.0-beta-2.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/wagon-ssh-external-1.0-beta-2.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/lib/xml-apis-1.0.b2.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/css/zTreeStyle/img/diy/1_close.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/css/zTreeStyle/img/diy/1_open.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/css/zTreeStyle/img/diy/2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/css/zTreeStyle/img/diy/3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/css/zTreeStyle/img/diy/4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/css/zTreeStyle/img/diy/5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/css/zTreeStyle/img/diy/6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/css/zTreeStyle/img/diy/7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/css/zTreeStyle/img/diy/8.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/css/zTreeStyle/img/diy/9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/css/zTreeStyle/img/line_conn.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/css/zTreeStyle/img/loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/css/zTreeStyle/img/zTreeStandard.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/css/zTreeStyle/img/zTreeStandard.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/img/base.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/img/get-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/img/get-logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/img/green.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/img/red.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/img/test/1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/img/test/11.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/img/test/2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/img/test/3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/img/test/4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/img/test/5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/img/test/6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/img/test/66.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/img/test/7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/img/test/8.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/img/test/9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/img/test/99.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/img/test/data-1491837512042-rJlLfXYax.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/img/test/data-1491837984109-r1u7NmY6e.hdr" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/img/test/data-1491837999815-H1_44Qtal.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/img/test/data-1491889019097-rJQYikcpl.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/img/test/data-1491890092270-BJEhJg96l.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/img/test/data-1491890179041-Hkj-elqpe.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tms/spring/dao/PlanDao.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tms/spring/entity/Plan.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tms/spring/entity/PlanHelper.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tms/spring/entity/TreeNode.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tms/spring/exception/CaseAnalyseException.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tms/spring/handler/CaseAnalyseHandler.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tms/spring/handler/impl/CaseBugCountAnalyse.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tms/spring/handler/impl/CaseBugRatioCompareAnalyse.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tms/spring/handler/impl/SeverityCompareAnalyse.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tms/spring/handler/impl/SeverityDistributeAnalyse.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tms/spring/service/CaseAnalyseService.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tms/spring/utils/CaseAnalyseUtil.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tms/spring/utils/PlanDataType.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tms/spring/utils/PropertiesUtil.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tms/spring/utils/TreeUtil.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/test.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/tms/spring/dao/BaseDaoTest.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/tms/spring/dao/PermissionDaoTest.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/tms/spring/dao/PlanDaoTest.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/tms/spring/dao/RoleDaoTest.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/tms/spring/dao/RolePermissionDaoTest.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/tms/spring/dao/UserDaoTest.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/tms/spring/dao/UserRoleDaoTest.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/tms/spring/entity/TreeNodeTest.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/tms/spring/shiro/ShiroRealmTest.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/tms/spring/utils/CaseAnalyseUtilTest.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__classworlds_classworlds_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jcraft_jsch_0_1_27.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_cli_commons_cli_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jtidy_jtidy_4aug2000r7_dev.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_doxia_doxia_sink_api_1_0_alpha_7.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_artifact_2_0_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_artifact_manager_2_0_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_core_2_0_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_error_diagnostics_2_0_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_model_2_0_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_monitor_2_0_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_plugin_api_2_0_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_plugin_descriptor_2_0_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_plugin_parameter_documenter_2_0_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_plugin_registry_2_0_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_profile_2_0_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_project_2_0_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_repository_metadata_2_0_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_settings_2_0_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_plugins_maven_resources_plugin_2_4_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_reporting_maven_reporting_api_2_0_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_shared_maven_filtering_1_0_beta_4.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_wagon_wagon_file_1_0_beta_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_wagon_wagon_http_lightweight_1_0_beta_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_wagon_wagon_http_shared_1_0_beta_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_wagon_wagon_provider_api_1_0_beta_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_wagon_wagon_ssh_1_0_beta_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_wagon_wagon_ssh_common_1_0_beta_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_wagon_wagon_ssh_external_1_0_beta_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_plexus_plexus_container_default_1_0_alpha_9_stable_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_plexus_plexus_interactivity_api_1_0_alpha_4.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_plexus_plexus_interpolation_1_13.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_plexus_plexus_utils_2_0_5.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_sonatype_plexus_plexus_build_api_0_0_4.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xml_apis_xml_apis_1_0_b2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tms/spring/utils/PropertiesUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/threshold.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/thresholdConfig.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/META-INF/MANIFEST.MF" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/mapping/PlanDao.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/spring-config/spring-service.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/threshold.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/dao/PlanDao.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/entity/Plan.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/entity/PlanHelper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/entity/TreeNode.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/exception/CaseAnalyseException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/handler/CaseAnalyseHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/handler/impl/CaseBugCountAnalyse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/handler/impl/CaseBugRatioCompareAnalyse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/handler/impl/SeverityCompareAnalyse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/handler/impl/SeverityDistributeAnalyse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/service/CaseAnalyseService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/utils/CaseAnalyseUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/utils/PlanDataType.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/utils/PropertiesUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/utils/TreeUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/view/thresholdConfig.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/view/totalCaseResult.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/css/test/jquery.thoughtBubble.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/css/test/reset.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/css/test/solarSystemStyle.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/css/zTreeStyle/zTreeStyle.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/js/data.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/js/echarts-gl.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/js/echarts.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/js/jquery.ztree.all-3.5.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/js/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/js/test/TweenMax.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/js/test/jquery-1.7.2.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/js/test/jquery.alert.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/js/test/jquery.thoughtBubble.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/js/test/solarSystem.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/assets/js/totalCaseResult.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/plugins/jquery-ui/jquery-ui.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/TMS/test.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/mapping/PlanDao.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/spring-config/spring-service.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/threshold.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tms/spring/dao/PlanDao.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tms/spring/entity/Plan.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tms/spring/entity/PlanHelper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tms/spring/entity/TreeNode.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tms/spring/exception/CaseAnalyseException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tms/spring/handler/CaseAnalyseHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tms/spring/handler/impl/CaseBugCountAnalyse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tms/spring/handler/impl/CaseBugRatioCompareAnalyse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tms/spring/handler/impl/SeverityCompareAnalyse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tms/spring/handler/impl/SeverityDistributeAnalyse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tms/spring/service/CaseAnalyseService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tms/spring/utils/CaseAnalyseUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tms/spring/utils/PlanDataType.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tms/spring/utils/PropertiesUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tms/spring/utils/TreeUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-cli/createdFiles.lst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-cli/inputFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/controller/mainController.class" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/controller/mainController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/utils/MailCilent.class" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/utils/MailCilent.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/utils/VerifyCodeUtils.class" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/utils/VerifyCodeUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tms/spring/controller/mainController.class" afterPath="$PROJECT_DIR$/target/classes/tms/spring/controller/mainController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tms/spring/utils/MailCilent.class" afterPath="$PROJECT_DIR$/target/classes/tms/spring/utils/MailCilent.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tms/spring/utils/VerifyCodeUtils.class" afterPath="$PROJECT_DIR$/target/classes/tms/spring/utils/VerifyCodeUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/TMS_war.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/TMS_war.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/TMS_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/TMS_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TMS.iml" afterPath="$PROJECT_DIR$/TMS.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tms/spring/controller/mainController.java" afterPath="$PROJECT_DIR$/src/main/java/tms/spring/controller/mainController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tms/spring/service/CaseAnalyseService.java" afterPath="$PROJECT_DIR$/src/main/java/tms/spring/service/CaseAnalyseService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tms/spring/utils/CaseAnalyseUtil.java" afterPath="$PROJECT_DIR$/src/main/java/tms/spring/utils/CaseAnalyseUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/test.java" afterPath="$PROJECT_DIR$/src/main/test/test.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/demo/form_wizard.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/demo/form_wizard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/totalCaseResult.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/totalCaseResult.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/data.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/data.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/controller/mainController.java" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/controller/mainController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMS/WEB-INF/view/index.jsp" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/view/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tms/spring/controller/mainController.java" afterPath="$PROJECT_DIR$/target/classes/tms/spring/controller/mainController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -38,33 +258,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UpdateCaseResult.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/quartz/UpdateCaseResult.java">
+      <file leaf-file-name="mainController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/controller/mainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
-              <caret line="59" column="28" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+            <state relative-caret-position="316">
+              <caret line="119" column="28" lean-forward="false" selection-start-line="119" selection-start-column="28" selection-end-line="119" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CaseBugCountAnalyse.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/handler/impl/CaseBugCountAnalyse.java">
+      <file leaf-file-name="threshold.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/threshold.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="37" column="9" lean-forward="true" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PropertiesUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/utils/PropertiesUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/controller/LoginController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="34" column="36" lean-forward="false" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
               <folding>
-                <element signature="method#getChartData#0;class#CaseBugCountAnalyse#0" expanded="false" />
+                <element signature="imports" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Constant.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/utils/Constant.java">
+      <file leaf-file-name="jdbc.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="264">
+              <caret line="12" column="9" lean-forward="false" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="231" column="34" lean-forward="false" selection-start-line="231" selection-start-column="34" selection-end-line="231" selection-end-column="34" />
+              <folding>
+                <marker date="1505724953581" expanded="true" signature="1808:1814" ph="..." />
+                <marker date="1505724953581" expanded="true" signature="2971:2985" ph="..." />
+                <marker date="1505724953581" expanded="true" signature="3879:3893" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="thresholdConfig.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/thresholdConfig.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="11" column="42" lean-forward="false" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+              <folding>
+                <marker date="1505702003395" expanded="true" signature="741:747" ph="..." />
+                <marker date="1505702003395" expanded="true" signature="1900:1914" ph="..." />
+                <marker date="1505702003395" expanded="true" signature="2808:2822" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="data.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/data.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="191">
+              <caret line="74" column="13" lean-forward="false" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -140,7 +418,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/tms/spring/controller/CaseResultController.java" />
         <option value="$PROJECT_DIR$/src/main/java/tms/spring/handler/CaseAnalyseHandler.java" />
         <option value="$PROJECT_DIR$/src/main/test/tms/spring/utils/CaseAnalyseUtilTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/tms/spring/utils/PlanDataType.java" />
@@ -148,7 +425,6 @@
         <option value="$PROJECT_DIR$/src/main/java/tms/spring/handler/impl/SeverityDistributeAnalyse.java" />
         <option value="$PROJECT_DIR$/src/main/java/tms/spring/handler/impl/CaseBugCountAnalyse.java" />
         <option value="$PROJECT_DIR$/src/main/java/tms/spring/cache/CaseResultCountCache.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tms/spring/quartz/UpdateCaseResult.java" />
         <option value="$USER_HOME$/Desktop/css3实现的模拟3D行星运转效果源码/index.html" />
         <option value="$USER_HOME$/Desktop/css3实现的模拟3D行星运转效果源码/css/solarSystemStyle.css" />
         <option value="$USER_HOME$/Desktop/css3实现的模拟3D行星运转效果源码/js/solarSystem.js" />
@@ -181,16 +457,18 @@
         <option value="$PROJECT_DIR$/src/main/java/tms/spring/utils/TreeUtil.java" />
         <option value="$PROJECT_DIR$/src/main/test/tms/spring/entity/TreeNodeTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/tms/spring/entity/TreeNode.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/assets/js/data.js" />
         <option value="$PROJECT_DIR$/src/main/java/tms/spring/handler/impl/SeverityCompareAnalyse.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tms/spring/controller/mainController.java" />
         <option value="$PROJECT_DIR$/src/main/java/tms/spring/service/CaseAnalyseService.java" />
         <option value="$USER_HOME$/Downloads/meAdmin/ui_general.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/assets/js/demo/form_wizard.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/assets/js/totalCaseResult.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/tms/spring/utils/CaseAnalyseUtil.java" />
         <option value="$PROJECT_DIR$/src/main/test/test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tms/spring/utils/PropertiesUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tms/spring/controller/mainController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/assets/js/data.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/tms/spring/quartz/UpdateCaseResult.java" />
       </list>
     </option>
   </component>
@@ -396,27 +674,26 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="TMS" />
+              <option name="myItemId" value="TMS - 副本" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="TMS" />
+              <option name="myItemId" value="TMS - 副本" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="TMS" />
+              <option name="myItemId" value="TMS - 副本" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="TMS" />
+              <option name="myItemId" value="TMS - 副本" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -434,11 +711,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="TMS" />
+              <option name="myItemId" value="TMS - 副本" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="TMS" />
+              <option name="myItemId" value="TMS - 副本" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -450,17 +727,125 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="TMS" />
+              <option name="myItemId" value="TMS - 副本" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="TMS" />
+              <option name="myItemId" value="TMS - 副本" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TMS - 副本" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TMS - 副本" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TMS - 副本" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TMS - 副本" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TMS - 副本" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TMS - 副本" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TMS - 副本" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TMS - 副本" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -478,11 +863,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="TMS" />
+              <option name="myItemId" value="TMS - 副本" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="TMS" />
+              <option name="myItemId" value="TMS - 副本" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -502,8 +887,39 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TMS - 副本" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TMS - 副本" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quartz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -536,18 +952,18 @@
       <recent name="tms.spring" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="tms.spring.utils" />
       <recent name="tms.spring.handler.impl" />
       <recent name="tms.spring.exception" />
-      <recent name="tms.spring.utils" />
       <recent name="tms.spring.shiro.filter" />
       <recent name="tms.spring.shiro" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\IdeaProjects\TMS - 副本\src\main\webapp\WEB-INF\view" />
+      <recent name="C:\Users\user\IdeaProjects\TMS - 副本\src\main\resources" />
       <recent name="F:\tijiao\TMS\src\main\webapp\assets\js" />
       <recent name="F:\tijiao\TMS\src\main\webapp\assets\css" />
       <recent name="F:\tijiao\TMS\src\main\webapp\assets\img" />
-      <recent name="F:\tijiao\TMS\src\main\webapp\assets" />
-      <recent name="D:\project\TMS\src\main\webapp\assets\img\test" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\tijiao\TMS\src\main\webapp\assets\img" />
@@ -569,7 +985,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.test.testExe">
+  <component name="RunManager" selected="Tomcat Server.Unnamed">
     <configuration default="false" name="ShiroRealmTest.doGetAuthorizationInfo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1115,7 +1531,7 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <configuration default="false" name="Unnamed" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.79" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="C:\Program Files\Java\jdk1.8.0_45\jre">
+    <configuration default="false" name="Unnamed" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.79" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="C:\Program Files\Java\jdk1.8.0_131\jre">
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
@@ -1222,12 +1638,12 @@
       </method>
     </configuration>
     <list size="6">
-      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Unnamed" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.ShiroRealmTest.doGetAuthorizationInfo" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.PlanDaoTest.insertPlans" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.CaseAnalyseUtilTest.getNewTwoVersion" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.TreeNodeTest.equals" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.test.testExe" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.ShiroRealmTest.doGetAuthorizationInfo" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.PlanDaoTest.insertPlans" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.CaseAnalyseUtilTest.getNewTwoVersion" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.TreeNodeTest.equals" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.test.testExe" />
+      <item index="5" class="java.lang.String" itemvalue="Tomcat Server.Unnamed" />
     </list>
     <recent_temporary>
       <list size="5">
@@ -1380,9 +1796,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TreeNodeTest_equals - 2017.09.08 at 14h 54m 56s.xml">
-      <configuration name="TreeNodeTest.equals" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="test_testExe - 2017.09.13 at 19h 35m 26s.xml">
       <configuration name="test.testExe" configurationId="JUnit" />
     </history-entry>
@@ -1410,9 +1823,12 @@
     <history-entry file="test_testExe - 2017.09.14 at 09h 31m 01s.xml">
       <configuration name="test.testExe" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="test_testExe - 2017.09.18 at 16h 57m 02s.xml">
+      <configuration name="test.testExe" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="518853000" />
+    <option name="totallyTimeSpent" value="519784000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1424,14 +1840,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16576381" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4312026" sideWeight="0.5053305" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28277355" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4539545" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1439,30 +1854,58 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3066089" sideWeight="0.4978678" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30985916" sideWeight="0.4978678" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25135428" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25135428" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42903575" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4312026" sideWeight="0.4946695" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29144096" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26226014" sideWeight="0.16227181" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21428572" sideWeight="0.61939216" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21428572" sideWeight="0.3806078" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="15" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16576381" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28277355" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4539545" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3066089" sideWeight="0.4978678" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2156013" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29144096" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26226014" sideWeight="0.16227181" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27292112" sideWeight="0.8377282" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2153518" sideWeight="0.5361842" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="15" side_tool="true" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1506,6 +1949,32 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -1557,54 +2026,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/shiro/filter/ShiroFilterUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="57" column="24" lean-forward="false" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/service/LoginService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-189">
-          <caret line="24" column="46" lean-forward="true" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/meAdmin/form_components.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="79" selection-end-column="13" />
-          <folding>
-            <marker date="1448330281000" expanded="true" signature="466:474" ph="..." />
-            <marker date="1448330281000" expanded="true" signature="1664:1680" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/css/zTreeStyle/zTreeStyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/entity/Plan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1289">
           <caret line="74" column="36" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1613,7 +2038,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1624,10 +2048,10 @@
         <state relative-caret-position="394">
           <caret line="49" column="39" lean-forward="false" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="39" />
           <folding>
-            <element signature="e#785#786#0" expanded="true" />
-            <element signature="e#831#832#0" expanded="true" />
-            <element signature="e#937#938#0" expanded="true" />
-            <element signature="e#973#974#0" expanded="true" />
+            <element signature="e#785#786#0" expanded="false" />
+            <element signature="e#831#832#0" expanded="false" />
+            <element signature="e#937#938#0" expanded="false" />
+            <element signature="e#973#974#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1640,57 +2064,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="299" column="17" lean-forward="false" selection-start-line="299" selection-start-column="17" selection-end-line="299" selection-end-column="17" />
-          <folding>
-            <element signature="e#10907#10908#0" expanded="false" />
-            <element signature="e#10945#10946#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/util/ArrayList.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.2.5.RELEASE/spring-web-4.2.5.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
           <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/util/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="559" column="8" lean-forward="false" selection-start-line="559" selection-start-column="8" selection-end-line="559" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="36" column="13" lean-forward="false" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/util/Map.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/lang/Object.java" />
     <entry file="file://$PROJECT_DIR$/src/main/test/tms/spring/entity/TreeNodeTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="12" column="42" lean-forward="true" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="144" column="12" lean-forward="false" selection-start-line="144" selection-start-column="12" selection-end-line="144" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/util/List.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/utils/TreeUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="241">
@@ -1710,25 +2101,25 @@
         <state relative-caret-position="-2">
           <caret line="52" column="28" lean-forward="true" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#296#297#0" expanded="true" />
-            <element signature="e#322#323#0" expanded="true" />
-            <element signature="e#357#358#0" expanded="true" />
-            <element signature="e#387#388#0" expanded="true" />
-            <element signature="e#418#419#0" expanded="true" />
-            <element signature="e#445#446#0" expanded="true" />
-            <element signature="e#485#486#0" expanded="true" />
-            <element signature="e#517#518#0" expanded="true" />
-            <element signature="e#544#545#0" expanded="true" />
-            <element signature="e#570#571#0" expanded="true" />
-            <element signature="e#605#606#0" expanded="true" />
-            <element signature="e#635#636#0" expanded="true" />
-            <element signature="e#668#669#0" expanded="true" />
-            <element signature="e#699#700#0" expanded="true" />
-            <element signature="e#745#746#0" expanded="true" />
-            <element signature="e#785#786#0" expanded="true" />
-            <element signature="e#1213#1214#0" expanded="true" />
-            <element signature="e#1272#1273#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#296#297#0" expanded="false" />
+            <element signature="e#322#323#0" expanded="false" />
+            <element signature="e#357#358#0" expanded="false" />
+            <element signature="e#387#388#0" expanded="false" />
+            <element signature="e#418#419#0" expanded="false" />
+            <element signature="e#445#446#0" expanded="false" />
+            <element signature="e#485#486#0" expanded="false" />
+            <element signature="e#517#518#0" expanded="false" />
+            <element signature="e#544#545#0" expanded="false" />
+            <element signature="e#570#571#0" expanded="false" />
+            <element signature="e#605#606#0" expanded="false" />
+            <element signature="e#635#636#0" expanded="false" />
+            <element signature="e#668#669#0" expanded="false" />
+            <element signature="e#699#700#0" expanded="false" />
+            <element signature="e#745#746#0" expanded="false" />
+            <element signature="e#785#786#0" expanded="false" />
+            <element signature="e#1213#1214#0" expanded="false" />
+            <element signature="e#1272#1273#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1743,9 +2134,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="52" column="84" lean-forward="true" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="84" />
-          <folding />
+        <state relative-caret-position="374">
+          <caret line="34" column="36" lean-forward="false" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1761,10 +2154,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="415">
           <caret line="48" column="105" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="105" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <marker date="1504515310452" expanded="true" signature="1568:1582" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1772,7 +2162,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="55" column="33" lean-forward="false" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1780,50 +2169,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="0" column="160386" lean-forward="false" selection-start-line="0" selection-start-column="160386" selection-end-line="0" selection-end-column="160386" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/controller/mainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="89" column="56" lean-forward="false" selection-start-line="89" selection-start-column="56" selection-end-line="89" selection-end-column="56" />
-          <folding>
-            <element signature="e#2319#2335#0" expanded="true" />
-            <element signature="e#2998#3014#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/meAdmin/assets/js/demo/ui_general.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/meAdmin/assets/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="0" column="31367" lean-forward="false" selection-start-line="0" selection-start-column="31367" selection-end-line="0" selection-end-column="31367" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/meAdmin/bootstrap/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="8" column="75568" lean-forward="false" selection-start-line="8" selection-start-column="75568" selection-end-line="8" selection-end-column="75568" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Downloads/meAdmin/assets/js/demo/ui_general.js" />
+    <entry file="file://$USER_HOME$/Downloads/meAdmin/assets/css/main.css" />
+    <entry file="file://$USER_HOME$/Downloads/meAdmin/bootstrap/css/bootstrap.min.css" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/plugins/typeahead/typeahead.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="6" column="13474" lean-forward="false" selection-start-line="6" selection-start-column="13474" selection-end-line="6" selection-end-column="13474" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1851,31 +2206,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/meAdmin/ui_general.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="1645" column="24" lean-forward="true" selection-start-line="1642" selection-start-column="17" selection-end-line="1645" selection-end-column="24" />
-          <folding>
-            <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1505108659062" expanded="true" signature="463:471" ph="..." />
-            <marker date="1505108659062" expanded="true" signature="1661:1677" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="13" column="40" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Downloads/meAdmin/ui_general.html" />
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="775" column="9" lean-forward="false" selection-start-line="775" selection-start-column="9" selection-end-line="775" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1883,7 +2218,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="47" column="8" lean-forward="false" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1891,7 +2225,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="92" column="24" lean-forward="true" selection-start-line="92" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1899,16 +2232,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
           <caret line="151" column="76" lean-forward="true" selection-start-line="151" selection-start-column="4" selection-end-line="151" selection-end-column="76" />
-          <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1504514101844" expanded="true" signature="591:597" ph="..." />
-            <marker date="1504514101844" expanded="true" signature="2832:2846" ph="..." />
-            <marker date="1504514101844" expanded="true" signature="3740:3754" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1927,28 +2251,6 @@
           <folding>
             <element signature="e#1968#2012#0" expanded="false" />
             <element signature="e#2045#2128#0" expanded="false" />
-            <element signature="e#5065#6290#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1230">
-          <caret line="297" column="25" lean-forward="true" selection-start-line="297" selection-start-column="0" selection-end-line="541" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1505120878002" expanded="true" signature="1808:1814" ph="..." />
-            <marker date="1505120878002" expanded="true" signature="2971:2985" ph="..." />
-            <marker date="1505120878002" expanded="true" signature="3879:3893" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1980,8 +2282,7 @@
         <state relative-caret-position="369">
           <caret line="113" column="23" lean-forward="false" selection-start-line="113" selection-start-column="23" selection-end-line="113" selection-end-column="23" />
           <folding>
-            <element signature="e#4261#4271#0" expanded="true" />
-            <element signature="e#5375#5383#0" expanded="true" />
+            <element signature="e#4261#4271#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1993,8 +2294,6 @@
           <folding>
             <element signature="method#getNewTwoVersion#0;class#CaseAnalyseUtil#0" expanded="false" />
             <element signature="method#getResult#0;class#CaseAnalyseUtil#0" expanded="false" />
-            <element signature="method#getChildSuitesById#0;class#CaseAnalyseUtil#0" expanded="false" />
-            <element signature="method#getUutVersion#0;class#CaseAnalyseUtil#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2007,50 +2306,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="1723" column="30" lean-forward="true" selection-start-line="1723" selection-start-column="0" selection-end-line="1724" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/lang/Comparable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="95" column="17" lean-forward="false" selection-start-line="95" selection-start-column="17" selection-end-line="95" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/lang/Boolean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="272" column="18" lean-forward="true" selection-start-line="272" selection-start-column="18" selection-end-line="272" selection-end-column="18" />
-          <folding>
-            <element signature="e#9087#9088#0" expanded="false" />
-            <element signature="e#9138#9139#0" expanded="false" />
-            <element signature="e#9728#9729#0" expanded="false" />
-            <element signature="e#9778#9779#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/lang/String.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/lang/Comparable.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/lang/Boolean.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/handler/impl/CaseBugCountAnalyse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="756">
           <caret line="37" column="9" lean-forward="true" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
-          <folding>
-            <element signature="method#getChartData#0;class#CaseBugCountAnalyse#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/quartz/UpdateCaseResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="59" column="28" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2058,7 +2320,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="74" column="23" lean-forward="false" selection-start-line="74" selection-start-column="23" selection-end-line="74" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2067,6 +2328,86 @@
         <state relative-caret-position="378">
           <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/utils/PropertiesUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/controller/mainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="119" column="28" lean-forward="false" selection-start-line="119" selection-start-column="28" selection-end-line="119" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/threshold.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="74" column="13" lean-forward="false" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="231" column="34" lean-forward="false" selection-start-line="231" selection-start-column="34" selection-end-line="231" selection-end-column="34" />
+          <folding>
+            <marker date="1505724953581" expanded="true" signature="1808:1814" ph="..." />
+            <marker date="1505724953581" expanded="true" signature="2971:2985" ph="..." />
+            <marker date="1505724953581" expanded="true" signature="3879:3893" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-config/spring-redis.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" column="29" lean-forward="false" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/utils/HttpRequestUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="143" column="0" lean-forward="true" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/quartz/UpdateCaseResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1100">
+          <caret line="70" column="35" lean-forward="true" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/thresholdConfig.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="42" lean-forward="false" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+          <folding>
+            <marker date="1505702003395" expanded="true" signature="741:747" ph="..." />
+            <marker date="1505702003395" expanded="true" signature="1900:1914" ph="..." />
+            <marker date="1505702003395" expanded="true" signature="2808:2822" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
