@@ -111,6 +111,7 @@ $(document).ready(function(){
                         $('#moduleNodeTree').append('找不到数据')
                     }
                 })
+                $('#moduleNodeTree').empty()
                 $('#box1View').empty()
                 $('#box2View').empty()
             }
@@ -157,36 +158,38 @@ $(document).ready(function(){
     $("#form_wizard .button-submit").click(function(b){
         b.preventDefault();
         bootbox.setDefaults({locale:"zh_CN"});
-        bootbox.confirm("确定所选信息无误，开始分析吗?",function(){
-            $('#row1').addClass('hide')
-            $('#row2').removeClass('hide')
-            var types=arr.type.split(',')
-            $.each(types,function (index,element) {
-                if(element=='severity'){
-                    getCaseAnalyseResult({planName:arr.planName,version:arr.planVersion,node:String(arr.node),type:element}, function (res) {
-                        $('#row2').children('div').eq(0).removeClass('hide')
-                        drawSeverity(res)
-                    })
-                }
-                else if(element=='severityCompare'){
-                    getCaseAnalyseResult({planName:arr.planName,version:arr.planVersion,node:String(arr.node),type:element}, function (res) {
-                        $('#row2').children('div').eq(1).removeClass('hide')
-                        drawSeverityCompare(res)
-                    })
-                }
-                else if(element=='caseBugCount'){
-                    getCaseAnalyseResult({planName:arr.planName,version:arr.planVersion,node:String(arr.node),type:element}, function (res) {
-                        $('#row2').children('div').eq(2).removeClass('hide')
-                        drawCaseBugCount(res)
-                    })
-                }
-                else if(element=='caseBugRatioCompare'){
-                    getCaseAnalyseResult({planName:arr.planName,version:arr.planVersion,node:String(arr.node),type:element}, function (res) {
-                        $('#row2').children('div').eq(3).removeClass('hide')
-                        drawCaseBugRatioCompare(res)
-                    })
-                }
-            })
+        bootbox.confirm("确定所选信息无误，开始分析吗?",function(confirmed){
+            if(confirmed==true){
+                $('#row1').addClass('hide')
+                $('#row2').removeClass('hide')
+                var types=arr.type.split(',')
+                $.each(types,function (index,element) {
+                    if(element=='severity'){
+                        $('#row2').children('div').eq(0).removeClass('hide').find('.chart').append('正在分析...')
+                        getCaseAnalyseResult({planName:arr.planName,version:arr.planVersion,node:String(arr.node),type:element}, function (res) {
+                            drawSeverity(res)
+                        })
+                    }
+                    else if(element=='severityCompare'){
+                        $('#row2').children('div').eq(1).removeClass('hide').find('.chart').append('正在分析...')
+                        getCaseAnalyseResult({planName:arr.planName,version:arr.planVersion,node:String(arr.node),type:element}, function (res) {
+                            drawSeverityCompare(res)
+                        })
+                    }
+                    else if(element=='caseBugCount'){
+                        $('#row2').children('div').eq(2).removeClass('hide').find('.chart').append('正在分析...')
+                        getCaseAnalyseResult({planName:arr.planName,version:arr.planVersion,node:String(arr.node),type:element}, function (res) {
+                            drawCaseBugCount(res)
+                        })
+                    }
+                    else if(element=='caseBugRatioCompare'){
+                        $('#row2').children('div').eq(3).removeClass('hide').find('.chart').append('正在分析...')
+                        getCaseAnalyseResult({planName:arr.planName,version:arr.planVersion,node:String(arr.node),type:element}, function (res) {
+                            drawCaseBugRatioCompare(res)
+                        })
+                    }
+                })
+            }
         })
     }).hide()
 });

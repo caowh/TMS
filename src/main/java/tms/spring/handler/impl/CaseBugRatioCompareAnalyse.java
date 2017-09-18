@@ -52,7 +52,12 @@ public class CaseBugRatioCompareAnalyse implements CaseAnalyseHandler {
         for(Map<String,Integer> caseBugRatioMap: caseBugRatioList){
             List<Integer> list=new ArrayList<Integer>();
             for(String suiteName:suiteList){
-                int ratio=caseBugRatioMap.get(suiteName);
+                int ratio=0;
+                try {
+                    ratio=caseBugRatioMap.get(suiteName);
+                }catch (Exception e){
+                    //
+                }
                 list.add(ratio);
             }
             result.add(list);

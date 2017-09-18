@@ -2,7 +2,11 @@ package tms.spring.shiro.cache;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.ScanParams;
 import redis.clients.jedis.exceptions.JedisConnectionException;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by user on 2017/8/8.
@@ -20,7 +24,7 @@ public class JedisManager {
             if("Could not get a resource from the pool".equalsIgnoreCase(message)){
                 System.out.println("++++++++++请检查你的redis服务++++++++");
                 System.out.println("|①.请检查是否安装redis服务");
-                System.out.println("|②.请检查redis 服务是否启动。启动口诀[安装目录中的redis-server.exe，双击即可，如果有错误，请用CMD方式启动，怎么启动百度，或者加QQ群。]|");
+                System.out.println("|②.请检查redis 服务是否启动。启动口诀[安装目录中的redis-server.exe，双击即可，如果有错误，请用CMD方式启动]");
                 System.out.println("|③.请检查redis启动是否带配置文件启动，也就是是否有密码，是否端口有变化（默认6379）。解决方案，参考第二点。如果需要配置密码和改变端口，请修改spring-cache.xml配置。|");
                 System.out.println("项目退出中....");
                 System.exit(0);//停止项目
@@ -95,6 +99,23 @@ public class JedisManager {
         } finally {
             returnResource(jedis, isBroken);
         }
+    }
+
+    public List<String> getKeysByPattern(int dbIndex,String pattern)throws Exception{
+        Jedis jedis = null;
+        boolean isBroken = false;
+        List<String> list = new ArrayList<String>();
+        try {
+            jedis = getJedis();
+            jedis.select(dbIndex);
+            list.addAll(jedis.scan("0",new ScanParams().match(pattern).count(jedis.dbSize().intValue())).getResult());
+        } catch (Exception e) {
+            isBroken = true;
+            throw e;
+        } finally {
+            returnResource(jedis, isBroken);
+        }
+        return list;
     }
 
     public JedisPool getJedisPool() {

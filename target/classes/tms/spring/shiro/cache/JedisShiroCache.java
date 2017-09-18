@@ -4,9 +4,12 @@ import org.apache.shiro.cache.Cache;
 import org.apache.shiro.cache.CacheException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import redis.clients.util.SafeEncoder;
 import tms.spring.utils.SerializeUtil;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -21,7 +24,7 @@ public class JedisShiroCache<K, V> implements Cache<K, V> {
     /**
      * Redis 分片(分区)，也可以在配置文件中配置
      */
-    private static final int DB_INDEX = 1;
+    private static final int DB_INDEX = 2;
 
     private JedisManager jedisManager;
 
@@ -30,7 +33,6 @@ public class JedisShiroCache<K, V> implements Cache<K, V> {
     private static Logger logger = LoggerFactory.getLogger(JedisShiroCache.class);
 
 
-    static final Class<JedisShiroCache> SELF = JedisShiroCache.class;
     public JedisShiroCache(String name, JedisManager jedisManager) {
         this.name = name;
         this.jedisManager = jedisManager;
@@ -50,7 +52,7 @@ public class JedisShiroCache<K, V> implements Cache<K, V> {
     }
 
     public V get(K key) throws CacheException {
-        byte[] byteKey = SerializeUtil.serialize(buildCacheKey(key));
+        byte[] byteKey = SafeEncoder.encode(buildCacheKey(key));
         byte[] byteValue = new byte[0];
         try {
             byteValue = jedisManager.getValueByKey(DB_INDEX, byteKey);
@@ -63,7 +65,7 @@ public class JedisShiroCache<K, V> implements Cache<K, V> {
     public V put(K key, V value) throws CacheException {
         V previos = get(key);
         try {
-            jedisManager.saveValueByKey(DB_INDEX, SerializeUtil.serialize(buildCacheKey(key)),
+            jedisManager.saveValueByKey(DB_INDEX, SafeEncoder.encode(buildCacheKey(key)),
                     SerializeUtil.serialize(value), -1);
         } catch (Exception e) {
             logger.error("put cache throw exception",e);
@@ -74,12 +76,27 @@ public class JedisShiroCache<K, V> implements Cache<K, V> {
     public V remove(K key) throws CacheException {
         V previos = get(key);
         try {
-            jedisManager.deleteByKey(DB_INDEX, SerializeUtil.serialize(buildCacheKey(key)));
+            jedisManager.deleteByKey(DB_INDEX, SafeEncoder.encode(buildCacheKey(key)));
         } catch (Exception e) {
             logger.error("remove cache  throw exception",e);
 
         }
         return previos;
+    }
+
+    public List<String> scan(String pattern){
+        List<String> list = new ArrayList<String>();
+        try {
+            List<String> results=jedisManager.getKeysByPattern(DB_INDEX,REDIS_SHIRO_CACHE + getName() + ":"+pattern);
+            if(results!=null&&results.size()>0){
+                for(String result:results){
+                    list.add(result.replace(REDIS_SHIRO_CACHE + getName() + ":",""));
+                }
+            }
+        } catch (Exception e) {
+            logger.error("scan cache  throw exception",e);
+        }
+        return list;
     }
 
     public void clear() throws CacheException {

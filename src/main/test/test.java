@@ -91,14 +91,7 @@ public class test {
 
     @Test
     public void testExe(){
-        try
-        {
-            Runtime mt =Runtime.getRuntime();
-            mt.exec("cmd.exe");
-        } catch(Exception e)
-        {
-            System.out.println(e);
-        }
+
 
     }
 }

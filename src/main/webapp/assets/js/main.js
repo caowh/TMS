@@ -7,11 +7,8 @@ function logout() {
         url: "/main/logout.do",
         dataType: "json",
         success: function(res){
-            if(res.code===1){
-                window.location.href="/login.jsp"
-            }else {
-                alert(res.message)
-            }
+            console.log(res)
+            window.location.href="/login.jsp"
         }
     })
 }

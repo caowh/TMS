@@ -33,14 +33,14 @@ public class UpdateCaseResult {
          * 所有统计完毕，更新计划
          * 清除要使用的缓存
          * */
-//        getTestPlanList();
-//        getPlanExecuteCount();
-//        getPlanSeverity();
-//        getTestSuites();
-//        getSuiteExecuteCount();
-//        getSuiteSeverity();
-//        cache.updatePlanList();
-//        cache.clearUselessCache();
+        getTestPlanList(true);
+        getPlanExecuteCount();
+        getPlanSeverity();
+        getTestSuites();
+        getSuiteExecuteCount();
+        getSuiteSeverity();
+        cache.updatePlanList();
+        cache.clearUselessCache();
         logger.info("Finished Update CaseResult Count!");
     }
 
@@ -131,36 +131,39 @@ public class UpdateCaseResult {
         logger.info("Finished Get Plan CaseExecuteCount!");
     }
 
-    private void getTestPlanList() {
+    private void getTestPlanList(Boolean bl) {
         logger.info("Begin Get getTestPlanList!");
         List<Map> testPlans=HttpRequestUtils.httpGet(Constant.TESTLINKSERVICE_ADDRESS+"getAllTestPlan", List.class);
         if(testPlans!=null&&testPlans.size()>0){
             cache.getTestPlanListAll().addAll(testPlans);
-            List<Map> testPlanList=new ArrayList<Map>();
-            Map<String,Map> testPlanMap=new HashMap();
-            for (Map testPlan:testPlans){
-                String planName=String.valueOf(testPlan.get("name"));
-                String[] planArr=planName.split("_");
-                float versionNumber=Float.parseFloat(planArr[1].replace("v",""));
-                String name=planArr[0];
-                Map map=testPlanMap.get(name);
-                if(map!=null){
-                    String existPlanName=String.valueOf(map.get("name"));
-                    float existVersion=Float.parseFloat(existPlanName.split("_")[1].replace("v",""));
-                    if(existVersion<versionNumber){
+            if(bl){
+                List<Map> testPlanList=new ArrayList<Map>();
+                Map<String,Map> testPlanMap=new HashMap();
+                for (Map testPlan:testPlans){
+                    String planName=String.valueOf(testPlan.get("name"));
+                    String[] planArr=planName.split("_");
+                    float versionNumber=Float.parseFloat(planArr[1].replace("v",""));
+                    String name=planArr[0];
+                    Map map=testPlanMap.get(name);
+                    if(map!=null){
+                        String existPlanName=String.valueOf(map.get("name"));
+                        float existVersion=Float.parseFloat(existPlanName.split("_")[1].replace("v",""));
+                        if(existVersion<versionNumber){
+                            testPlanMap.put(name,testPlan);
+                        }
+                    }else {
                         testPlanMap.put(name,testPlan);
                     }
-                }else {
-                    testPlanMap.put(name,testPlan);
                 }
+                Iterator<Map.Entry<String,Map>> iterator=testPlanMap.entrySet().iterator();
+                while (iterator.hasNext()){
+                    Map.Entry<String,Map> entry=iterator.next();
+                    testPlanList.add(entry.getValue());
+                }
+                cache.getTestPlanList().addAll(testPlanList);
+            }else {
+                cache.getTestPlanList().addAll(testPlans);
             }
-            Iterator<Map.Entry<String,Map>> iterator=testPlanMap.entrySet().iterator();
-            while (iterator.hasNext()){
-                Map.Entry<String,Map> entry=iterator.next();
-                testPlanList.add(entry.getValue());
-            }
-            cache.getTestPlanList().addAll(testPlanList);
-//            logger.info(JSON.toJSONString(testPlans));
         }
         logger.info("Finished Get getTestPlanList!");
     }

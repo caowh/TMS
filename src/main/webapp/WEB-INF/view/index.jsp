@@ -216,29 +216,6 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="pages_user_profile.html">
-                            <i class="icon-user">
-                            </i>
-                            我的资料
-                        </a>
-                    </li>
-                    <li>
-                        <a href="pages_calendar.html">
-                            <i class="icon-calendar">
-                            </i>
-                            我的日历
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="icon-tasks">
-                            </i>
-                            我的任务
-                        </a>
-                    </li>
-                    <li class="divider">
-                    </li>
-                    <li>
                         <a href="#" onclick="logout()">
                             <i class="icon-key">
                             </i>

@@ -87,7 +87,7 @@ public class mainController {
         Map<String, Object> map = new HashMap<String, Object>();
         logger.info("begin getSupportType!");
         try {
-            List<String> types=caseAnalyseService.getSupportType(jsonMap.get("version"));
+            List<String> types=caseAnalyseService.getSupportType(jsonMap);
             map.put("code", Constant.CODE_SUCCESS);
             map.put("result", types);
         }catch (Exception e){
