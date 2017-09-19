@@ -87,8 +87,7 @@ public class CaseBugRatioCompareAnalyse implements CaseAnalyseHandler {
                 plan.setType(PlanDataType.EXECUTE.name());
                 Map executeMap=(Map)caseAnalyseUtil.getResult(plan);
                 int caseCount=Integer.parseInt(String.valueOf(executeMap.get("pass")))
-                        +Integer.parseInt(String.valueOf(executeMap.get("fail")))
-                        +Integer.parseInt(String.valueOf(executeMap.get("lock")));
+                        +Integer.parseInt(String.valueOf(executeMap.get("fail")));
                 plan.setType(PlanDataType.SEVERITY.name());
                 Map severityMap=(Map)caseAnalyseUtil.getResult(plan);
                 int bugCount=Integer.parseInt(String.valueOf(severityMap.get("total")));

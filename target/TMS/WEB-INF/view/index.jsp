@@ -295,6 +295,8 @@
                 </button>
                 <button id="warning4" class="btn btn-warning btn-notification close" data-type="warning" data-text="<strong>警告</strong><br>请至少选择一种分析种类！">
                 </button>
+                <button id="warning5" class="btn btn-success btn-notification close" data-type="success" data-text="<strong>提示</strong><br>成功收藏本次分析方式！">
+                </button>
             </div>
             <div id="row1" class="row">
                 <div class="col-md-12">
@@ -540,6 +542,53 @@
                     </div>
                 </div>
             </div>
+            <div id="row3" class="row row-bg hide">
+                <div class="col-md-4">
+                    <div class="statbox widget box box-shadow">
+                        <div class="widget-content">
+                            <div class="visual blue">
+                                <i class="icon-camera">
+                                </i>
+                            </div>
+                            <div class="title">
+                                系统名称
+                            </div>
+                            <div class="value">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="statbox widget box box-shadow">
+                        <div class="widget-content">
+                            <div class="visual green">
+                                <i class="icon-globe">
+                                </i>
+                            </div>
+                            <div class="title">
+                                版本号
+                            </div>
+                            <div class="value">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="statbox widget box box-shadow">
+                        <div class="widget-content">
+                            <div class="visual yellow">
+                                <i class="icon-desktop">
+                                </i>
+                            </div>
+                            <div class="title">
+                                子模块名称
+                            </div>
+                            <div class="value">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div id="row2" class="row hide">
                 <div class="col-md-12 hide">
                     <div class="widget box">
@@ -636,6 +685,71 @@
                             <div class="chart" id="caseBugRatioCompare">
 
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 hide">
+                    <div class="widget box">
+                        <div class="widget-header">
+                            <h4>
+                                <i class="icon-reorder">
+                                </i>
+                                模块问题数版本对比
+                            </h4>
+                            <div class="light"><p id="bugCountCompare-light"></p></div>
+                            <div class="toolbar no-padding">
+                                <div class="btn-group">
+                      <span class="btn btn-xs widget-collapse">
+                        <i class="icon-angle-down">
+                        </i>
+                      </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget-content">
+                            <div class="chart" id="bugCountCompare">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 hide">
+                    <div class="widget box">
+                        <div class="widget-header">
+                            <h4>
+                                <i class="icon-reorder">
+                                </i>
+                                模块问题与用例数时间变化趋势分析
+                            </h4>
+                            <div class="light"><p id="caseBugTimeChange-light"></p></div>
+                            <div class="toolbar no-padding">
+                                <div class="btn-group">
+                      <span class="btn btn-xs widget-collapse">
+                        <i class="icon-angle-down">
+                        </i>
+                      </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget-content">
+                            <div class="chart" id="caseBugTimeChange">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-actions fluid">
+                <div  id="row4" class="row hide">
+                    <div class="col-md-12">
+                        <div class="col-md-offset-3 col-md-9">
+                            <%--<a href="#" class="btn button-previous">--%>
+                            <%--收藏--%>
+                            <%--</a>--%>
+                            <a href="#" id="collect" class="btn btn-primary">
+                                收藏
+                            </a>
+                            <a href="/main/index.do" class="btn btn-success">
+                                重新选择
+                            </a>
                         </div>
                     </div>
                 </div>

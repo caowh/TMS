@@ -145,9 +145,11 @@ public class CaseAnalyseService {
         if(versions.length>1){
             list.add("severityCompare");
             list.add("caseBugRatioCompare");
+            list.add("bugCountCompare");
         }else {
             list.add("severity");
             list.add("caseBugCount");
+            list.add("caseBugTimeChange");
         }
         return list;
     }

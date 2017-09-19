@@ -66,6 +66,10 @@ $(document).ready(function(){
                 return false
             }
             if($('#firstLi').attr('class')=='active'){
+                $('#moduleNodeTree').empty()
+                $('#box1View').empty()
+                $('#box2View').empty()
+                $('#moduleNodeTree').append('正在加载...')
                 getModuleTree({planName:arr.planName,planVersion:arr.planVersion},function (res) {
                     if(res.code==1){
                         var nodeTree=[];
@@ -95,6 +99,12 @@ $(document).ready(function(){
                                                 else if(type=='caseBugRatioCompare'&&treeNode.children.length>0){
                                                     message='子模块用例问题分布版本对比'
                                                 }
+                                                else if(type=='bugCountCompare'){
+                                                    message='模块问题数版本对比'
+                                                }
+                                                else if(type=='caseBugTimeChange'){
+                                                    message='模块问题与用例数时间变化趋势分析'
+                                                }
                                                 if(message!=''){
                                                     $('#box1View').append('<option value="'+type+'">'+message+'</option>')
                                                 }
@@ -111,9 +121,6 @@ $(document).ready(function(){
                         $('#moduleNodeTree').append('找不到数据')
                     }
                 })
-                $('#moduleNodeTree').empty()
-                $('#box1View').empty()
-                $('#box2View').empty()
             }
             if($('#secondLi').attr('class')=='active'){
                 var treeObj=$.fn.zTree.getZTreeObj("moduleNodeTree")
@@ -162,6 +169,11 @@ $(document).ready(function(){
             if(confirmed==true){
                 $('#row1').addClass('hide')
                 $('#row2').removeClass('hide')
+                $('#row3').removeClass('hide')
+                $('#row4').removeClass('hide')
+                $('#row3 .value').eq(0).html(arr.planName)
+                $('#row3 .value').eq(1).html(arr.version)
+                $('#row3 .value').eq(2).html(arr.nodeName)
                 var types=arr.type.split(',')
                 $.each(types,function (index,element) {
                     if(element=='severity'){
@@ -188,10 +200,26 @@ $(document).ready(function(){
                             drawCaseBugRatioCompare(res)
                         })
                     }
+                    else if(element=='bugCountCompare'){
+                        $('#row2').children('div').eq(4).removeClass('hide').find('.chart').append('正在分析...')
+                        getCaseAnalyseResult({planName:arr.planName,version:arr.planVersion,node:String(arr.node),type:element}, function (res) {
+                            drawBugCountCompare(res)
+                        })
+                    }
+                    else if(element=='caseBugTimeChange'){
+                        $('#row2').children('div').eq(5).removeClass('hide').find('.chart').append('正在分析...')
+                        getCaseAnalyseResult({planName:arr.planName,version:arr.planVersion,node:String(arr.node),type:element}, function (res) {
+                            drawCaseBugTimeChange(res)
+                        })
+                    }
                 })
             }
         })
     }).hide()
+
+    $('#collect').click(function () {
+        $('#warning5').click()
+    })
 });
 
 function selectPlanNameAndVersion(obj) {

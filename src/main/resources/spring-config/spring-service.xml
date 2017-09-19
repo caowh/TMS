@@ -10,6 +10,8 @@
                 <entry key="severityCompare" value-ref="severityCompareAnalyse"></entry>
                 <entry key="caseBugCount" value-ref="caseBugCountAnalyse"></entry>
                 <entry key="caseBugRatioCompare" value-ref="caseBugRatioCompareAnalyse"></entry>
+                <entry key="bugCountCompare" value-ref="bugCountCompareAnalyse"></entry>
+                <entry key="caseBugTimeChange" value-ref="caseBugTimeChangeAnalyse"></entry>
             </map>
         </property>
     </bean>

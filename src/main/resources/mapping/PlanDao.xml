@@ -4,6 +4,10 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="tms.spring.dao.PlanDao">
 
+    <resultMap id="PlanResults" type="java.lang.String">
+        <id column="result" property="result"/>
+    </resultMap>
+
     <insert id="insertPlans" parameterType="java.util.List" useGeneratedKeys="true">
         INSERT INTO t_plan(name,version,node,type,result)
         VALUES
@@ -12,4 +16,9 @@
             #{plan.node,jdbcType=VARCHAR},#{plan.type,jdbcType=VARCHAR},#{plan.result,jdbcType=VARCHAR})
         </foreach>
     </insert>
+
+    <select id="selectPlanResults" parameterType="tms.spring.entity.Plan" resultMap="PlanResults">
+        SELECT result FROM t_plan WHERE name = #{name} AND version = #{version} AND node = #{node} AND type = #{type}
+        ORDER BY id;
+    </select>
 </mapper>

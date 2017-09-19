@@ -6,6 +6,7 @@ import tms.spring.entity.Plan;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.Assert.*;
 
@@ -23,6 +24,17 @@ public class PlanDaoTest extends BaseDaoTest{
 //        List<Plan> plans=new ArrayList<Plan>();
 //        plans.add(plan);
 //        planDao.insertPlans(plans);
+    }
+
+    @Test
+    public void selectPlanResults(){
+        Plan plan=new Plan();
+        plan.setName("GVML规范");
+        plan.setVersion("v1.0");
+        plan.setNode("0");
+        plan.setType("SEVERITY");
+        List<String> results=planDao.selectPlanResults(plan);
+        assertTrue(results.size()>0);
     }
 
 }

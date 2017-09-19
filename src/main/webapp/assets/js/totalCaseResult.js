@@ -580,6 +580,187 @@ function drawCaseBugRatioCompare(res) {
         $('#caseBugRatioCompare').html(res.message)
     }
 }
+function drawBugCountCompare(res) {
+    if(res.code==1){
+        var eData = res.result[0];
+        var sData = res.result[1];
+        var eMarkLineData = [];
+        var sMarkLineData = [];
+        $.each(sData,function (i,element) {
+            sMarkLineData.push([{
+                xAxis: i - 1,
+                yAxis: sData[i - 1],
+                value: sData[i] - sData[i-1]
+            }, {
+                xAxis: i,
+                yAxis: sData[i]
+            }]);
+        })
+        $.each(eData,function (i,element) {
+            eMarkLineData.push([{
+                xAxis: i - 1,
+                yAxis: eData[i - 1],
+                value: eData[i] - eData[i-1]
+            }, {
+                xAxis: i,
+                yAxis: eData[i]
+            }]);
+        })
+        var option = {
+            title: {
+                text: '模块问题数版本对比',
+                subtext:res.time,
+                x:'center'
+            },
+            tooltip : {
+                trigger: 'axis'
+            },
+            grid: {
+                containLabel: true,
+                y2:0
+            },
+            legend: {
+                orient : 'vertical',
+                x : 'left',
+                data:['问题数','执行用例数']
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    dataView: {readOnly: true},
+                    saveAsImage: {}
+                }
+            },
+            xAxis: {
+                data: res.versions,
+                name: '版本'
+            },
+            yAxis: {
+                name: '问题数',
+                nameLocation:"middle",
+                nameGap:50
+            },
+            series: [
+                {
+                type: 'line',
+                data:sData,
+                name:'问题数',
+                markLine: {
+                    smooth: true,
+                    effect: {
+                        show: true
+                    },
+                    distance: 10,
+                    label: {
+                        normal: {
+                            position: 'middle'
+                        }
+                    },
+                    data: sMarkLineData
+                }
+            },
+                {
+                    type: 'line',
+                    data:eData,
+                    name:'执行用例数',
+                    markLine: {
+                        smooth: true,
+                        effect: {
+                            show: true
+                        },
+                        distance: 10,
+                        label: {
+                            normal: {
+                                position: 'middle'
+                            }
+                        },
+                        data: eMarkLineData
+                    }
+                }
+            ]
+        };
+        var myChart = echarts.init(document.getElementById('bugCountCompare'));
+        myChart.setOption(option);
+        if(res.pass){
+            $('#bugCountCompare-light').addClass('light-normal');
+        }else {
+            $('#bugCountCompare-light').addClass('light-alarm');
+        }
+    }else {
+        $('#bugCountCompare').html(res.message)
+    }
+}
+function drawCaseBugTimeChange(res) {
+    if(res.code==1){
+        var option = {
+            title: {
+                text: '模块问题数版本对比',
+                subtext:res.time,
+                x:'center'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            grid: {
+                containLabel: true,
+                y2:0
+            },
+            legend: {
+                orient : 'vertical',
+                x : 'left',
+                data:['问题数','执行用例数']
+            },
+            xAxis: {
+                data: res.times,
+                name:'时间'
+            },
+            yAxis: {
+                name:'数量',
+                splitLine: {
+                    show: false
+                }
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    dataZoom: {
+                        yAxisIndex: 'none'
+                    },
+                    dataView: {readOnly: true},
+                    saveAsImage: {}
+                }
+            },
+            dataZoom: {
+                    type: 'inside',
+                    xAxisIndex: 0,
+                    filterMode: 'empty',
+                    start: 0,
+                    end: 100
+                },
+            series: [
+                {
+                    name: '问题数',
+                    type: 'line',
+                    data: res.result[1]
+                },
+                {
+                    name: '执行用例数',
+                    type: 'line',
+                    data:res.result[0]
+                }
+            ]
+        };
+        var myChart = echarts.init(document.getElementById('caseBugTimeChange'));
+        myChart.setOption(option);
+        if(res.pass){
+            $('#caseBugTimeChange-light').addClass('light-normal');
+        }else {
+            $('#caseBugTimeChange-light').addClass('light-alarm');
+        }
+    }else {
+        $('#caseBugTimeChange').html(res.message)
+    }
+}
 
 var totalCaseResult={
     init:function (planName) {
