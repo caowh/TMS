@@ -1,3 +1,13 @@
+isLogin(function (res) {
+    if(res.code==1){
+        if(res.result==true){
+            window.location.href="/main/index.do"
+        }
+    }else {
+        console.log(res.message)
+    }
+});
+
 var Login=function(){var b=function(){if($.fn.uniform){$(":radio.uniform, :checkbox.uniform").uniform()}};
 var c=function(){
     $(".sign-up").click(function(h){

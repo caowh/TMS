@@ -63,6 +63,23 @@ function getSupportType(data,fun) {
 
 
 /**
+ * 判断用户是否已登录
+ *@fun：回调函数，支持的分析类型
+ *     {
+            version:"v1.0,v2.0"
+        }
+ * */
+function isLogin(fun) {
+    $.ajax({
+        type: "get",
+        url: "/before/isLogin.do",
+        dataType: "json",
+        async:false,
+        success: fun
+    })
+}
+
+/**
  * 修改阈值的方法
  * 参数，fun：回调函数，修改阈值的方法
  *     {

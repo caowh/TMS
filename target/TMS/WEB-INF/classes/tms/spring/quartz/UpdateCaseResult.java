@@ -33,7 +33,7 @@ public class UpdateCaseResult {
          * 所有统计完毕，更新计划
          * 清除要使用的缓存
          * */
-//        getTestPlanList(false);
+//        getTestPlanList(true);
 //        getPlanExecuteCount();
 //        getPlanSeverity();
 //        getTestSuites();
@@ -45,7 +45,6 @@ public class UpdateCaseResult {
     }
 
     private void getSuiteSeverity() {
-        logger.info("Begin Get Suite Severity!");
         Iterator<Map.Entry<String, List<String>>> entries = cache.getPlanSuiteMap().entrySet().iterator();
         while (entries.hasNext()) {
             Map.Entry<String, List<String>> entry = entries.next();
@@ -62,11 +61,9 @@ public class UpdateCaseResult {
                 }
             }
         }
-        logger.info("Finished Get Suite Severity!");
     }
 
     private void getSuiteExecuteCount() {
-        logger.info("Begin Get Suite ExecuteCount!");
         Iterator<Map.Entry<String, List<String>>> entries = cache.getPlanSuiteMap().entrySet().iterator();
         while (entries.hasNext()) {
             Map.Entry<String, List<String>> entry = entries.next();
@@ -83,11 +80,9 @@ public class UpdateCaseResult {
                 }
             }
         }
-        logger.info("Finished Get Suite ExecuteCount!");
     }
 
     private void getTestSuites() {
-        logger.info("Begin Get Plan TestSuites!");
         if (cache.getTestPlanList()!=null&&cache.getTestPlanList().size()>0){
             for (Map testPlan : cache.getTestPlanList()){
                 String planName=String.valueOf(testPlan.get("name"));
@@ -111,11 +106,9 @@ public class UpdateCaseResult {
                 }
             }
         }
-        logger.info("Finished Get Plan TestSuites!");
     }
 
     private void getPlanExecuteCount() {
-        logger.info("Begin Get Plan CaseExecuteCount!");
         if (cache.getTestPlanList()!=null&&cache.getTestPlanList().size()>0){
             for (Map testPlan : cache.getTestPlanList()){
                 String planName=String.valueOf(testPlan.get("name"));
@@ -128,11 +121,9 @@ public class UpdateCaseResult {
                 }
             }
         }
-        logger.info("Finished Get Plan CaseExecuteCount!");
     }
 
     private void getTestPlanList(Boolean bl) {
-        logger.info("Begin Get getTestPlanList!");
         List<Map> testPlans=HttpRequestUtils.httpGet(Constant.TESTLINKSERVICE_ADDRESS+"getAllTestPlan", List.class);
         if(testPlans!=null&&testPlans.size()>0){
             cache.getTestPlanListAll().addAll(testPlans);
@@ -165,11 +156,9 @@ public class UpdateCaseResult {
                 cache.getTestPlanList().addAll(testPlans);
             }
         }
-        logger.info("Finished Get getTestPlanList!");
     }
 
     private void getPlanSeverity(){
-        logger.info("Begin Get Plan CaseSeverity!");
         if (cache.getTestPlanList()!=null&&cache.getTestPlanList().size()>0){
              for (Map testPlan : cache.getTestPlanList()){
                 String planName=String.valueOf(testPlan.get("name"));
@@ -182,6 +171,5 @@ public class UpdateCaseResult {
                 }
             }
         }
-        logger.info("Finished Get Plan CaseSeverity!");
     }
 }

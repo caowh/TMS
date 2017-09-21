@@ -1,5 +1,6 @@
 package tms.spring.controller;
 
+import org.apache.shiro.SecurityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -167,5 +168,24 @@ public class LoginController {
         }
     }
 
+    @RequestMapping(value = "isLogin")
+    @ResponseBody
+    public Map<String, Object> isLogin(){
+        Map<String, Object> map = new HashMap<String, Object>();
+        try {
+            Object userName=SecurityUtils.getSubject().getPrincipal();
+            if(userName!=null){
+                map.put("result",true);
+            }else {
+                map.put("result",false);
+            }
+            map.put("code",Constant.CODE_SUCCESS);
+        }catch (Exception e){
+            logger.error("判断是否登录发生异常：%s",e.getMessage());
+            map.put("code",Constant.CODE_FAILED);
+            map.put("message",e.getMessage());
+        }
+        return map;
+    }
 
 }

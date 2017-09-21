@@ -694,7 +694,7 @@ function drawCaseBugTimeChange(res) {
     if(res.code==1){
         var option = {
             title: {
-                text: '模块问题数版本对比',
+                text: '模块问题与用例数时间变化趋势分析',
                 subtext:res.time,
                 x:'center'
             },

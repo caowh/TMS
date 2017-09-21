@@ -35,6 +35,8 @@
     </script>
     <script type="text/javascript" src="/plugins/nprogress/nprogress.js">
     </script>
+    <script type="text/javascript" src="/assets/js/data.js">
+    </script>
     <script type="text/javascript" src="/assets/js/login.js">
     </script>
     <script type="text/javascript" src="/assets/js/all.js"></script>

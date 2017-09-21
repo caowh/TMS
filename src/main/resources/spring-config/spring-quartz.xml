@@ -19,11 +19,11 @@
 		</property>
 		<!-- 配置该触发器,在第一次启动之前等待时间,以毫秒为单位 -->
 		<property name="startDelay">
-			<value>5000</value>
+			<value>60000</value>
 		</property>
 		<!--配置启动任务间隔时间,以毫秒为单位-->
 		<property name="repeatInterval">
-			<value>7200000</value>
+			<value>14400000</value>
 		</property>
 	</bean>
 
