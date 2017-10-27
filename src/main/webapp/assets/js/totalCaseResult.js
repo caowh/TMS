@@ -327,7 +327,7 @@ function drawSeverityCompare(res) {
                     x:'center'
                 },
                 tooltip: {
-                    trigger: 'axis'
+                    trigger: 'axis',
                 },
                 dataZoom:
                     {
@@ -509,7 +509,8 @@ function drawCaseBugRatioCompare(res) {
                 x:'center'
             },
             tooltip: {
-                trigger: 'axis'
+                trigger: 'axis',
+                formatter: '{b}<br/>{a0}: {c0}%<br/>{a1}: {c1}%'
             },
             dataZoom:
                 {
@@ -558,12 +559,28 @@ function drawCaseBugRatioCompare(res) {
                 type:'line',
                 data:res.result[index],
                 markPoint: {
+                    itemStyle: {
+                        normal: {
+                            label: {
+                                show: true,
+                                formatter: '{c}%'
+                            }
+                        }
+                    },
                     data: [
                         {type: 'max', name: '最大值'},
                         {type: 'min', name: '最小值'}
                     ]
                 },
                 markLine: {
+                    itemStyle: {
+                        normal: {
+                            label: {
+                                show: true,
+                                formatter: '{c}%'
+                            }
+                        }
+                    },
                     data: [
                         {type: 'average', name: '平均值'}
                     ]

@@ -2,6 +2,8 @@ package tms.spring.cache;
 
 import com.alibaba.fastjson.JSON;
 import org.apache.shiro.cache.Cache;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import tms.spring.dao.PlanDao;
@@ -20,6 +22,8 @@ import java.util.Map;
  */
 @Component
 public class CaseResultCountCache {
+
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private JedisCacheManager cacheManager;
@@ -125,7 +129,11 @@ public class CaseResultCountCache {
                 }
             }
             if(plans!=null&&plans.size()>0){
-                planDao.insertPlans(plans);
+                try{
+                    planDao.insertPlans(plans);
+                }catch (Exception e){
+                    logger.error("insert plans into mysql throw exception:"+e);
+                }
             }
         }
     }

@@ -6,7 +6,9 @@ import org.apache.http.HttpStatus;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.cookie.Cookie;
 import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.BasicCookieStore;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
@@ -15,6 +17,8 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.net.URLDecoder;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by user on 2017/8/8.
@@ -164,5 +168,30 @@ public class HttpRequestUtils {
 
         return jsonResult;
 
+    }
+
+    public static List<String> getCookies(String url){
+        List<String> list = new ArrayList<String>();
+        try {
+            BasicCookieStore cookieStore = new BasicCookieStore();
+            CloseableHttpClient httpClient = HttpClients.custom()
+                    .setDefaultCookieStore(cookieStore)
+                    .build();
+            HttpGet request = new HttpGet(url);
+            CloseableHttpResponse response = httpClient.execute(request);
+            if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+                List<Cookie> cookies = cookieStore.getCookies();
+                if (!cookies.isEmpty()) {
+                    for (int i = 0; i < cookies.size(); i++) {
+                        list.add(cookies.get(i).getValue());
+                    }
+                }
+            }else {
+                logger.error("get请求获取cookies失败:" + url);
+            }
+        }catch (IOException e) {
+            logger.error("get请求获取cookies失败:" + url, e);
+        }
+        return list;
     }
 }

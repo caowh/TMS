@@ -55,6 +55,7 @@ public class LoginService {
         }
         UsernamePasswordToken token = new UsernamePasswordToken(username, ShiroFilterUtils.encryptPassword(password));
         Subject subject = SecurityUtils.getSubject();
+        subject.getSession();
         token.setRememberMe(remember);
         subject.login(token);
     }

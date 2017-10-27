@@ -34,6 +34,9 @@ public class UpdateCaseResult {
          * 清除要使用的缓存
          * */
 //        getTestPlanList(true);
+//        /**
+//         * true：只刷新最新版本，false：刷新所有版本
+//         * */
 //        getPlanExecuteCount();
 //        getPlanSeverity();
 //        getTestSuites();

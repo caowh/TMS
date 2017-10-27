@@ -118,6 +118,7 @@ $(document).ready(function(){
                         };
                         $.fn.zTree.init($("#moduleNodeTree"), setting, nodeTree);
                     }else {
+                        $('#moduleNodeTree').empty()
                         $('#moduleNodeTree').append('找不到数据')
                     }
                 })
