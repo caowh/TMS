@@ -82,7 +82,7 @@ public class UserDaoTest extends BaseDaoTest{
         User user=new User();
         user.setLastLoginTime(new Date());
         user.setEmail("1240597349@qq.com");
-        user.setPassword("admin");
+        user.setPassword("47a584b728e69533311a76ff05e8dc01");
         userDao.updatePasswordByEmail(user);
     }
 }

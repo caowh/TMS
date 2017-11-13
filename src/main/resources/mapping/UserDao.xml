@@ -15,7 +15,11 @@
     </resultMap>
 
     <select id="selectUserByName" parameterType="java.lang.String" resultType="tms.spring.entity.User">
-        SELECT * FROM t_user WHERE username = #{name,jdbcType=VARCHAR};
+    SELECT * FROM t_user WHERE username = #{name,jdbcType=VARCHAR};
+</select>
+
+    <select id="selectUserById" parameterType="java.lang.Long" resultType="tms.spring.entity.User">
+        SELECT * FROM t_user WHERE id = #{id};
     </select>
 
     <select id="selectUserByEmail" parameterType="java.lang.String" resultType="tms.spring.entity.User">

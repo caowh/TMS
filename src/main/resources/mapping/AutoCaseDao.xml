@@ -49,4 +49,10 @@
         SELECT * FROM t_autocase WHERE id = #{id};
     </select>
 
+    <update id="updateAutoCase" parameterType="tms.spring.entity.AutoCase">
+        UPDATE t_autocase SET describes = #{describes,jdbcType=VARCHAR} , case_id = #{case_id,jdbcType=VARCHAR}
+        , updateReason = #{updateReason,jdbcType=VARCHAR} , content = #{content,jdbcType=VARCHAR} WHERE id = #{id}
+    </update>
+
+
 </mapper>

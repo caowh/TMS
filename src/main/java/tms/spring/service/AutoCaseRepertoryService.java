@@ -27,6 +27,7 @@ import tms.spring.utils.CaseAnalyseUtil;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -169,6 +170,20 @@ public class AutoCaseRepertoryService {
             autoCaseHelper.setCaseId(autoCase.getCase_id());
             autoCaseHelper.setDescribe(autoCase.getDescribes());
             autoCaseHelper.setNode(caseAnalyseUtil.selectNodeNameById(autoCase.getVersion(),autoCase.getNode()));
+            autoCaseHelper.setContent(autoCase.getContent());
+            autoCaseHelper.setUpdateReason(autoCase.getUpdateReason());
+            autoCaseHelper.setWriter(autoCase.getWriter());
+            autoCaseHelper.setUploader(userDao.selectUserById(autoCase.getUploaderId()).getUsername());
+            autoCaseHelper.setVersion(autoCase.getVersion());
+            if(autoCase.getType()==1){
+                autoCaseHelper.setType("postman");
+            }else if(autoCase.getType()==2){
+                autoCaseHelper.setType("GVML");
+            }
+            Date date=autoCase.getTime();
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String dateString = formatter.format(date);
+            autoCaseHelper.setTime(dateString);
             list.add(autoCaseHelper);
         }
         return list;
@@ -290,5 +305,39 @@ public class AutoCaseRepertoryService {
             script+=atCases;
         }
         return script;
+    }
+
+    public AutoCaseHelper searchAutoCaseById(String id) throws AutoCaseRepertoryException, CaseAnalysesException {
+        if(id==null||id.equals("")){
+            throw new AutoCaseRepertoryException("输入的id为空！");
+        }
+        AutoCase autoCase=autoCaseDao.selectById(Long.parseLong(id));
+        if(autoCase==null){
+            throw new AutoCaseRepertoryException("id不存在！");
+        }
+        List<AutoCase> autoCases=new ArrayList<AutoCase>();
+        autoCases.add(autoCase);
+        return convertToAutoCaseHelper(autoCases).get(0);
+    }
+
+
+    public void updateGVMLAutoCase(String caseId, String describe, String content, String updateReason,String id) throws AutoCaseRepertoryException {
+        AutoCaseConvertHandler handler=new GVMLAutoCaseConvert();
+        List<AutoCase> autoCases=handler.stringToAutoCase(content);
+        if(autoCases==null||autoCases.size()!=1){
+            throw new AutoCaseRepertoryException("修改的内容检测不通过！");
+        }
+        if(!autoCases.get(0).getCase_id().equals(caseId)){
+            content=content.replace(autoCases.get(0).getCase_id(),caseId);
+            autoCases.get(0).setCase_id(caseId);
+        }
+        if(!autoCases.get(0).getDescribes().equals(describe)){
+            content=content.replace(autoCases.get(0).getDescribes(),describe);
+            autoCases.get(0).setDescribes(describe);
+        }
+        autoCases.get(0).setUpdateReason(updateReason);
+        autoCases.get(0).setContent(content);
+        autoCases.get(0).setId(Long.parseLong(id));
+        autoCaseDao.updateAutoCase(autoCases.get(0));
     }
 }

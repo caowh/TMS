@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+import tms.spring.entity.AutoCaseHelper;
 import tms.spring.service.AutoCaseRepertoryService;
 import tms.spring.utils.CaseAnalyseUtil;
 import tms.spring.utils.Constant;
@@ -98,7 +99,7 @@ public class autoCaseRepertoryController {
         String ids=request.getParameter("ids");
         String key=autoCaseRepertoryService.saveGVMLExecutePlan(strategy,sendToTestlink,before,statement,planName,ids);
         model.addAttribute("username", SecurityUtils.getSubject().getPrincipal());
-        model.addAttribute("result", "你的执行秘钥为：“"+key+"”，请在GVML专用浏览器访问：http:192.168.4.173:8888/autoCaseRepertory/execute.do进行测试，" +
+        model.addAttribute("result", "你的执行秘钥为：“"+key+"”，请在GVML专用浏览器访问：http://ip:port/autoCaseRepertory/executeGVMLCase.jsp?key="+key+"进行测试，" +
                 "如果浏览器正确，请直接点击！<a href=\"/executeGVMLCase.jsp?key="+key+"\" class=\"btn btn-primary\">执行测试</a>");
         return "autoCaseRepertoryResult";
     }
@@ -123,6 +124,41 @@ public class autoCaseRepertoryController {
             map.put("message",e.getMessage());
         }
         return map;
+    }
+
+
+    @RequestMapping(value = "lookAutoCase")
+    public String lookAutoCase(Model model,@RequestParam("id") String id) {
+        model.addAttribute("username", SecurityUtils.getSubject().getPrincipal());
+        AutoCaseHelper autoCaseHelper=null;
+        try {
+            autoCaseHelper=autoCaseRepertoryService.searchAutoCaseById(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.warn("用例不存在，id:"+id);
+        }
+        model.addAttribute("autoCaseHelper", autoCaseHelper);
+        return "lookAutoCase";
+    }
+
+
+    @RequestMapping(value = "updateAutoCase")
+    public String updateAutoCase(Model model,HttpServletRequest request) {
+        String id=request.getParameter("id");
+        String caseId=request.getParameter("caseId");
+        String describe=request.getParameter("describe");
+        String content=request.getParameter("content");
+        String updateReason=request.getParameter("updateReason");
+        AutoCaseHelper autoCaseHelper=null;
+        try {
+            autoCaseRepertoryService.updateGVMLAutoCase(caseId,describe,content,updateReason,id);
+            autoCaseHelper=autoCaseRepertoryService.searchAutoCaseById(id);
+            model.addAttribute("result", "用例更新成功！");
+        } catch (Exception e) {
+            model.addAttribute("result", "用例更新失败，失败原因："+e.getMessage());
+        }
+        model.addAttribute("autoCaseHelper", autoCaseHelper);
+        return "lookAutoCase";
     }
 
 

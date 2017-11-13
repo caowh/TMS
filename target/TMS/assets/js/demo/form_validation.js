@@ -31,11 +31,13 @@ function searchAllAutoCase() {
                 autoCase['用例id']=autoCaseHelper.caseId
                 autoCase['用例描述']=autoCaseHelper.describe
                 autoCase['子模块']=autoCaseHelper.node
-                autoCase['操作']='<a href="" class="btn btn-xs bs-tooltip"title="Search"> <i class="icon-search"> </i> </a>'
+                autoCase['操作']='<a href="/autoCaseRepertory/lookAutoCase.do?id='+autoCaseHelper.id+'" class="btn btn-xs bs-tooltip" title="Search" target="_blank"> <i class="icon-search"> </i> </a>'
                 data.push(autoCase)
             }
             $('#autoCaseTable').dataTable().fnClearTable();   //将数据清除
-            $('#autoCaseTable').dataTable().fnAddData(data,true);
+            if(result.length>0){
+                $('#autoCaseTable').dataTable().fnAddData(data,true);
+            }
         }else {
             $('#warning4').click();
             console.error(res.message)
@@ -156,7 +158,7 @@ $(document).ready(function(){
             }
         }
         if(ids.length>0){
-            window.location.href="/autoCaseRepertory/prepareExecute.do?ids="+JSON.stringify(ids)
+            window.open("/autoCaseRepertory/prepareExecute.do?ids="+JSON.stringify(ids))
         }else {
             $('#warning5').click()
             return false
