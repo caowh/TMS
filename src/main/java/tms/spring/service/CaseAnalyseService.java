@@ -6,7 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import tms.spring.entity.Plan;
 import tms.spring.entity.PlanHelper;
 import tms.spring.entity.TreeNode;
-import tms.spring.exception.CaseAnalyseException;
+import tms.spring.exception.AutoCaseRepertoryException;
+import tms.spring.exception.CaseAnalysesException;
 import tms.spring.handler.CaseAnalyseHandler;
 import tms.spring.utils.CaseAnalyseUtil;
 import tms.spring.utils.PlanDataType;
@@ -32,14 +33,14 @@ public class CaseAnalyseService {
         this.caseAnalyses = caseAnalyses;
     }
 
-    public Map<String,Object> analyse(Map<String,String> jsonMap) throws CaseAnalyseException {
+    public Map<String,Object> analyse(Map<String,String> jsonMap) throws CaseAnalysesException {
         String type=jsonMap.get("type");
         if(type==null){
-            throw new CaseAnalyseException("请选择要分析类型");
+            throw new CaseAnalysesException("请选择要分析类型");
         }
         CaseAnalyseHandler handler=caseAnalyses.get(type);
         if(handler==null){
-            throw new CaseAnalyseException("输入的分析类型不存在");
+            throw new CaseAnalysesException("输入的分析类型不存在");
         }
         return  handler.analyse(jsonMap);
     }
@@ -54,19 +55,20 @@ public class CaseAnalyseService {
         return getMessage(planName,version);
     }
 
-    public int getCaseTotalCount(Map<String,String> jsonMap) throws CaseAnalyseException {
+    public int getCaseTotalCount(Map<String,String> jsonMap) throws CaseAnalysesException {
         String planName=jsonMap.get("planName");
         String version=jsonMap.get("version");
         String node=jsonMap.get("node");
         String type=jsonMap.get("type");
-        if(planName==null||node==null||type==null){
-            throw new CaseAnalyseException("输入的信息不完善");
+        String detail=jsonMap.get("detail");
+        if(planName==null||node==null||type==null||detail==null){
+            throw new CaseAnalysesException("输入的信息不完善");
         }
         if(version==null||version.equals("")){
             version=caseAnalyseUtil.getNewVersion(planName);
         }
         if(!(type.toUpperCase().equals(PlanDataType.EXECUTE.name())||type.toUpperCase().equals(PlanDataType.SEVERITY.name()))){
-            throw new CaseAnalyseException("输入的类型无法进行统计");
+            throw new CaseAnalysesException("输入的类型无法进行统计");
         }
         Plan plan=new Plan();
         plan.setName(planName);
@@ -74,7 +76,16 @@ public class CaseAnalyseService {
         plan.setNode(node);
         plan.setType(type.toUpperCase());
         Map map=(Map)caseAnalyseUtil.getResult(plan);
-        return Integer.parseInt(String.valueOf(map.get("total")));
+        int result=0;
+        if(detail.contains(",")){
+            String[] details=detail.split(",");
+            for(int i=0;i<details.length;i++){
+                result+=Integer.parseInt(String.valueOf(map.get(details[i])));
+            }
+        }else {
+            result=Integer.parseInt(String.valueOf(map.get(detail)));
+        }
+        return result;
     }
 
     public List<PlanHelper> getPlanHelperList(){
@@ -99,11 +110,27 @@ public class CaseAnalyseService {
         return planHelperList;
     }
 
-    public TreeNode getModuleTree(Map<String, String> jsonMap) throws CaseAnalyseException {
+    public List<String> getPlanNameList(){
+        List<String> list=new ArrayList<String>();
+        List<Map> planList=caseAnalyseUtil.getPlanList();
+        if(planList!=null&&planList.size()>0){
+            for (Map testPlan : planList){
+                String currentPlanName=String.valueOf(testPlan.get("name"));
+                String[] planArr=currentPlanName.split("_");
+                String planName=planArr[0];
+                if(!list.contains(planName)){
+                    list.add(planName);
+                }
+            }
+        }
+        return list;
+    }
+
+    public TreeNode getModuleTree(Map<String, String> jsonMap) throws CaseAnalysesException {
         String planName=jsonMap.get("planName");
         String planVersion=jsonMap.get("planVersion");
         if(planName==null||planVersion==null){
-            throw new CaseAnalyseException("输入的信息不完善");
+            throw new CaseAnalysesException("输入的信息不完善");
         }
         String[] versions=planVersion.split(",");
         Plan plan=new Plan();
@@ -135,11 +162,11 @@ public class CaseAnalyseService {
         return treeUtil.generateTreeNode(root_id);
     }
 
-    public List<String> getSupportType(Map<String,String> jsonMap) throws CaseAnalyseException {
+    public List<String> getSupportType(Map<String,String> jsonMap) throws AutoCaseRepertoryException {
         String version=jsonMap.get("planVersion");
         List<String> list=new ArrayList<String>();
         if(version==null||version.equals("")){
-            throw new CaseAnalyseException("输入的版本号为空");
+            throw new AutoCaseRepertoryException("输入的版本号为空");
         }
         String[] versions=version.split(",");
         if(versions.length>1){

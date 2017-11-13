@@ -43,6 +43,7 @@
 
     <!-- 静态资源的访问 -->
     <mvc:resources location="/assets/css/" mapping="/assets/css/**"/>
+    <mvc:resources location="/assets/css/" mapping="/assets/css/**"/>
     <mvc:resources location="/assets/js/" mapping="/assets/js/**"/>
     <mvc:resources location="/assets/img/" mapping="/assets/img/**"/>
     <mvc:resources location="/bootstrap/" mapping="/bootstrap/**"/>
@@ -52,6 +53,7 @@
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/view/"></property>
         <property name="suffix" value=".jsp"></property>
+        <property name="order" value="0" />
     </bean>
 
     <!-- 文件上传配置 -->

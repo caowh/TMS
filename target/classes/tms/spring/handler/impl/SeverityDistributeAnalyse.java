@@ -4,7 +4,8 @@ import com.alibaba.fastjson.JSON;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import tms.spring.entity.Plan;
-import tms.spring.exception.CaseAnalyseException;
+import tms.spring.exception.AutoCaseRepertoryException;
+import tms.spring.exception.CaseAnalysesException;
 import tms.spring.handler.CaseAnalyseHandler;
 import tms.spring.utils.CaseAnalyseUtil;
 import tms.spring.utils.PlanDataType;
@@ -28,12 +29,12 @@ public class SeverityDistributeAnalyse implements CaseAnalyseHandler {
     @Autowired
     private CaseAnalyseUtil caseAnalyseUtil;
 
-    public Map<String,Object> analyse(Map<String,String> map) throws CaseAnalyseException {
+    public Map<String,Object> analyse(Map<String,String> map) throws CaseAnalysesException {
         Map<String,Object> returnMap=new HashMap<String, Object>();
         String planName=map.get("planName");
         String node=map.get("node");
         if(planName==null||node==null){
-            throw new CaseAnalyseException("输入的分析信息不完善");
+            throw new CaseAnalysesException("输入的分析信息不完善");
         }
         Plan plan=new Plan();
         plan.setName(planName);

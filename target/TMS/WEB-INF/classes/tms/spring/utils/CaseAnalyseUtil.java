@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import tms.spring.cache.CaseResultCountCache;
 import tms.spring.entity.Plan;
-import tms.spring.exception.CaseAnalyseException;
+import tms.spring.exception.CaseAnalysesException;
 
 import java.util.*;
 
@@ -68,14 +68,14 @@ public class CaseAnalyseUtil {
         return versions;
     }
 
-    public Object getResult(Plan plan) throws CaseAnalyseException {
+    public Object getResult(Plan plan) throws CaseAnalysesException {
         String key=JSON.toJSONString(plan);
         Object data=cache.getResult(key);
         if(data!=null){
             return data;
         }else {
             logger.error("get key from redis is null ,key is :"+key);
-            throw new CaseAnalyseException("找不到该数据");
+            throw new CaseAnalysesException("找不到该数据");
         }
     }
 
@@ -103,7 +103,7 @@ public class CaseAnalyseUtil {
         return map;
     }
 
-    public List<Map> getChildSuites(String planName, String version, String node) throws CaseAnalyseException {
+    public List<Map> getChildSuites(String planName, String version, String node) throws CaseAnalysesException {
         List<Map> list=new ArrayList<Map>();
         Plan plan=new Plan();
         plan.setVersion(version);
@@ -149,5 +149,56 @@ public class CaseAnalyseUtil {
             }
         }
         return list;
+    }
+
+    public List<String> getAllDeepCNode(String planName,String node) throws CaseAnalysesException {
+        List<String> list=new ArrayList<String>();
+        String[] planTrueName=planName.split("_");
+        Plan plan=new Plan();
+        plan.setVersion(planTrueName[1]);
+        plan.setName(planTrueName[0]);
+        plan.setNode("0");
+        plan.setType(PlanDataType.SUITES.name());
+        List<Map> testSuites= (List<Map>) getResult(plan);
+        if(testSuites==null||testSuites.size()==0){
+            return list;
+        }
+        getCNodeRecursion(node, list, testSuites);
+        return list;
+    }
+
+    private void getCNodeRecursion(String node, List<String> list, List<Map> testSuites) {
+        for (Map testSuite : testSuites){
+            String currentPNode=String.valueOf(testSuite.get("parent_id"));
+            if(currentPNode.equals(node)){
+                String currentNode=String.valueOf(testSuite.get("id"));
+                if(!list.contains(currentNode)){
+                    list.add(currentNode);
+                    getCNodeRecursion(currentNode,list,testSuites);
+                }
+            }
+        }
+    }
+
+    public String selectNodeNameById(String planName,String node) throws CaseAnalysesException {
+        String name="";
+        String[] planTrueName=planName.split("_");
+        Plan plan=new Plan();
+        plan.setVersion(planTrueName[1]);
+        plan.setName(planTrueName[0]);
+        plan.setNode("0");
+        plan.setType(PlanDataType.SUITES.name());
+        List<Map> testSuites= (List<Map>) getResult(plan);
+        if(testSuites==null||testSuites.size()==0){
+            return name;
+        }
+        for (Map testSuite : testSuites){
+            String currentNode=String.valueOf(testSuite.get("id"));
+            if(node.equals(currentNode)){
+                name=String.valueOf(testSuite.get("name"));
+                break;
+            }
+        }
+        return name;
     }
 }

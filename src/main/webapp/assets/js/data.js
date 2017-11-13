@@ -99,3 +99,24 @@ function modifyThreshold(idname) {
         }
     })
 }
+
+
+
+/**
+ * 查询自动化测试用例
+ * 参数，fun：回调函数，返回符合条件所有的自动化用例
+ *   data  {
+            node:"30,40"
+            planName:"GVML规范_v1.0"
+        }
+ * */
+function searchAutoCase(data,fun) {
+    $.ajax({
+        type: "post",
+        contentType: "application/json; charset=utf-8",
+        url: "/autoCaseRepertory/searchAutoCase.do",
+        data: JSON.stringify(data),
+        dataType: "json",
+        success: fun
+    })
+}

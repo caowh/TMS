@@ -19,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 import tms.spring.entity.TreeNode;
 import tms.spring.service.CaseAnalyseService;
 import tms.spring.service.LoginService;
+import tms.spring.utils.CaseAnalyseUtil;
 import tms.spring.utils.Constant;
 import tms.spring.utils.PropertiesUtil;
 
@@ -41,6 +42,9 @@ public class mainController {
 
     @Autowired
     private CaseAnalyseService caseAnalyseService;
+
+    @Autowired
+    private CaseAnalyseUtil caseAnalyseUtil;
 
     @RequestMapping(value = "index")
     public String index(Model model) {
@@ -123,4 +127,15 @@ public class mainController {
 
         return "thresholdConfig";
     }
+
+    /**
+     * 阈值参数配置
+     */
+    @RequestMapping(value="autoCaseRepertory")
+    public String autoCaseRepertory(Model model) {
+        model.addAttribute("username", SecurityUtils.getSubject().getPrincipal());
+        model.addAttribute("planList", caseAnalyseUtil.getPlanList());
+        return "autoCaseRepertory";
+    }
+
 }

@@ -242,14 +242,14 @@
                     <a href="javascript:void(0);">
                         <i class="icon-dashboard">
                         </i>
-                        系统管理
+                        自动化测试管理
                     </a>
                     <ul class="sub-menu">
                         <li>
                             <a href="/main/index.do">
                                 <i class="icon-bar-chart">
                                 </i>
-                                用例结果分析
+                                分析与统计
                             </a>
                         </li>
                         <li>
@@ -259,9 +259,15 @@
                                 阈值参数配置
                             </a>
                         </li>
+                        <li>
+                            <a href="/main/autoCaseRepertory.do">
+                                <i class="icon-suitcase">
+                                </i>
+                                用例仓库
+                            </a>
+                        </li>
                     </ul>
                 </li>
-
             </ul>
             <div class="sidebar-widget align-center">
                 <div class="btn-group" data-toggle="buttons" id="theme-switcher">
@@ -366,7 +372,7 @@
                                                     <div class="col-md-12">
                                                         <div class="widget box">
                                                             <div class="widget-content">
-                                                                <table class="table table-striped table-bordered table-hover table-checkable datatable">
+                                                                <table id="planDatable" class="table table-striped table-bordered table-hover table-checkable">
                                                                     <thead>
                                                                     <tr>
                                                                         <th class="checkbox-column">

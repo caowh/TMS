@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tms.spring.dao.AutoCaseExecDao">
+
+    <insert id="insert" parameterType="tms.spring.entity.AutoCaseExec" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO t_autocase_exec(planname,isSendToTestlink,ids,content,create_id,statement)
+        VALUES
+            (#{planname,jdbcType=VARCHAR},#{isSendToTestlink,jdbcType=INTEGER},#{ids,jdbcType=VARCHAR},
+            #{content,jdbcType=VARCHAR},#{create_id,jdbcType=BIGINT},#{statement,jdbcType=VARCHAR})
+    </insert>
+
+    <select id="selectMaxId" resultType="java.lang.Long">
+        SELECT max(id) FROM t_autocase_exec;
+    </select>
+
+    <select id="selectById" parameterType="java.lang.Long" resultType="tms.spring.entity.AutoCaseExec">
+        SELECT * FROM t_autocase_exec WHERE id=#{id};
+    </select>
+
+</mapper>

@@ -3,7 +3,8 @@ package tms.spring.handler.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import tms.spring.entity.Plan;
-import tms.spring.exception.CaseAnalyseException;
+import tms.spring.exception.AutoCaseRepertoryException;
+import tms.spring.exception.CaseAnalysesException;
 import tms.spring.handler.CaseAnalyseHandler;
 import tms.spring.utils.CaseAnalyseUtil;
 import tms.spring.utils.PlanDataType;
@@ -25,12 +26,12 @@ public class CaseBugRatioCompareAnalyse implements CaseAnalyseHandler {
     @Autowired
     private CaseAnalyseUtil caseAnalyseUtil;
 
-    public Map<String,Object> analyse(Map<String,String> map) throws CaseAnalyseException {
+    public Map<String,Object> analyse(Map<String,String> map) throws CaseAnalysesException {
         Map<String,Object> returnMap=new HashMap<String, Object>();
         String planName=map.get("planName");
         String node=map.get("node");
         if(planName==null||node==null){
-            throw new CaseAnalyseException("输入的分析信息不完善");
+            throw new CaseAnalysesException("输入的分析信息不完善");
         }
         String versions=map.get("version");
         List<String> versionList;
@@ -40,7 +41,7 @@ public class CaseBugRatioCompareAnalyse implements CaseAnalyseHandler {
             versionList= Arrays.asList(versions.split(","));
         }
         if(versionList==null||versionList.size()<2){
-            throw new CaseAnalyseException("不存在两个及两个以上的版本数据");
+            throw new CaseAnalysesException("不存在两个及两个以上的版本数据");
         }
         List<String> suiteList=new ArrayList<String>();
         List<Map<String,Integer>> caseBugRatioList=new ArrayList<Map<String,Integer>>();
@@ -71,7 +72,7 @@ public class CaseBugRatioCompareAnalyse implements CaseAnalyseHandler {
 
     private Map<String,Integer> getCaseBugRatioAndSuites(String planName, String version, List<Map> childSuites,
                                           Map<String,Object> returnMap, List<String> suiteList
-                                                                        ) throws CaseAnalyseException {
+                                                                        ) throws CaseAnalysesException {
         Map<String,Integer> map=new HashMap<String, Integer>();
         String time="";
         if(childSuites!=null&&childSuites.size()>0){

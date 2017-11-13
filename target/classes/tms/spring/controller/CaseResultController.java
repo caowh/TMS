@@ -9,11 +9,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import tms.spring.exception.CaseAnalyseException;
+import tms.spring.exception.AutoCaseRepertoryException;
+import tms.spring.exception.CaseAnalysesException;
 import tms.spring.service.CaseAnalyseService;
 import tms.spring.utils.Constant;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -49,17 +51,26 @@ public class CaseResultController {
         Map<String,String> map=new HashMap();
         map.put("planName",name);
         map.put("node","0");
+        map.put("detail","total");
         try {
             map.put("type","severity");
             int severityCount=caseAnalyseService.getCaseTotalCount(map);
             map.put("type","execute");
+            int caseTotalCount=caseAnalyseService.getCaseTotalCount(map);
+            map.put("detail","pass,fail");
             int executeCount=caseAnalyseService.getCaseTotalCount(map);
+            map.put("detail","fail");
+            int failCount=caseAnalyseService.getCaseTotalCount(map);
             model.addAttribute("severityCount",severityCount);
+            model.addAttribute("caseTotalCount",caseTotalCount);
             model.addAttribute("executeCount",executeCount);
-        } catch (CaseAnalyseException e) {
+            model.addAttribute("failCount",failCount);
+        } catch (CaseAnalysesException e) {
             logger.error("统计用例总数失败，失败原因："+e.getMessage());
-            model.addAttribute("severityCount",e.getMessage());
-            model.addAttribute("executeCount",e.getMessage());
+            model.addAttribute("severityCount",-1);
+            model.addAttribute("caseTotalCount",-1);
+            model.addAttribute("executeCount",-1);
+            model.addAttribute("failCount",-1);
         }
         return "totalCaseResult";
     }
@@ -77,5 +88,11 @@ public class CaseResultController {
             map.put("message",e.getMessage());
         }
         return map;
+    }
+
+    @RequestMapping(value = "planNameList")
+    @ResponseBody
+    public List<String> planNameList() {
+        return caseAnalyseService.getPlanNameList();
     }
 }

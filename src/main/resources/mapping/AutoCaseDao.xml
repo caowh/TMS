@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tms.spring.dao.AutoCaseDao">
+
+    <resultMap id="AutoCases" type="tms.spring.entity.AutoCase">
+        <id column="id" property="id"/>
+        <id column="case_id" property="case_id"/>
+        <id column="type" property="type"/>
+        <id column="describes" property="describes"/>
+        <id column="version" property="version"/>
+        <id column="node" property="node"/>
+        <id column="updateReason" property="updateReason"/>
+        <id column="content" property="content"/>
+        <id column="writer" property="writer"/>
+        <id column="uploaderId" property="uploaderId"/>
+        <id column="time" property="time"/>
+    </resultMap>
+
+    <resultMap id="AutoCaseTypes" type="java.lang.Integer">
+        <id column="type" property="type"/>
+    </resultMap>
+
+    <insert id="insertsAutoCases" parameterType="java.util.List" useGeneratedKeys="true">
+        INSERT INTO t_autocase(case_id,type,version,node,describes,updateReason,content,writer,uploaderId,time)
+        VALUES
+        <foreach collection="list" item="autoCase" separator=",">
+            (#{autoCase.case_id,jdbcType=VARCHAR},#{autoCase.type,jdbcType=INTEGER},#{autoCase.version,jdbcType=VARCHAR},
+            #{autoCase.node,jdbcType=VARCHAR},#{autoCase.describes,jdbcType=VARCHAR},#{autoCase.updateReason,jdbcType=VARCHAR},
+            #{autoCase.content,jdbcType=VARCHAR},#{autoCase.writer,jdbcType=VARCHAR}
+            ,#{autoCase.uploaderId,jdbcType=BIGINT},#{autoCase.time})
+        </foreach>
+    </insert>
+
+    <select id="selectAutoCases" parameterType="tms.spring.entity.AutoCase" resultMap="AutoCases">
+        SELECT * FROM t_autocase WHERE version = #{version} AND node = #{node} ORDER BY id;
+    </select>
+
+    <select id="selectAutoCaseTypes" parameterType="java.util.List" resultMap="AutoCaseTypes">
+        SELECT type FROM t_autocase WHERE
+        <foreach collection="list" item="id" separator=" ">
+            id = #{id} OR
+        </foreach>
+        id = 0;
+    </select>
+
+    <select id="selectById" parameterType="java.lang.Long" resultType="tms.spring.entity.AutoCase">
+        SELECT * FROM t_autocase WHERE id = #{id};
+    </select>
+
+</mapper>

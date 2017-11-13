@@ -147,6 +147,29 @@
             FormComponents.init();
             var planName="${planName}";
             totalCaseResult.init(planName)
+            $.ajax({
+                url: "/CaseResult/planNameList.do",
+                type: "get",
+                dataType:"json",
+                success: function (data) {
+                    var array=new Array();
+                    for(var i=0;i<data.length;i++){
+                        var item={}
+                        item['id']=data[i]
+                        item['text']=data[i]
+                        array.push(item)
+                    }
+                    $('#moduleList').select2({
+                        data: array,
+                        cache: true,
+                        placeholder:'请选择...'
+                    });
+                    $('#moduleList').change(function () {
+                        var name=$(this).select2("data").id
+                        window.location.href="/CaseResult/total.do?name="+name;
+                    })
+                }
+            })
         });
     </script>
     <script type="text/javascript" src="/assets/js/echarts.min.js"></script>
@@ -169,13 +192,33 @@
                 <li>
                     <div class="summary">
                   <span>
-                    用例总数
+                    设计用例总数
                   </span>
                         <h3>
-                            ${executeCount}
+                            ${caseTotalCount}
                         </h3>
                     </div>
                 </li>
+                <li>
+                <div class="summary">
+                  <span>
+                    执行用例总数
+                  </span>
+                    <h3>
+                        ${executeCount}
+                    </h3>
+                </div>
+            </li>
+                <li>
+                <div class="summary">
+                  <span>
+                    失败用例总数
+                  </span>
+                    <h3>
+                        ${failCount}
+                    </h3>
+                </div>
+            </li>
                 <li>
                     <div class="summary">
                   <span>
@@ -202,6 +245,10 @@
                             模块
                         </div>
                         <div class="value">
+                            <div class="col-md-5">
+                                <div id="moduleList" class="select2-select-00 col-md-12 full-width-fix">
+                                </div>
+                            </div>
                             ${planName}
                         </div>
                     </div>

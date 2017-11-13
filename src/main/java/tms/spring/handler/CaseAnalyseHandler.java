@@ -1,6 +1,6 @@
 package tms.spring.handler;
 
-import tms.spring.exception.CaseAnalyseException;
+import tms.spring.exception.CaseAnalysesException;
 
 import java.util.Map;
 
@@ -9,5 +9,5 @@ import java.util.Map;
  */
 public interface CaseAnalyseHandler {
 
-    Map<String,Object> analyse(Map<String,String> map) throws CaseAnalyseException;
+    Map<String,Object> analyse(Map<String,String> map) throws CaseAnalysesException;
 }
