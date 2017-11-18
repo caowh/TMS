@@ -15,19 +15,19 @@ public class CustomSessionListener implements SessionListener {
      */
     public void onStart(Session session) {
         //TODO
-        logger.info("%s on start",session.getId());
+        logger.info(session.getId()+" on start");
     }
     /**
      * 一个回话的生命周期结束
      */
     public void onStop(Session session) {
         //TODO
-        logger.info("%s on stop",session.getId());
+        logger.info(session.getId()+" on stop");
     }
 
     public void onExpiration(Session session) {
         //TODO
-        logger.info("%s on onExpiration",session.getId());
+        logger.info(session.getId()+" on onExpiration");
     }
 
 

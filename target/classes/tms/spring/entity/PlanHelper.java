@@ -10,6 +10,9 @@ public class PlanHelper {
     private String version;
     private String environment;
     private String leader;
+    private Boolean update;
+    private String planId;
+
 
     public String getPlanName() {
         return planName;
@@ -49,5 +52,21 @@ public class PlanHelper {
 
     public void setLeader(String leader) {
         this.leader = leader;
+    }
+
+    public Boolean getUpdate() {
+        return update;
+    }
+
+    public void setUpdate(Boolean update) {
+        this.update = update;
+    }
+
+    public String getPlanId() {
+        return planId;
+    }
+
+    public void setPlanId(String planId) {
+        this.planId = planId;
     }
 }

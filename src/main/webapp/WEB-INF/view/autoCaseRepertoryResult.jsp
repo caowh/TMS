@@ -212,6 +212,13 @@
                         </li>
                     </ul>
                 </li>
+                <li class="current">
+                    <a href="/linuxMonitor/index.do?ip=192.168.4.173">
+                        <i class="icon-eye-open">
+                        </i>
+                        性能监控
+                    </a>
+                </li>
             </ul>
             <div class="sidebar-widget align-center">
                 <div class="btn-group" data-toggle="buttons" id="theme-switcher">

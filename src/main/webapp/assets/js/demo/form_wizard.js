@@ -1,6 +1,21 @@
 "use strict";
 var arr={planName:'',version:'',planVersion:'',type:'',node:'0',typeName:'',nodeName:'',mark:false};
-
+function updateStatus(obj) {
+    var planId=$(obj).parent().parent().parent().parent().find('td').eq(7).text()
+    if($(obj).parent().attr('class').indexOf('switch-on')>=0){
+        updatePlanStatus({planId:planId,update:"true"},function (res) {
+            if(res.code!=1){
+                $('#warning6').click()
+            }
+        })
+    }else {
+        updatePlanStatus({planId:planId,update:"false"},function (res) {
+            if(res.code!=1){
+                $('#warning6').click()
+            }
+        })
+    }
+}
 $(document).ready(function(){
     $('#planDatable').DataTable({
         order : [],
@@ -34,6 +49,19 @@ $(document).ready(function(){
             "orderable": false
         }]
     });
+    var table=$('#planDatable').dataTable()
+    var nTrs=table.fnGetNodes()
+    for(var i = 0; i < nTrs.length; i++){
+        var updateTd=$(nTrs[i]).find('td').eq(6)
+        if(updateTd.find('.hide').text()=="true"){
+            //
+        }else if(updateTd.find('.hide').text()=="false"){
+            updateTd.find('div').removeClass('switch-on').addClass('switch-off');
+        }else {
+            updateTd.empty()
+            updateTd.append('暂无信息')
+        }
+    }
     var c=$("#sample_form");
     var d=$("#form_wizard");
     var a=$(".alert-danger",c);

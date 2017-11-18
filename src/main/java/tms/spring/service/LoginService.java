@@ -3,8 +3,10 @@ package tms.spring.service;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
+import org.apache.shiro.web.servlet.ShiroFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.util.WebUtils;
 import tms.spring.dao.UserDao;
@@ -160,6 +162,21 @@ public class LoginService {
         User user=new User();
         user.setEmail(email);
         user.setPassword(ShiroFilterUtils.encryptPassword(password));
+        userDao.updatePasswordByEmail(user);
+    }
+
+    @Transactional
+    public void updatePwd(Map<String, String> jsonMap) throws Exception {
+        String old=jsonMap.get("old");
+        String newPwd=jsonMap.get("new");
+        if(old==null||newPwd==null){
+            throw new Exception("输入的密码为空！");
+        }
+        User user=userDao.selectUserByName(SecurityUtils.getSubject().getPrincipal().toString());
+        if(!user.getPassword().equals(ShiroFilterUtils.encryptPassword(old))){
+            throw new Exception("输入的旧密码错误！");
+        }
+        user.setPassword(ShiroFilterUtils.encryptPassword(newPwd));
         userDao.updatePasswordByEmail(user);
     }
 }

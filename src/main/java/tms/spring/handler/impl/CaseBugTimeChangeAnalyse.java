@@ -19,7 +19,7 @@ import java.util.Map;
 /**
  * Created by user on 2017/8/28.
  */
-@Component
+@Component("caseBugTimeChange")
 public class CaseBugTimeChangeAnalyse implements CaseAnalyseHandler {
 
     /**

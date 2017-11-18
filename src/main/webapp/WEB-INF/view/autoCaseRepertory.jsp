@@ -182,6 +182,11 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li>
+                        <a href="#" id="updatePassword">
+                            <i class="icon-anchor">
+                            </i>
+                            修改密码
+                        </a>
                         <a href="#" onclick="logout()">
                             <i class="icon-key">
                             </i>
@@ -233,6 +238,13 @@
                             </a>
                         </li>
                     </ul>
+                </li>
+                <li class="current">
+                    <a href="/linuxMonitor/index.do?ip=192.168.4.173">
+                        <i class="icon-eye-open">
+                        </i>
+                        性能监控
+                    </a>
                 </li>
             </ul>
             <div class="sidebar-widget align-center">
@@ -308,7 +320,7 @@
                                         </span>
                                     </label>
                                     <div class="col-md-6">
-                                        <input type="text" name="name" class="form-control required" maxlength="10">
+                                        ${writer}
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -354,7 +366,7 @@
                                             <option value="">
                                             </option>
                                             <c:forEach items="${planList}" var="plan">
-                                                <option value="${plan.get("name")}">${plan.get("name")}
+                                                <option value="${plan.get("id")}">${plan.get("name")}
                                                 </option>
                                             </c:forEach>
                                         </select>
@@ -398,6 +410,16 @@
                             </h4>
                         </div>
                         <div class="widget-content">
+                            <div class="tab-content" id="alert2">
+                                <div class="alert alert-danger hide-default">
+                                    <i class="icon-remove close" data-dismiss="alert">
+                                    </i>
+                                </div>
+                                <div class="alert alert-success hide-default">
+                                    <i class="icon-remove close" data-dismiss="alert">
+                                    </i>
+                                </div>
+                            </div>
                             <form class="form-horizontal" id="sample_form" action="#">
                                 <div class="form-wizard">
                                     <div class="form-body">
@@ -426,7 +448,7 @@
                                                                             <option value="">
                                                                             </option>
                                                                             <c:forEach items="${planList}" var="plan">
-                                                                                <option value="${plan.get("name")}">${plan.get("name")}
+                                                                                <option value="${plan.get("id")}">${plan.get("name")}
                                                                                 </option>
                                                                             </c:forEach>
                                                                         </select>
@@ -474,6 +496,9 @@
                                                     </a>
                                                     <a href="#" id="execA" class="btn btn-primary">
                                                         执行
+                                                    </a>
+                                                    <a href="#" id="deleteA" class="btn btn-danger">
+                                                        删除
                                                     </a>
                                                 </div>
                                             </div>

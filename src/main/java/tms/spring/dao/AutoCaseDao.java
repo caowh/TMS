@@ -14,4 +14,5 @@ public interface AutoCaseDao {
     List<Integer> selectAutoCaseTypes(List<Long> ids);
     AutoCase selectById(Long id);
     void updateAutoCase(AutoCase autoCase);
+    void deleteAutoCase(Long id);
 }

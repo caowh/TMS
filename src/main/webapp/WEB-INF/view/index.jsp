@@ -157,6 +157,8 @@
     </script>
     <script type="text/javascript" src="/assets/js/jquery.ztree.all-3.5.min.js">
     </script>
+    <script type="text/javascript" src="/plugins/bootstrap-switch/bootstrap-switch.min.js">
+    </script>
     <script type="text/javascript" src="/assets/js/app.js">
     </script>
     <script type="text/javascript" src="/assets/js/plugins.js">
@@ -216,6 +218,11 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li>
+                        <a href="#" id="updatePassword">
+                            <i class="icon-anchor">
+                            </i>
+                            修改密码
+                        </a>
                         <a href="#" onclick="logout()">
                             <i class="icon-key">
                             </i>
@@ -268,6 +275,13 @@
                         </li>
                     </ul>
                 </li>
+                <li class="current">
+                    <a href="/linuxMonitor/index.do?ip=192.168.4.173">
+                        <i class="icon-eye-open">
+                        </i>
+                        性能监控
+                    </a>
+                </li>
             </ul>
             <div class="sidebar-widget align-center">
                 <div class="btn-group" data-toggle="buttons" id="theme-switcher">
@@ -302,6 +316,8 @@
                 <button id="warning4" class="btn btn-warning btn-notification close" data-type="warning" data-text="<strong>警告</strong><br>请至少选择一种分析种类！">
                 </button>
                 <button id="warning5" class="btn btn-success btn-notification close" data-type="success" data-text="<strong>提示</strong><br>成功收藏本次分析方式！">
+                </button>
+                <button id="warning6" class="btn btn-warning btn-notification close" data-type="warning" data-text="<strong>警告</strong><br>你无权进行切换！">
                 </button>
             </div>
             <div id="row1" class="row">
@@ -382,6 +398,8 @@
                                                                         <th class="hide"></th>
                                                                         <th class="hidden-xs">环境</th>
                                                                         <th>负责人</th>
+                                                                        <th>更新状态</th>
+                                                                        <th class="hide">计划id</th>
                                                                     </tr>
                                                                     </thead>
                                                                     <tbody>
@@ -393,6 +411,13 @@
                                                                             <td class="hide">${planHelper.version}</td>
                                                                             <td>${planHelper.environment}</td>
                                                                             <td>${planHelper.leader}</td>
+                                                                            <td>
+                                                                                <span class="hide">${planHelper.update}</span>
+                                                                                <div class="make-switch" data-on="success" data-off="warning">
+                                                                                    <input type="checkbox" checked class="toggle" onchange="updateStatus(this)" />
+                                                                                </div>
+                                                                            </td>
+                                                                            <td class="hide">${planHelper.planId}</td>
                                                                         </tr>
                                                                     </c:forEach>
                                                                     </tbody>

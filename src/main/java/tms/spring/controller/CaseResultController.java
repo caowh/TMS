@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import tms.spring.exception.AutoCaseRepertoryException;
 import tms.spring.exception.CaseAnalysesException;
 import tms.spring.service.CaseAnalyseService;
+import tms.spring.utils.CaseAnalyseUtil;
 import tms.spring.utils.Constant;
 
 import java.util.HashMap;
@@ -29,6 +30,9 @@ public class CaseResultController {
 
     @Autowired
     private CaseAnalyseService caseAnalyseService;
+
+    @Autowired
+    private CaseAnalyseUtil caseAnalyseUtil;
 
     @RequestMapping(value = "analyse")
     @ResponseBody
@@ -94,5 +98,22 @@ public class CaseResultController {
     @ResponseBody
     public List<String> planNameList() {
         return caseAnalyseService.getPlanNameList();
+    }
+
+
+    @RequestMapping(value = "updatePlanStatus")
+    @ResponseBody
+    public Map<String, Object> updatePlanStatus(@RequestBody Map<String,String> jsonMap) {
+        String planId=jsonMap.get("planId");
+        String update=jsonMap.get("update");
+        Map<String, Object> map = new HashMap<String, Object>();
+        try {
+            caseAnalyseUtil.setPlanUpdateStatus(planId,Boolean.parseBoolean(update));
+            map.put("code", Constant.CODE_SUCCESS);
+        } catch (Exception e){
+            map.put("code",Constant.CODE_FAILED);
+            map.put("message",e.getMessage());
+        }
+        return map;
     }
 }

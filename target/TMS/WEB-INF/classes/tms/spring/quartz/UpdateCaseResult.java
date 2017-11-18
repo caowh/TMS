@@ -1,8 +1,10 @@
 package tms.spring.quartz;
 
+import com.alibaba.fastjson.JSON;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import tms.spring.cache.CaseResultCountCache;
 import tms.spring.utils.Constant;
 import tms.spring.utils.HttpRequestUtils;
@@ -33,17 +35,26 @@ public class UpdateCaseResult {
          * 所有统计完毕，更新计划
          * 清除要使用的缓存
          * */
-//        getTestPlanList(true);
-//        /**
-//         * true：只刷新最新版本，false：刷新所有版本
-//         * */
-//        getPlanExecuteCount();
-//        getPlanSeverity();
-//        getTestSuites();
-//        getSuiteExecuteCount();
-//        getSuiteSeverity();
-//        cache.updatePlanList();
-//        cache.clearUselessCache();
+        try{
+//            getTestPlanList();
+//            logger.info("getTestPlanList finished!");
+//            getPlanExecuteCount();
+//            logger.info("getPlanExecuteCount finished!");
+//            getPlanSeverity();
+//            logger.info("getPlanSeverity finished!");
+//            getTestSuites();
+//            logger.info("getTestSuites finished!");
+//            getSuiteExecuteCount();
+//            logger.info("getSuiteExecuteCount finished!");
+//            getSuiteSeverity();
+//            logger.info("getSuiteSeverity finished,begin update data!");
+//            cache.updatePlanList();
+        }catch (Exception e){
+            logger.info("error when UpdateCaseResult!");
+            e.printStackTrace();
+        }
+        logger.info("begin clearUselessCache!");
+        cache.clearUselessCache();
         logger.info("Finished Update CaseResult Count!");
     }
 
@@ -126,39 +137,60 @@ public class UpdateCaseResult {
         }
     }
 
-    private void getTestPlanList(Boolean bl) {
+    private void getTestPlanList() {
         List<Map> testPlans=HttpRequestUtils.httpGet(Constant.TESTLINKSERVICE_ADDRESS+"getAllTestPlan", List.class);
         if(testPlans!=null&&testPlans.size()>0){
             cache.getTestPlanListAll().addAll(testPlans);
-            if(bl){
-                List<Map> testPlanList=new ArrayList<Map>();
-                Map<String,Map> testPlanMap=new HashMap();
-                for (Map testPlan:testPlans){
-                    String planName=String.valueOf(testPlan.get("name"));
-                    String[] planArr=planName.split("_");
-                    float versionNumber=Float.parseFloat(planArr[1].replace("v",""));
-                    String name=planArr[0];
-                    Map map=testPlanMap.get(name);
-                    if(map!=null){
-                        String existPlanName=String.valueOf(map.get("name"));
-                        float existVersion=Float.parseFloat(existPlanName.split("_")[1].replace("v",""));
-                        if(existVersion<versionNumber){
-                            testPlanMap.put(name,testPlan);
-                        }
-                    }else {
-                        testPlanMap.put(name,testPlan);
+            Map<String, Boolean> updateMap=cache.getUpdateMap();
+            for (Map testPlan:testPlans){
+                String planId=String.valueOf(testPlan.get("id"));
+                Boolean bl=updateMap.get(planId);
+                if(bl!=null){
+                    if(bl){
+                        cache.getTestPlanList().add(testPlan);
                     }
+                }else {
+                    cache.getTestPlanList().add(testPlan);
+                    updateMap.put(planId,true);
                 }
-                Iterator<Map.Entry<String,Map>> iterator=testPlanMap.entrySet().iterator();
-                while (iterator.hasNext()){
-                    Map.Entry<String,Map> entry=iterator.next();
-                    testPlanList.add(entry.getValue());
-                }
-                cache.getTestPlanList().addAll(testPlanList);
-            }else {
-                cache.getTestPlanList().addAll(testPlans);
             }
+            cache.setUpdateMap(updateMap);
         }
+        if(cache.getTestPlanList()!=null&&cache.getTestPlanList().size()>0){
+            logger.info("Update planList:"+ JSON.toJSONString(cache.getTestPlanList()));
+        }else {
+            logger.warn("Update planList is null!");
+        }
+//            if(bl){
+//                List<Map> testPlanList=new ArrayList<Map>();
+//                /**只更新最新版本的计划*/
+//                Map<String,Map> testPlanMap=new HashMap();
+//                for (Map testPlan:testPlans){
+//                    String planName=String.valueOf(testPlan.get("name"));
+//                    String[] planArr=planName.split("_");
+//                    float versionNumber=Float.parseFloat(planArr[1].replace("v",""));
+//                    String name=planArr[0];
+//                    Map map=testPlanMap.get(name);
+//                    if(map!=null){
+//                        String existPlanName=String.valueOf(map.get("name"));
+//                        float existVersion=Float.parseFloat(existPlanName.split("_")[1].replace("v",""));
+//                        if(existVersion<versionNumber){
+//                            testPlanMap.put(name,testPlan);
+//                        }
+//                    }else {
+//                        testPlanMap.put(name,testPlan);
+//                    }
+//                }
+//                Iterator<Map.Entry<String,Map>> iterator=testPlanMap.entrySet().iterator();
+//                while (iterator.hasNext()){
+//                    Map.Entry<String,Map> entry=iterator.next();
+//                    testPlanList.add(entry.getValue());
+//                }
+//                cache.getTestPlanList().addAll(testPlanList);
+//            }else {
+//                cache.getTestPlanList().addAll(testPlans);
+//            }
+//        }
     }
 
     private void getPlanSeverity(){

@@ -46,6 +46,7 @@ public class mainController {
     @Autowired
     private CaseAnalyseUtil caseAnalyseUtil;
 
+
     @RequestMapping(value = "index")
     public String index(Model model) {
         model.addAttribute("username",SecurityUtils.getSubject().getPrincipal());
@@ -68,6 +69,23 @@ public class mainController {
         }
         return map;
     }
+
+
+    @RequestMapping(value="updatePwd")
+    @ResponseBody
+    public Map<String, Object> updatePwd(@RequestBody Map<String,String> jsonMap){
+        Map<String, Object> map = new HashMap<String, Object>();
+        try {
+            loginService.updatePwd(jsonMap);
+            map.put("code", Constant.CODE_SUCCESS);
+        }catch (Exception e){
+            logger.error("getSupportType errorMessage:" + e.getMessage());
+            map.put("code", Constant.CODE_FAILED);
+            map.put("message",e.getMessage());
+        }
+        return map;
+    }
+
 
     @RequestMapping(value="getModuleTree")
     @ResponseBody
@@ -133,7 +151,13 @@ public class mainController {
      */
     @RequestMapping(value="autoCaseRepertory")
     public String autoCaseRepertory(Model model) {
-        model.addAttribute("username", SecurityUtils.getSubject().getPrincipal());
+        String username=SecurityUtils.getSubject().getPrincipal().toString();
+        if(username.equals("admin")){
+            model.addAttribute("writer", "<input type=\"text\" name=\"name\" class=\"form-control required\" maxlength=\"10\">");
+        }else {
+            model.addAttribute("writer", "<input type=\"text\" name=\"name\" class=\"form-control required\" value=\""+username+"\" readonly=\"readonly\">");
+        }
+        model.addAttribute("username", username);
         model.addAttribute("planList", caseAnalyseUtil.getPlanList());
         return "autoCaseRepertory";
     }

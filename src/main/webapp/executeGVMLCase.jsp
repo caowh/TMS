@@ -61,15 +61,13 @@
     </dd>
 </div>
 <div id="status">
+    <button onclick="caseStatusChange()" id="caseStatusChangeButton" style="color: #31ff53;display: inline-block;cursor: hand;border: 1px solid red;">暂停</button>
     <span class="prefixStyle">当前执行状态：</span><span id="currentStautus"></span>
 </div>
 <script src="http://127.0.0.1:3000/dist/GVML.js"></script>
 <script type="text/javascript" src="/assets/js/libs/jquery-1.10.2.min.js"></script>
 
-<script type="text/javascript" src="/assets/js/roujiamo/testUtils.js"></script>
-<script type="text/javascript" src="/assets/js/roujiamo/roujiamo.js"></script>
-<script type="text/javascript" src="/assets/js/roujiamo/console.catch.js"></script>
-<script type="text/javascript" src="/assets/js/roujiamo/testcases.js"></script>
+<script type="text/javascript" src="/assets/js/roujiamo/roujiamo-1.0.0-min.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function() {

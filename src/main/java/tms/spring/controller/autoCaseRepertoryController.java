@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import tms.spring.entity.AutoCaseHelper;
+import tms.spring.exception.AutoCaseRepertoryException;
+import tms.spring.exception.CaseAnalysesException;
 import tms.spring.service.AutoCaseRepertoryService;
 import tms.spring.utils.CaseAnalyseUtil;
 import tms.spring.utils.Constant;
@@ -52,7 +54,13 @@ public class autoCaseRepertoryController {
         }catch (Exception e){
             model.addAttribute("result", "上传用例失败，失败原因："+e.getMessage());
         }
-        model.addAttribute("username", SecurityUtils.getSubject().getPrincipal());
+        String username=SecurityUtils.getSubject().getPrincipal().toString();
+        if(username.equals("admin")){
+            model.addAttribute("writer", "<input type=\"text\" name=\"name\" class=\"form-control required\" maxlength=\"10\">");
+        }else {
+            model.addAttribute("writer", "<input type=\"text\" name=\"name\" class=\"form-control required\" value=\""+username+"\" readonly=\"readonly\">");
+        }
+        model.addAttribute("username", username);
         model.addAttribute("planList", caseAnalyseUtil.getPlanList());
         return "autoCaseRepertory";
     }
@@ -73,6 +81,21 @@ public class autoCaseRepertoryController {
     }
 
 
+    @RequestMapping(value = "deleteAutoCase")
+    @ResponseBody
+    public Map<String, Object> deleteAutoCase(@RequestParam("ids") String ids) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        try {
+            autoCaseRepertoryService.deleteAutoCase(ids);
+            map.put("code", Constant.CODE_SUCCESS);
+        } catch (Exception e){
+            map.put("code",Constant.CODE_FAILED);
+            map.put("message",e.getMessage());
+        }
+        return map;
+    }
+
+
     @RequestMapping(value = "prepareExecute")
     public String prepareExecute(Model model, @RequestParam("ids") String ids) {
         model.addAttribute("username", SecurityUtils.getSubject().getPrincipal());
@@ -80,6 +103,22 @@ public class autoCaseRepertoryController {
         model.addAttribute("planList", caseAnalyseUtil.getPlanList());
         int type=autoCaseRepertoryService.checkAutoCaseType(ids);
         if(type==2){
+            model.addAttribute("before", "window.earth = new GV.GeoCanvas(\"#container\", {map : {supported_mode: '23D', current_mode: '3D'} })\n" +
+                    "var username = 'dongb';\n" +
+                    "var password = 'dongbo7690600';\n" +
+                    "earth.plugincenter = `${GV.Center.PluginCenter.getPluginCenter}?name=${username}&pwd=${password}`;\n" +
+                    "earth.onReady(function() {\n" +
+                    "    earth.usingWidget('coordsinfo');\n" +
+                    "    var source = new GV.TileMapServiceSource({\n" +
+                    "        url: 'http://127.0.0.1:3000/docResource/tms/tilemapresource.xml'\n" +
+                    "    });\n" +
+                    "    earth.addImageLayer({\n" +
+                    "        name: 'quanqiu\\ngrst',\n" +
+                    "        source: source\n" +
+                    "    });\n" +
+                    "    window.scene = new GV.GraphicScene();\n" +
+                    "    earth.addScene(scene);\n" +
+                    "})");
             model.addAttribute("planName", autoCaseRepertoryService.getPlanName(ids));
             return "autoCaseExecute";
         }else {
@@ -99,7 +138,9 @@ public class autoCaseRepertoryController {
         String ids=request.getParameter("ids");
         String key=autoCaseRepertoryService.saveGVMLExecutePlan(strategy,sendToTestlink,before,statement,planName,ids);
         model.addAttribute("username", SecurityUtils.getSubject().getPrincipal());
-        model.addAttribute("result", "你的执行秘钥为：“"+key+"”，请在GVML专用浏览器访问：http://ip:port/autoCaseRepertory/executeGVMLCase.jsp?key="+key+"进行测试，" +
+        model.addAttribute("result", "你的执行秘钥为：“"+key+"”，请在GVML专用浏览器访问：http://"+request.getLocalAddr()+":"
+                + request.getLocalPort()
+                +"/executeGVMLCase.jsp?key="+key+"进行测试，" +
                 "如果浏览器正确，请直接点击！<a href=\"/executeGVMLCase.jsp?key="+key+"\" class=\"btn btn-primary\">执行测试</a>");
         return "autoCaseRepertoryResult";
     }
@@ -152,14 +193,16 @@ public class autoCaseRepertoryController {
         AutoCaseHelper autoCaseHelper=null;
         try {
             autoCaseRepertoryService.updateGVMLAutoCase(caseId,describe,content,updateReason,id);
-            autoCaseHelper=autoCaseRepertoryService.searchAutoCaseById(id);
             model.addAttribute("result", "用例更新成功！");
         } catch (Exception e) {
             model.addAttribute("result", "用例更新失败，失败原因："+e.getMessage());
         }
+        try {
+            autoCaseHelper=autoCaseRepertoryService.searchAutoCaseById(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         model.addAttribute("autoCaseHelper", autoCaseHelper);
         return "lookAutoCase";
     }
-
-
 }

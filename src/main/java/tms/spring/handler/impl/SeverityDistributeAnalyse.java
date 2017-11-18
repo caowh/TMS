@@ -18,7 +18,7 @@ import java.util.Map;
 /**
  * Created by user on 2017/8/28.
  */
-@Component
+@Component("severity")
 public class SeverityDistributeAnalyse implements CaseAnalyseHandler {
 
     /**

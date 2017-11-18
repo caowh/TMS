@@ -15,7 +15,7 @@ import java.util.*;
 /**
  * Created by user on 2017/8/28.
  */
-@Component
+@Component("caseBugRatioCompare")
 public class CaseBugRatioCompareAnalyse implements CaseAnalyseHandler {
 
     /**

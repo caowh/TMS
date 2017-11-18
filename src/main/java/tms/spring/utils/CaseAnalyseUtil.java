@@ -23,7 +23,39 @@ public class CaseAnalyseUtil {
     private CaseResultCountCache cache;
 
     public List<Map> getPlanList(){
-        return (List<Map>)cache.getResult("planList");
+        List<Map> list=(List<Map>)cache.getResult("planList");
+        return list;
+    }
+
+    public String searchPlanIdByName(String name){
+        String id="";
+        List<Map> planList=getPlanList();
+        if(planList!=null&&planList.size()>0){
+            for (Map testPlan : planList){
+                String currentPlanName=String.valueOf(testPlan.get("name"));
+                if(currentPlanName.equals(name)){
+                    id=String.valueOf(testPlan.get("id"));
+                    break;
+                }
+            }
+        }
+        return id;
+    }
+
+    public String searchPlanNameById(String id){
+        String name="";
+        List<Map> planList=getPlanList();
+        if(planList!=null&&planList.size()>0){
+            for (Map testPlan : planList){
+                String currentPlanId=String.valueOf(testPlan.get("id"));
+                if(currentPlanId.equals(id)){
+                    Object obj=testPlan.get("name");
+                    name=String.valueOf(obj);
+                    break;
+                }
+            }
+        }
+        return name;
     }
 
     public String getNewVersion(String planName){
@@ -180,7 +212,8 @@ public class CaseAnalyseUtil {
         }
     }
 
-    public String selectNodeNameById(String planName,String node) throws CaseAnalysesException {
+    public String selectNodeNameById(String id,String node) throws CaseAnalysesException {
+        String planName=searchPlanNameById(id);
         String name="";
         String[] planTrueName=planName.split("_");
         Plan plan=new Plan();
@@ -200,5 +233,15 @@ public class CaseAnalyseUtil {
             }
         }
         return name;
+    }
+
+    public void setPlanUpdateStatus(String planId,Boolean bl){
+        Map<String, Boolean> map=getPlanUpdateStatus();
+        map.put(planId,bl);
+        cache.setUpdateMap(map);
+    }
+
+    public Map<String, Boolean> getPlanUpdateStatus(){
+        return cache.getUpdateMap();
     }
 }

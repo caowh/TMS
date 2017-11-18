@@ -149,4 +149,16 @@ public class CaseResultCountCache {
     public List<Map> getTestPlanListAll() {
         return testPlanListAll;
     }
+
+    public Map<String, Boolean> getUpdateMap() {
+        Object obj=getCache().get("updateMap");
+        if(obj==null){
+            return new HashMap<String, Boolean>();
+        }
+        return (Map<String, Boolean>) obj;
+    }
+
+    public void setUpdateMap(Map<String, Boolean> updateMap) {
+        getCache().put("updateMap",updateMap);
+    }
 }

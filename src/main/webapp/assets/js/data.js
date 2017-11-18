@@ -120,3 +120,60 @@ function searchAutoCase(data,fun) {
         success: fun
     })
 }
+
+
+/**
+ * 根据旧密码修改密码
+ * 参数，fun：回调函数，返回符合条件所有的自动化用例
+ *   data  {
+            old:""
+            new:""
+        }
+ * */
+function updatePwd(data,fun) {
+    $.ajax({
+        type: "post",
+        contentType: "application/json; charset=utf-8",
+        url: "/main/updatePwd.do",
+        data: JSON.stringify(data),
+        dataType: "json",
+        success: fun
+    })
+}
+
+
+/**
+ * 修改计划的更新状态
+ * 参数，fun：回调函数，返回符合条件所有的自动化用例
+ *   data  {
+            planId:""
+            update:""  true or false
+        }
+ * */
+function updatePlanStatus(data,fun) {
+    $.ajax({
+        type: "post",
+        contentType: "application/json; charset=utf-8",
+        url: "/CaseResult/updatePlanStatus.do",
+        data: JSON.stringify(data),
+        dataType: "json",
+        success: fun
+    })
+}
+
+
+
+/**
+ * 删除自动化用例
+ * 参数，fun：回调函数，返回删除是否成功信息
+ * 参数，ids:""  删除的用例id列表
+ * */
+function deleteAutoCase(ids,fun) {
+    $.ajax({
+        type: "get",
+        url: "/autoCaseRepertory/deleteAutoCase.do?ids="+ids,
+        dataType: "json",
+        success: fun
+    })
+}
+

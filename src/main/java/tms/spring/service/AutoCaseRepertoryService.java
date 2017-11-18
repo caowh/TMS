@@ -38,6 +38,7 @@ public class AutoCaseRepertoryService {
 
     /***
      * type取值 1：postman方式解析    2：gvml方式解析
+     * 修改存储与查找用例时的planName为planId
      */
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -100,6 +101,10 @@ public class AutoCaseRepertoryService {
             User user=userDao.selectUserByName(SecurityUtils.getSubject().getPrincipal().toString());
             for(AutoCase autoCase:autoCases){
                 autoCase.setType(type);
+                if(type==2&&(!autoCase.getContent().contains("Roujiamo"))){
+                    String newContent= convertToNewGVMLAutoCaseContent(autoCase.getContent(),autoCase.getCase_id());
+                    autoCase.setContent(newContent);
+                }
                 autoCase.setWriter(name);
                 autoCase.setUploaderId(user.getId());
                 autoCase.setTime(currentTime);
@@ -117,10 +122,13 @@ public class AutoCaseRepertoryService {
         String planName=jsonMap.get("planName");
         List<String> nodes=findAllCNode(node,planName);
         AutoCase autoCase=new AutoCase();
+        autoCase.setVersion(caseAnalyseUtil.searchPlanIdByName(planName));
         for(int i=0;i<nodes.size();i++){
             autoCase.setNode(nodes.get(i));
-            autoCase.setVersion(planName);
-            list.addAll(autoCaseDao.selectAutoCases(autoCase));
+            List<AutoCase> autoCases=autoCaseDao.selectAutoCases(autoCase);
+            if(autoCases!=null&&autoCases.size()>0){
+                list.addAll(autoCases);
+            }
         }
 //        /**list根据id去重复*/
 //        List<AutoCase> list1=new ArrayList<AutoCase>();
@@ -174,7 +182,7 @@ public class AutoCaseRepertoryService {
             autoCaseHelper.setUpdateReason(autoCase.getUpdateReason());
             autoCaseHelper.setWriter(autoCase.getWriter());
             autoCaseHelper.setUploader(userDao.selectUserById(autoCase.getUploaderId()).getUsername());
-            autoCaseHelper.setVersion(autoCase.getVersion());
+            autoCaseHelper.setVersion(caseAnalyseUtil.searchPlanNameById(autoCase.getVersion()));
             if(autoCase.getType()==1){
                 autoCaseHelper.setType("postman");
             }else if(autoCase.getType()==2){
@@ -267,7 +275,7 @@ public class AutoCaseRepertoryService {
             throw new AutoCaseRepertoryException("不存在该测试方案！");
         }
         AutoCaseExec autoCaseExec=autoCaseExecDao.selectById(id);
-        String script="window.arrglobal=[];window.waitTimeGlobal=0;";
+        String script="window.arrglobal=[];window.waitTimeGlobal=0;window.arrCasePrepareRun=[];";
         if(autoCaseExec.getIsSendToTestlink()==1){
             script+="window.isSendToTestlink=true;";
             script+="window.address=\"192.168.4.173:8085\";";
@@ -304,7 +312,7 @@ public class AutoCaseRepertoryService {
             script+=mtCases;
             script+=atCases;
         }
-        return script;
+        return script+"ResultTotestlink()";
     }
 
     public AutoCaseHelper searchAutoCaseById(String id) throws AutoCaseRepertoryException, CaseAnalysesException {
@@ -322,22 +330,84 @@ public class AutoCaseRepertoryService {
 
 
     public void updateGVMLAutoCase(String caseId, String describe, String content, String updateReason,String id) throws AutoCaseRepertoryException {
+        AutoCase autoCase=autoCaseDao.selectById(Long.parseLong(id));
+        String username=SecurityUtils.getSubject().getPrincipal().toString();
+        if(!autoCase.getWriter().equals(username)){
+            if(!username.equals("admin")){
+                throw new AutoCaseRepertoryException("你无权修改此用例！");
+            }
+        }
         AutoCaseConvertHandler handler=new GVMLAutoCaseConvert();
         List<AutoCase> autoCases=handler.stringToAutoCase(content);
         if(autoCases==null||autoCases.size()!=1){
             throw new AutoCaseRepertoryException("修改的内容检测不通过！");
         }
         if(!autoCases.get(0).getCase_id().equals(caseId)){
-            content=content.replace(autoCases.get(0).getCase_id(),caseId);
+            content=content.replaceAll(autoCases.get(0).getCase_id(),caseId);
             autoCases.get(0).setCase_id(caseId);
         }
         if(!autoCases.get(0).getDescribes().equals(describe)){
-            content=content.replace(autoCases.get(0).getDescribes(),describe);
+            content=content.replaceAll(autoCases.get(0).getDescribes(),describe);
             autoCases.get(0).setDescribes(describe);
         }
         autoCases.get(0).setUpdateReason(updateReason);
         autoCases.get(0).setContent(content);
         autoCases.get(0).setId(Long.parseLong(id));
         autoCaseDao.updateAutoCase(autoCases.get(0));
+    }
+
+    public String convertToNewGVMLAutoCaseContent(String content, String case_id) throws AutoCaseRepertoryException {
+        try{
+            String functionName=content.substring(content.indexOf("function")+8,content.indexOf("()")).trim();
+            content=content.replaceFirst("setTimeout","\nvar functionName='"+functionName+"';\nvar id=setTimeout");
+            content=content.substring(0,content.length()-1)+"\npushBefore(functionName,id)\n"+"}\n";
+            content=content.replaceAll("showAtCase","Roujiamo.showAtCase");
+            content=content.replaceAll("showMtCase","Roujiamo.showMtCase");
+            content=content.replaceAll("hideCase","Roujiamo.hideCase");
+            content=content.replaceAll("showCaseResult","Roujiamo.showCaseResult");
+            content=content.replaceAll("getCaseResult","Roujiamo.getCaseResult");
+            content=content.replaceAll("addCaseToArrGlobal","Roujiamo.addCaseToArrGlobal");
+
+            content=content.replaceAll("assertEqual","Roujiamo.assertEqual");
+            content=content.replaceAll("assertNotNull","Roujiamo.assertNotNull");
+            content=content.replaceAll("assertVp","Roujiamo.assertVp");
+            content=content.replaceAll("assertFr","Roujiamo.assertFr");
+            content=content.replaceAll("assertFrNotNull","Roujiamo.assertFrNotNull");
+            content=content.replaceAll("assertISNull","Roujiamo.assertISNull");
+            content=content.replaceAll("assertNotEqual","Roujiamo.assertNotEqual");
+            content=content.replaceAll("assertObjEqual","Roujiamo.assertObjEqual");
+
+            content=content.replace("var describe","removeFirst(functionName);\nvar describe");
+        }catch (Exception e){
+            throw new AutoCaseRepertoryException("GVML旧用例转化为新用例时出错，用例ID为："+case_id);
+        }
+        return content;
+    }
+
+
+    @Transactional
+    public void deleteAutoCase(String ids) throws AutoCaseRepertoryException {
+        if(ids==null&&ids.equals("")){
+            throw new AutoCaseRepertoryException("删除的ids为空！");
+        }
+        List<Long> idLongs=new ArrayList<Long>();
+        try{
+            idLongs.addAll(JSON.parseArray(ids,Long.class));
+        }catch (Exception e){
+            throw new AutoCaseRepertoryException("输入的ids不合法，ids:"+ids);
+        }
+        if(idLongs.size()==0){
+            throw new AutoCaseRepertoryException("输入的ids为空！");
+        }
+        String username=SecurityUtils.getSubject().getPrincipal().toString();
+        for(Long id:idLongs){
+            AutoCase autoCase=autoCaseDao.selectById(id);
+            if(!autoCase.getWriter().equals(username)){
+                if(!username.equals("admin")){
+                    throw new AutoCaseRepertoryException("你无权删除此用例，用例ID："+autoCase.getCase_id());
+                }
+            }
+            autoCaseDao.deleteAutoCase(id);
+        }
     }
 }

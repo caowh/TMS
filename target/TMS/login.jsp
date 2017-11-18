@@ -120,7 +120,7 @@
                     <i class="icon-user">
                     </i>
                     <input type="text" id="username" name="username" class="form-control" placeholder="用户名"
-                           autofocus="autofocus" data-rule-required="true" data-rule-rangelength="[4,10]" data-msg-rangelength="字符长度必须在{0}-{1}之间" data-msg-required="请输入用户名"/>
+                           autofocus="autofocus" data-rule-required="true" data-rule-rangelength="[2,10]" data-msg-rangelength="字符长度必须在{0}-{1}之间" data-msg-required="请输入用户名"/>
                 </div>
             </div>
             <div class="form-group">

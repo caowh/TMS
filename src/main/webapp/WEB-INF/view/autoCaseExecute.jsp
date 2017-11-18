@@ -236,6 +236,13 @@
                         </li>
                     </ul>
                 </li>
+                <li class="current">
+                    <a href="/linuxMonitor/index.do?ip=192.168.4.173">
+                        <i class="icon-eye-open">
+                        </i>
+                        性能监控
+                    </a>
+                </li>
             </ul>
             <div class="sidebar-widget align-center">
                 <div class="btn-group" data-toggle="buttons" id="theme-switcher">
@@ -347,7 +354,7 @@
                                         前置操作
                                     </label>
                                     <div class="col-md-6">
-                                        <textarea  class="form-control" name="before"></textarea>
+                                        <textarea  class="form-control" name="before">${before}</textarea>
                                         <span class="help-block">
                                             此部分内容在用例执行前将被调用
                                         </span>

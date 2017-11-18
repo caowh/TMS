@@ -3,6 +3,7 @@ package tms.spring.service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import tms.spring.entity.Plan;
 import tms.spring.entity.PlanHelper;
 import tms.spring.entity.TreeNode;
@@ -20,6 +21,7 @@ import java.util.Map;
 /**
  * Created by user on 2017/8/28.
  */
+@Service
 public class CaseAnalyseService {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -27,11 +29,9 @@ public class CaseAnalyseService {
     @Autowired
     private CaseAnalyseUtil caseAnalyseUtil;
 
+    @Autowired
     private Map<String,CaseAnalyseHandler> caseAnalyses;
 
-    public void setCaseAnalyses(Map<String, CaseAnalyseHandler> caseAnalyses) {
-        this.caseAnalyses = caseAnalyses;
-    }
 
     public Map<String,Object> analyse(Map<String,String> jsonMap) throws CaseAnalysesException {
         String type=jsonMap.get("type");
@@ -92,6 +92,7 @@ public class CaseAnalyseService {
         List<PlanHelper> planHelperList=new ArrayList<PlanHelper>();
         List<Map> planList=caseAnalyseUtil.getPlanList();
         if(planList!=null&&planList.size()>0){
+            Map<String, Boolean> updateMap=caseAnalyseUtil.getPlanUpdateStatus();
             for (Map testPlan : planList){
                 PlanHelper planHelper=new PlanHelper();
                 String currentPlanName=String.valueOf(testPlan.get("name"));
@@ -104,6 +105,9 @@ public class CaseAnalyseService {
                 planHelper.setUut(map.get("uut"));
                 planHelper.setEnvironment(map.get("environment"));
                 planHelper.setLeader(map.get("leader"));
+                String planId=String.valueOf(testPlan.get("id"));
+                planHelper.setPlanId(planId);
+                planHelper.setUpdate(updateMap.get(planId));
                 planHelperList.add(planHelper);
             }
         }
@@ -180,4 +184,6 @@ public class CaseAnalyseService {
         }
         return list;
     }
+
+
 }

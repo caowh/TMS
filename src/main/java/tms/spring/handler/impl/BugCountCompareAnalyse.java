@@ -14,7 +14,7 @@ import java.util.*;
 /**
  * Created by user on 2017/8/28.
  */
-@Component
+@Component("bugCountCompare")
 public class BugCountCompareAnalyse implements CaseAnalyseHandler {
 
     /**

@@ -108,6 +108,8 @@
     </script>
     <script type="text/javascript" src="/assets/js/app.js">
     </script>
+    <script type="text/javascript" src="/plugins/bootbox/bootbox.min.js">
+    </script>
     <script type="text/javascript" src="/assets/js/plugins.js">
     </script>
     <script type="text/javascript" src="/plugins/pickadate/picker.js">
@@ -162,29 +164,11 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="pages_user_profile.html">
-                            <i class="icon-user">
+                        <a href="#" id="updatePassword">
+                            <i class="icon-anchor">
                             </i>
-                            我的资料
+                            修改密码
                         </a>
-                    </li>
-                    <li>
-                        <a href="pages_calendar.html">
-                            <i class="icon-calendar">
-                            </i>
-                            我的日历
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="icon-tasks">
-                            </i>
-                            我的任务
-                        </a>
-                    </li>
-                    <li class="divider">
-                    </li>
-                    <li>
                         <a href="#" onclick="logout()">
                             <i class="icon-key">
                             </i>
@@ -208,30 +192,43 @@
                         GET首页
                     </a>
                 </li>
-                <li>
+                <li class="active open">
                     <a href="javascript:void(0);">
                         <i class="icon-dashboard">
                         </i>
-                        系统管理
+                        自动化测试管理
                     </a>
-                    <ul class="sub-menu">
+                    <ul class="sub-menu" style="display: block">
                         <li>
                             <a href="/main/index.do">
                                 <i class="icon-bar-chart">
                                 </i>
-                                用例结果分析
+                                分析与统计
                             </a>
                         </li>
-                        <li>
+                        <li  class="active">
                             <a href="/main/loadThresholdPage.do">
                                 <i class="icon-edit">
                                 </i>
                                 阈值参数配置
                             </a>
                         </li>
+                        <li>
+                            <a href="/main/autoCaseRepertory.do">
+                                <i class="icon-suitcase">
+                                </i>
+                                用例仓库
+                            </a>
+                        </li>
                     </ul>
                 </li>
-
+                <li class="current">
+                    <a href="/linuxMonitor/index.do?ip=192.168.4.173">
+                        <i class="icon-eye-open">
+                        </i>
+                        性能监控
+                    </a>
+                </li>
             </ul>
 
             <div class="sidebar-widget align-center">
