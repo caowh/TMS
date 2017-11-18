@@ -95,6 +95,20 @@ public class autoCaseRepertoryController {
         return map;
     }
 
+    @RequestMapping(value = "moveAutoCase")
+    @ResponseBody
+    public Map<String, Object> moveAutoCase(@RequestParam("ids") String ids,@RequestParam("nodeName") String nodeName) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        try {
+            autoCaseRepertoryService.moveAutoCase(ids,nodeName);
+            map.put("code", Constant.CODE_SUCCESS);
+        } catch (Exception e){
+            map.put("code",Constant.CODE_FAILED);
+            map.put("message",e.getMessage());
+        }
+        return map;
+    }
+
 
     @RequestMapping(value = "prepareExecute")
     public String prepareExecute(Model model, @RequestParam("ids") String ids) {

@@ -15,4 +15,5 @@ public interface AutoCaseDao {
     AutoCase selectById(Long id);
     void updateAutoCase(AutoCase autoCase);
     void deleteAutoCase(Long id);
+    void moveAutoCase(AutoCase autoCase);
 }

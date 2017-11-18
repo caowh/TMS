@@ -410,4 +410,33 @@ public class AutoCaseRepertoryService {
             autoCaseDao.deleteAutoCase(id);
         }
     }
+
+
+    @Transactional
+    public void moveAutoCase(String ids,String nodeName) throws AutoCaseRepertoryException {
+        if(ids==null&&ids.equals("")){
+            throw new AutoCaseRepertoryException("移动的ids为空！");
+        }
+        List<Long> idLongs=new ArrayList<Long>();
+        try{
+            idLongs.addAll(JSON.parseArray(ids,Long.class));
+        }catch (Exception e){
+            throw new AutoCaseRepertoryException("输入的ids不合法，ids:"+ids);
+        }
+        if(idLongs.size()==0){
+            throw new AutoCaseRepertoryException("输入的ids为空！");
+        }
+        String username=SecurityUtils.getSubject().getPrincipal().toString();
+        for(Long id:idLongs){
+
+            AutoCase autoCase=autoCaseDao.selectById(id);
+            if(!autoCase.getWriter().equals(username)){
+                if(!username.equals("admin")){
+                    throw new AutoCaseRepertoryException("你无权移动此用例，用例ID："+autoCase.getCase_id());
+                }
+            }
+            autoCase.setNode(nodeName);
+            autoCaseDao.moveAutoCase(autoCase);
+        }
+    }
 }

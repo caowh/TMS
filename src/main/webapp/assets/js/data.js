@@ -177,3 +177,17 @@ function deleteAutoCase(ids,fun) {
     })
 }
 
+/**
+ * 移动自动化用例
+ * 参数，fun：回调函数，返回移动是否成功信息
+ * 参数，ids:""  移动的用例id列表
+ * */
+function moveAutoCase(ids,nodeName,fun) {
+    $.ajax({
+        type: "get",
+        url: "/autoCaseRepertory/moveAutoCase.do?ids="+ids+"&nodeName="+nodeName,
+        dataType: "json",
+        success: fun
+    })
+}
+

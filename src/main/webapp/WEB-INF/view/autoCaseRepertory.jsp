@@ -414,6 +414,7 @@
                                 <div class="alert alert-danger hide-default">
                                     <i class="icon-remove close" data-dismiss="alert">
                                     </i>
+                                    <span></span>
                                 </div>
                                 <div class="alert alert-success hide-default">
                                     <i class="icon-remove close" data-dismiss="alert">
@@ -499,6 +500,9 @@
                                                     </a>
                                                     <a href="#" id="deleteA" class="btn btn-danger">
                                                         删除
+                                                    </a>
+                                                    <a href="#" id="moveA" class="btn btn-primary">
+                                                        移动
                                                     </a>
                                                 </div>
                                             </div>
