@@ -2,7 +2,6 @@ import org.apache.shiro.crypto.hash.Md5Hash;
 import org.apache.shiro.crypto.hash.Sha256Hash;
 import org.apache.shiro.crypto.hash.SimpleHash;
 import org.junit.Test;
-import tms.spring.utils.WebSocketUtil;
 
 import javax.mail.Message;
 import javax.mail.Session;
@@ -12,12 +11,6 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import java.io.File;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintWriter;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.net.SocketException;
 import java.util.Properties;
 import java.util.Random;
 
@@ -93,5 +86,4 @@ public class test {
         }
         System.out.print(val);
     }
-
 }

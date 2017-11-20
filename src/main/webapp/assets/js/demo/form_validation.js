@@ -177,10 +177,12 @@ $(document).ready(function(){
             deleteAutoCase(JSON.stringify(ids),function (res) {
                 if(res.code==1){
                     $('#alert2 .alert-success').removeClass("hide-default")
-                    $('#alert2 .alert-success').append("用例删除成功！")
+                    $('#alert2 .alert-success span').empty()
+                    $('#alert2 .alert-success span').append("用例删除成功！")
                 }else{
                     $('#alert2 .alert-danger').removeClass("hide-default")
-                    $('#alert2 .alert-danger').append(res.message)
+                    $('#alert2 .alert-danger span').empty()
+                    $('#alert2 .alert-danger span').append("删除失败，失败原因为："+res.message)
                 }
             })
         }else {
@@ -212,7 +214,6 @@ $(document).ready(function(){
         }
         if(ids.length>0 && nodes.length===1){
            moveAutoCase(JSON.stringify(ids),nodes[0].cid,function (res) {
-               console.log(res)
                 if(res.code==1){
                     $('#alert2 .alert-success').removeClass("hide-default")
                     $('#alert2 .alert-success span').empty()
@@ -220,7 +221,7 @@ $(document).ready(function(){
                 }else{
                     $('#alert2 .alert-danger').removeClass("hide-default")
                     $('#alert2 .alert-danger span').empty()
-                    $('#alert2 .alert-danger span').append(res.message)
+                    $('#alert2 .alert-danger span').append("删除移动，失败原因为："+res.message)
                 }
             })
         }else {

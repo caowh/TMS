@@ -35,6 +35,11 @@
       <artifactId>servlet-api</artifactId>
       <version>2.5</version>
     </dependency>
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>7.0</version>
+    </dependency>
 
     <!-- 添加spring核心依赖 -->
     <dependency>

@@ -9,7 +9,10 @@ import tms.spring.cache.CaseResultCountCache;
 import tms.spring.utils.Constant;
 import tms.spring.utils.HttpRequestUtils;
 import tms.spring.utils.PlanDataType;
+import tms.spring.utils.WebSocketUtil;
 
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -23,7 +26,12 @@ public class UpdateCaseResult {
     private CaseResultCountCache cache;
 
     public void execute(){
-        logger.info("Begin Update CaseResult Count!");
+        Map<String,String> map=new HashMap<String, String>();
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        String message="开始更新用例执行结果!";
+        logger.info(message);
+        broadcast(message, map, formatter);
         /**
          * 根据产品得到测试计划列表
          * 根据每个测试计划得到对应的用例执行情况
@@ -36,26 +44,59 @@ public class UpdateCaseResult {
          * 清除要使用的缓存
          * */
         try{
+//            message="开始获取更新列表!";
+//            logger.info(message);
+//            broadcast(message, map, formatter);
 //            getTestPlanList();
-//            logger.info("getTestPlanList finished!");
+//
+//            message="开始获取计划用例执行情况!";
+//            logger.info(message);
+//            broadcast(message, map, formatter);
 //            getPlanExecuteCount();
-//            logger.info("getPlanExecuteCount finished!");
+//
+//            message="开始获取计划问题列表!";
+//            logger.info(message);
+//            broadcast(message, map, formatter);
 //            getPlanSeverity();
-//            logger.info("getPlanSeverity finished!");
+//
+//
+//            message="开始获取计划包含的所有测试套!";
+//            logger.info(message);
+//            broadcast(message, map, formatter);
 //            getTestSuites();
-//            logger.info("getTestSuites finished!");
+//
+//            message="开始获取测试套用例执行情况!";
+//            logger.info(message);
+//            broadcast(message, map, formatter);
 //            getSuiteExecuteCount();
-//            logger.info("getSuiteExecuteCount finished!");
+//
+//
+//            message="开始获取测试套问题列表!";
+//            logger.info(message);
+//            broadcast(message, map, formatter);
 //            getSuiteSeverity();
-//            logger.info("getSuiteSeverity finished,begin update data!");
+//
+//            message="开始保存最新数据!";
+//            logger.info(message);
+//            broadcast(message, map, formatter);
 //            cache.updatePlanList();
         }catch (Exception e){
-            logger.info("error when UpdateCaseResult!");
-            e.printStackTrace();
+            message="更新中出现异常:"+e.getMessage();
+            logger.error(message);
+            broadcast(message, map, formatter);
         }
-        logger.info("begin clearUselessCache!");
         cache.clearUselessCache();
-        logger.info("Finished Update CaseResult Count!");
+        message="更新结束!";
+        logger.info(message);
+        broadcast(message, map, formatter);
+    }
+
+    private void broadcast(String message, Map<String, String> map, SimpleDateFormat formatter) {
+        String dateString;
+        map.put("message",message);
+        dateString = formatter.format(new Date());
+        map.put("time",dateString);
+        WebSocketUtil.broadcast(JSON.toJSONString(map));
     }
 
     private void getSuiteSeverity() {

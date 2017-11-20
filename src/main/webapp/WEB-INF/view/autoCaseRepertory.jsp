@@ -247,6 +247,13 @@
                     </a>
                 </li>
             </ul>
+            <div class="sidebar-title">
+            <span>
+              系统消息
+            </span>
+            </div>
+            <ul class="notifications demo-slide-in">
+            </ul>
             <div class="sidebar-widget align-center">
                 <div class="btn-group" data-toggle="buttons" id="theme-switcher">
                     <label class="btn active">
@@ -279,7 +286,7 @@
                 </button>
                 <button id="warning4" class="btn btn-warning btn-notification close" data-type="warning" data-text="<strong>警告</strong><br>查询过程出现错误！">
                 </button>
-                <button id="warning5" class="btn btn-warning btn-notification close" data-type="success" data-text="<strong>提示</strong><br>请先勾选用例再执行！">
+                <button id="warning5" class="btn btn-warning btn-notification close" data-type="success" data-text="<strong>提示</strong><br>请先勾选用例！">
                 </button>
             </div>
             <div class="row">
@@ -498,11 +505,11 @@
                                                     <a href="#" id="execA" class="btn btn-primary">
                                                         执行
                                                     </a>
-                                                    <a href="#" id="deleteA" class="btn btn-danger">
-                                                        删除
-                                                    </a>
                                                     <a href="#" id="moveA" class="btn btn-primary">
                                                         移动
+                                                    </a>
+                                                    <a href="#" id="deleteA" class="btn btn-danger">
+                                                        删除
                                                     </a>
                                                 </div>
                                             </div>

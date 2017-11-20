@@ -230,7 +230,13 @@
                     </a>
                 </li>
             </ul>
-
+            <div class="sidebar-title">
+            <span>
+              系统消息
+            </span>
+            </div>
+            <ul class="notifications demo-slide-in">
+            </ul>
             <div class="sidebar-widget align-center">
                 <div class="btn-group" data-toggle="buttons" id="theme-switcher">
                     <label class="btn active">
