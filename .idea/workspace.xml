@@ -10,15 +10,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tms/spring/quartz/UpdateCaseResult.class" afterPath="$PROJECT_DIR$/target/classes/tms/spring/quartz/UpdateCaseResult.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tms/spring/quartz/UpdateCaseResult.java" afterPath="$PROJECT_DIR$/src/main/java/tms/spring/quartz/UpdateCaseResult.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tms/spring/utils/WebSocketUtil.java" afterPath="$PROJECT_DIR$/src/main/java/tms/spring/utils/WebSocketUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/autoCaseExecute.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/autoCaseExecute.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/autoCaseRepertory.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/autoCaseRepertory.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/autoCaseRepertoryResult.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/autoCaseRepertoryResult.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/lookAutoCase.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/lookAutoCase.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/thresholdConfig.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/thresholdConfig.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/custom.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/custom.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/main.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/quartz/UpdateCaseResult.java" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/classes/tms/spring/quartz/UpdateCaseResult.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMS/WEB-INF/view/thresholdConfig.jsp" afterPath="$PROJECT_DIR$/target/TMS/WEB-INF/view/thresholdConfig.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tms/spring/quartz/UpdateCaseResult.java" afterPath="$PROJECT_DIR$/target/classes/tms/spring/quartz/UpdateCaseResult.java" />
@@ -49,7 +40,18 @@
     <favorites_list name="TMS" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="UpdateCaseResult.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/quartz/UpdateCaseResult.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="36" column="30" lean-forward="false" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -175,13 +177,13 @@
         <option value="$PROJECT_DIR$/src/main/webapp/assets/js/main.js" />
         <option value="$PROJECT_DIR$/src/main/java/tms/spring/utils/WebSocketUtil.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/tms/spring/quartz/UpdateCaseResult.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/assets/js/custom.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/autoCaseExecute.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/autoCaseRepertory.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/autoCaseRepertoryResult.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/lookAutoCase.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/thresholdConfig.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/tms/spring/quartz/UpdateCaseResult.java" />
       </list>
     </option>
   </component>
@@ -594,6 +596,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="spring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quartz" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1404,7 +1436,7 @@
       <workItem from="1510276634295" duration="58054000" />
       <workItem from="1510622645005" duration="25200000" />
       <workItem from="1510712894489" duration="56698000" />
-      <workItem from="1511142924598" duration="25938000" />
+      <workItem from="1511142924598" duration="25974000" />
     </task>
     <task id="LOCAL-00001" summary="移除自动发送">
       <created>1503398984536</created>
@@ -1539,7 +1571,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511172684798</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="增加群发消息功能">
+      <created>1511244073680</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1511244073680</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1575,7 +1614,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="911304000" />
+    <option name="totallyTimeSpent" value="911340000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1588,6 +1627,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1617,7 +1657,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29144096" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26226014" sideWeight="0.16227181" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30490404" sideWeight="0.8377282" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30490404" sideWeight="0.8377282" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2153518" sideWeight="0.5361842" order="10" side_tool="true" content_ui="tabs" />
@@ -1707,6 +1747,8 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="移除自动发送" />
     <MESSAGE value="增加主页" />
     <MESSAGE value="修改邮箱获取验证码的方式" />
@@ -1724,7 +1766,8 @@
     <MESSAGE value="增加GVML自动化用例的修改功能" />
     <MESSAGE value="计划可更改更新状态，上传的用例可删除" />
     <MESSAGE value="前台可以接收到后台推送的计划更新信息" />
-    <option name="LAST_COMMIT_MESSAGE" value="前台可以接收到后台推送的计划更新信息" />
+    <MESSAGE value="增加群发消息功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加群发消息功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2238,8 +2281,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/quartz/UpdateCaseResult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="38" column="30" lean-forward="false" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
+        <state relative-caret-position="108">
+          <caret line="36" column="30" lean-forward="false" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
           <folding />
         </state>
       </provider>
