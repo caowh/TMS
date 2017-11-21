@@ -230,7 +230,13 @@
                     </a>
                 </li>
             </ul>
-
+            <div class="sidebar-title">
+            <span>
+                系统消息（在线人数：<a href="#" id="onlineUserCount"></a><span id="onlineUser" class="hide"></span>）
+            </span>
+            </div>
+            <ul class="notifications demo-slide-in">
+            </ul>
             <div class="sidebar-widget align-center">
                 <div class="btn-group" data-toggle="buttons" id="theme-switcher">
                     <label class="btn active">

@@ -1,7 +1,57 @@
 "use strict";
+var sendMessage;
+Date.prototype.Format = function(format){
+
+    var o = {
+
+        "M+" : this.getMonth()+1, //month
+
+        "d+" : this.getDate(), //day
+
+        "h+" : this.getHours(), //hour
+
+        "m+" : this.getMinutes(), //minute
+
+        "s+" : this.getSeconds(), //second
+
+        "q+" : Math.floor((this.getMonth()+3)/3), //quarter
+
+        "S" : this.getMilliseconds() //millisecond
+
+    }
+
+    if(/(y+)/.test(format)) {
+
+        format = format.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));
+
+    }
+
+    for(var k in o) {
+
+        if(new RegExp("("+ k +")").test(format)) {
+
+            format = format.replace(RegExp.$1, RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+
+        }
+
+    }
+
+    return format;
+
+}
 function showMessage(msg) {
-    $('#sidebar .notifications.demo-slide-in').prepend('<li style="display: none;"><div class="col-left"><span class="label label-info"><i class="icon-envelope"></i></span></div><div class="col-right with-margin"><span class="message">'+msg.message+'</span><span class="time">'+msg.time+'</span></div></li>')
-    $("#sidebar .notifications.demo-slide-in > li:eq(0)").slideDown(500)
+    if(msg.type==0){
+        $('#sidebar .notifications.demo-slide-in').prepend('<li style="display: none;"><div class="col-left"><span class="label label-info"><i class="icon-envelope"></i></span></div><div class="col-right with-margin"><span class="message">'+msg.message+'</span><span class="time">'+msg.username+'&nbsp;&nbsp;'+msg.time+'</span></div></li>')
+        $("#sidebar .notifications.demo-slide-in > li:eq(0)").slideDown(500)
+    }else if(msg.type==1){
+        var arr=JSON.parse(msg.message)
+        $('#onlineUserCount').html(arr.length)
+        var users="";
+        $.each(arr,function (index,item) {
+            users=users+item+"&nbsp;&nbsp;";
+        })
+        $('#onlineUser').html(users)
+    }
 }
 $(document).ready(function(){
     $(".sidebar-search").submit(function(a){
@@ -35,4 +85,10 @@ $(document).ready(function(){
     window.onbeforeunload = function () {
         websocket.close()
     }
+    sendMessage=function (message){
+        websocket.send(message)
+    }
+    $('#onlineUserCount').click(function () {
+        bootbox.alert($('#onlineUser').html())
+    })
 });

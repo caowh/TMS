@@ -1,6 +1,7 @@
 package tms.spring.quartz;
 
 import com.alibaba.fastjson.JSON;
+import org.apache.shiro.SecurityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,10 @@ import tms.spring.cache.CaseResultCountCache;
 import tms.spring.utils.Constant;
 import tms.spring.utils.HttpRequestUtils;
 import tms.spring.utils.PlanDataType;
+import tms.spring.utils.WebSocketUtil;
 
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -23,40 +27,32 @@ public class UpdateCaseResult {
     private CaseResultCountCache cache;
 
     public void execute(){
-        logger.info("Begin Update CaseResult Count!");
-        /**
-         * 根据产品得到测试计划列表
-         * 根据每个测试计划得到对应的用例执行情况
-         * 根据每个测试计划得到对应的严重级别分布情况
-         * 根据每个测试计划得到对应的测试套
-         * 根据每个测试套得到对应的用例执行情况
-         * 根据每个测试套得到对应的严重级别分布情况
-         * 。。。
-         * 所有统计完毕，更新计划
-         * 清除要使用的缓存
-         * */
+
+        String message="开始获取最新数据!";
+        logger.info(message);
+        WebSocketUtil.broadcast(message,"服务器","0");
         try{
-//            getTestPlanList();
-//            logger.info("getTestPlanList finished!");
-//            getPlanExecuteCount();
-//            logger.info("getPlanExecuteCount finished!");
-//            getPlanSeverity();
-//            logger.info("getPlanSeverity finished!");
-//            getTestSuites();
-//            logger.info("getTestSuites finished!");
-//            getSuiteExecuteCount();
-//            logger.info("getSuiteExecuteCount finished!");
-//            getSuiteSeverity();
-//            logger.info("getSuiteSeverity finished,begin update data!");
-//            cache.updatePlanList();
+            getTestPlanList();
+            getPlanExecuteCount();
+            getPlanSeverity();
+            getTestSuites();
+            getSuiteExecuteCount();
+            getSuiteSeverity();
+            message="开始更新数据!";
+            logger.info(message);
+            WebSocketUtil.broadcast(message,"服务器","0");
+            cache.updatePlanList();
         }catch (Exception e){
-            logger.info("error when UpdateCaseResult!");
-            e.printStackTrace();
+            message="数据更新过程出现异常:"+e.getMessage();
+            logger.error(message);
+            WebSocketUtil.broadcast(message,"服务器","0");
         }
-        logger.info("begin clearUselessCache!");
         cache.clearUselessCache();
-        logger.info("Finished Update CaseResult Count!");
+        message="数据更新结束!";
+        logger.info(message);
+        WebSocketUtil.broadcast(message,"服务器","0");
     }
+
 
     private void getSuiteSeverity() {
         Iterator<Map.Entry<String, List<String>>> entries = cache.getPlanSuiteMap().entrySet().iterator();

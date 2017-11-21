@@ -1,8 +1,11 @@
 package tms.spring.utils;
 
+import com.alibaba.fastjson.JSON;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.io.IOException;
 import javax.websocket.*;
@@ -32,7 +35,8 @@ public class WebSocketUtil {
         this.session = session;
         webSocketSet.add(this); //加入set中
         addOnlineCount(); //在线数加
-        logger.info("有新连接加入！当前在线人数为" + getOnlineCount());
+        broadcast(JSON.toJSONString(getOnlineUser()),"服务器","1");
+        logger.info("有新连接加入！当前在线人数为" + getOnlineCount()+","+session.getId()+","+session.getUserPrincipal());
     }
     /**
      * 连接关闭调用的方法
@@ -41,7 +45,8 @@ public class WebSocketUtil {
     public void onClose(){
         webSocketSet.remove(this); //从set中删除
         subOnlineCount(); //在线数减
-        logger.info("有一连接关闭！当前在线人数为" + getOnlineCount());
+        broadcast(JSON.toJSONString(getOnlineUser()),"服务器","1");
+        logger.info("有一连接关闭！当前在线人数为" + getOnlineCount()+","+this.session.getId()+","+this.session.getUserPrincipal());
     }
     /**
      * 收到客户端消息后调用的方法
@@ -51,14 +56,7 @@ public class WebSocketUtil {
     @OnMessage
     public void onMessage(String message, Session session) {
         logger.info("来自客户端的消息:"+session.getId()+"," + message);
-        for(WebSocketUtil item: webSocketSet){
-            try {
-                item.sendMessage(message);
-            } catch (IOException e) {
-                logger.warn("向客户端发送消息失败:"+item.session.getId()+"," +e.getMessage());
-                continue;
-            }
-        }
+        broadcast(message,session.getUserPrincipal().getName(),"0");
     }
     /**
      * 发生错误时调用
@@ -67,16 +65,34 @@ public class WebSocketUtil {
      */
     @OnError
     public void onError(Session session, Throwable error){
-        logger.warn("socket连接出错:"+session.getId()+"," +error.getMessage());
+        logger.warn("socket连接出错:"+session.getId()+","+session.getUserPrincipal()+"," +error.getMessage());
     }
     /**
      * 这个方法与上面几个方法不一样。没有用注解，是根据自己需要添加的方法。
      * @param message
      * @throws IOException
      */
-    public void sendMessage(String message) throws IOException{
-        this.session.getBasicRemote().sendText(message);
+    public void sendMessage(String message,String username,String type) throws IOException{
+        Map<String,String> map=new HashMap();
+        map.put("message",message);
+        map.put("username", username);
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        map.put("time",formatter.format(new Date()));
+        map.put("type", type);
+        this.session.getBasicRemote().sendText(JSON.toJSONString(map));
     }
+
+    public static synchronized List getOnlineUser(){
+        List<String> list=new ArrayList<String>();
+        for(WebSocketUtil item: webSocketSet){
+            String username=item.session.getUserPrincipal().getName();
+            if(!list.contains(username)){
+                list.add(username);
+            }
+        }
+        return list;
+    }
+
     public static synchronized int getOnlineCount() {
         return onlineCount;
     }
@@ -87,12 +103,12 @@ public class WebSocketUtil {
         WebSocketUtil.onlineCount--;
     }
 
-    public static void broadcast(String message){
+    public static void broadcast(String message,String username,String type){
         for(WebSocketUtil item: webSocketSet){
             try {
-                item.sendMessage(message);
+                item.sendMessage(message,username,type);
             } catch (IOException e) {
-                logger.warn("向客户端发送消息失败:"+item.session.getId()+"," +e.getMessage());
+                logger.warn("向客户端发送消息失败:"+item.session.getId()+","+item.session.getUserPrincipal()+"," +e.getMessage());
                 continue;
             }
         }

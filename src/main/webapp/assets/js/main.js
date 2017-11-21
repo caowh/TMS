@@ -53,5 +53,21 @@ $(document).ready(function(){
             }
         });
     })
+    $('#broadcast').click(function () {
+        bootbox.dialog({
+            title:"群发消息--所有在线用户",
+            message:"<div class='well ' style='margin-top:25px;'><form class='form-horizontal' role='form'><div class='form-group'><div class='col-sm-9'><input type='text' id='txtOldPwd' placeholder='请输入...' class='col-xs-10 col-sm-5 form-control' /></div></div></form></div>",
+            buttons:{
+                "success" : {
+                    "label" : "<i class='icon-ok'></i> 发送",
+                    "className" : "btn-sm btn-success",
+                    "callback" : function() {
+                        var txt1 = $("#txtOldPwd").val();
+                        sendMessage(txt1)
+                    }
+                }
+            }
+        })
+    })
 })
 
