@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+import tms.spring.entity.AutoCase;
 import tms.spring.entity.AutoCaseHelper;
+import tms.spring.entity.TreeNode;
 import tms.spring.exception.AutoCaseRepertoryException;
 import tms.spring.exception.CaseAnalysesException;
 import tms.spring.service.AutoCaseRepertoryService;
@@ -67,7 +69,9 @@ public class autoCaseRepertoryController {
     public Map<String, Object> searchAutoCase(@RequestParam("node") String node) {
         Map<String, Object> map = new HashMap<String, Object>();
         try {
-            map.put("result",autoCaseRepertoryService.convertToAutoCaseHelper(autoCaseRepertoryService.searchAutoCase(node)));
+            List<TreeNode> treeNodes=caseAnalyseUtil.getProjectTree();
+            List<AutoCase> autoCases=autoCaseRepertoryService.searchAutoCase(node,treeNodes);
+            map.put("result",autoCaseRepertoryService.convertToAutoCaseHelper(autoCases,treeNodes));
             map.put("code", Constant.CODE_SUCCESS);
         } catch (Exception e){
             map.put("code",Constant.CODE_FAILED);

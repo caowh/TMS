@@ -106,7 +106,11 @@ public class AutoCaseRepertoryService {
                 autoCase.setNode(node);
                 autoCase.setUpdateReason(updateReason);
             }
-            autoCaseDao.insertsAutoCases(autoCases);
+            try {
+                autoCaseDao.insertsAutoCases(autoCases);
+            } catch (Exception e) {
+                throw new AutoCaseRepertoryException("“"+fileName+"”文件中自动化测试用例写入数据库时出错！");
+            }
         }
     }
 
@@ -167,13 +171,17 @@ public class AutoCaseRepertoryService {
                     autoCase.setTpm_id(tpm_id);
                 }
             }
-            autoCaseDao.insertsAutoCases(autoCases);
+            try {
+                autoCaseDao.insertsAutoCases(autoCases);
+            } catch (Exception e) {
+                throw new AutoCaseRepertoryException("“"+fileName+"”文件中自动化测试用例写入数据库时出错！");
+            }
         }
     }
 
-    public List<AutoCase> searchAutoCase(String node) throws CaseAnalysesException {
+    public List<AutoCase> searchAutoCase(String node,List<TreeNode> treeNodes) throws CaseAnalysesException {
         List<AutoCase> list=new ArrayList<AutoCase>();
-        List<String> nodes=findAllCNode(node);
+        List<String> nodes=findAllCNode(node,treeNodes);
         AutoCase autoCase=new AutoCase();
         autoCase.setVersion(String.valueOf(Constant.PROJECT_ID));
         for(int i=0;i<nodes.size();i++){
@@ -196,8 +204,8 @@ public class AutoCaseRepertoryService {
         return list;
     }
 
-    private List<String> findAllCNode(String node) throws CaseAnalysesException {
-        TreeUtil treeUtil=new TreeUtil(caseAnalyseUtil.getProjectTree());
+    private List<String> findAllCNode(String node, List<TreeNode> treeNodes) throws CaseAnalysesException {
+        TreeUtil treeUtil=new TreeUtil(treeNodes);
         List<String> cNodeList=new ArrayList<String>();
         if(node.contains(",")){
             String[] nodes=node.split(",");
@@ -215,12 +223,11 @@ public class AutoCaseRepertoryService {
     }
 
 
-    public List<AutoCaseHelper> convertToAutoCaseHelper(List<AutoCase> autoCases) throws CaseAnalysesException {
+    public List<AutoCaseHelper> convertToAutoCaseHelper(List<AutoCase> autoCases,List<TreeNode> treeNodes) throws CaseAnalysesException {
         List<AutoCaseHelper> list=new ArrayList<AutoCaseHelper>();
         if(autoCases==null||autoCases.size()==0){
             return list;
         }
-        List<TreeNode> treeNodes=caseAnalyseUtil.getProjectTree();
         for(AutoCase autoCase:autoCases){
             AutoCaseHelper autoCaseHelper=new AutoCaseHelper();
             autoCaseHelper.setId(autoCase.getId().toString());
@@ -570,7 +577,7 @@ public class AutoCaseRepertoryService {
         }
         List<AutoCase> autoCases=new ArrayList<AutoCase>();
         autoCases.add(autoCase);
-        return convertToAutoCaseHelper(autoCases).get(0);
+        return convertToAutoCaseHelper(autoCases,caseAnalyseUtil.getProjectTree()).get(0);
     }
 
 
@@ -716,7 +723,6 @@ public class AutoCaseRepertoryService {
 
 
     public TreeNode getProjectTree() throws CaseAnalysesException {
-
         List<TreeNode> treeNodes=caseAnalyseUtil.getProjectTree();
         Map<String,Integer> map=new HashMap<String, Integer>();
         for(TreeNode treeNode:treeNodes){
@@ -725,7 +731,7 @@ public class AutoCaseRepertoryService {
         }
         for(TreeNode treeNode:treeNodes){
             int cid=treeNode.getCid();
-            List<String> nodes=findAllCNode(String.valueOf(cid));
+            List<String> nodes=findAllCNode(String.valueOf(cid),treeNodes);
             int count=0;
             for(String node : nodes){
                 count+=map.get(node);
