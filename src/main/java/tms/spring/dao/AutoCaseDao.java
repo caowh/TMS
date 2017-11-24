@@ -16,4 +16,5 @@ public interface AutoCaseDao {
     void updateAutoCase(AutoCase autoCase);
     void deleteAutoCase(Long id);
     void moveAutoCase(AutoCase autoCase);
+    int selectCountByNode(String node);
 }

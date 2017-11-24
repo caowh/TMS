@@ -425,6 +425,7 @@ public class AutoCaseRepertoryService {
         }
         caseMap.put("name",planName);
         List<Map> requests=new ArrayList<Map>();
+        List<String> orders=new ArrayList<String>();
         String id=null;
         for(AutoCase autoCase:autoCases){
             String content=autoCase.getContent();
@@ -432,9 +433,11 @@ public class AutoCaseRepertoryService {
             if(id==null){
                 id=map.get("collectionId").toString();
             }
+            orders.add(map.get("id").toString());
             requests.add(map);
         }
         caseMap.put("id",id);
+        caseMap.put("order",orders);
         caseMap.put("requests",requests);
         ByteArrayInputStream stream = new ByteArrayInputStream(JSON.toJSONBytes(caseMap));
         FileUtil.saveFile(stream,"testCases.json",path+time);
@@ -709,5 +712,27 @@ public class AutoCaseRepertoryService {
         autoCaseExecDao.insert(autoCaseExec);
         Long id=autoCaseExec.getId();
         return ShiroFilterUtils.encryptPassword(id.toString());
+    }
+
+
+    public TreeNode getProjectTree() throws CaseAnalysesException {
+
+        List<TreeNode> treeNodes=caseAnalyseUtil.getProjectTree();
+        Map<String,Integer> map=new HashMap<String, Integer>();
+        for(TreeNode treeNode:treeNodes){
+            int cid=treeNode.getCid();
+            map.put(String.valueOf(cid),autoCaseDao.selectCountByNode(String.valueOf(cid)));
+        }
+        for(TreeNode treeNode:treeNodes){
+            int cid=treeNode.getCid();
+            List<String> nodes=findAllCNode(String.valueOf(cid));
+            int count=0;
+            for(String node : nodes){
+                count+=map.get(node);
+            }
+            treeNode.setName(treeNode.getName()+"（"+count+"）");
+        }
+        TreeUtil treeUtil=new TreeUtil(treeNodes);
+        return treeUtil.generateTreeNode(Constant.PROJECT_ID);
     }
 }

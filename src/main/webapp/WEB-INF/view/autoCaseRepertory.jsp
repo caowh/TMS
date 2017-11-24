@@ -134,7 +134,7 @@
             App.init();
             Plugins.init();
             FormComponents.init();
-            var result='${result}'
+            var result="${result}"
             if(result.indexOf("成功")>=0){
                 $('#alert1 .alert-success').removeClass("hide-default")
                 $('#alert1 .alert-success').append(result)

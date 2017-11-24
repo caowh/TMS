@@ -182,10 +182,4 @@ public class CaseAnalyseService {
         }
         return list;
     }
-
-
-    public TreeNode getProjectTree() throws CaseAnalysesException {
-        TreeUtil treeUtil=new TreeUtil(caseAnalyseUtil.getProjectTree());
-        return treeUtil.generateTreeNode(Constant.PROJECT_ID);
-    }
 }

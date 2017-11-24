@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import tms.spring.entity.TreeNode;
+import tms.spring.service.AutoCaseRepertoryService;
 import tms.spring.service.CaseAnalyseService;
 import tms.spring.service.LoginService;
 import tms.spring.utils.CaseAnalyseUtil;
@@ -44,8 +45,7 @@ public class mainController {
     private CaseAnalyseService caseAnalyseService;
 
     @Autowired
-    private CaseAnalyseUtil caseAnalyseUtil;
-
+    private AutoCaseRepertoryService autoCaseRepertoryService;
 
     @RequestMapping(value = "index")
     public String index(Model model) {
@@ -107,7 +107,7 @@ public class mainController {
     public Map<String, Object> getProjectTree(){
         Map<String, Object> map = new HashMap<String, Object>();
         try {
-            TreeNode treeNode=caseAnalyseService.getProjectTree();
+            TreeNode treeNode=autoCaseRepertoryService.getProjectTree();
             map.put("code", Constant.CODE_SUCCESS);
             map.put("result", treeNode);
         }catch (Exception e){
