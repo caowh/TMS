@@ -44,6 +44,18 @@ function getModuleTree(data,fun) {
 
 
 /**
+ * 获取GV5产品根目录
+ * */
+function getProjectTree(fun) {
+    $.ajax({
+        type: "get",
+        url: "/main/getProjectTree.do",
+        dataType: "json",
+        success: fun
+    })
+}
+
+/**
  * 查看支持的分析类型
  * 参数，data：post请求的数据（json）；fun：回调函数，支持的分析类型
  *     {
@@ -107,15 +119,12 @@ function modifyThreshold(idname) {
  * 参数，fun：回调函数，返回符合条件所有的自动化用例
  *   data  {
             node:"30,40"
-            planName:"GVML规范_v1.0"
         }
  * */
-function searchAutoCase(data,fun) {
+function searchAutoCase(node,fun) {
     $.ajax({
-        type: "post",
-        contentType: "application/json; charset=utf-8",
-        url: "/autoCaseRepertory/searchAutoCase.do",
-        data: JSON.stringify(data),
+        type: "get",
+        url: "/autoCaseRepertory/searchAutoCase.do?node="+node,
         dataType: "json",
         success: fun
     })

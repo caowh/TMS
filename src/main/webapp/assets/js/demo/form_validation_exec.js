@@ -3,8 +3,10 @@ $(document).ready(function(){
     $('#checkbox').change(function () {
         if ($('#checkbox').prop('checked')) {
             $('#formGroup_plan').removeClass('hide')
+            $('#planName').addClass('required')
         }else {
             $('#formGroup_plan').addClass('hide')
+            $('#planName').removeClass('required')
         }
     })
 

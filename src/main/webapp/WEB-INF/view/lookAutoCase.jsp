@@ -353,7 +353,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">
-                                        测试计划：
+                                        产品：
                                     </label>
                                     <div class="col-md-9">
                                         <label class="form-control">${autoCaseHelper.version}</label>
@@ -361,7 +361,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">
-                                        计划节点：
+                                        节点：
                                     </label>
                                     <div class="col-md-9">
                                         <label class="form-control">${autoCaseHelper.node}</label>

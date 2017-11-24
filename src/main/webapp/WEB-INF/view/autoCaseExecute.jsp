@@ -293,7 +293,7 @@
                             <h4>
                                 <i class="icon-reorder">
                                 </i>
-                                自动化用例执行
+                                自动化用例执行--GVML
                             </h4>
                             <div class="toolbar no-padding">
                                 <div class="btn-group">
@@ -325,8 +325,8 @@
                                     </label>
                                     <div class="col-md-6">
                                         <input type="text" id="ids" name="ids" class="hide" value=""/>
+                                        <label class="col-md-6">优先执行手动用例&nbsp;&nbsp;<input type="radio" name="strategy" class="required" value="1" checked></label>
                                         <label class="col-md-6">优先执行自动化用例&nbsp;&nbsp;<input type="radio" name="strategy" class="required" value="0"></label>
-                                        <label class="col-md-6">优先执行手动用例&nbsp;&nbsp;<input type="radio" name="strategy" class="required" value="1"></label>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -340,8 +340,10 @@
                                 <div id="formGroup_plan" class="form-group hide">
                                     <label class="col-md-3 control-label">
                                         发送到的计划名称
+                                        <span class="required">
+                                          *
+                                        </span>
                                     </label>
-                                    <label class="col-md-1 control-label">${planName}</label>
                                     <div class="col-md-3">
                                         <select id="planName" name="planName" class="form-control">
                                             <option value="">
@@ -352,7 +354,7 @@
                                             </c:forEach>
                                         </select>
                                         <span class="help-block">
-                                            如需更改计划请在此下拉框中选择
+                                            发送至testlink对应计划的名称
                                         </span>
                                     </div>
                                 </div>
@@ -369,10 +371,13 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-3">
-                                        执行说明
+                                        执行标签
                                     </label>
                                     <div class="col-md-6">
                                         <input type="text" class="form-control" name="statement" />
+                                        <span class="help-block">
+                                            为本次秘钥打上标签，方便后续执行
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="form-actions align-center">

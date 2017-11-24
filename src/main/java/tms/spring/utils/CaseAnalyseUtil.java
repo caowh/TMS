@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import tms.spring.cache.CaseResultCountCache;
 import tms.spring.entity.Plan;
+import tms.spring.entity.TreeNode;
 import tms.spring.exception.CaseAnalysesException;
 
 import java.util.*;
@@ -212,27 +213,34 @@ public class CaseAnalyseUtil {
         }
     }
 
-    public String selectNodeNameById(String id,String node) throws CaseAnalysesException {
-        String planName=searchPlanNameById(id);
-        String name="";
-        String[] planTrueName=planName.split("_");
-        Plan plan=new Plan();
-        plan.setVersion(planTrueName[1]);
-        plan.setName(planTrueName[0]);
-        plan.setNode("0");
-        plan.setType(PlanDataType.SUITES.name());
-        List<Map> testSuites= (List<Map>) getResult(plan);
-        if(testSuites==null||testSuites.size()==0){
-            return name;
-        }
-        for (Map testSuite : testSuites){
-            String currentNode=String.valueOf(testSuite.get("id"));
-            if(node.equals(currentNode)){
-                name=String.valueOf(testSuite.get("name"));
-                break;
-            }
-        }
-        return name;
+    public String selectNodeNameById(String node,List<TreeNode> treeNodes) throws CaseAnalysesException {
+          for(TreeNode treeNode:treeNodes){
+              int cid=treeNode.getCid();
+              if(Integer.parseInt(node)==cid){
+                  return treeNode.getName();
+              }
+          }
+          return "testlink不存在该节点！";
+//        String planName=searchPlanNameById(id);
+//        String name="";
+//        String[] planTrueName=planName.split("_");
+//        Plan plan=new Plan();
+//        plan.setVersion(planTrueName[1]);
+//        plan.setName(planTrueName[0]);
+//        plan.setNode("0");
+//        plan.setType(PlanDataType.SUITES.name());
+//        List<Map> testSuites= (List<Map>) getResult(plan);
+//        if(testSuites==null||testSuites.size()==0){
+//            return name;
+//        }
+//        for (Map testSuite : testSuites){
+//            String currentNode=String.valueOf(testSuite.get("id"));
+//            if(node.equals(currentNode)){
+//                name=String.valueOf(testSuite.get("name"));
+//                break;
+//            }
+//        }
+//        return name;
     }
 
     public void setPlanUpdateStatus(String planId,Boolean bl){
@@ -243,5 +251,30 @@ public class CaseAnalyseUtil {
 
     public Map<String, Boolean> getPlanUpdateStatus(){
         return cache.getUpdateMap();
+    }
+
+
+    public List<TreeNode> getProjectTree() throws CaseAnalysesException {
+        List<List> lists=HttpRequestUtils.httpGet(Constant.TESTLINKSERVICE_ADDRESS+"getAllSuite",List.class);
+        if(lists==null&&lists.size()==0){
+            throw new CaseAnalysesException("获取产品模块失败！");
+        }
+        List<TreeNode> treeNodes=new ArrayList<TreeNode>();
+        TreeNode treeNodeRoot=new TreeNode();
+        treeNodeRoot.setCid(Constant.PROJECT_ID);
+        treeNodeRoot.setPid(0);
+        treeNodeRoot.setName("GV5产品测试");
+        treeNodes.add(treeNodeRoot);
+        for(List list:lists){
+            int cid=Integer.parseInt(list.get(0).toString());
+            int pid=Integer.parseInt(list.get(2).toString());
+            String name=list.get(1).toString();
+            TreeNode treeNode=new TreeNode();
+            treeNode.setCid(cid);
+            treeNode.setPid(pid);
+            treeNode.setName(name);
+            treeNodes.add(treeNode);
+        }
+        return treeNodes;
     }
 }

@@ -10,9 +10,7 @@ import tms.spring.entity.TreeNode;
 import tms.spring.exception.AutoCaseRepertoryException;
 import tms.spring.exception.CaseAnalysesException;
 import tms.spring.handler.CaseAnalyseHandler;
-import tms.spring.utils.CaseAnalyseUtil;
-import tms.spring.utils.PlanDataType;
-import tms.spring.utils.TreeUtil;
+import tms.spring.utils.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -186,4 +184,8 @@ public class CaseAnalyseService {
     }
 
 
+    public TreeNode getProjectTree() throws CaseAnalysesException {
+        TreeUtil treeUtil=new TreeUtil(caseAnalyseUtil.getProjectTree());
+        return treeUtil.generateTreeNode(Constant.PROJECT_ID);
+    }
 }

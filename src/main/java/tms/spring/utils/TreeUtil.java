@@ -66,5 +66,16 @@ public class TreeUtil {
         }
         return root;
     }
+
+
+    public void getDeepChildNode(List<String> list,int rootId){
+        List<TreeNode> childrenTreeNode = this.getChildrenNodeById(rootId);
+        for (TreeNode item : childrenTreeNode) {
+            if(!list.contains(item.getCid())){
+                list.add(String.valueOf(item.getCid()));
+            }
+            this.getDeepChildNode(list,item.getCid());
+        }
+    }
 }
 

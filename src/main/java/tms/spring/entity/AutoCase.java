@@ -18,8 +18,15 @@ public class AutoCase {
     private Long uploaderId;
     private Date time;
     private String node;
+    private Long tpm_id;
 
+    public Long getTpm_id() {
+        return tpm_id;
+    }
 
+    public void setTpm_id(Long tpm_id) {
+        this.tpm_id = tpm_id;
+    }
 
     public String getNode() {
         return node;

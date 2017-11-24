@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tms.spring.dao.PostManAssoDao">
+
+    <insert id="insert" parameterType="tms.spring.entity.PostManAsso" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO t_pm_asso(readme_url,env_url)
+        VALUES
+            (#{readme_url,jdbcType=VARCHAR},#{env_url,jdbcType=INTEGER})
+    </insert>
+
+    <select id="selectById" parameterType="java.lang.Long" resultType="tms.spring.entity.PostManAsso">
+        SELECT * FROM t_pm_asso WHERE id=#{id};
+    </select>
+
+</mapper>

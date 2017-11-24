@@ -20,6 +20,10 @@ import tms.spring.utils.CaseAnalyseUtil;
 import tms.spring.utils.Constant;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.File;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -41,15 +45,8 @@ public class autoCaseRepertoryController {
 
     @RequestMapping(value = "upload")
     public String upload(Model model,HttpServletRequest request) {
-        String name=request.getParameter("name");
-        String type=request.getParameter("type");
-        String planName=request.getParameter("planName");
-        String updateReason=request.getParameter("updateReason");
-        String node=request.getParameter("node");
-        MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
-        List<MultipartFile> files=multipartRequest.getFiles("multipartFiles");
         try{
-            autoCaseRepertoryService.upload(updateReason,name,type,planName,node,files);
+            autoCaseRepertoryService.upload(request);
             model.addAttribute("result", "上传用例成功");
         }catch (Exception e){
             model.addAttribute("result", "上传用例失败，失败原因："+e.getMessage());
@@ -61,17 +58,16 @@ public class autoCaseRepertoryController {
             model.addAttribute("writer", "<input type=\"text\" name=\"name\" class=\"form-control required\" value=\""+username+"\" readonly=\"readonly\">");
         }
         model.addAttribute("username", username);
-        model.addAttribute("planList", caseAnalyseUtil.getPlanList());
         return "autoCaseRepertory";
     }
 
 
     @RequestMapping(value = "searchAutoCase")
     @ResponseBody
-    public Map<String, Object> searchAutoCase(@RequestBody Map<String,String> jsonMap) {
+    public Map<String, Object> searchAutoCase(@RequestParam("node") String node) {
         Map<String, Object> map = new HashMap<String, Object>();
         try {
-            map.put("result",autoCaseRepertoryService.convertToAutoCaseHelper(autoCaseRepertoryService.searchAutoCase(jsonMap)));
+            map.put("result",autoCaseRepertoryService.convertToAutoCaseHelper(autoCaseRepertoryService.searchAutoCase(node)));
             map.put("code", Constant.CODE_SUCCESS);
         } catch (Exception e){
             map.put("code",Constant.CODE_FAILED);
@@ -133,12 +129,44 @@ public class autoCaseRepertoryController {
                     "    window.scene = new GV.GraphicScene();\n" +
                     "    earth.addScene(scene);\n" +
                     "})");
-            model.addAttribute("planName", autoCaseRepertoryService.getPlanName(ids));
             return "autoCaseExecute";
+        }else if(type==1){
+            model.addAttribute("waitTime","5000");
+            return "autoCaseExecutePM";
         }else {
             model.addAttribute("result", "对不起，你所输入的用例类型错误或不一致，无法运行！");
             return "autoCaseRepertoryResult";
         }
+    }
+
+
+    @RequestMapping(value = "createPMExecutePlan")
+    public String createPMExecutePlan(Model model,HttpServletRequest request) {
+        String key=autoCaseRepertoryService.savePMExecutePlan(request);
+        model.addAttribute("username", SecurityUtils.getSubject().getPrincipal());
+        model.addAttribute("result", "你的执行秘钥为：“"+key+"”，可访问：“http://"+request.getLocalAddr()+":"
+                + request.getLocalPort()
+                +"/autoCaseRepertory/executePMCase.do?key="+key+"”进行测试，" +
+                "本次测试请直接点击！<a href=\"/autoCaseRepertory/executePMCase.do?key="+key+"\" class=\"btn btn-primary\">执行测试</a>");
+        return "autoCaseRepertoryResult";
+    }
+
+
+    @RequestMapping(value = "executePMCase")
+    public String executePMCase(Model model,HttpServletRequest request,HttpServletResponse response) {
+        model.addAttribute("username", SecurityUtils.getSubject().getPrincipal());
+        try {
+            byte[] bytes=autoCaseRepertoryService.createPostManTest(request);
+            OutputStream out=response.getOutputStream();
+            out.write(bytes);
+            response.setContentType("APPLICATION/OCTET-STREAM");
+            response.setHeader("Content-Disposition", "attachment; filename="
+                    + "postmanAutoCase.zip");
+        } catch (Exception e) {
+            model.addAttribute("result", "下载执行文件失败，失败原因："+e.getMessage());
+            return "autoCaseRepertoryResult";
+        }
+        return null;
     }
 
 
@@ -150,7 +178,14 @@ public class autoCaseRepertoryController {
         String statement=request.getParameter("statement");
         String planName=request.getParameter("planName");
         String ids=request.getParameter("ids");
-        String key=autoCaseRepertoryService.saveGVMLExecutePlan(strategy,sendToTestlink,before,statement,planName,ids);
+        String key;
+        try {
+            key = autoCaseRepertoryService.saveGVMLExecutePlan(strategy,sendToTestlink,before,statement,planName,ids);
+        } catch (AutoCaseRepertoryException e) {
+            model.addAttribute("result","获取执行秘钥失败：失败原因："+e.getMessage());
+            this.prepareExecute(model,ids);
+            return "autoCaseExecute";
+        }
         model.addAttribute("username", SecurityUtils.getSubject().getPrincipal());
         model.addAttribute("result", "你的执行秘钥为：“"+key+"”，请在GVML专用浏览器访问：http://"+request.getLocalAddr()+":"
                 + request.getLocalPort()

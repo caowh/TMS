@@ -1,6 +1,5 @@
 "use strict";
 function searchAllAutoCase() {
-    var planName=$("#searchPlanName").find("option:selected").text().trim()
     var treeObj=$.fn.zTree.getZTreeObj("searchModuleNodeTree")
     var nodes="";
     try {
@@ -18,7 +17,7 @@ function searchAllAutoCase() {
         node=node+","+nodes[i].cid
     }
     $('#searchA').html('正在查询...')
-    searchAutoCase({node:String(node),planName:planName},function (res) {
+    searchAutoCase(String(node),function (res) {
         $('#searchA').html('查询')
         if(res.code==1){
             var result=res.result
@@ -43,17 +42,43 @@ function searchAllAutoCase() {
             console.error(res.message)
         }
     })
-
 }
-
+function checkFilesJS() {
+    var multipartFiles = document.getElementById("multipartFiles");
+    if(!multipartFiles.value){
+        return;
+    }
+    for(var i=0;i<multipartFiles.files.length;i++){
+        var file = multipartFiles.files[i];
+        if(!file.name.endsWith(".js")){
+            bootbox.alert("GVML用例文件必须为js格式！")
+            multipartFiles.value = "";
+            return;
+        }
+    }
+}
+function checkFilesJSON() {
+    var multipartFiles = document.getElementById("multipartFiles");
+    if(!multipartFiles.value){
+        return;
+    }
+    for(var i=0;i<multipartFiles.files.length;i++){
+        var file = multipartFiles.files[i];
+        if(!file.name.endsWith(".json")){
+            bootbox.alert("postman用例文件必须为json格式！")
+            multipartFiles.value = "";
+            return;
+        }
+    }
+}
 function validatePlanNode() {
-    if($('#moduleNodeTree').html()=="找不到数据"){
+    if($('#moduleNodeTree').html()=="找不到数据!"){
         $('#warning1').click()
         return false;
     }else {
         var treeObj=$.fn.zTree.getZTreeObj("moduleNodeTree")
         var nodes=treeObj.getSelectedNodes(true)
-        if(nodes.length==0){
+        if(nodes.length==0||nodes[0].pid==0){
             $('#warning3').click()
             return false;
         }
@@ -61,6 +86,37 @@ function validatePlanNode() {
     }
 }
 $(document).ready(function(){
+
+    var multipartFiles = document.getElementById("multipartFiles"),
+        envFile = document.getElementById("envFile");
+    envFile.addEventListener('change',function(){
+        if(!envFile.value){
+            return;
+        }
+        if(!envFile.value.endsWith(".json")) {
+            bootbox.alert("环境变量文件必须为json格式！")
+            envFile.value = "";
+            return;
+        }
+    })
+    multipartFiles.addEventListener('change',checkFilesJS);
+    $('.form-horizontal.row-border .form-group').eq(4).change(function () {
+        var multipartFiles = document.getElementById("multipartFiles");
+        multipartFiles.value="";
+        if($(this).find('option:selected').val()==1){
+            multipartFiles.removeEventListener("change",checkFilesJS);
+            multipartFiles.addEventListener('change',checkFilesJSON);
+            $('.form-horizontal.row-border .form-group').eq(2).removeClass('hide')
+            $('.form-horizontal.row-border .form-group').eq(3).removeClass('hide')
+        }else if($(this).find('option:selected').val()==2){
+            multipartFiles.removeEventListener("change",checkFilesJSON);
+            multipartFiles.addEventListener('change',checkFilesJS);
+            document.getElementById("envFile").value="";
+            document.getElementById("readMeFile").value="";
+            $('.form-horizontal.row-border .form-group').eq(2).addClass('hide')
+            $('.form-horizontal.row-border .form-group').eq(3).addClass('hide')
+        }
+    })
     $('#autoCaseTable').DataTable({
         language:{
             sProcessing : "处理中...",
@@ -97,55 +153,30 @@ $(document).ready(function(){
             {data: "操作"}
         ]
     });
-    $('#planName').change(function () {
-        $('#moduleNodeTree').empty()
-        $('#moduleNodeTree').append('正在加载...')
-        var selectText=$("#planName").find("option:selected").text()
-        if(selectText==""){
-            $('#moduleNodeTree').append("请选择一个计划！")
-        }else {
-            var depart=selectText.indexOf("_")
-            getModuleTree({planName:selectText.substring(0,depart),planVersion:selectText.substring(depart+1,selectText.length).trim()},function (res) {
-                if(res.code==1){
-                    var nodeTree=[];
-                    nodeTree.push(res.result)
-                    var setting = {
-                        view:{
-                            selectedMulti:false
-                        },
-                        callback: {
-                            onClick: function (event, treeId, treeNode) {
-                                $('#node').val(treeNode.cid);
-                            }
-                        }
-                    };
-                    $.fn.zTree.init($("#moduleNodeTree"), setting, nodeTree);
-                }else {
-                    $('#moduleNodeTree').empty()
-                    $('#moduleNodeTree').append('找不到数据')
+    $('#searchModuleNodeTree').append('正在加载...')
+    $('#moduleNodeTree').append('正在加载...')
+    getProjectTree(function (res) {
+        if(res.code==1){
+            var nodeTree=[];
+            nodeTree.push(res.result)
+            var setting = {
+                view:{
+                    selectedMulti:false
+                },
+                callback: {
+                    onClick: function (event, treeId, treeNode) {
+                        $('#node').val(treeNode.cid);
+                    }
                 }
-            })
-        }
-    })
-    $('#searchPlanName').change(function () {
-        $('#searchModuleNodeTree').empty()
-        $('#searchModuleNodeTree').append('正在加载...')
-        var selectText=$("#searchPlanName").find("option:selected").text()
-        if(selectText==""||selectText==null){
-            $('#searchModuleNodeTree').append("请选择一个计划！")
+            };
+            $.fn.zTree.init($("#moduleNodeTree"), setting, nodeTree);
+            setting = {};
+            $.fn.zTree.init($("#searchModuleNodeTree"), setting, nodeTree);
         }else {
-            var depart=selectText.indexOf("_")
-            getModuleTree({planName:selectText.substring(0,depart),planVersion:selectText.substring(depart+1,selectText.length).trim()},function (res) {
-                if(res.code==1){
-                    var nodeTree=[];
-                    nodeTree.push(res.result)
-                    var setting = {};
-                    $.fn.zTree.init($("#searchModuleNodeTree"), setting, nodeTree);
-                }else {
-                    $('#searchModuleNodeTree').empty()
-                    $('#searchModuleNodeTree').append('找不到数据')
-                }
-            })
+            $('#searchModuleNodeTree').empty()
+            $('#moduleNodeTree').empty()
+            $('#searchModuleNodeTree').append('找不到数据！')
+            $('#moduleNodeTree').append('找不到数据！')
         }
     })
     $('#execA').click(function () {
@@ -174,11 +205,14 @@ $(document).ready(function(){
             }
         }
         if(ids.length>0){
+            $('#deleteA').html('正在删除...')
             deleteAutoCase(JSON.stringify(ids),function (res) {
+                $('#deleteA').html('删除')
                 if(res.code==1){
                     $('#alert2 .alert-success').removeClass("hide-default")
                     $('#alert2 .alert-success span').empty()
                     $('#alert2 .alert-success span').append("用例删除成功！")
+                    searchAllAutoCase()
                 }else{
                     $('#alert2 .alert-danger').removeClass("hide-default")
                     $('#alert2 .alert-danger span').empty()
@@ -190,7 +224,6 @@ $(document).ready(function(){
             return false
         }
     })
-
     $('#moveA').click(function () {
         var table=$('#autoCaseTable').dataTable()
         var nTrs=table.fnGetNodes()
@@ -213,11 +246,14 @@ $(document).ready(function(){
             return false
         }
         if(ids.length>0 && nodes.length===1){
+            $('#moveA').html('正在移动...')
            moveAutoCase(JSON.stringify(ids),nodes[0].cid,function (res) {
+               $('#moveA').html('移动')
                 if(res.code==1){
                     $('#alert2 .alert-success').removeClass("hide-default")
                     $('#alert2 .alert-success span').empty()
                     $('#alert2 .alert-success span').append("用例移动成功！")
+                    searchAllAutoCase()
                 }else{
                     $('#alert2 .alert-danger').removeClass("hide-default")
                     $('#alert2 .alert-danger span').empty()
@@ -229,8 +265,6 @@ $(document).ready(function(){
             return false
         }
     })
-
-
 
 
     $.extend($.validator.defaults,{invalidHandler:function(c,a){var d=a.numberOfInvalids();if(d){var b=d==1?"你有一个必填项未填写内容！":"你有"+d+" 个必填项未填写内容！";noty({text:b,type:"error",timeout:2000})}}});$("#validate-1").validate();$("#validate-2").validate();$("#validate-3").validate();$("#validate-4").validate()});

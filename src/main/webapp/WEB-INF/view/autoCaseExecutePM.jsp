@@ -134,6 +134,8 @@
             App.init();
             Plugins.init();
             FormComponents.init();
+            var ids='${ids}'
+            $('#ids').val(ids);
             var result='${result}'
             if(result.indexOf("成功")>=0){
                 $('#alert1 .alert-success').removeClass("hide-default")
@@ -156,7 +158,7 @@
     </script>
     <script type="text/javascript" src="/assets/js/demo/ui_general.js">
     </script>
-    <script type="text/javascript" src="/assets/js/demo/form_validation.js">
+    <script type="text/javascript" src="/assets/js/demo/form_validation_exec.js">
     </script>
 </head>
 
@@ -182,11 +184,6 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="#" id="updatePassword">
-                            <i class="icon-anchor">
-                            </i>
-                            修改密码
-                        </a>
                         <a href="#" onclick="logout()">
                             <i class="icon-key">
                             </i>
@@ -248,7 +245,7 @@
                 </li>
             </ul>
             <div class="sidebar-title">
-            <span>
+             <span>
                 系统消息（在线人数：<a href="#" id="onlineUserCount"></a><span id="onlineUser" class="hide"></span>）
             </span>
             </div>
@@ -278,15 +275,15 @@
         <div class="container">
             <div class="page-header">
                 <h3>自动化用例仓库</h3>
-                <button id="warning1" class="btn btn-warning btn-notification close" data-type="warning" data-text="<strong>警告</strong><br>当前不存在任何节点！">
+                <button id="warning1" class="btn btn-warning btn-notification close" data-type="warning" data-text="<strong>警告</strong><br>当前计划不存在任何节点！">
                 </button>
-                <button id="warning2" class="btn btn-warning btn-notification close" data-type="warning" data-text="<strong>警告</strong><br>查询时请先选择节点！">
+                <button id="warning2" class="btn btn-warning btn-notification close" data-type="warning" data-text="<strong>警告</strong><br>查询时请先选择计划和节点！">
                 </button>
-                <button id="warning3" class="btn btn-warning btn-notification close" data-type="warning" data-text="<strong>警告</strong><br>请先选择一个节点，不能选择根节点！">
+                <button id="warning3" class="btn btn-warning btn-notification close" data-type="warning" data-text="<strong>警告</strong><br>请先选择一个节点！">
                 </button>
                 <button id="warning4" class="btn btn-warning btn-notification close" data-type="warning" data-text="<strong>警告</strong><br>查询过程出现错误！">
                 </button>
-                <button id="warning5" class="btn btn-warning btn-notification close" data-type="warning" data-text="<strong>提示</strong><br>请先勾选用例！">
+                <button id="warning5" class="btn btn-success btn-notification close" data-type="success" data-text="<strong>提示</strong><br>成功收藏本次分析方式！">
                 </button>
             </div>
             <div class="row">
@@ -296,7 +293,7 @@
                             <h4>
                                 <i class="icon-reorder">
                                 </i>
-                                自动化用例上传
+                                自动化用例执行--PostMan
                             </h4>
                             <div class="toolbar no-padding">
                                 <div class="btn-group">
@@ -318,200 +315,86 @@
                                     </i>
                                 </div>
                             </div>
-                            <form class="form-horizontal row-border" id="validate-3" action="/autoCaseRepertory/upload.do" method="POST" enctype="multipart/form-data" onsubmit="return validatePlanNode()">
+                            <form class="form-horizontal row-border" id="validate-3" action="/autoCaseRepertory/createPMExecutePlan.do" method="POST">
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">
-                                        编写人员
-                                        <span class="required">
-                                          *
-                                        </span>
+                                        页面重定向
                                     </label>
                                     <div class="col-md-6">
-                                        ${writer}
+                                        <input type="text" id="ids" name="ids" class="hide" value=""/>
+                                        <input type="checkbox" name="redirect">
+                                        <span class="help-block">
+                                            返回状态码为3XX后自动重定向
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">
-                                        用例文件
-                                        <span class="required">
-                                          *
-                                        </span>
-                                    </label>
-                                    <div class="col-md-9">
-                                        <input type="file" name="multipartFiles" id="multipartFiles" class="required" multiple="multiple">
-                                    </div>
-                                </div>
-                                <div class="form-group hide">
-                                    <label class="col-md-3 control-label">
-                                        环境变量
-                                    </label>
-                                    <div class="col-md-9">
-                                        <input type="file" name="envFile" id="envFile">
-                                    </div>
-                                </div>
-                                <div class="form-group hide">
-                                    <label class="col-md-3 control-label">
-                                        执行说明
-                                    </label>
-                                    <div class="col-md-9">
-                                        <input type="file" name="readMeFile" id="readMeFile" accept="text/plain">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                <label class="col-md-3 control-label">
-                                    类型
-                                    <span class="required">
-                                          *
-                                        </span>
-                                </label>
-                                <div class="col-md-6">
-                                    <select name="type" class="form-control required">
-                                        <option value="1">
-                                            postman接口测试
-                                        </option>
-                                        <option value="2" selected>
-                                            GVML规范测试
-                                        </option>
-                                    </select>
-                                </div>
-                            </div>
-                                <div class="form-group">
-                                    <label class="col-md-3 control-label">
-                                        节点名称
-                                        <span class="required">
-                                          *
-                                        </span>
+                                        用例失败后停止运行
                                     </label>
                                     <div class="col-md-6">
-                                        <div class="widget-content">
-                                            <ul id="moduleNodeTree" class="ztree">
-                                            </ul>
-                                            <input type="text" id="node" name="node" class="hide"/>
-                                        </div>
+                                        <input type="checkbox" name="bail">
+                                        <span class="help-block">
+                                            某一个用例失败后，不继续运行接下来的用例
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">
+                                        是否发送至testlink
+                                    </label>
+                                    <div class="col-md-9">
+                                        <input id="checkbox" type="checkbox" name="sendToTestlink">
+                                    </div>
+                                </div>
+                                <div id="formGroup_plan" class="form-group hide">
+                                    <label class="col-md-3 control-label">
+                                        发送到的计划名称
+                                        <span class="required">
+                                          *
+                                        </span>
+                                    </label>
+                                    <div class="col-md-3">
+                                        <select id="planName" name="planName" class="form-control">
+                                            <option value="">
+                                            </option>
+                                            <c:forEach items="${planList}" var="plan">
+                                                <option value="${plan.get("name")}">${plan.get("name")}
+                                                </option>
+                                            </c:forEach>
+                                        </select>
+                                        <span class="help-block">
+                                            发送至testlink对应计划的名称
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-3">
-                                        变更原因
-                                        <span class="required">
-                                  *
-                                </span>
+                                        单用例最大等待时间(ms)
                                     </label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control required" name="updateReason" />
+                                        <input  type="number" class="form-control" name="waitTime" value="${waitTime}">
                                         <span class="help-block">
-                                  初级提交或者修改用例的原因
-                                </span>
+                                            超过等待时间，则继续执行下一个用例
+                                        </span>
                                     </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">
+                                        执行标签
+                                        <span class="required">
+                                          *
+                                        </span>
+                                    </label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control required" name="statement" />
+                                    </div>
+                                    <span class="help-block">
+                                            为本次秘钥打上标签，方便后续执行
+                                        </span>
                                 </div>
                                 <div class="form-actions align-center">
-                                    <input type="submit" value="上传" class="btn btn-primary">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="widget box">
-                        <div class="widget-header">
-                            <h4>
-                                <i class="icon-reorder">
-                                </i>
-                                用例检索与执行
-                            </h4>
-                            <div class="form-actions fluid">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="col-md-offset-3 col-md-9">
-                                            <a href="#" id="searchA" onclick="searchAllAutoCase()" class="btn btn-primary">
-                                                查询
-                                            </a>
-                                            <a href="#" id="execA" class="btn btn-primary">
-                                                执行
-                                            </a>
-                                            <a href="#" id="moveA" class="btn btn-primary">
-                                                移动
-                                            </a>
-                                            <a href="#" id="deleteA" class="btn btn-danger">
-                                                删除
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="widget-content">
-                            <div class="tab-content" id="alert2">
-                                <div class="alert alert-danger hide-default">
-                                    <i class="icon-remove close" data-dismiss="alert">
-                                    </i>
-                                    <span></span>
-                                </div>
-                                <div class="alert alert-success hide-default">
-                                    <i class="icon-remove close" data-dismiss="alert">
-                                    </i>
-                                    <span></span>
-                                </div>
-                            </div>
-                            <form class="form-horizontal" id="sample_form" action="#">
-                                <div class="form-wizard">
-                                    <div class="form-body">
-                                        <div class="tab-content">
-                                            <div class="alert alert-danger hide-default">
-                                                <button class="close" data-dismiss="alert">
-                                                </button>
-                                                您填写的不完善，请再次确认
-                                            </div>
-                                            <div class="alert alert-success hide-default">
-                                                <button class="close" data-dismiss="alert">
-                                                </button>
-                                                填写正确
-                                            </div>
-                                            <div class="tab-pane active">
-                                                <div class="row">
-                                                    <div class="col-md-3">
-                                                        <div class="widget box">
-                                                            <div class="widget-content">
-                                                                <div class="form-group">
-                                                                    <div class="col-md-12">
-                                                                        <label class="control-label">
-                                                                            请先选择产品节点，再点击下方查询（按“ctrl”可多选）
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="col-md-12">
-                                                                        <ul id="searchModuleNodeTree" class="ztree">
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-9">
-                                                        <div class="widget box">
-                                                            <div class="widget-content">
-                                                                <table id="autoCaseTable" class="table table-striped table-bordered table-hover table-checkable">
-                                                                    <thead>
-                                                                    <tr>
-                                                                        <th class="checkbox-column">
-                                                                            <input type="checkbox" class="uniform">
-                                                                        </th>
-                                                                        <th>true_id</th>
-                                                                        <th>用例id</th>
-                                                                        <th>用例描述</th>
-                                                                        <th>子模块</th>
-                                                                        <th>操作</th>
-                                                                    </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                    </tbody>
-                                                                </table>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <input type="submit" value="生成执行秘钥" class="btn btn-primary">
                                 </div>
                             </form>
                         </div>

@@ -16,6 +16,7 @@
         <id column="writer" property="writer"/>
         <id column="uploaderId" property="uploaderId"/>
         <id column="time" property="time"/>
+        <id column="tpm_id" property="tpm_id"/>
     </resultMap>
 
     <resultMap id="AutoCaseTypes" type="java.lang.Integer">
@@ -23,13 +24,13 @@
     </resultMap>
 
     <insert id="insertsAutoCases" parameterType="java.util.List" useGeneratedKeys="true">
-        INSERT INTO t_autocase(case_id,type,version,node,describes,updateReason,content,writer,uploaderId,time)
+        INSERT INTO t_autocase(case_id,type,version,node,describes,updateReason,content,writer,uploaderId,time,tpm_id)
         VALUES
         <foreach collection="list" item="autoCase" separator=",">
             (#{autoCase.case_id,jdbcType=VARCHAR},#{autoCase.type,jdbcType=INTEGER},#{autoCase.version,jdbcType=VARCHAR},
             #{autoCase.node,jdbcType=VARCHAR},#{autoCase.describes,jdbcType=VARCHAR},#{autoCase.updateReason,jdbcType=VARCHAR},
             #{autoCase.content,jdbcType=VARCHAR},#{autoCase.writer,jdbcType=VARCHAR}
-            ,#{autoCase.uploaderId,jdbcType=BIGINT},#{autoCase.time})
+            ,#{autoCase.uploaderId,jdbcType=BIGINT},#{autoCase.time},#{autoCase.tpm_id,jdbcType=BIGINT})
         </foreach>
     </insert>
 

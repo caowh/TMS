@@ -58,7 +58,6 @@ public class mainController {
     @ResponseBody
     public Map<String, Object> logout(){
         Map<String, Object> map = new HashMap<String, Object>();
-        logger.info("begin logout!");
         try {
             loginService.logout();
             map.put("code", Constant.CODE_SUCCESS);
@@ -91,9 +90,24 @@ public class mainController {
     @ResponseBody
     public Map<String, Object> getModuleTree(@RequestBody Map<String,String> jsonMap){
         Map<String, Object> map = new HashMap<String, Object>();
-        logger.info("begin getModuleTree!");
         try {
             TreeNode treeNode=caseAnalyseService.getModuleTree(jsonMap);
+            map.put("code", Constant.CODE_SUCCESS);
+            map.put("result", treeNode);
+        }catch (Exception e){
+            logger.error("getModuleTree errorMessage:" + e.getMessage());
+            map.put("code", Constant.CODE_FAILED);
+            map.put("message",e.getMessage());
+        }
+        return map;
+    }
+
+    @RequestMapping(value="getProjectTree")
+    @ResponseBody
+    public Map<String, Object> getProjectTree(){
+        Map<String, Object> map = new HashMap<String, Object>();
+        try {
+            TreeNode treeNode=caseAnalyseService.getProjectTree();
             map.put("code", Constant.CODE_SUCCESS);
             map.put("result", treeNode);
         }catch (Exception e){
@@ -108,7 +122,6 @@ public class mainController {
     @ResponseBody
     public Map<String, Object> getSupportType(@RequestBody Map<String,String> jsonMap){
         Map<String, Object> map = new HashMap<String, Object>();
-        logger.info("begin getSupportType!");
         try {
             List<String> types=caseAnalyseService.getSupportType(jsonMap);
             map.put("code", Constant.CODE_SUCCESS);
@@ -126,7 +139,6 @@ public class mainController {
      */
     @RequestMapping(value="loadThresholdPage")
     public String loadThresholdPage(Model model) {
-        logger.info("load threshold page!");
         model.addAttribute("username", SecurityUtils.getSubject().getPrincipal());
         return "thresholdConfig";
     }
@@ -136,8 +148,6 @@ public class mainController {
      */
     @RequestMapping(value="modifyThreshold")
     public String modifyThreshold(String value) {
-        logger.info("modify the threshold!");
-
         //向配置文件写入threshold值
         String path = getClass().getResource("/").getFile().toString()+"threshold.properties";
         PropertiesUtil.updateValue(path,"threshold",value);
@@ -158,7 +168,6 @@ public class mainController {
             model.addAttribute("writer", "<input type=\"text\" name=\"name\" class=\"form-control required\" value=\""+username+"\" readonly=\"readonly\">");
         }
         model.addAttribute("username", username);
-        model.addAttribute("planList", caseAnalyseUtil.getPlanList());
         return "autoCaseRepertory";
     }
 
