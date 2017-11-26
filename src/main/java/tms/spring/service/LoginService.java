@@ -3,7 +3,6 @@ package tms.spring.service;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
-import org.apache.shiro.web.servlet.ShiroFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,11 +14,10 @@ import tms.spring.exception.MailException;
 import tms.spring.exception.RegisterException;
 import tms.spring.shiro.ShiroRealm;
 import tms.spring.shiro.filter.ShiroFilterUtils;
-import tms.spring.utils.MailCilent;
+import tms.spring.utils.MailClient;
 import tms.spring.utils.VerifyCodeUtils;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.util.Date;
 import java.util.Map;
 
@@ -34,7 +32,7 @@ public class LoginService {
     @Autowired
     private UserDao userDao;
     @Autowired
-    private MailCilent mailCilent;
+    private MailClient mailClient;
 
     public void login(HttpServletRequest request,Map<String,String> jsonMap) throws Exception {
         String username=jsonMap.get("username");
@@ -128,7 +126,7 @@ public class LoginService {
             throw new MailException("邮箱已被注册");
         }
         String content="你正在注册账号！";
-        String validateCode=mailCilent.sendHtmlMail(email,content);
+        String validateCode= mailClient.sendHtmlMail(email,content);
         WebUtils.setSessionAttribute(request, email, validateCode);
     }
 
@@ -141,7 +139,7 @@ public class LoginService {
             throw new MailException("该邮箱未被注册");
         }
         String content="你正在找回密码！";
-        String validateCode=mailCilent.sendHtmlMail(email,content);
+        String validateCode= mailClient.sendHtmlMail(email,content);
         WebUtils.setSessionAttribute(request, email, validateCode);
     }
 

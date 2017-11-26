@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f9cc282-ed11-4a6d-8b09-35408e684dc7" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/spring-config/spring-transaction.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/spring-config/spring-service.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/login.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/login.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tms/spring/controller/autoCaseRepertoryController.java" afterPath="$PROJECT_DIR$/src/main/java/tms/spring/controller/autoCaseRepertoryController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tms/spring/controller/linuxMonitorController.java" afterPath="$PROJECT_DIR$/src/main/java/tms/spring/controller/linuxMonitorController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tms/spring/service/AutoCaseRepertoryService.java" afterPath="$PROJECT_DIR$/src/main/java/tms/spring/service/AutoCaseRepertoryService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tms/spring/service/LoginService.java" afterPath="$PROJECT_DIR$/src/main/java/tms/spring/service/LoginService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring-config/spring-mvc.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring-config/spring-mvc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring-config/spring-mybatis.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring-config/spring-mybatis.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/tms/spring/utils/MailCilent.java" afterPath="$PROJECT_DIR$/src/main/java/tms/spring/utils/MailClient.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -54,7 +62,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>curre</find>
       <find>current</find>
       <find>currentT</find>
       <find>currentTime</find>
@@ -84,6 +91,7 @@
       <find>mybatis</find>
       <find>getAllSuite</find>
       <find>register-form</find>
+      <find>@Transactional</find>
     </findStrings>
     <replaceStrings>
       <replace>t_user_role</replace>
@@ -117,14 +125,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/tms/spring/entity/PlanHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring-config/spring-service.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/tms/spring/cache/CaseResultCountCache.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring-config/spring-quartz.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/tms/spring/shiro/listenter/CustomSessionListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tms/spring/controller/CaseResultController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/shiroBaseAuth.ini" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring-config/spring-shiro.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/assets/js/demo/form_wizard.js" />
         <option value="$PROJECT_DIR$/src/main/java/tms/spring/utils/SocketUtil.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -166,8 +166,16 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/autoCaseRepertory.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/tms/spring/quartz/UpdateCaseResult.java" />
         <option value="$PROJECT_DIR$/src/main/java/tms/spring/controller/autoCaseRepertoryController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tms/spring/service/AutoCaseRepertoryService.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/assets/js/login.js" />
+        <option value="$PROJECT_DIR$/src/main/java/tms/spring/utils/MailCilent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tms/spring/utils/MailClient.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring-config/spring-mvc.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring-config/spring-service.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring-config/spring-mybatis.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/tms/spring/service/AutoCaseRepertoryService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring-config/spring-transaction.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/tms/spring/service/impl/LinuxMonitorHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tms/spring/controller/linuxMonitorController.java" />
       </list>
     </option>
   </component>
@@ -372,9 +380,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -465,6 +472,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -476,7 +484,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.32258064" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/samplecode-server/webfin" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/WeChat Files/w18706810372/Files/waimai" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -1273,7 +1281,8 @@
       <workItem from="1511142924598" duration="59872000" />
       <workItem from="1511419062032" duration="35364000" />
       <workItem from="1511529399091" duration="1450000" />
-      <workItem from="1511604797052" duration="1200000" />
+      <workItem from="1511604797052" duration="1453000" />
+      <workItem from="1511666359597" duration="4506000" />
     </task>
     <task id="LOCAL-00001" summary="移除自动发送">
       <created>1503398984536</created>
@@ -1436,7 +1445,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511530815146</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="login.js验证单词写错了一个">
+      <created>1511606015918</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1511606015918</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1472,7 +1488,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="983252000" />
+    <option name="totallyTimeSpent" value="988011000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1509,7 +1525,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29144096" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35969663" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26226014" sideWeight="0.16227181" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23827292" sideWeight="0.8377282" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24093817" sideWeight="0.8377282" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -1630,7 +1646,8 @@
     <MESSAGE value="本次提交不修改" />
     <MESSAGE value="对postman的用例支持上传，检索与下载完整执行包" />
     <MESSAGE value="优化了自动化用例树的生成方式和用例的查询方式，修改了用例写入数据库失败的提示信息" />
-    <option name="LAST_COMMIT_MESSAGE" value="优化了自动化用例树的生成方式和用例的查询方式，修改了用例写入数据库失败的提示信息" />
+    <MESSAGE value="login.js验证单词写错了一个" />
+    <option name="LAST_COMMIT_MESSAGE" value="login.js验证单词写错了一个" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1672,42 +1689,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/entity/AutoCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="20" column="23" lean-forward="false" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/entity/PostManAsso.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="26" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/io/OutputStream.java" />
-    <entry file="file://$PROJECT_DIR$/target/TMS/cacheFile/1511430990286/testCases.json" />
-    <entry file="file://$PROJECT_DIR$/target/TMS/cacheFile/1511431516056/testCases.json" />
-    <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.7/fastjson-1.2.7.jar!/com/alibaba/fastjson/JSON.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="126" column="29" lean-forward="false" selection-start-line="126" selection-start-column="29" selection-end-line="126" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/utils/ZipCompress.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/io/File.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.2.5.RELEASE/spring-web-4.2.5.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="139" column="35" lean-forward="true" selection-start-line="139" selection-start-column="35" selection-end-line="139" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/io/FileOutputStream.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/lang/String.java" />
-    <entry file="file://$PROJECT_DIR$/target/TMS/cacheFile/1511436868788/1511436869193/run.bat" />
     <entry file="file://$PROJECT_DIR$/target/TMS/cacheFile/1511436868788/postmanAutoCase_1511436869193_测试服务/1511436869193/run.bat" />
     <entry file="file://$PROJECT_DIR$/target/TMS/cacheFile/1511436868788/1511437146691/run.bat" />
     <entry file="file://$PROJECT_DIR$/target/TMS/cacheFile/1511437621048/1511437621492/run.bat" />
@@ -1804,13 +1785,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/dao/AutoCaseDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="11" column="9" lean-forward="false" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/lang/Throwable.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/controller/mainController.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1830,13 +1804,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="249">
           <caret line="36" column="32" lean-forward="true" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/service/impl/LinuxMonitorHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="31" column="59" lean-forward="true" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -1889,13 +1856,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/service/AutoCaseRepertoryService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="40" column="7" lean-forward="true" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/500.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1908,10 +1868,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
           <caret line="46" column="35" lean-forward="true" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
-          <folding>
-            <element signature="e#6730#8048#0" expanded="false" />
-            <marker date="1511605876174" expanded="true" signature="9556:9566" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1922,6 +1878,140 @@
           <folding>
             <marker date="1511529383836" expanded="true" signature="1568:1582" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/utils/MailClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/4.2.5.RELEASE/spring-tx-4.2.5.RELEASE.jar!/org/springframework/transaction/annotation/Propagation.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/dao/AutoCaseDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-config/spring-quartz.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-config/spring-mvc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="58" column="33" lean-forward="false" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-config/spring-mybatis.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="46" lean-forward="true" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/service/LoginService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="166" column="16" lean-forward="false" selection-start-line="166" selection-start-column="16" selection-end-line="166" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/service/AutoCaseRepertoryService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="310" column="5" lean-forward="true" selection-start-line="310" selection-start-column="5" selection-end-line="310" selection-end-column="5" />
+          <folding>
+            <element signature="e#2894#2904#0" expanded="true" />
+            <element signature="e#6447#6457#0" expanded="true" />
+            <element signature="e#8019#8029#0" expanded="true" />
+            <element signature="e#9054#9062#0" expanded="true" />
+            <element signature="e#9742#9758#0" expanded="true" />
+            <element signature="e#11336#11342#0" expanded="true" />
+            <element signature="method#findPlanToCreateGVML#0;class#AutoCaseRepertoryService#0" expanded="false" />
+            <element signature="method#findPlanToCreatePostMan#0;class#AutoCaseRepertoryService#0" expanded="false" />
+            <element signature="method#zipPMCase#0;class#AutoCaseRepertoryService#0" expanded="false" />
+            <element signature="method#getExecuteId#0;class#AutoCaseRepertoryService#0" expanded="false" />
+            <marker date="1511670084513" expanded="false" signature="16335:16357" ph="&lt;~&gt;" />
+            <marker date="1511670084513" expanded="false" signature="18566:18582" ph="&lt;~&gt;" />
+            <marker date="1511670084513" expanded="false" signature="33347:33364" ph="&lt;~&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/controller/CaseResultController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/handler/impl/BugCountCompareAnalyse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="62" column="29" lean-forward="false" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/controller/linuxMonitorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/service/impl/LinuxMonitorHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="19" column="28" lean-forward="false" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tms/spring/cache/CaseResultCountCache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="69" column="26" lean-forward="false" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-config/spring-transaction.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="21" column="41" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

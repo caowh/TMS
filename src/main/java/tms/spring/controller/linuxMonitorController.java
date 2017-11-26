@@ -22,8 +22,6 @@ import java.util.Map;
 @RequestMapping("/linuxMonitor")
 public class linuxMonitorController {
 
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
-
     private LinuxMonitorService linuxMonitorService=(LinuxMonitorService)new LinuxMonitorHandler().newProxyInstance(new LinuxMonitorServiceByPydashImpl());
 
     @RequestMapping(value = "index")

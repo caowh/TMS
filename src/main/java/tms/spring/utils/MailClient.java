@@ -13,7 +13,7 @@ import java.util.Random;
 /**
  * Created by user on 2017/7/17.
  */
-public class MailCilent {
+public class MailClient {
 
     private String sender;
     private String password;

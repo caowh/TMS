@@ -6,25 +6,19 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 import tms.spring.entity.AutoCase;
 import tms.spring.entity.AutoCaseHelper;
 import tms.spring.entity.TreeNode;
 import tms.spring.exception.AutoCaseRepertoryException;
-import tms.spring.exception.CaseAnalysesException;
 import tms.spring.service.AutoCaseRepertoryService;
 import tms.spring.utils.CaseAnalyseUtil;
 import tms.spring.utils.Constant;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.IOException;
 import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.List;
@@ -160,7 +154,7 @@ public class autoCaseRepertoryController {
     public String executePMCase(Model model,HttpServletRequest request,HttpServletResponse response) {
         model.addAttribute("username", SecurityUtils.getSubject().getPrincipal());
         try {
-            byte[] bytes=autoCaseRepertoryService.createPostManTest(request);
+            byte[] bytes=autoCaseRepertoryService.findPlanToCreatePostMan(request);
             OutputStream out=response.getOutputStream();
             out.write(bytes);
             response.setContentType("APPLICATION/OCTET-STREAM");
@@ -211,7 +205,7 @@ public class autoCaseRepertoryController {
     public Map<String, Object> executeTestPlan(@RequestParam("key") String key) {
         Map<String, Object> map = new HashMap<String, Object>();
         try {
-            map.put("result",autoCaseRepertoryService.createGVMLTestScript(key));
+            map.put("result",autoCaseRepertoryService.findPlanToCreateGVML(key));
             map.put("code", Constant.CODE_SUCCESS);
         } catch (Exception e){
             map.put("code",Constant.CODE_FAILED);

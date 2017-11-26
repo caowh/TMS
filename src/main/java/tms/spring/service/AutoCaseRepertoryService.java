@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
@@ -67,7 +68,7 @@ public class AutoCaseRepertoryService {
         }
     }
 
-    @Transactional
+    
     private void saveGVMLAutoCase(HttpServletRequest request) throws IOException, AutoCaseRepertoryException {
         String name=request.getParameter("name");
         String updateReason=request.getParameter("updateReason");
@@ -114,7 +115,7 @@ public class AutoCaseRepertoryService {
         }
     }
 
-    @Transactional
+    
     private void savePostManAutoCase(HttpServletRequest request) throws AutoCaseRepertoryException, IOException {
         String name=request.getParameter("name");
         String updateReason=request.getParameter("updateReason");
@@ -309,8 +310,8 @@ public class AutoCaseRepertoryService {
         return ShiroFilterUtils.encryptPassword(id.toString());
     }
 
-    @Transactional
-    public String createGVMLTestScript(String key) throws AutoCaseRepertoryException {
+    
+    public String findPlanToCreateGVML(String key) throws AutoCaseRepertoryException {
         Long id = getExecuteId(key);
         AutoCaseExec autoCaseExec=autoCaseExecDao.selectById(id);
         String script="window.arrglobal=[];window.waitTimeGlobal=0;window.arrCasePrepareRun=[];";
@@ -353,7 +354,7 @@ public class AutoCaseRepertoryService {
         return script+"ResultTotestlink()";
     }
 
-    public byte[] createPostManTest(HttpServletRequest request) throws AutoCaseRepertoryException, IOException {
+    public byte[] findPlanToCreatePostMan(HttpServletRequest request) throws AutoCaseRepertoryException, IOException {
         Long time=new Date().getTime();
         String key=request.getParameter("key");
         Long id = getExecuteId(key);
@@ -637,7 +638,7 @@ public class AutoCaseRepertoryService {
     }
 
 
-    @Transactional
+    
     public void deleteAutoCase(String ids) throws AutoCaseRepertoryException {
         if(ids==null&&ids.equals("")){
             throw new AutoCaseRepertoryException("删除的ids为空！");
@@ -663,8 +664,7 @@ public class AutoCaseRepertoryService {
         }
     }
 
-
-    @Transactional
+    
     public void moveAutoCase(String ids,String nodeName) throws AutoCaseRepertoryException {
         if(ids==null&&ids.equals("")){
             throw new AutoCaseRepertoryException("移动的ids为空！");
