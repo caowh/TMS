@@ -142,6 +142,14 @@
                 $('#alert1 .alert-danger').removeClass("hide-default")
                 $('#alert1 .alert-danger').append(result)
             }
+            var result1="${result1}"
+            if(result1.indexOf("成功")>=0){
+                $('#alert3 .alert-success').removeClass("hide-default")
+                $('#alert3 .alert-success').append(result1)
+            }else if(result1.indexOf("失败")>=0){
+                $('#alert3 .alert-danger').removeClass("hide-default")
+                $('#alert3 .alert-danger').append(result1)
+            }
         });
     </script>
     <script type="text/javascript" src="/assets/js/custom.js">
@@ -512,6 +520,56 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="widget box">
+                        <div class="widget-header">
+                            <h4>
+                                <i class="icon-reorder">
+                                </i>
+                                testLink用例文件上传
+                            </h4>
+                            <div class="toolbar no-padding">
+                                <div class="btn-group">
+                                  <span class="btn btn-xs widget-collapse">
+                                    <i class="icon-angle-down">
+                                    </i>
+                                  </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget-content">
+                            <div class="tab-content" id="alert3">
+                                <div class="alert alert-danger hide-default">
+                                    <i class="icon-remove close" data-dismiss="alert">
+                                    </i>
+                                </div>
+                                <div class="alert alert-success hide-default">
+                                    <i class="icon-remove close" data-dismiss="alert">
+                                    </i>
+                                </div>
+                            </div>
+                            <form class="form-horizontal row-border" id="validate-4" action="/autoCaseRepertory/uploadCaseFiles.do" method="POST" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">
+                                        用例文件（可批量）
+                                        <span class="required">
+                                          *
+                                        </span>
+                                    </label>
+                                    <div class="col-md-9">
+                                        <input type="file" name="multipartFiles" class="required" multiple="multiple">
+                                        <span class="help-block">
+                                            以caseID或“caseID+"_"+"文件描述（编号等）"”命名
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-actions align-center">
+                                    <input type="submit" value="上传" class="btn btn-primary">
                                 </div>
                             </form>
                         </div>

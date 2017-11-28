@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import tms.spring.entity.AutoCase;
 import tms.spring.entity.AutoCaseHelper;
 import tms.spring.entity.TreeNode;
@@ -101,6 +103,23 @@ public class autoCaseRepertoryController {
             map.put("message",e.getMessage());
         }
         return map;
+    }
+
+
+    @RequestMapping(value = "uploadCaseFiles")
+    public String uploadCaseFiles(Model model,HttpServletRequest request) {
+        MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+        List<MultipartFile> files=multipartRequest.getFiles("multipartFiles");
+        try {
+            String message=autoCaseRepertoryService.uploadCaseFiles(files);
+            if(message.equals("")){
+                message="所有文件上传成功";
+            }
+            model.addAttribute("result1", message);
+        } catch (Exception e) {
+            model.addAttribute("result1", "所有文件上传失败，失败原因："+e.getMessage());
+        }
+        return "autoCaseRepertory";
     }
 
 

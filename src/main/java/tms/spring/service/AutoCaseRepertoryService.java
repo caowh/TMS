@@ -75,12 +75,12 @@ public class AutoCaseRepertoryService {
         String node=request.getParameter("node");
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
         List<MultipartFile> files=multipartRequest.getFiles("multipartFiles");
+        List<AutoCase> autoCases=new ArrayList<AutoCase>();
         for(MultipartFile file:files){
             String fileName=file.getOriginalFilename();
             logger.info("开始解析自动化测试文件："+fileName);
             InputStream inputStream=file.getInputStream();
             String content=IOUtils.toString(inputStream,"utf-8");
-            List<AutoCase> autoCases=new ArrayList<AutoCase>();
             try {
                 autoCases.addAll(new GVMLAutoCaseConvert().stringToAutoCase(content));
             }catch (AutoCaseRepertoryException e){
@@ -107,12 +107,8 @@ public class AutoCaseRepertoryService {
                 autoCase.setNode(node);
                 autoCase.setUpdateReason(updateReason);
             }
-            try {
-                autoCaseDao.insertsAutoCases(autoCases);
-            } catch (Exception e) {
-                throw new AutoCaseRepertoryException("“"+fileName+"”文件中自动化测试用例写入数据库时出错！");
-            }
         }
+        insertsAutoCase(autoCases);
     }
 
     
@@ -142,12 +138,12 @@ public class AutoCaseRepertoryService {
             postManAssoDao.insert(postManAsso);
             tpm_id=postManAsso.getId();
         }
+        List<AutoCase> autoCases=new ArrayList<AutoCase>();
         for(MultipartFile file:files){
             String fileName=file.getOriginalFilename();
             logger.info("开始解析自动化测试文件："+fileName);
             InputStream inputStream=file.getInputStream();
             String content=IOUtils.toString(inputStream,"utf-8");
-            List<AutoCase> autoCases=new ArrayList<AutoCase>();
             try {
                 autoCases.addAll(new PostManAutoCaseConvert().stringToAutoCase(content));
             }catch (AutoCaseRepertoryException e){
@@ -172,11 +168,23 @@ public class AutoCaseRepertoryService {
                     autoCase.setTpm_id(tpm_id);
                 }
             }
-            try {
-                autoCaseDao.insertsAutoCases(autoCases);
-            } catch (Exception e) {
-                throw new AutoCaseRepertoryException("“"+fileName+"”文件中自动化测试用例写入数据库时出错！");
+        }
+        insertsAutoCase(autoCases);
+    }
+
+    private void insertsAutoCase(List<AutoCase> autoCases) throws AutoCaseRepertoryException {
+        try {
+            autoCaseDao.insertsAutoCases(autoCases);
+        } catch (Exception e) {
+            String message=e.getMessage();
+            if(message.contains("Duplicate entry")){
+                int begin=message.indexOf("Duplicate entry '")+17;
+                message="用例ID为："+message.substring(begin,message.indexOf("'",begin))+"重复出现";
+            }else {
+                logger.error(message);
+                message="插入数据库出现位置错误，请联系管理员";
             }
+            throw new AutoCaseRepertoryException(message);
         }
     }
 
@@ -740,5 +748,18 @@ public class AutoCaseRepertoryService {
         }
         TreeUtil treeUtil=new TreeUtil(treeNodes);
         return treeUtil.generateTreeNode(Constant.PROJECT_ID);
+    }
+
+    public String uploadCaseFiles(List<MultipartFile> multipartFiles) throws Exception {
+        TestLinkUtil testLinkUtil=new TestLinkUtil();
+        String message="";
+        for(MultipartFile file:multipartFiles){
+            try {
+                testLinkUtil.uploadCaseAttachment(file);
+            } catch (Exception e) {
+                message+=e.getMessage();
+            }
+        }
+        return message;
     }
 }
