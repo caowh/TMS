@@ -62,12 +62,13 @@
 </div>
 <div id="status">
     <button onclick="caseStatusChange()" id="caseStatusChangeButton" style="color: #31ff53;display: inline-block;cursor: hand;border: 1px solid red;">暂停</button>
+    <button onclick="casePlayBack()" id="casePlayBack" style="color: #31ff53;display: none;cursor: hand;border: 1px solid red;">回放</button>
     <span class="prefixStyle">当前执行状态：</span><span id="currentStautus"></span>
 </div>
 <script src="http://127.0.0.1:3000/dist/GVML.js"></script>
 <script type="text/javascript" src="/assets/js/libs/jquery-1.10.2.min.js"></script>
 
-<script type="text/javascript" src="/assets/js/roujiamo/roujiamo-1.0.0-min.js"></script>
+<script type="text/javascript" src="/assets/js/roujiamo/roujiamo-1.0.0.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function() {

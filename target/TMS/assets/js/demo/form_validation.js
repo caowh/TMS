@@ -257,7 +257,7 @@ $(document).ready(function(){
                 }else{
                     $('#alert2 .alert-danger').removeClass("hide-default")
                     $('#alert2 .alert-danger span').empty()
-                    $('#alert2 .alert-danger span').append("删除移动，失败原因为："+res.message)
+                    $('#alert2 .alert-danger span').append("移动失败，失败原因为："+res.message)
                 }
             })
         }else {

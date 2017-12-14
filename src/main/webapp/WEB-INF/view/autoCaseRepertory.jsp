@@ -408,7 +408,7 @@
                                     <div class="col-md-6">
                                         <input type="text" class="form-control required" name="updateReason" />
                                         <span class="help-block">
-                                  初级提交或者修改用例的原因
+                                  初次提交或者修改用例的原因
                                 </span>
                                     </div>
                                 </div>

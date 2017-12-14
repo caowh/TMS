@@ -115,10 +115,17 @@ public class autoCaseRepertoryController {
             if(message.equals("")){
                 message="所有文件上传成功";
             }
-            model.addAttribute("result1", message);
+            model.addAttribute("result1", "下列文件上传失败，失败原因："+message);
         } catch (Exception e) {
             model.addAttribute("result1", "所有文件上传失败，失败原因："+e.getMessage());
         }
+        String username=SecurityUtils.getSubject().getPrincipal().toString();
+        if(username.equals("admin")){
+            model.addAttribute("writer", "<input type=\"text\" name=\"name\" class=\"form-control required\" maxlength=\"10\">");
+        }else {
+            model.addAttribute("writer", "<input type=\"text\" name=\"name\" class=\"form-control required\" value=\""+username+"\" readonly=\"readonly\">");
+        }
+        model.addAttribute("username", username);
         return "autoCaseRepertory";
     }
 

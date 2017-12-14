@@ -21,6 +21,7 @@
     <link href="/assets/css/icons.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="/assets/css/fontawesome/font-awesome.min.css">
     <link rel="stylesheet" href="/assets/css/zTreeStyle/zTreeStyle.css">
+    <link rel="stylesheet" href="/assets/css/SyntaxHighlighter.css">
     <!--[if IE 7]>
     <link rel="stylesheet" href="/assets/css/fontawesome/font-awesome-ie7.min.css">
     <![endif]-->
@@ -34,6 +35,10 @@
     <script type="text/javascript" src="/bootstrap/js/bootstrap.min.js">
     </script>
     <script type="text/javascript" src="/assets/js/libs/lodash.compat.min.js">
+    </script>
+    <script type="text/javascript" src="/assets/js/shCore.js">
+    </script>
+    <script type="text/javascript" src="/assets/js/shBrushJScript.js">
     </script>
     <!--[if lt IE 9]>
     <script src="/assets/js/libs/html5shiv.js">
@@ -307,7 +312,7 @@
                                         真实ID：
                                     </label>
                                     <div class="col-md-9">
-                                        <input type="text" name="id" value="${autoCaseHelper.id}"/>
+                                        <input type="text" name="id" id="trueId" value="${autoCaseHelper.id}"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -341,14 +346,15 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label">
+                                    <label class="col-md-2 control-label">
                                         内容（可修改）
                                         <span class="required">
                                           *
                                         </span>：
                                     </label>
                                     <div class="col-md-9">
-                                        <textarea class="form-control required" name="content" style="width:100%;">${autoCaseHelper.content}</textarea>
+                                        <div class="col-md-6"><textarea class="form-control required" name="content" id="caseContent">${autoCaseHelper.content}</textarea></div>
+                                        <div class="col-md-6"><pre name="code" id="code" class="js">${autoCaseHelper.content}</pre></div>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -403,6 +409,7 @@
                                     </div>
                                 </div>
                                 <div class="form-actions align-center">
+                                    <input type="button" value="预览效果" id="previewCase" class="btn btn-primary">
                                     <input type="submit" value="修改" class="btn btn-primary">
                                 </div>
                             </form>

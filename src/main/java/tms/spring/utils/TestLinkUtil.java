@@ -1,12 +1,17 @@
 package tms.spring.utils;
 
 import br.eti.kinoshita.testlinkjavaapi.TestLinkAPI;
+import br.eti.kinoshita.testlinkjavaapi.model.TestCase;
+import br.eti.kinoshita.testlinkjavaapi.model.TestPlan;
 import br.eti.kinoshita.testlinkjavaapi.util.TestLinkAPIException;
 import com.sun.org.apache.xml.internal.security.utils.Base64;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.awt.*;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.*;
+import java.util.List;
 
 
 public class TestLinkUtil
@@ -50,8 +55,16 @@ public class TestLinkUtil
 				null,name,null, Base64.encode(file.getBytes()).toString());
 	}
 
+	public TestPlan[] getTestPlans(Integer projectId){
+		return api.getProjectTestPlans(projectId);
+	}
+//	public List<String> getTestPlanCaseId(String planId){
+//		api.getTestCasesForTestPlan()
+//	}
+
 //	public static void main(String[] args) throws Exception {
 //		TestLinkUtil testLinkUtil =new TestLinkUtil();
-//		testLinkUtil.api.getTestCaseByExternalId("GV5-5993",null);
+//		TestCase[] testCases=testLinkUtil.api.getTestCasesForTestPlan(40,null,3,null,null,null,null,null,null,null,null);
+//		System.out.println();
 //	}
 }

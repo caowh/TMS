@@ -50,6 +50,13 @@ public class mainController {
     @RequestMapping(value = "index")
     public String index(Model model) {
         model.addAttribute("username",SecurityUtils.getSubject().getPrincipal());
+        if(SecurityUtils.getSubject().isPermitted("/main/autoCaseRepertory.do")){
+            model.addAttribute("autoCaseRepertory"," <a href=\"/main/autoCaseRepertory.do\">\n" +
+                    "                            <i class=\"icon-anchor\">\n" +
+                    "                            </i>\n" +
+                    "                            用例仓库\n" +
+                    "                        </a>");
+        }
         model.addAttribute("planHelperList",caseAnalyseService.getPlanHelperList());
         return "index";
     }

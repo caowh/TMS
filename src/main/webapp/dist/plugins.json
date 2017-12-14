@@ -1,0 +1,375 @@
+﻿{
+    "total": 20,
+    "status": "请求操作成功！",
+    "results": [     
+        {
+            "name": "compass",
+            "alias": "指北针",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/指北针.png",
+            "type": "widget",
+            "on_off": false,
+            "js": "CompassZoom",
+            "url": "http://127.0.0.1:3000/dist/plugins/base_plugins/CompassZoom/"
+        },
+        {
+            "name": "measure",
+            "alias": "量测功能",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/指北针.png",
+            "type": "tool",
+            "on_off": false,
+            "js": "Measure",
+            "url": "http://127.0.0.1:3000/dist/plugins/base_plugins/Measure/"
+        },
+        {
+            "name": "birdview",
+            "alias": "鸟瞰图",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/指北针.png",
+            "type": "widget",
+            "on_off": false,
+            "js": "Birdview",
+            "url": "http://127.0.0.1:3000/dist/plugins/base_plugins/Birdview/"
+        },
+        {
+            "name": "coordsinfo",
+            "alias": "状态条信息",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/信息条.png",
+            "type": "widget",
+            "on_off": false,
+            "js": "CoordsInfoWidget",
+            "url": "http://127.0.0.1:3000/dist/plugins/base_plugins/CoordsInfoWidget/"
+        },
+        {
+            "name": "gradicule",
+            "alias": "经纬度信息",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/信息条.png",
+            "type": "widget",
+            "on_off": false,
+            "js": "gradiculeWidget",
+            "url": "http://127.0.0.1:3000/dist/plugins/base_plugins/gradiculeWidget/"
+        },
+        {
+            "name": "gridwidget",
+            "alias": "格网信息",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/信息条.png",
+            "type": "widget",
+            "on_off": false,
+            "js": "GridWidget",
+            "url": "http://127.0.0.1:3000/dist/plugins/base_plugins/GridWidget/"
+        },
+        {
+            "name": "timewidget",
+            "alias": "时序影像",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/信息条.png",
+            "type": "widget",
+            "on_off": false,
+            "js": "TimeWidget",
+            "url": "http://127.0.0.1:3000/dist/plugins/base_plugins/TimeWidget/"
+        },
+        {
+            "name": "layermanager",
+            "alias": "图层管理器",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/图层logo.png",
+            "type": "tool",
+            "on_off": false,
+            "js": "LayersTool",
+            "url": "http://127.0.0.1:3000/dist/plugins/base_plugins/LayersTool/"
+        },
+        {
+            "name": "draw",
+            "alias": "标绘",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/图标.png",
+            "type": "tool",
+            "on_off": true,
+            "js": "DrawIconTool",
+            "url": "http://127.0.0.1:3000/dist/plugins/base_plugins/BasePlugins/"
+        },
+        {
+            "name": "frameStatInfo",
+            "alias": "帧率统计",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/图层logo.png",
+            "type": "widget",
+            "on_off": false,
+            "js": "FrameStatInfo",
+            "url": "http://127.0.0.1:3000/dist/plugins/base_plugins/FrameStatInfo/"
+        },
+        {
+            "name": "bluetooth",
+            "alias": "蓝牙",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/经纬度.png",
+            "type": "widget",
+            "on_off": false,
+            "js": "Bluetooth",
+            "url": "http://127.0.0.1:3000/dist/plugins/base_plugins/Bluetooth/"
+        },
+        {
+            "name": "ViewpointCollect",
+            "alias": "视点收藏",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/经纬度.png",
+            "type": "widget",
+            "on_off": false,
+            "js": "ViewpointCollect",
+            "url": "http://127.0.0.1:3000/dist/plugins/base_plugins/ViewpointCollect/"
+        },			
+        {
+            "name": "distance",
+            "alias": "距离量测",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/距离量测.png",
+            "type": "tool",
+            "on_off": false,
+            "js": "DistanceTool",
+            "url": "http://127.0.0.1:3000/dist/plugins/base_pluginshttp://127.0.0.1:3000/distanceTool/"
+        },  
+        {
+            "name": "azimuthmeasure",
+            "alias": "方位角",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/距离量测.png",
+            "type": "tool",
+            "on_off": false,
+            "js": "AzimuthMeasureTool",
+            "url": "http://127.0.0.1:3000/dist/plugins/base_plugins/AzimuthMeasureTool/"
+        }, 
+        {
+            "name": "areameasure",
+            "alias": "面积量测",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/距离量测.png",
+            "type": "tool",
+            "on_off": false,
+            "js": "AreaMeasureTool",
+            "url": "http://127.0.0.1:3000/dist/plugins/base_plugins/AreaMeasureTool/"
+        },
+        {
+            "name": "rectangletool",
+            "alias": "态势分析",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/距离量测.png",
+            "type": "tool",
+            "on_off": false,
+            "js": "RectAngleTool",
+            "url": "http://127.0.0.1:3000/dist/plugins/base_plugins/RectAngleTool/"
+        },
+        {
+            "name": "snapshotsplugin",
+            "alias": "影像出图",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/距离量测.png",
+            "type": "tool",
+            "on_off": false,
+            "js": "SnapshotsPlugin",
+            "url": "http://127.0.0.1:3000/dist/plugins/base_plugins/SnapshotsPlugin/"
+        },
+        {
+            "name": "laycharttool",
+            "alias": "刨面分析",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/距离量测.png",
+            "type": "tool",
+            "on_off": false,
+            "js": "LayChartTool",
+            "url": "http://127.0.0.1:3000/dist/plugins/analyse_plugins/LayChartTool/"
+        },
+        {
+            "name": "milmark",
+            "alias": "军标标绘",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/军标2.png",
+            "type": "tool",
+            "on_off": false,
+            "js": "MilitaryMark",
+            "url": "http://127.0.0.1:3000/dist/plugins/subject_plugins/MilitaryMark/"
+        },
+        {
+            "name": "newmark",
+            "alias": "标绘面板",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/军标2.png",
+            "type": "tool",
+            "on_off": false,
+            "js": "MarkPlugin",
+            "url": "http://127.0.0.1:3000/dist/plugins/subject_plugins/markPlugin/"
+        },
+        {
+            "name": "Skyandcloud",
+            "alias": "天空",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/军标2.png",
+            "type": "widget",
+            "on_off": false,
+            "js": "Skyandcloud",
+            "url": "http://127.0.0.1:3000/dist/plugins/effect_plugins/Skyandcloud/"
+        },
+        {
+            "name": "ocean",
+            "alias": "海水",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/军标2.png",
+            "type": "widget",
+            "on_off": false,
+            "js": "Ocean",
+            "url": "http://127.0.0.1:3000/dist/plugins/effect_plugins/Ocean/"
+        },
+        {
+            "name": "SkyAndOcean",
+            "alias": "天空和海水",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/军标2.png",
+            "type": "widget",
+            "on_off": false,
+            "js": "SkyAndOcean",
+            "url": "http://127.0.0.1:3000/dist/plugins/effect_plugins/SkyAndOcean/"
+        },
+        {
+            "name": "SkyAndOceanPage",
+            "alias": "天空和海水",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/军标2.png",
+            "type": "widget",
+            "on_off": false,
+            "js": "SkyAndOceanPage",
+            "url": "http://127.0.0.1:3000/dist/plugins/effect_plugins/SkyAndOceanPage/"
+        },
+        {
+            "name": "explosion",
+            "alias": "爆炸",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/军标2.png",
+            "type": "widget",
+            "on_off": false,
+            "js": "explosion",
+            "url": "http://127.0.0.1:3000/dist/plugins/effect_plugins/"
+        },
+        {
+            "name": "fire",
+            "alias": "火",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/军标2.png",
+            "type": "widget",
+            "on_off": false,
+            "js": "fire",
+            "url": "http://127.0.0.1:3000/dist/plugins/effect_plugins/"
+        },
+        {
+            "name": "smoke",
+            "alias": "烟",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/军标2.png",
+            "type": "widget",
+            "on_off": false,
+            "js": "smoke",
+            "url": "http://127.0.0.1:3000/dist/plugins/effect_plugins/"
+        },
+        {
+            "name": "rain",
+            "alias": "雨",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/军标2.png",
+            "type": "widget",
+            "on_off": false,
+            "js": "rain",
+            "url": "http://127.0.0.1:3000/dist/plugins/effect_plugins/"
+        },
+        {
+            "name": "SatelliteWidget",
+            "alias": "卫星",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/军标2.png",
+            "type": "widget",
+            "on_off": false,
+            "js": "SatelliteWidget",
+            "url": "http://127.0.0.1:3000/dist/plugins/satellite_plugins/"
+        },
+        {
+            "name": "elecmagnetic",
+            "alias": "电磁",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/电磁.png",
+            "type": "widget",
+            "on_off": false,
+            "js": "ElectroMagneticTool",
+            "url": "http://127.0.0.1:3000/dist/plugins/subject_plugins/ElectroMagneticTool/"
+        },
+        {
+            "name": "elecmagneticHFDY",
+            "alias": "电磁HFDY",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/电磁.png",
+            "type": "widget",
+            "on_off": false,
+            "js": "ElectroMagneticWdigetHFDY",
+            "url": "http://127.0.0.1:3000/dist/plugins/subject_plugins/ElectroMagneticTool/"
+        },
+        {
+            "name": "dyntarget",
+            "alias": "态势",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/动目标.png",
+            "type": "widget",
+            "on_off": false,
+            "js": "DyntargetTool",
+            "url": "http://127.0.0.1:3000/dist/plugins/subject_plugins/DyntargetTool/"
+        },
+        {
+            "name": "weather",
+            "alias": "气象",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/动目标.png",
+            "type": "widget",
+            "on_off": false,
+            "js": "WeatherSetTool",
+            "url": "http://127.0.0.1:3000/dist/plugins/subject_plugins/WeatherSetTool/"
+        },
+        {
+            "name": "oceancurrent",
+            "alias": "海流",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/动目标.png",
+            "type": "widget",
+            "on_off": false,
+            "js": "OceanCurrentWidget",
+            "url": "http://127.0.0.1:3000/dist/plugins/subject_plugins/OceanCurrentWidget/"
+        },
+        {
+            "name": "landing",
+            "alias": "云图",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/动目标.png",
+            "type": "widget",
+            "on_off": false,
+            "js": "LandingWidget",
+            "url": "http://127.0.0.1:3000/dist/plugins/subject_plugins/LandingWidget/"
+        },
+        {
+            "name": "WeatherForeastWidget",
+            "alias": "天气",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/动目标.png",
+            "type": "widget",
+            "on_off": false,
+            "js": "WeatherForeastWidget",
+            "url": "http://127.0.0.1:3000/dist/plugins/subject_plugins/WeatherForeastWidget/"
+        },
+        {
+            "name": "WindFieldWidget",
+            "alias": "天气",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/动目标.png",
+            "type": "widget",
+            "on_off": false,
+            "js": "WindFieldWidget",
+            "url": "http://127.0.0.1:3000/dist/plugins/subject_plugins/WindFieldWidget/"
+        },
+        {
+            "name": "dyntargetcreate",
+            "alias": "态势编辑",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/动目标.png",
+            "type": "tool",
+            "on_off": false,
+            "js": "TargetCreateTool",
+            "url": "http://127.0.0.1:3000/dist/plugins/subject_plugins/TargetCreateTool/"
+        },
+        {
+            "name": "routeedit",
+            "alias": "航路编辑",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/动目标.png",
+            "type": "tool",
+            "on_off": false,
+            "js": "RouteEditTool",
+            "url": "http://127.0.0.1:3000/dist/plugins/subject_plugins/RouteEditTool/"
+        },
+        {
+            "name": "moveedit",
+            "alias": "移动编辑",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/动目标.png",
+            "type": "tool",
+            "on_off": false,
+            "js": "MoveObjectTool",
+            "url": "http://127.0.0.1:3000/dist/plugins/subject_plugins/MoveObjectTool/"
+        },
+        {
+            "name": "spatialAnalysisTool",
+            "alias": "空间分析工具",
+            "img": "http://127.0.0.1:3000/dist/resources/plugins/指北针.png",
+            "type": "tool",
+            "on_off": false,
+            "js": "SpatialAnalysisTool",
+            "url": "http://127.0.0.1:3000/dist/plugins/analyse_plugins/SpatialAnalysisTool/"
+        }
+    ]
+}

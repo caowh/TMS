@@ -218,6 +218,7 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li>
+                        ${autoCaseRepertory}
                         <a href="#" id="broadcast">
                             <i class="icon-anchor">
                             </i>
@@ -250,36 +251,36 @@
                         GET首页
                     </a>
                 </li>
-                <li>
-                    <a href="javascript:void(0);">
-                        <i class="icon-dashboard">
-                        </i>
-                        自动化测试管理
-                    </a>
-                    <ul class="sub-menu">
-                        <li>
-                            <a href="/main/index.do">
-                                <i class="icon-bar-chart">
-                                </i>
-                                分析与统计
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/main/loadThresholdPage.do">
-                                <i class="icon-edit">
-                                </i>
-                                阈值参数配置
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/main/autoCaseRepertory.do">
-                                <i class="icon-suitcase">
-                                </i>
-                                用例仓库
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                <%--<li>--%>
+                    <%--<a href="javascript:void(0);">--%>
+                        <%--<i class="icon-dashboard">--%>
+                        <%--</i>--%>
+                        <%--自动化测试管理--%>
+                    <%--</a>--%>
+                    <%--<ul class="sub-menu">--%>
+                        <%--<li>--%>
+                            <%--<a href="/main/index.do">--%>
+                                <%--<i class="icon-bar-chart">--%>
+                                <%--</i>--%>
+                                <%--分析与统计--%>
+                            <%--</a>--%>
+                        <%--</li>--%>
+                        <%--<li>--%>
+                            <%--<a href="/main/loadThresholdPage.do">--%>
+                                <%--<i class="icon-edit">--%>
+                                <%--</i>--%>
+                                <%--阈值参数配置--%>
+                            <%--</a>--%>
+                        <%--</li>--%>
+                        <%--<li>--%>
+                            <%--<a href="/main/autoCaseRepertory.do">--%>
+                                <%--<i class="icon-suitcase">--%>
+                                <%--</i>--%>
+                                <%--用例仓库--%>
+                            <%--</a>--%>
+                        <%--</li>--%>
+                    <%--</ul>--%>
+                <%--</li>--%>
                 <li class="current">
                     <a href="/linuxMonitor/index.do?ip=192.168.4.173">
                         <i class="icon-eye-open">

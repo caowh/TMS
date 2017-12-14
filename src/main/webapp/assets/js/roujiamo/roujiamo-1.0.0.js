@@ -51,6 +51,7 @@ function getRemainingTime(time) {
         $("#currentStautus").html("开始执行用例，剩余用时："+time/1000+"(s)，剩余用例数："+(window.arrCasePrepareRun.length-1))
         if(waitTimeGlobal==0&&$("#currentTime").html()==1){
             $("#caseStatusChangeButton").html("启动")
+            $("#casePlayBack").css("display","inline-block")
             return false;
         }
         time=time-1000;
@@ -60,7 +61,6 @@ function getRemainingTime(time) {
     }
 }
 function addCaseToArrGlobal(caseid,result,describe,message,functionName) {
-
     var myCase={}
     myCase["caseid"]=caseid
     myCase["result"]=result
@@ -187,6 +187,7 @@ function getTestScript(json) {
     return script+"</script>"
 }
 function removeFirst(functionName) {
+    window.currentCase=functionName
     for(var i=0;i<window.arrCasePrepareRun.length;i++){
         if(window.arrCasePrepareRun[i].function==functionName){
             window.arrCasePrepareRun.splice(i,1)
@@ -203,12 +204,27 @@ function casePause() {
     }
     window.waitTimeGlobal=0
 }
+
+function casePlayBack() {
+    $("body").append("<script type='text/javascript'>"+window.currentCase+"();"+"</script>")
+    setTimeout(function () {
+        $("#casePlayBack").css("display","inline-block")
+        $("#caseStatusChangeButton").css("display","inline-block")
+        $("#currentStautus").html("用例回放结束！")
+        window.waitTimeGlobal=0
+    },window.waitTimeGlobal)
+    $("#casePlayBack").css("display","none")
+    $("#caseStatusChangeButton").css("display","none")
+    $("#currentStautus").html("回放用例中...")
+    window.arrglobal.splice(window.arrglobal.length-1,1)
+}
 function caseContinue() {
     var str="";
     for(var i=0;i<window.arrCasePrepareRun.length;i++){
         str+=window.arrCasePrepareRun[i].function+"();"
     }
     window.arrCasePrepareRun.length=0
+    $("#casePlayBack").css("display","none")
     $("body").append("<script type='text/javascript'>"+str+"</script>")
 }
 function ResultTotestlink() {
