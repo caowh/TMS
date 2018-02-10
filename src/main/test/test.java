@@ -2,6 +2,7 @@ import org.apache.shiro.crypto.hash.Md5Hash;
 import org.apache.shiro.crypto.hash.Sha256Hash;
 import org.apache.shiro.crypto.hash.SimpleHash;
 import org.junit.Test;
+import org.springframework.beans.factory.BeanFactory;
 import tms.spring.utils.WebSocketUtil;
 
 import javax.mail.Message;

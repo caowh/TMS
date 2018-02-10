@@ -7,19 +7,30 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.util.WebUtils;
 import tms.spring.dao.UserDao;
 import tms.spring.entity.User;
 import tms.spring.exception.MailException;
 import tms.spring.exception.RegisterException;
+import tms.spring.shiro.ShiroManager;
 import tms.spring.shiro.ShiroRealm;
 import tms.spring.shiro.filter.ShiroFilterUtils;
+import tms.spring.utils.FileUtil;
 import tms.spring.utils.MailClient;
 import tms.spring.utils.VerifyCodeUtils;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
+
+import static javafx.scene.input.KeyCode.F;
 
 /**
  * Created by Administrator on 2017/7/15 0015.
@@ -176,5 +187,59 @@ public class LoginService {
         }
         user.setPassword(ShiroFilterUtils.encryptPassword(newPwd));
         userDao.updatePasswordByEmail(user);
+    }
+
+    public void updateUserProfile(HttpServletRequest request) {
+        User user=new User();
+        user.setUsername(SecurityUtils.getSubject().getPrincipal().toString());
+        String nickname=request.getParameter("nickname");
+        user.setNickname(nickname);
+        String sex=request.getParameter("sex");
+        user.setSex(Integer.parseInt(sex));
+        String age=request.getParameter("age");
+        user.setAge(Integer.parseInt(age));
+        String watchword=request.getParameter("watchword");
+        user.setWatchword(watchword);
+        String description=request.getParameter("description");
+        user.setDescription(description);
+        String mark=request.getParameter("mark");
+        user.setMark(mark);
+        MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+        MultipartFile picture=multipartRequest.getFile("picture");
+        if(picture.getSize()>0){
+            try {
+                user.setPicture(picture.getBytes());
+            } catch (IOException e) {
+//                e.printStackTrace();
+            }
+        }
+        userDao.updateUserProfile(user);
+    }
+
+    public byte[] getUserPicture(String username) {
+        User user=userDao.selectUserByName(username);
+        if(user==null||user.getPicture()==null){
+            String path=Thread.currentThread().getContextClassLoader ().getResource("").getPath();
+            try {
+                return FileUtil.readFile(new File(path+"wu.jpg"));
+            }  catch (IOException e) {
+                return null;
+            }
+        }
+        return user.getPicture();
+    }
+
+    public User getUserProfile(String username) {
+        User user=userDao.selectUserByName(username);
+        if(user!=null){
+            user.setPassword(null);
+            user.setId(null);
+            user.setCreateTime(null);
+            user.setLastLoginTime(null);
+            user.setPicture(null);
+        }else {
+            user=new User();
+        }
+        return user;
     }
 }

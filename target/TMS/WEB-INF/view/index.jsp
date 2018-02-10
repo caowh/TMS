@@ -224,6 +224,11 @@
                             </i>
                             群发消息
                         </a>
+                            <a href="/main/userProfile.do">
+                                <i class="icon-anchor">
+                                </i>
+                                个人资料
+                            </a>
                         <a href="#" id="updatePassword">
                             <i class="icon-anchor">
                             </i>

@@ -30,6 +30,72 @@ public class User implements Serializable{
     /**1:有效，0:禁止登录*/
     private Long status;
 
+    /**性别*/
+    private int sex;
+
+    /**年龄*/
+    private int age;
+
+    /**口号*/
+    private String watchword;
+
+    /**个人简介*/
+    private String description;
+
+    /**标签*/
+    private String mark;
+
+    /**个人图片*/
+    private byte[] picture;
+
+    public int getSex() {
+        return sex;
+    }
+
+    public void setSex(int sex) {
+        this.sex = sex;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getWatchword() {
+        return watchword;
+    }
+
+    public void setWatchword(String watchword) {
+        this.watchword = watchword;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getMark() {
+        return mark;
+    }
+
+    public void setMark(String mark) {
+        this.mark = mark;
+    }
+
+    public byte[] getPicture() {
+        return picture;
+    }
+
+    public void setPicture(byte[] picture) {
+        this.picture = picture;
+    }
+
     public Long getId() {
         return id;
     }

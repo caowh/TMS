@@ -19,4 +19,5 @@ public interface UserDao {
      Set<String> selectRoleNamesById(Long id);
      void updateLastLoginTime(User user);
      void updatePasswordByEmail(User user);
+     void updateUserProfile(User user);
 }

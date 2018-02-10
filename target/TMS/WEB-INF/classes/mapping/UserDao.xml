@@ -55,4 +55,32 @@
     <update id="updatePasswordByEmail" parameterType="tms.spring.entity.User">
         UPDATE t_user SET  password=#{password,jdbcType=TIMESTAMP} WHERE email=#{email,jdbcType=VARCHAR}
     </update>
+
+    <update id="updateUserProfile" parameterType="tms.spring.entity.User">
+        UPDATE t_user
+        <trim prefix="set" suffixOverrides=",">
+            <if test="nickname != null">
+                nickname = #{nickname},
+            </if>
+            <if test="sex != null">
+                sex = #{sex},
+            </if>
+            <if test="age != null">
+                age = #{age},
+            </if>
+            <if test="watchword != null">
+                watchword = #{watchword},
+            </if>
+            <if test="description != null">
+                description = #{description},
+            </if>
+            <if test="mark != null">
+                mark = #{mark},
+            </if>
+            <if test="picture != null">
+                picture = #{picture},
+            </if>
+        </trim>
+        WHERE username=#{username}
+    </update>
 </mapper>

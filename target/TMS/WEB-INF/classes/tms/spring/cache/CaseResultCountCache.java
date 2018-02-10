@@ -2,8 +2,10 @@ package tms.spring.cache;
 
 import com.alibaba.fastjson.JSON;
 import org.apache.shiro.cache.Cache;
+import org.quartz.core.QuartzScheduler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.SmartInitializingSingleton;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import tms.spring.dao.PlanDao;
@@ -21,7 +23,7 @@ import java.util.Map;
  * Created by user on 2017/8/8.
  */
 @Component
-public class CaseResultCountCache {
+public class CaseResultCountCache implements SmartInitializingSingleton {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -160,5 +162,9 @@ public class CaseResultCountCache {
 
     public void setUpdateMap(Map<String, Boolean> updateMap) {
         getCache().put("updateMap",updateMap);
+    }
+
+    public void afterSingletonsInstantiated() {
+        logger.info("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     }
 }

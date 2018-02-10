@@ -1,5 +1,6 @@
 package tms.spring.controller;
 
+import com.alibaba.fastjson.JSON;
 import org.apache.shiro.SecurityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,8 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.util.WebUtils;
+import tms.spring.entity.User;
 import tms.spring.exception.MailException;
 import tms.spring.exception.RegisterException;
 import tms.spring.service.LoginService;
@@ -17,6 +20,8 @@ import tms.spring.utils.VerifyCodeUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -186,6 +191,49 @@ public class LoginController {
             map.put("message",e.getMessage());
         }
         return map;
+    }
+
+    /**
+     * 查看个人图片
+     */
+    @RequestMapping(value="getUserPicture")
+    public void getUserPicture(@RequestParam("name") String name, HttpServletResponse response) {
+        byte[] bytes = loginService.getUserPicture(name);
+        if(bytes!=null&&bytes.length>0){
+            OutputStream out;
+            try {
+                out = response.getOutputStream();
+                out.write(bytes);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        response.setHeader("Pragma", "No-cache");
+        response.setHeader("Cache-Control", "no-cache");
+        response.setDateHeader("Expires", 0);
+        response.setContentType("image/jpg");
+    }
+
+
+    /**
+     * 查看个人资料
+     */
+    @RequestMapping(value="getUserProfile")
+    @ResponseBody
+    public void getUserProfile(@RequestParam("name") String name, HttpServletResponse response) {
+        OutputStream out;
+        User user=loginService.getUserProfile(name);
+        String res="success_jsonpCallback("+JSON.toJSONString(user)+")";
+        try {
+            out = response.getOutputStream();
+            out.write(res.getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        response.setHeader("content-type","text/html;charset=gb2312");
+        response.setHeader("Cache-Control", "no-cache");
+        response.setHeader("Pragma", "No-cache");
+        response.setDateHeader("Expires", 0);
     }
 
 }

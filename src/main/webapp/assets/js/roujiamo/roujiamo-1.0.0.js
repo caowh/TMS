@@ -262,6 +262,7 @@ function caseStatusChange() {
         caseContinue()
     }
 }
+
 var Roujiamo={
     start:function (key) {
             $.ajax({

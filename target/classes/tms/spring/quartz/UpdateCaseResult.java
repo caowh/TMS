@@ -32,16 +32,16 @@ public class UpdateCaseResult {
         logger.info(message);
         WebSocketUtil.broadcast(message,"服务器","0");
         try{
-            getTestPlanList();
-            getPlanExecuteCount();
-            getPlanSeverity();
-            getTestSuites();
-            getSuiteExecuteCount();
-            getSuiteSeverity();
-            message="开始更新数据!";
-            logger.info(message);
-            WebSocketUtil.broadcast(message,"服务器","0");
-            cache.updatePlanList();
+//            getTestPlanList();
+//            getPlanExecuteCount();
+//            getPlanSeverity();
+//            getTestSuites();
+//            getSuiteExecuteCount();
+//            getSuiteSeverity();
+//            message="开始更新数据!";
+//            logger.info(message);
+//            WebSocketUtil.broadcast(message,"服务器","0");
+//            cache.updatePlanList();
         }catch (Exception e){
             message="数据更新过程出现异常:"+e.getMessage();
             logger.error(message);

@@ -24,6 +24,10 @@ import tms.spring.utils.CaseAnalyseUtil;
 import tms.spring.utils.Constant;
 import tms.spring.utils.PropertiesUtil;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -164,7 +168,7 @@ public class mainController {
     }
 
     /**
-     * 阈值参数配置
+     * 用例仓库页面
      */
     @RequestMapping(value="autoCaseRepertory")
     public String autoCaseRepertory(Model model) {
@@ -177,5 +181,38 @@ public class mainController {
         model.addAttribute("username", username);
         return "autoCaseRepertory";
     }
+
+
+    /**
+     * 个人资料页面
+     */
+    @RequestMapping(value="userProfile")
+    public String userProfile(Model model) {
+        String username=SecurityUtils.getSubject().getPrincipal().toString();
+        if(username.equals("admin")){
+            model.addAttribute("writer", "<input type=\"text\" name=\"name\" class=\"form-control required\" maxlength=\"10\">");
+        }else {
+            model.addAttribute("writer", "<input type=\"text\" name=\"name\" class=\"form-control required\" value=\""+username+"\" readonly=\"readonly\">");
+        }
+        model.addAttribute("username", username);
+        model.addAttribute("user", loginService.getUserProfile(username));
+        return "userProfile";
+    }
+
+
+    /**
+     * 更新个人资料
+     */
+    @RequestMapping(value="updateUserProfile")
+    public String updateUserProfile(Model model,HttpServletRequest request) {
+        try{
+            loginService.updateUserProfile(request);
+            model.addAttribute("result", "个人资料更新成功！");
+        }catch (Exception e){
+            model.addAttribute("result", "个人资料更新失败，失败原因："+e.getMessage());
+        }
+        return this.userProfile(model);
+    }
+
 
 }
