@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tms.spring.dao.UserDao">
+
+    <resultMap id="Roles" type="tms.spring.entity.Role">
+        <id column="id" property="id"/>
+        <id column="name" property="name"/>
+        <id column="type" property="type"/>
+    </resultMap>
+
+    <resultMap id="RoleNames" type="java.lang.String">
+        <id column="name" property="name"/>
+    </resultMap>
+
+    <select id="selectUserByName" parameterType="java.lang.String" resultType="tms.spring.entity.User">
+    SELECT * FROM t_user WHERE username = #{name,jdbcType=VARCHAR};
+</select>
+
+    <select id="selectUserById" parameterType="java.lang.Long" resultType="tms.spring.entity.User">
+        SELECT * FROM t_user WHERE id = #{id};
+    </select>
+
+    <select id="selectUserByEmail" parameterType="java.lang.String" resultType="tms.spring.entity.User">
+        SELECT * FROM t_user WHERE email = #{email,jdbcType=VARCHAR};
+    </select>
+
+    <insert id="insertUser" parameterType="tms.spring.entity.User">
+        INSERT INTO t_user(username,nickname,email,password,create_time,last_login_time,status,department)
+        VALUES (#{username,jdbcType=VARCHAR},#{nickname,jdbcType=VARCHAR},#{email,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},
+        #{createTime,jdbcType=TIMESTAMP},#{lastLoginTime,jdbcType=TIMESTAMP},#{status,jdbcType=BIGINT},#{department,jdbcType=VARCHAR})
+    </insert>
+
+    <delete id="deleteUserById" parameterType="java.lang.Long">
+        DELETE FROM t_user WHERE id = #{id,jdbcType=BIGINT}
+    </delete>
+    
+    <select id="selectRolesById" parameterType="java.lang.Long" resultMap="Roles">
+        SELECT t_role.id,t_role.name,t_role.type
+        FROM t_user LEFT JOIN t_user_role ON t_user.id=t_user_role.uid
+        LEFT JOIN t_role ON t_role.id=t_user_role.rid WHERE t_user.id=#{id,jdbcType=BIGINT}
+    </select>
+
+    <select id="selectRoleNamesById" parameterType="java.lang.Long" resultMap="RoleNames">
+        SELECT t_role.name
+        FROM t_user LEFT JOIN t_user_role ON t_user.id=t_user_role.uid
+        LEFT JOIN t_role ON t_role.id=t_user_role.rid WHERE t_user.id=#{id,jdbcType=BIGINT}
+    </select>
+
+    <update id="updateLastLoginTime" parameterType="tms.spring.entity.User">
+        UPDATE t_user SET  last_login_time=#{lastLoginTime,jdbcType=TIMESTAMP} WHERE username=#{username,jdbcType=VARCHAR}
+    </update>
+
+    <update id="updatePasswordByEmail" parameterType="tms.spring.entity.User">
+        UPDATE t_user SET  password=#{password,jdbcType=TIMESTAMP} WHERE email=#{email,jdbcType=VARCHAR}
+    </update>
+
+    <update id="updateUserProfile" parameterType="tms.spring.entity.User">
+        UPDATE t_user
+        <trim prefix="set" suffixOverrides=",">
+            <if test="nickname != null">
+                nickname = #{nickname},
+            </if>
+            <if test="sex != null">
+                sex = #{sex},
+            </if>
+            <if test="age != null">
+                age = #{age},
+            </if>
+            <if test="watchword != null">
+                watchword = #{watchword},
+            </if>
+            <if test="description != null">
+                description = #{description},
+            </if>
+            <if test="mark != null">
+                mark = #{mark},
+            </if>
+            <if test="picture != null">
+                picture = #{picture},
+            </if>
+        </trim>
+        WHERE username=#{username}
+    </update>
+</mapper>
