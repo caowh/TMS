@@ -131,7 +131,7 @@ public class CaseAnalyseUtil {
             map.put("environment",arrMessage[1].split(":")[1].trim());
             map.put("leader",arrMessage[2].split(":")[1].trim());
         } catch (Exception e) {
-            logger.error("get message from test plan name:"+planName+",version:"+version+",data is "+message);
+            //logger.error("get message from test plan name:"+planName+",version:"+version+",data is "+message);
         }
         return map;
     }

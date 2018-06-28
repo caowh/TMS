@@ -23,20 +23,20 @@ public class AutoCaseDaoTest extends BaseDaoTest{
 
     @Test
     public void insertsAutoCases() throws Exception {
-        AutoCase autoCase=new AutoCase();
-        autoCase.setType(0);
-        autoCase.setVersion("test");
-        autoCase.setCase_id("test");
-        autoCase.setContent("test");
-        autoCase.setDescribes("test");
-        autoCase.setUpdateReason("test");
-        autoCase.setTime(new Date());
-        autoCase.setUploaderId(userDao.selectUserByName("admin").getId());
-        autoCase.setWriter("test");
-        autoCase.setNode("0");
-        List<AutoCase> list=new ArrayList();
-        list.add(autoCase);
-        autoCaseDao.insertsAutoCases(list);
+//        AutoCase autoCase=new AutoCase();
+//        autoCase.setType(0);
+//        autoCase.setVersion("test");
+//        autoCase.setCase_id("test");
+//        autoCase.setContent("test");
+//        autoCase.setDescribes("test");
+//        autoCase.setUpdateReason("test");
+//        autoCase.setTime(new Date());
+//        autoCase.setUploaderId(userDao.selectUserByName("admin").getId());
+//        autoCase.setWriter("test");
+//        autoCase.setNode("0");
+//        List<AutoCase> list=new ArrayList();
+//        list.add(autoCase);
+//        autoCaseDao.insertsAutoCases(list);
     }
 
     @Test

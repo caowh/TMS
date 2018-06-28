@@ -39,7 +39,6 @@ public class UpdateCaseResult {
 //            getSuiteExecuteCount();
 //            getSuiteSeverity();
 //            message="开始更新数据!";
-//            logger.info(message);
 //            WebSocketUtil.broadcast(message,"服务器","0");
 //            cache.updatePlanList();
         }catch (Exception e){

@@ -59,3 +59,49 @@
     top:0;
     height: 32px;
 }
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0; /*初始状态 透明度为0*/
+    }
+    25% {
+        opacity: 0.05; /*初始状态 透明度为0*/
+    }
+    50% {
+        opacity: 0.1; /*初始状态 透明度为0*/
+    }
+    75% {
+        opacity: 0.2; /*中间状态 透明度为0*/
+    }
+    100% {
+        opacity: 1; /*结尾状态 透明度为1*/
+    }
+}
+@keyframes appear{
+    0% {
+        opacity: 0;
+    }
+    99%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.text-total{
+    font-family: 华文行楷;
+    font-size: 56px;
+    writing-mode: vertical-rl;
+    letter-spacing:10px;
+    color: #a6e1ec;
+}
+
+.text-1{
+    animation: appear 1.1s ease,fadeIn 3s ease 1s;
+}
+.text-2{
+    animation: appear 3.1s ease,fadeIn 3s ease 3s;
+}
+.text-3{
+    animation: appear 5.1s ease,fadeIn 3s ease 5s;
+}

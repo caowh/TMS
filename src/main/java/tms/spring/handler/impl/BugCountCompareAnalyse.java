@@ -3,7 +3,6 @@ package tms.spring.handler.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import tms.spring.entity.Plan;
-import tms.spring.exception.AutoCaseRepertoryException;
 import tms.spring.exception.CaseAnalysesException;
 import tms.spring.handler.CaseAnalyseHandler;
 import tms.spring.utils.CaseAnalyseUtil;

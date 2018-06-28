@@ -9,8 +9,8 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <!--&lt;!&ndash; (事务管理)transaction manager, use JtaTransactionManager for global tx &ndash;&gt;-->
-    <!--<tx:annotation-driven transaction-manager="transactionManager" />-->
+    <!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
+    <tx:annotation-driven transaction-manager="transactionManager" />
 
     <!-- 定义事务策略 -->
     <tx:advice id="txAdvice" transaction-manager="transactionManager">

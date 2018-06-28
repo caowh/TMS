@@ -234,23 +234,12 @@
 </div>
 <script>
     var address="";
-    Array.prototype.remove=function(dx) {
-        if(isNaN(dx)||dx>this.length){return false;}
-        for(var i=0,n=0;i<this.length;i++)
-        {
-            if(this[i]!=this[dx])
-            {
-                this[n++]=this[i]
-            }
-        }
-        this.length-=1
-    }
     Array.prototype.pushHasMax=function(item,max) {
         if(max == undefined ||max == null ||max <= 0){
             max = 60
         }
         if(this.length>=max){
-            this.remove(0)
+            this.shift()
         }
         this.push(item)
     }
@@ -421,145 +410,161 @@
         $.getJSON("/linuxMonitor/memUsage.do?url="+address,
             function (data) {
                 if(data.code==1){
+                    var first = true;
+                    if(memUsageArr.length>0){
+                        first = false
+                    }
                     var result=data.result;
                     var usedPercent=Math.round((result.usage/result.total)*100*100)/100;
                     var dict={}
                     dict['value']=usedPercent
                     dict['time']=result.time
                     memUsageArr.pushHasMax(dict)
-                    memUsageChart.setOption(option = {
-                        grid: {
-                            containLabel: true,
-                            y2:0
-                        },
-                        xAxis: {
-                            type: 'time',
-                            name: '时间（s）',
-                            interval: 60*1000,
-                            axisLine: {
-                                lineStyle: {
-                                    color: '#ccc'
-                                }
+                    var option;
+                    if(first){
+                        option = {
+                            grid: {
+                                containLabel: true,
+                                y2:0
                             },
-                            nameTextStyle: {
-                                color: '#333'
-                            },
-                            axisTick: {
-                                show: false
-                            }
-                        },
-                        toolbox: {
-                            show: true,
-                            feature: {
-                                dataZoom: {
-                                    yAxisIndex: 'none'
+                            xAxis: {
+                                type: 'time',
+                                name: '时间（s）',
+//                                interval: 60*1000,
+                                axisLine: {
+                                    lineStyle: {
+                                        color: '#ccc'
+                                    }
                                 },
-                                saveAsImage: {}
-                            }
-                        },
-                        dataZoom: {
-                            type: 'inside',
-                            xAxisIndex: 0,
-                            filterMode: 'empty',
-                            start: 0,
-                            end: 100
-                        },
-                        yAxis: {
-                            name: '内存使用率(总量：'+result.total+'MB)',
-                            max: 100,
-                            min: 0,
-                            axisLine: {
-                                lineStyle: {
-                                    color: '#ccc'
-                                }
-                            },
-                            nameTextStyle: {
-                                color: '#333'
-                            },
-                            axisLabel: {
-                                formatter: '{value} %',
-                                textStyle: {
+                                nameTextStyle: {
                                     color: '#333'
+                                },
+                                axisTick: {
+                                    show: false
                                 }
                             },
-                            interval: 25,
-                            splitLine: {
-                                lineStyle: {
-                                    type: 'dashed',
-                                    color: '#e2e6a'
-
-                                }
-                            },
-                            splitArea: {
+                            toolbox: {
                                 show: true,
+                                feature: {
+                                    dataZoom: {
+                                        yAxisIndex: 'none'
+                                    },
+                                    saveAsImage: {}
+                                }
+                            },
+                            dataZoom: {
+                                type: 'inside',
+                                xAxisIndex: 0,
+                                filterMode: 'empty',
+                                start: 0,
+                                end: 100
+                            },
+                            yAxis: {
+                                name: '内存使用率(总量：'+result.total+'MB)',
+                                max: 100,
+                                min: 0,
+                                axisLine: {
+                                    lineStyle: {
+                                        color: '#ccc'
+                                    }
+                                },
+                                nameTextStyle: {
+                                    color: '#333'
+                                },
+                                axisLabel: {
+                                    formatter: '{value} %',
+                                    textStyle: {
+                                        color: '#333'
+                                    }
+                                },
+                                interval: 25,
+                                splitLine: {
+                                    lineStyle: {
+                                        type: 'dashed',
+                                        color: '#e2e6a'
+
+                                    }
+                                },
+                                splitArea: {
+                                    show: true,
+                                    areaStyle: {
+                                        color: ['#fbfbfb', '#fbfbfb']
+                                    }
+                                }
+                            },
+                            visualMap: {
+                                show: false,
+                                pieces: [{
+                                    gt: 0,
+                                    lte: 25,
+                                    color: '#096'
+                                }, {
+                                    gt: 25,
+                                    lte: 50,
+                                    color: '#4b7cde'
+                                }, {
+                                    gt: 50,
+                                    lte: 75,
+                                    color: '#fea621'
+                                }, {
+                                    gt: 75,
+                                    lte: 100,
+                                    color: '#f72c2e'
+                                }],
+                                outOfRange: {
+                                    color: '#999'
+                                }
+                            },
+                            legend: {
+                                show: false
+                            },
+                            series: [{
+                                name: '内存使用率',
+                                type: 'line',
+                                showSymbol: false,
+                                hoverAnimation: false,
+                                lineStyle: {
+                                    normal: {
+                                        width: 1
+                                    }
+                                },
+                                itemStyle: {
+                                    normal: {
+                                        opacity: 0
+                                    }
+                                },
+                                data: memUsageArr.map(function(item) {
+                                    return {
+                                        name: Math.round(item.value*100)/100,
+                                        value: [item.time, Math.round(item.value*100)/100]
+                                    }
+                                }),
                                 areaStyle: {
-                                    color: ['#fbfbfb', '#fbfbfb']
+                                    normal: {
+                                        color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                                            offset: 1,
+                                            color: '#40e112' // 0% 处的颜色
+                                        }, {
+                                            offset: 0,
+                                            color: '#2dfb2d' // 100% 处的颜色
+                                        }], false),
+                                        opacity: 0.4
+                                    }
                                 }
-                            }
-                        },
-                        visualMap: {
-                            show: false,
-                            pieces: [{
-                                gt: 0,
-                                lte: 25,
-                                color: '#096'
-                            }, {
-                                gt: 25,
-                                lte: 50,
-                                color: '#4b7cde'
-                            }, {
-                                gt: 50,
-                                lte: 75,
-                                color: '#fea621'
-                            }, {
-                                gt: 75,
-                                lte: 100,
-                                color: '#f72c2e'
                             }],
-                            outOfRange: {
-                                color: '#999'
+                            tooltip: {
+                                trigger: 'axis',
                             }
-                        },
-                        legend: {
-                            show: false
-                        },
-                        series: [{
-                            name: '内存使用率',
-                            type: 'line',
-                            hoverAnimation: false,
-                            lineStyle: {
-                                normal: {
-                                    width: 1
-                                }
-                            },
-                            itemStyle: {
-                                normal: {
-                                    opacity: 0
-                                }
-                            },
-                            data: memUsageArr.map(function(item) {
-                                return {
-                                    name: Math.round(item.value*100)/100,
-                                    value: [item.time, Math.round(item.value*100)/100]
-                                }
-                            }),
-                            areaStyle: {
-                                normal: {
-                                    color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
-                                        offset: 1,
-                                        color: '#40e112' // 0% 处的颜色
-                                    }, {
-                                        offset: 0,
-                                        color: '#2dfb2d' // 100% 处的颜色
-                                    }], false),
-                                    opacity: 0.4
-                                }
-                            }
-                        }],
-                        tooltip: {
-                            trigger: 'axis',
                         }
-                    });
+                    }else {
+                        option = {series:[{data:memUsageArr.map(function(item) {
+                            return {
+                                name: Math.round(item.value*100)/100,
+                                value: [item.time, Math.round(item.value*100)/100]
+                            }
+                        })}]}
+                    }
+                    memUsageChart.setOption(option);
                 }
             }
         );

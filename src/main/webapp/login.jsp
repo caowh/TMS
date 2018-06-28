@@ -11,6 +11,7 @@
     <link href="/assets/css/plugins.css" rel="stylesheet" type="text/css" />
     <link href="/assets/css/responsive.css" rel="stylesheet" type="text/css"/>
     <link href="/assets/css/icons.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/animate.css" rel="stylesheet" type="text/css" />
     <link href="/assets/css/login.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="/assets/css/fontawesome/font-awesome.min.css">
     <!--[if IE 7]>
@@ -48,7 +49,16 @@
 </head>
 
 <body class="login">
-<div class="snow-container" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;"></div>
+<div class="snow-container" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;">
+
+</div>
+<div style="position:fixed;top:18%;left:70%;width:100%;height:100%;z-index:-0.5;">
+    <span class="text-total">
+        <span class="text-1">一蓑烟雨<br></span>
+        <span class="text-2">满城风絮<br></span>
+        <span class="text-3">梅子黄时雨</span>
+    </span>
+</div>
 
 <div class="logo">
     <img src="/assets/img/logo.png" alt="logo" /></div>

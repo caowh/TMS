@@ -1,5 +1,6 @@
 package tms.spring.dao;
 
+import org.springframework.stereotype.Repository;
 import tms.spring.entity.AutoCase;
 
 import java.util.List;
@@ -7,6 +8,7 @@ import java.util.List;
 /**
  * Created by user on 2017/11/9.
  */
+@Repository
 public interface AutoCaseDao {
 
     void insertsAutoCases(List<AutoCase> autoCases);

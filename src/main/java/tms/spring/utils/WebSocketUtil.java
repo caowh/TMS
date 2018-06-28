@@ -35,8 +35,10 @@ public class WebSocketUtil {
         this.session = session;
         webSocketSet.add(this); //加入set中
         addOnlineCount(); //在线数加
-        broadcast(JSON.toJSONString(getOnlineUser()),"服务器","1");
-        logger.info("有新连接加入！当前在线人数为" + getOnlineCount()+","+session.getId()+","+session.getUserPrincipal());
+        if(session.getUserPrincipal() != null){
+            broadcast(JSON.toJSONString(getOnlineUser()),"服务器","1");
+        }
+        logger.info("有新连接加入！当前在线人数为" + getOnlineCount()+","+session.getId()+","+getUserName(session));
     }
     /**
      * 连接关闭调用的方法
@@ -46,7 +48,7 @@ public class WebSocketUtil {
         webSocketSet.remove(this); //从set中删除
         subOnlineCount(); //在线数减
         broadcast(JSON.toJSONString(getOnlineUser()),"服务器","1");
-        logger.info("有一连接关闭！当前在线人数为" + getOnlineCount()+","+this.session.getId()+","+this.session.getUserPrincipal());
+        logger.info("有一连接关闭！当前在线人数为" + getOnlineCount()+","+this.session.getId()+","+getUserName(session));
     }
     /**
      * 收到客户端消息后调用的方法
@@ -56,7 +58,7 @@ public class WebSocketUtil {
     @OnMessage
     public void onMessage(String message, Session session) {
         logger.info("来自客户端的消息:"+session.getId()+"," + message);
-        broadcast(message,session.getUserPrincipal().getName(),"0");
+        broadcast(message,getUserName(session),"0");
     }
     /**
      * 发生错误时调用
@@ -65,7 +67,7 @@ public class WebSocketUtil {
      */
     @OnError
     public void onError(Session session, Throwable error){
-        logger.warn("socket连接出错:"+session.getId()+","+session.getUserPrincipal()+"," +error.getMessage());
+        logger.warn("socket连接出错:"+session.getId()+","+getUserName(session)+"," +error.getMessage());
     }
     /**
      * 这个方法与上面几个方法不一样。没有用注解，是根据自己需要添加的方法。
@@ -85,7 +87,7 @@ public class WebSocketUtil {
     public static synchronized List getOnlineUser(){
         List<String> list=new ArrayList<String>();
         for(WebSocketUtil item: webSocketSet){
-            String username=item.session.getUserPrincipal().getName();
+            String username = getUserName(item.session);
             if(!list.contains(username)){
                 list.add(username);
             }
@@ -108,9 +110,16 @@ public class WebSocketUtil {
             try {
                 item.sendMessage(message,username,type);
             } catch (IOException e) {
-                logger.warn("向客户端发送消息失败:"+item.session.getId()+","+item.session.getUserPrincipal()+"," +e.getMessage());
+                logger.warn("向客户端发送消息失败:"+item.session.getId()+","+getUserName(item.session)+"," +e.getMessage());
                 continue;
             }
         }
+    }
+
+    private static String getUserName(Session session){
+        if(session.getUserPrincipal() == null){
+            return "未知用户："+session.getId();
+        }
+        return session.getUserPrincipal().getName();
     }
 }

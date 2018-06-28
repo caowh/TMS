@@ -1,7 +1,5 @@
 package tms.spring.service;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tms.spring.entity.Plan;
@@ -21,8 +19,6 @@ import java.util.Map;
  */
 @Service
 public class CaseAnalyseService {
-
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private CaseAnalyseUtil caseAnalyseUtil;
@@ -148,7 +144,7 @@ public class CaseAnalyseService {
                 int cid=Integer.parseInt(String.valueOf(map.get("id")));
                 int pid=Integer.parseInt(String.valueOf(map.get("parent_id")));
                 String name=String.valueOf(map.get("name"));
-                if(name.equals(planName)){
+                if(root_id==0||root_id>cid){
                     root_id=cid;
                 }
                 TreeNode treeNode=new TreeNode();

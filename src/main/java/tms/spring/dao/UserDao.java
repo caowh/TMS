@@ -1,5 +1,6 @@
 package tms.spring.dao;
 
+import org.springframework.stereotype.Repository;
 import tms.spring.entity.Role;
 import tms.spring.entity.User;
 
@@ -8,6 +9,7 @@ import java.util.Set;
 /**
  * Created by user on 2017/7/14.
  */
+@Repository
 public interface UserDao {
 
      User selectUserByName(String name);

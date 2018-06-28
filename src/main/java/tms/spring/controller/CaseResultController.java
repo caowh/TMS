@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import tms.spring.exception.AutoCaseRepertoryException;
 import tms.spring.exception.CaseAnalysesException;
 import tms.spring.service.CaseAnalyseService;
 import tms.spring.utils.CaseAnalyseUtil;
@@ -27,7 +26,6 @@ import java.util.Map;
 public class CaseResultController {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
-
     @Autowired
     private CaseAnalyseService caseAnalyseService;
 

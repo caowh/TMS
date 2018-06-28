@@ -200,7 +200,7 @@ public class VerifyCodeUtils {
             image.setRGB(x, y, rgb);  
         }  
           
-        shear(g2, w, h, c);// 使图片扭曲  
+        shear(g2, w, h, c);// 使图片扭曲
   
         g2.setColor(getRandColor(100, 160));  
         int fontSize = h-4;  

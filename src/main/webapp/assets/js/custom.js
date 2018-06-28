@@ -77,7 +77,7 @@ $(document).ready(function(){
     setTimeout(function(){
         $("#sidebar .notifications.demo-slide-in > li:eq(0)").slideDown(500)},7000)
 
-    var wsServer = 'ws://192.168.4.173:8888/webSocket'; //服务器地址
+    var wsServer = 'ws://192.168.31.14:8888/webSocket'; //服务器地址
     var websocket = new WebSocket(wsServer); //创建WebSocket对象
     websocket.onmessage = function (evt) {
         showMessage(JSON.parse(evt.data))
